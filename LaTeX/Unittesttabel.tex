@@ -1,0 +1,61 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[table,xcdraw, x11names]{xcolor}
+    \usepackage{fourier}
+    \usepackage[sups]{heuristica}
+    \usepackage{geometry}
+    \usepackage[shortlabels]{enumitem}
+
+    \usepackage{array, tabularx, threeparttable, caption}
+    \renewcommand{\tabularxcolumn}[1]{m{#1}}
+    \newcolumntype{Y}{>{\hsize=2\hsize}X}
+    \newcolumntype{Z}{>{\hsize=3\hsize}X}
+    \captionsetup{font =small, labelfont = sc}
+
+\pagestyle{empty}
+    \usepackage{colortbl}
+\begin{document}
+
+
+  
+%%Testtabel
+Test Unittesttabel \\
+
+\begin{tabular}{p{0.12\textwidth} p{0.17\textwidth} p{0.17\textwidth} p{0.17\textwidth} p{0.17\textwidth}}
+
+\rowcolor{LightSteelBlue3!50} Udstyr:                                                & \multicolumn{4}{l}{}                                                                                                                                                                                           
+\rowcolor{LightSteelBlue3!50}
+\textbf{Test pkt.} & \textbf{Acceptkriterier} & \textbf{Observationer} & \textbf{Godkendt [Ja/Nej]} & \textbf{Dato/Initialer} \\ 
+\rowcolor{LightSteelBlue2!50}
+1 & Højtaler afgiver lyd & Højtaler afgiver lyd & Ja & JR/05.10.16 \\ 
+test & test & test & test & test \\
+test & test & test & test & test \\ 
+\rowcolor{LightSteelBlue3!50} Bemærkning:                                                & \multicolumn{4}{l}{}                                                                                                                                                                                            \\ 
+
+
+
+\end{tabular}
+
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[htb]
+\centering
+\begin{tabular}{lllll}
+\\ \hline
+\multicolumn{2}{l}{\#ID: UC\#1}                                                                                             & \multicolumn{3}{l}{Testobjekt:  }                                                                                                                 \\ \hline
+Udstyr:                                                & \multicolumn{4}{l}{}                                                                                                                                                                                            \\ \hline
+Metode:                                                & \multicolumn{4}{l}{}                                                                                                                                                                                            \\ \hline
+\rowcolor[HTML]{B0C4DE} 
+\multicolumn{1}{l|}{\cellcolor[HTML]{B0C4DE}Test Pkt.} & \multicolumn{1}{l|}{\cellcolor[HTML]{B0C4DE}Acceptkriterier} & \multicolumn{1}{l|}{\cellcolor[HTML]{B0C4DE}Observationer} & \multicolumn{1}{l|}{\cellcolor[HTML]{B0C4DE}Godkendt {[}Ja/Nej{]}} & Dato/Initialer \\ \hline
+\multicolumn{1}{l|}{}                                  & \multicolumn{1}{l|}{}                                        & \multicolumn{1}{l|}{}                                      & \multicolumn{1}{l|}{}                                              &                \\ \hline
+\cellcolor[HTML]{FFFFFF}Bemærkninger:                  & \multicolumn{4}{l}{}                                                                                                                                                                                            \\ \hline
+\end{tabular}
+\caption{My caption}
+\label{my-label}
+\end{table}
+
+\end{document}

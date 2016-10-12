@@ -1,0 +1,127 @@
+ \documentclass[a4paper, 10pt]{article}
+    \usepackage[utf8]{inputenc}
+    \usepackage{fourier}
+    \usepackage[sups]{heuristica}
+    \usepackage{geometry}
+    \usepackage[shortlabels]{enumitem}
+
+    \usepackage{array, tabularx, threeparttable, caption}
+    \renewcommand{\tabularxcolumn}[1]{m{#1}}
+    \newcolumntype{Y}{>{\hsize=2\hsize}X}
+    \newcolumntype{Z}{>{\hsize=3\hsize}X}
+    \captionsetup{font =small, labelfont = sc}
+
+\pagestyle{empty}
+    \usepackage[x11names]{xcolor}
+    \usepackage{colortbl}
+
+
+    \begin{document}
+    
+    
+    
+   \renewcommand{\tablename}
+   {Tabel}
+    \begin{table}[!h]
+    \renewcommand\arraystretch{1.5}
+    \arrayrulecolor{LightSteelBlue4}\setlength\arrayrulewidth{1.0pt}
+    \centering
+    \begin{threeparttable}
+    \caption{Beskrivelse af Use Case \#1: Akustisk volumenmåling af bryster}
+    \begin{tabularx}{\linewidth}{|*{4}{X|}}
+    \hline
+    \rowcolor{LightSteelBlue3!50}\multicolumn{4}{|l|}{\bfseries Use Case \#1: Udfør brystvolumenmåling} \\
+    \hline
+    \cellcolor{LightSteelBlue2!50}\textbf{Use Case ID} & \multicolumn{3}{Z|}{UC \#1} \\
+    \hline
+    \cellcolor{LightSteelBlue2!50}\textbf{Primær aktør} & \multicolumn{3}{Z|}{Plastikkirurg (PK)} \\
+    \hline
+    \cellcolor{LightSteelBlue2!50}\textbf{Sekundær aktør} & \multicolumn{3}{Z|}{Patient} \\
+    \hline
+        \rowcolor{LightSteelBlue2!50}\multicolumn{4}{ |l| }{\bfseries Interessenter} \\
+    \hline
+    \multicolumn{4}{|m{1.0\linewidth}| }{%
+    \begin{enumerate}[\bfseries 1., itemsep = 0ex, wide = 2em, ]
+    \item Patient: \textit{ønsker et objektivt mål, som bevis på overensstemmelse med købsaftale}
+    \item Sundhedsstyrelsen: \textit{ønsker et objektivt mål til vurdering af berettigelse til brystformindskende operation}
+    \item Lægemiddelstyrelsen: \textit{ønsker, at BVM er i overenstemmelse med EU-lovgivning for medicinsk udstyr}
+    \end{enumerate}
+    } \\
+    \hline
+    \rowcolor{LightSteelBlue2!50}\multicolumn{2}{|Y|}{\textbf{Startbetingelse} } & \multicolumn{2}{Y|}{\textbf{Slutbetingelse}} \\
+    \hline
+    \multicolumn{2}{|Y|}{BVM skal være tændt} & \multicolumn{2}{Y|}{BVM skal vise et mål for brystvolumen} \\
+    \hline
+    \rowcolor{LightSteelBlue2!50}\multicolumn{4}{ |l| }{\bfseries Normalforløb} \\
+    \hline
+    \multicolumn{4}{|m{1.0\linewidth}| }{%
+    \begin{enumerate}[\bfseries 1., itemsep = 0ex, wide = 2em, ]
+    \item PK har behov for at kende patientens brystvolumen
+    \item PK kalibrerer BVM i den tilhørende dockingstation
+    \item PK placrerer BVM på patients blottede bryst
+	\item PK kontrollerer, at patientens bryst er tætomsluttet af BVM   
+	\item PK kontrollerer, at BVM er placeret med et ensartet tryk på patientens bryst
+	\item PK foretager en måling af brystvolumen ved at trykke på den dertilhørende knap
+    \item BVM præsenterer målingen på et display, som PK aflæser 
+	\item BVM slukkes og rengøres
+    \end{enumerate}
+    } \\
+    \hline
+    \rowcolor{LightSteelBlue2!50}\multicolumn{4}{ |l| }{\bfseries Alternativt flow} \\
+    \hline
+    \multicolumn{4}{|m{1.0\linewidth}| }{%
+    \begin{enumerate}[\bfseries 1., itemsep = 0ex, wide = 2em, ]
+    \item Manglende kalibrering
+    			\begin{enumerate}
+    			\item PK anbringer BVM i dockingstation
+    			\item PK starter kalibrering ved at trykke på den dertilhørerende knap
+    			\item BVM melder klar til brug
+    			\end{enumerate}
+    \item Fejlhåndtering
+    			\begin{enumerate}
+    			\item PK slukker BVM
+    			\item PK anbringer BVM i dockingstationen
+    			\item PK tænder BVM
+    			\item PK kalibrerer BVM 
+    			\end{enumerate}
+    \end{enumerate}
+    } \\
+    \hline
+    \rowcolor{LightSteelBlue2!50}\multicolumn{4}{ |l| }{\bfseries Åbne problemstillinger} \\
+    \hline
+    \multicolumn{4}{|m{1.0\linewidth}| }{%
+    \begin{itemize}
+    \item Hvordan ved PK, at BVM mangler at blive kalibreret?
+    \item Hvordan ved PK, at BVM melder fejl?
+	\item Hvordan ved PK, at han påfører et ensartet tryk?
+	\item Hvordan ved PK, at patientens bryst er tætomsluttet af BVM? 
+    \end{itemize}   			
+    } \\
+    \hline
+    \end{tabularx}
+    \vskip 0.5ex
+    \end{threeparttable}
+    \end{table}
+
+
+\section*{Versionshistorie}
+\begin{tabular}{p{0.025\textwidth} p{0.12\textwidth} p{0.15\textwidth} p{0.68\textwidth}}
+\hline
+\rowcolor{LightSteelBlue3!50}
+\textbf{\#} & \textbf{Dato} & \textbf{Initialer} & \textbf{Beskrivelse } \\ \hline
+\rowcolor{LightSteelBlue2!50}0.1 & 03.10.16 & JH \& JR & Sendt til review \\ 
+ \hline
+\end{tabular} 
+
+\section*{Versionshistorie}
+\begin{tabular}{p{0.025\textwidth} p{0.12\textwidth} p{0.075\textwidth} p{0.68\textwidth}}
+\hline
+\rowcolor{LightSteelBlue3!50}
+\textbf{\#} & \textbf{Dato} & \textbf{Initialer} & \textbf{Beskrivelse } \\ \hline
+\rowcolor{LightSteelBlue2!50}1.0 & 01/01 2014 & ABC & Tilføjet Use Cases 1, 2 og 3 \\ 
+1.1 & 02/01 2014 & STU & Rettet Use Case 2 \\
+\rowcolor{LightSteelBlue2!50} 1.2 & 04/01 2014 & VXY & Rettet tekst, tilføjet bedre beskrivelse, gennemlæsning af dokument og mere.\\ \hline
+\end{tabular} 
+
+
+    \end{document} 
