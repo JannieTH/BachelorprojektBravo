@@ -1,0 +1,25 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\begin{document}
+
+\section*{Systembeskrivelse}
+
+\subsection*{Brystvolumenmålerens opbygning}
+Den akustiske brystvolumenmåler består af en Helmholtz resonater hvor der er påmonteret en højtaler og en mikrofon. Højtaleren og mikrofonen er koblet til en Arduino Mega 2560 R3. Arduino'en er koblet til en PC hvor der skrives til Arduino i LabVIEW. 
+
+-----TEGNING------
+
+\subsection*{Brystvolumenmåleren funktionalitet}
+
+Når der intialiseres en måling med BVM'en afsendes en lyd i resonatoren via højtaleren. Mikrofonen på rosantoren opsamler den reflekterede lyd og udfra den reflekterede lyd udregner en algoritme størrelsen på brystvolumet. 
+
+\section*{Aktørbeskrivelse}
+
+Systemets primære aktør er en plastikkirurg som bruger BMV'en når han ønsker et objektivt mål på et bryst.Det er udelukkende plastikkirurgen der  betjener BMV'en under en måling. Som sekundær aktør giver patient et input, sit bryst, til systemet. 
+ 
+
+
+\end{document}
