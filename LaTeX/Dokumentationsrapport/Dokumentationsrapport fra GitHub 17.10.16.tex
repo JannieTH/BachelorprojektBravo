@@ -264,56 +264,6 @@
 			Det konkluderes, at der ikke er fejl i VI'et \texttt{optagefrekvenssignal0.1.vi}. 
 			\subsubsection{Aktion}
 			Det skal undersøges, hvilken forskel der er på frekvenssignalet fra onlinetonegenerator.com og det generede frekvenssignal udsendt fra højtaleren ABS-224-RC.  
-	
-	\subsection{Bordtest nr. 3} %% Skal måske omdøbes?!
-		\subsubsection{Testformål}
-		Det undersøges, hvilken forskel der er på frekvenssignalet fra onlinegenerator.com og det genererede frekvenssignal udsendt fra højtaleren ABS-224-RC.  
-		
-		\subsubsection{Produktspecifikationer}
-		
-		\textit{Hardware:}\\
-		\abshøj\\
-		\højtalerkabel\\
-		\pins\\
-		\krympeflex
-		\arduino\\
-		\PC\\
-		\usbkabel\\
-		\PC\\
-
-		\mikrofon\\
-		\PC\\
-	
-		\textit{Software:}\\
-		\labview\\
-		\visa\\
-		\vi\\
-		\ardsw\
-		\texttt{onlinetonegenerator.com}
-		
-		\subsubsection{Opstilling og opsætning}
-		Mikrofonen er sat i PC'ens minijack-stik. På PC'en er VI'et \texttt{optagefrekvenssignal0.1.vi} åbnet i LabVIEW. Testopstillingen for denne del er vist i figur \ref{fig:etmik}, og blokdiagrammet er vist i figur \ref{fig:bdoptage}.\\ 
-		
-		\subsubsection{Udførsel}
-			\begin{enumerate}
-				\item Mikrofonen holdes manuelt, vendt mod PC'ens højtaler, i en afstand på 5 cm. 
-				\item I \texttt{onlinetonegenerator.com} genereres et signal med den ønskede frekvens. 
-				\item I VI'et \texttt{optagefrekvenssignal0.1.vi} trykkes på \textit{Run}. 
-					\begin{enumerate}
-						\item Den maksimale optagede frekvens aflæses i \textit{Max Frequency}. 
-					\end{enumerate}	  
-			\end{enumerate}
-			
-			Punkt 1-4 gentages med frekvenser på: 100 Hz, 150 Hz, 200 Hz, 400 Hz, 500 Hz, 600 Hz og 700 Hz. 
-			
-			\subsubsection{Resultater}
-			Den optagede frekvens var den generede udsendte frekvens (+/- 0.5 Hz). 
-			\subsubsection{Diskussion}
-			Der opnås nu pæne resultater, og der reflekteres over om resultaterne i \ref{bordtest1} skyldes fejl i højtaler i fejl i VI'et \texttt{genererfrekvenssignal0.2.vi}. 
-			\subsubsection{Konklusion}
-			Det konkluderes, at der ikke er fejl i VI'et \texttt{optagefrekvenssignal0.1.vi}. 
-			\subsubsection{Aktion}
-			Det skal undersøges, hvilken forskel der er på frekvenssignalet fra onlinetonegenerator.com og det generede frekvenssignal udsendt fra højtaleren ABS-224-RC. 
 		
 
 

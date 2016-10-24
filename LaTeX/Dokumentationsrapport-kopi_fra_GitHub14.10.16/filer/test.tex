@@ -1,0 +1,124 @@
+
+\chapter{Testdokumentation}
+	\section{Indledning}
+	Dette kapitel indeholder dokumentation for de udførte tests på den akustiske brystvolumenmåler. 
+		  
+		\subsection{Formål}
+		
+	
+		\subsection{Læsevejledning}	
+		
+				
+		\subsection{Versionshistorik}
+		
+		\vspace{5mm}
+		
+			\begin{figure*}[htb]
+				
+			\end{figure*}
+			
+			
+	\section{FAT-protokol}
+	Denne Final Acceptance Test protokol (FAT-protokol) beskriver alle de forhold og forudsætninger, som skal være opfyldt for at kunne udføre FAT af den akustiske brystvolumenmåler. 
+	  
+		\subsection{Formål}
+		Formålet med denne protokol er at specificere FAT-aktivteterne gældnede for brystvolumenmåleren. 
+		
+		\subsection{Referencer}
+		€€ Eksempelvis UC\#1
+		
+		\subsection{Forkortelser}
+		FAT - Final Acceptance Test
+		  
+		\subsection{Ansvar}
+		\textit{		Ved underskrift på protokollen bekræfter: }\\
+		
+		Kunde - Projektansvarlig
+		\begin{itemize}
+			\item \textit{at indholdet er komplet og entydigt}
+			\item \textit{at det tekniske indhold og metoder er i orden og dækkende for de planlagte tests}
+			\item \textit{at den projektansvarlige er enig i omfang, metode og acceptkriterier}
+		\end{itemize}
+		
+		Udviklere - Projektansvarlige
+		\begin{itemize}
+			\item \textit{at det tekniske indhold og metoder er i orden og dækkende for de planlagte tests}
+		\end{itemize}
+		
+		\subsection{Udstyrsbeskrivelse}
+		Den akustiske brystvolumenmåler består af en Helmholtz resonator, hvor der er påmonteret en højtaler og en mikrofon. Højtaleren og mikrofonen er koblet til en Arduino Mega 2560 R3. Arduino'en er koblet til en PC, hvor der skrives til Arduino i LabVIEW. 
+		Brystvolumenmåleren benyttes af en plastikkirurg, som bruger BMV'en når han ønsker et objektivt volumenmål på et bryst. Når en måling intialiseres med BVM'en afsendes en lyd i resonatoren via højtaleren. Mikrofonen på resonatoren opsamler den reflekterede lyd, og udfra den reflekterede lyd, udregner en algoritme størrelsen på brystvolumen. 			
+		\begin{figure}[htb]
+			\centering
+			\includegraphics[width=5in]{systembeskrivelse}
+			\caption{Beskrivelse af systemets komponenter €€€€}
+			\label{system}
+		\end{figure}
+		
+		\subsection{Acceptkriterier}
+		\textit{Acceptkriterierne er afledt af de forhold, der er specificeret i Kravspecifikationen, kapitel \ref{Kravspec}. Acceptkriterierne er specificeret i de enkelte testskemaer.} 
+		
+		\subsection{Metode}
+		Dette afsnit specificerer de retningslinjer, hvorefter FAT'en skal afvikles. 
+		
+			\subsubsection{Dokumentsammenhæng}
+			illustreres 
+			€€ Indsæt oversigt, med inspiration fra s. 204 	
+			
+			\subsubsection{Gennerelle krav}
+			Afviklingen af FAT skal overholde følgende nøglekrav: 
+			
+			\begin{itemize}
+				\item \textit{Protokollen skal være godkendt, før aktiviteter udføres}
+				\item \textit{Afvigelser skal registreres og rettelser udføres}
+				\item \textit{Dataindsamling og registreringer skal udføres i overenstemmelse med >>god testpraksis<< }
+				\item \textit{Data skal granskes for rigtighed og fuldstændighed }
+				\item \textit{En FAT-rapport skal udarbejdes og godkendes som bevis på den gennemførte FAT}
+			\end{itemize}
+			
+			\subsubsection{Acceptkriterier}
+			 Dette afsnit beskriver, hvordan testskemaerne specifikt skal udfyldes. 
+			 
+			 \begin{itemize}
+				\item \textit{Alle krav skal opfylde de specificerede acceptkriterier i hvert enkelte testskema.}
+				\item \textit{De aktuelle observationer skal svare til de forventede observationer}
+				\item \textit{I >>Godkendt<<-kolonnen skrives >>Ja<<, hvis acceptkriteriet er overholdt.} 
+				\item \textit{I >>Godkendt<<-kolonnen skrives >>Nej<< samt afvigelsesnummer, hvis acceptkriteriet ikke er overholdt.}  
+			\end{itemize}
+			
+			subsubsection{Afvigelseshåndtering}	
+			Afvigelser registreres under udførslen af FAT dokumenteres ved udarbejdelse af afvigelsesbilag, hvor følgende punkter opfyldes:
+			
+			\begin{enumerate}[label=\alph*)]
+				\item \textit{Afvigelse og årsag til afvigelsen beskrives}
+				\item \textit{Aktion for opfyldelse af acceptkriterier angives}
+				\item \textit{Resultat af gennemført aktion dokumenteres}	
+			\end{enumerate}
+			
+			\subsubsection{Afslutning af FAT-aktiviteter}
+			Ved afslutningen af FAT'aktivteterne, skrives en FAT-rapport der lukker FAT-aktiviteterne, og fungerer som bevis for, at den gennemførte test af brystvolumenmåleren er afsluttet med et tilfredsstillende resultat. 
+			
+			FAT-rapporten omhandler følgende punkter: 
+			\begin{itemize}
+				\item \textit{Konklusion på den gennemførte FAT}
+				\item \textit{Kopi af godkendt protokol}
+				\item \textit{Afvigelsesblad med korrektive aktioner}
+				\item \textit{Udfyldte testskemaer}
+			\end{itemize}
+			
+		\subsection{Oversigt over testdokumenter}
+		€€ Her angives de specifikke testdokumenter i en tabel. Obs, på eventuelle referencer til kravspec. 
+		
+		\subsection{Forudsætning for udførelse af FAT}
+		€€ Hvad forudsætter afgørelsen for igangsættelse af FAT / når det og det er opfyldt, startes FAT 
+		
+		\section{FAT-testdokument}
+		
+				
+	
+	
+		
+	
+		
+	
+		

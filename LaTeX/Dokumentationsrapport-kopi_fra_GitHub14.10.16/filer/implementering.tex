@@ -1,0 +1,176 @@
+\chapter{Implementering}
+
+\section{Indledning}
+	Dette kapitel indeholder €€€Husk at skrive noget om at for at kunne udføre beskrevne tests, forventes det at man har et vist kendeskab til Labview
+	  
+		\subsection{Formål}
+	
+		\subsection{Læsevejledning}	
+	
+		
+		\subsection{Versionshistorik}
+
+ 
+\section{Enhedstest}
+	Dette afsnit beskriver de indledende funktionstests, hvor hver enkelte selvstændige funktion i systemet afprøves. 
+	
+	\subsection{Højtaler ABS-224-RC}
+	\label{etha}
+		\subsubsection{Testformål}
+		Det afprøves, om højtaleren kan generere en lyd.
+		\subsubsection{Produktspecifikationer}
+	
+	
+		\textit{Hardware:}\\
+		\abshøj\\
+		\højtalerkabel\\
+		\pins\\
+		\arduino\\
+		\PC\\
+		\usbkabel\\
+	
+		\textit{Software:}\\
+		\labview\\
+		\visa\\
+		\vi\\
+		\ardsw\
+	
+		\subsubsection{Opstilling og opsætning}
+		Højtaleren er loddet til højtalerkablets ene ende, og pin headerne er loddet til kablets anden ende. 
+		Pin headerne er isat Arduino'en i pin 46 (PL3(OC5A)), som et er digitalt PWM output, og til ground (GND). 
+		Arduino'en er med et USB kabel koblet til PC'en. Testopstillingen er vist i figur \ref{fig:etha}.\\ 
+	  
+			\begin{figure}[htb]
+			\centering
+				\includegraphics[width=3in]{haArduino}
+				\caption{Testopstilling for enhedstest af Højtaler ABS-224-RC.}	
+				\label{fig:etha}
+			\end{figure}
+	
+		På PC'en er VI'et \texttt{genererfrekvenssignal0.2.vi} åbnet i LabVIEW. Blokdiagrammet for VI'et er vist i figur \ref{fig:bdgenerer}.   \\   
+	
+			\begin{figure}[htb]
+			\centering
+				\includegraphics[width=4in]{genererfrekvenssignal02}
+				\caption{I blokdiagrammet \texttt{genererfrekvenssignal0.2.vi} er der anvendt følgende LINX-VI'er; Initialize, Digital Write Square Wave samt Close.}	
+				\label{fig:bdgenerer}
+			\end{figure}	  
+	
+		\subsubsection{Udførsel}
+			\begin{enumerate}
+				\item I \textit{Enter Frequency} på frontpanelet i \texttt{genererfrekvenssignal0.2.vi}, indtastes 500. 
+				\item Der trykkes på \textit{Run}. 
+				\item Der lyttes efter lydsignal fra højtaleren.  
+			\end{enumerate}
+			
+		\subsubsection{Resultater}
+		Lydsignal blev generet og afspillet. 
+		\subsubsection{Diskussion} 
+		-
+		\subsubsection{Konklusion}
+		Højtaleren opfylder testen idet der generes en lyd. Samtidig konkluderes, at øvrigt anvendt HW og SW i denne test virker tilfredsstillende, og der vil derfor ikke blive lavet yderligere enhedstests på disse komponenter. 
+	
+		\subsubsection{Aktion}
+		- 
+	\subsection{Minijack PC Mikrofon}
+		\subsubsection{Testformål}
+		Det afprøves, om mikrofonen kan optage en tone.
+		\subsubsection{Produktspecifikationer}
+	
+			\textit{Hardware:}\\
+			\mikrofon\\
+			\PC\\
+	
+			\textit{Software:}\\
+			\labview\\
+	
+		\subsubsection{Opstilling og opsætning}
+		Mikrofonen er sat i PC'ens minijack-stik. Testopstillingen er vist i figur \ref{fig:etmik}.\\ 
+	  
+			\begin{figure}[htb]
+			\centering
+				\includegraphics[width=3in]{mikopstilling}
+				\caption{Testopstilling for enhedstest af Minijack PC Mikrofon.}	
+				\label{fig:etmik}
+			\end{figure}
+	
+			På PC'en er VI'et \texttt{optagefrekvenssignal0.1.vi} åbnet i LabVIEW. Blokdiagrammet for VI'et er vist i figur \ref{fig:bdoptage}.   \\   
+	
+			\begin{figure}[htb]
+			\centering
+				\includegraphics[width=4in]{optagefrekvenssignal01}
+				\caption{I blokdiagrammet \texttt{optagefrekvenssignal0.1.vi} opsamles lydsignalet, som vises i en graf på frontpanelet.}	
+				\label{fig:bdoptage}
+			\end{figure}	  
+	
+		\subsubsection{Udførsel}
+			\begin{enumerate}
+				\item I VI'et \texttt{optagefrekvenssignal0.1.vi}, trykkes på \textit{Run}.  
+				\item Der indtales en tone i mikrofonen. 
+				\item På frontpanelet i VI'et ses frekvensudsving på en graf.  
+			\end{enumerate}
+		
+		\subsubsection{Resultater}
+		Mikronen har opfanget et frekvenssignal. 
+		\subsubsection{Diskussion} 
+		-
+		\subsubsection{Konklusion}
+		Mikrofonen opfylder testen idet der optages en tone. 
+		\subsubsection{Aktion}
+		- 
+	
+	\subsection{Tores højtaler}
+		\subsubsection{Testformål}
+		Det afprøves, om højtaleren kan generere en lyd.
+		\subsubsection{Produktspecifikationer}
+	
+	
+		\textit{Hardware:}\\
+		\tores\\
+		\højtalerkabel\\
+		\kabelsko\\
+		\pins\\
+		\arduino\\
+		\PC\\
+		\usbkabel\\
+	
+		\textit{Software:}\\
+		\labview\\
+		\visa\\
+		\vi\\
+		\ardsw\
+	
+		\subsubsection{Opstilling og opsætning}
+		Højtalerkablets ene ende er påsat kabelsko, som er påsat højtaleren. Til kablets anden ende er pin headere loddet fast. Pin headerne er isat Arduino'en i pin 46 (PL3(OC5A)), som et er digitalt PWM output, og til ground (GND). 
+		Arduino'en er med et USB kabel koblet til PC'en. Testopstillingen er vist i figur \ref{fig:ethb}.\\ 
+	  
+			\begin{figure}[htb]
+			\centering
+				\includegraphics[width=3in]{hbArduino}
+				\caption{Testopstilling for enhedstest af Tores højtaler.}	
+				\label{fig:ethb}
+			\end{figure}
+	
+		På PC'en er VI'et \texttt{genererfrekvenssignal0.2.vi} åbnet i LabVIEW. Blokdiagrammet for VI'et er vist i figur \ref{fig:bdgenerer}.   \\   
+	
+		
+	
+		\subsubsection{Udførsel}
+			Udføres på samme vis, som ved enhedstest af \ref{etha} Højtaler ABS-224-RC. 
+			
+		\subsubsection{Resultater}
+		Lydsignal blev generet og afspillet. 
+		\subsubsection{Diskussion} 
+		-
+		\subsubsection{Konklusion}
+		Højtaleren opfylder testen idet der generes en lyd. 
+		\subsubsection{Aktion}
+		- 
+
+	\subsection{Integrationstest}
+		
+	
+	
+	
+
+	
