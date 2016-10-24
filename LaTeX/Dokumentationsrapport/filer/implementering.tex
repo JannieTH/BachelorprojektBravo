@@ -238,11 +238,12 @@
 		\labview\\
 		\visa\\
 		\vi\\
-		\ardsw\
+		\ardsw\\
 		\texttt{onlinetonegenerator.com}
 		
 		\subsubsection{Opstilling og opsætning}
 		Mikrofonen er sat i PC'ens minijack-stik. På PC'en er VI'et \texttt{optagefrekvenssignal0.1.vi} åbnet i LabVIEW. Testopstillingen for denne del er vist i figur \ref{fig:etmik}, og blokdiagrammet er vist i figur \ref{fig:bdoptage}.\\ 
+		I en internetbrowser er hjemmesiden \texttt{www.onlinetonegenerator.com} åbnet, og PC'ens højtalere er slået til. 
 		
 		\subsubsection{Udførsel}
 			\begin{enumerate}
@@ -277,24 +278,48 @@
 		\pins\\
 		\krympeflex
 		\arduino\\
-		\PC\\
 		\usbkabel\\
 		\PC\\
-
 		\mikrofon\\
-		\PC\\
 	
 		\textit{Software:}\\
 		\labview\\
 		\visa\\
 		\vi\\
-		\ardsw\
+		\ardsw\\
 		\texttt{onlinetonegenerator.com}
 		
 		\subsubsection{Opstilling og opsætning}
-		Mikrofonen er sat i PC'ens minijack-stik. På PC'en er VI'et \texttt{optagefrekvenssignal0.1.vi} åbnet i LabVIEW. Testopstillingen for denne del er vist i figur \ref{fig:etmik}, og blokdiagrammet er vist i figur \ref{fig:bdoptage}.\\ 
+		\textit{1. delopstilling}:\\
+		Højtaleren er loddet til højtalerkablets ene ende, og pin headerne er loddet til kablets anden ende. 
+		Pin headerne er isat Arduino'en i pin 46 (PL3(OC5A)), som et er digitalt PWM output, og til ground (GND). 
+		Arduino'en er med et USB kabel koblet til PC'en. 		
+		På PC'en er VI'et \texttt{genererfrekvenssignal0.2.vi} åbnet i LabVIEW. Testopstillingen for denne del er vist i figur \ref{fig:etha}, og blokdiagrammet er vist i figur \ref{fig:bdgenerer}.\\ 
+ 
+		\textit{2. delopstilling}:\\
+		Mikrofonen er sat i PC'ens minijack-stik. På PC'en er VI'et \texttt{optagefrekvenssignal0.1.vi} åbnet i LabVIEW. Testopstillingen for denne del er vist i figur \ref{fig:etmik}, og blokdiagrammet er vist i figur \ref{fig:bdoptage}.\\  
+		
+		\textit{3. delopstilling}:\\
+		I en internetbrowser er hjemmesiden \texttt{www.onlinetonegenerator.com} åbnet, og PC'ens højtalere er slået til. 
 		
 		\subsubsection{Udførsel}
+			
+			\textit{1. deltest}
+			\begin{enumerate}
+				\item Højtaleren holdes manuelt således membranen står i lodret position. 
+				\item Mikrofonen holdes manuelt, vendt mod højtaleren, i en afstand på 5 cm. 
+				\item I VI'et \texttt{genererfrekvenssignal0.2.vi} indtastes den ønskede frekvens i den numeriske kontrol \textit{Enter Frequency}. 
+					\begin{enumerate}
+						\item Koden eksekveres ved at trykke på \textit{Run}. 
+					\end{enumerate} 
+				\item I VI'et \texttt{optagefrekvenssignal0.1.vi} trykkes på \textit{Run}. 
+					\begin{enumerate}
+						\item Den maksimale optagede frekvens aflæses i \textit{Max Frequency}. 
+					\end{enumerate}	 	
+			\end{enumerate}
+			
+			
+			\textit{2. deltest}			
 			\begin{enumerate}
 				\item Mikrofonen holdes manuelt, vendt mod PC'ens højtaler, i en afstand på 5 cm. 
 				\item I \texttt{onlinetonegenerator.com} genereres et signal med den ønskede frekvens. 
@@ -303,17 +328,18 @@
 						\item Den maksimale optagede frekvens aflæses i \textit{Max Frequency}. 
 					\end{enumerate}	  
 			\end{enumerate}
-			
-			Punkt 1-4 gentages med frekvenser på: 100 Hz, 150 Hz, 200 Hz, 400 Hz, 500 Hz, 600 Hz og 700 Hz. 
+		
+			Deltestene gentages med frekvenser på: 100 Hz, 150 Hz, 200 Hz, 400 Hz, 500 Hz, 600 Hz, 700, 1000 0g 1200 Hz, og resultaterne sammenholdes. 
 			
 			\subsubsection{Resultater}
-			Den optagede frekvens var den generede udsendte frekvens (+/- 0.5 Hz). 
+			 Det blev observeret, at resultaterne fra det generede frekvenssignal i VI'et \texttt{genererfrekvenssignal0.2.vi} var grundtonens harmoniske overtoner, idet frekvensen udsendes som et firkantsignal. Kun ved højfrekvente signaler (<1 kHz), blev grundtonen opfanget. 
+			 Ved at benytte \texttt{onlinetonegenerator.com}, kunne der udsendes et sinussignal med en given frekvens, som blev korrekt opfanget (+/- 0.5 Hz).     
 			\subsubsection{Diskussion}
-			Der opnås nu pæne resultater, og der reflekteres over om resultaterne i \ref{bordtest1} skyldes fejl i højtaler i fejl i VI'et \texttt{genererfrekvenssignal0.2.vi}. 
+			Der opnås pæne resultater ved at bruge et sinussignal, men der er desværre meget kompliceret at generere sinussignaler til en Arduino.   
 			\subsubsection{Konklusion}
-			Det konkluderes, at der ikke er fejl i VI'et \texttt{optagefrekvenssignal0.1.vi}. 
+			Det konkluderes, at der ikke er fejl i software og hardware, og de unøjagtige resultater skyldes firkantsignalets harmoniske overtoner.  
 			\subsubsection{Aktion}
-			Det skal undersøges, hvilken forskel der er på frekvenssignalet fra onlinetonegenerator.com og det generede frekvenssignal udsendt fra højtaleren ABS-224-RC. 
+			Det skal undersøges, om det er muligt at filtrere firkantssignalets harmoniske overtoner fra, således firkantssignalet kan benyttes. 
 		
 
 
