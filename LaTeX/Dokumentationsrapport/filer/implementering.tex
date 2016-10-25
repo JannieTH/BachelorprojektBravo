@@ -456,6 +456,112 @@
 			Ved generering af frekvenser lavere end 1000 Hz opfanges harmoniske overtoner, i stedet for grundtonen, som er det ønskede resultat. 
 			Ved generering af frekvenser lig 1000 Hz opfanges ustabile resultater. 
 			Ved generering af frekvenser højere end 1000 Hz, opnås pæne resultater, hvor den genererede frekvens er lig den opfangede frekvens.  
+			Dermed konkluderes, at resonatoren i dette tilfælde ikke virker dæmpende på harmoniske overtoner på frekvenser lavere end 1000 Hz. 
+			  
+			\subsubsection{Aktion}
+			Det skal undersøges, om målinger genereret med en frekvens lig eller højere end 1000 Hz er stabile. 
+			
+			\subsection{Bordtest nr. 5} %% Skal måske omdøbes?!
+		\subsubsection{Testformål}
+		Det undersøges, om firkantsignaler genereret med frekvenser lig eller højere end 1000 Hz er stabile. 
+		
+		\subsubsection{Produktspecifikationer}
+		
+		\textit{Hardware:}\\
+		\tores\\
+		\højtalerkabel\\
+		\kabelsko\\
+		\pins\\
+		\krympeflex\\
+		\arduino\\
+		\mikrofon\\
+		\PC\\
+		\usbkabel\\
+		\sprøjtebeholder (resonator)\\
+		Lineal\\
+	
+		\textit{Software:}\\
+		\labview\\
+		\visa\\
+		\vi\\
+		\ardsw\\
+		
+		
+		\subsubsection{Opstilling og opsætning}
+		
+		Højtalerkablets ene ende er påsat kabelsko, som er påsat højtaleren. Til kablets anden ende er pin headere loddet fast og forsejlet med krympeflex. Pin headerne er isat Arduino'en i pin 46 (PL3(OC5A)), som et er digitalt PWM output, og til ground (GND). 
+		Arduino'en er med et USB kabel koblet til PC'en.	
+		Mikrofonen er sat i PC'ens minijack-stik og er ført ned i resonatoren hvor den ligger i bunden. Højtaleren placeres i en afstand på en halv diameter af højtalerens membran, ovenfor resonatorens hals. 
+		
+		På PC'en er VI'erne \texttt{genererfrekvenssignal0.2.vi} og \texttt{optagefrekvenssignal0.2.vi} åbnet i LabVIEW og blokdiagrammerne er vist i figur \ref{fig:bdgenerer} og \ref{fig:bdoptage} \\ Testopstillingen er den samme som i bordtest 4, og vises i figur \ref{fig:bt4}.  
+		
+
+		\subsubsection{Udførsel}
+			
+			\begin{enumerate}
+				\item Tryksprøjtedelen afmonteres af beholderen og fungere nu som resonator. Resonatoren stilles på et bord med halsen pegende opad. 
+				\item Mikrofonen føres ned i resonatoren og ligger i resonatorens bund. 
+				\item Linealen påsættes resonatorens hals så den fungere som afstandsmåler fra halsåbningen.
+				\item Højtaleren holdes manuelt over resonatorhalsen i en afstand på en halv diameter af højtalermembranen. Ved anvendelse ef den specificerede højtaler er afstanden to centimeter. 
+				\item I VI'et \texttt{genererfrekvenssignal0.2.vi} indtastes den ønskede frekvens i den numeriske kontrol \textit{Enter Frequency}. 
+					\begin{enumerate}
+						\item Koden eksekveres ved at trykke på \textit{Run}. 
+					\end{enumerate} 
+				\item I VI'et \texttt{optagefrekvenssignal0.2.vi} trykkes på \textit{Run}. 
+					\begin{enumerate}
+						\item Den maksimale optagede frekvens aflæses i \textit{Max Frequency}. 
+					\end{enumerate}	 	
+			\end{enumerate}
+			
+			Testen udføres med en frekvens på 950 Hz, 1000 Hz, 1100 Hz, 1200 Hz, 1300 Hz. Testen fortages to gange med hver frekvens.  
+			
+			\subsubsection{Resultater}
+			
+			\begin{table}[]
+				\centering
+				\caption{Tabel over resultater}
+				\label{bordtest5resultater}
+				\begin{tabular}{lll}
+					\multicolumn{1}{l|}{\textbf{Udsendt frekvens {[}Hz{]}}} & 	
+					\multicolumn{1}{l|}{\textbf{1. resultat}} & \textbf{2. resultat} \\ \hline
+					\multicolumn{1}{c|}{950}& 
+					\multicolumn{1}{c|}{954.33}&954.33\\
+					\multicolumn{1}{c|}{1000}& 
+					\multicolumn{1}{c|}{1000.00}&1000.00\\
+					\multicolumn{1}{c|}{1100}& 
+					\multicolumn{1}{c|}{1101.33}&1101.33\\
+					\multicolumn{1}{c|}{1200}& 
+					\multicolumn{1}{c|}{1202.00}&1202.00\\
+					\multicolumn{1}{c|}{1300}& 
+					\multicolumn{1}{c|}{1302.00}&1302.00\\
+                   
+				\end{tabular}
+			\end{table}
+
+			Det blev observeret ved begge forsøg, at resultatet fra det generede frekvenssignal i VI'et \texttt{genererfrekvenssignal0.2.vi} på 950 Hz var  en af grundtonens harmoniske overtoner på 1500 Hz. Dette ses i figur \ref{fig:bt4500}. 
+
+			 Det blev observeret i første forsøg, at resultatet fra det generede frekvenssignal i VI'et \texttt{genererfrekvenssignal0.2.vi} på 200 Hz var en af grundtonens harmoniske overtone på 1803 Hz og i andet forsøg observeres en harmonisk overtone 1402,33 Hz. Resultatet fra første forsøg vises i figur \ref{fig:bt4200}.
+			 
+			 Det blev observeret i første forsøg, at resultatet fra det generede frekvenssignal i VI'et \texttt{genererfrekvenssignal0.2.vi} på 1000 Hz var en af grundtonens harmoniske overtoner på 3000,33 Hz i. Dette ses i figur \ref{fig:bt41000}. I det andet forsøg observeres det at resultatet stemmer overens med den afspillede grundtone. Dette ses på figur \ref{fig:bt41000b}.  
+			 
+			 Det blev observeret, at resultatet fra den generede frekvenssignal i VI'et \texttt{genererfrekvenssignal0.2.vi} på 1200 Hz stemmer overens med den afspillede grundtone. Dette ses på figur \ref{fig:bt41200}.  
+			 
+			\begin{figure}[htb]
+			\centering
+				\includegraphics[width=4in]{Bordtest4500Hz}
+				\caption{Resultat for for bordtest 4 ved anvendelse af 500 Hz}	
+				\label{fig:bt4500}
+			\end{figure} 
+			
+				
+			  
+			\subsubsection{Diskussion}
+			Ved forsøget med 1000 Hz observeres, at de to resultater ikke er tilnærmelsesvis ens. I første forsøg blev en harmonisk overtone opfanget, som den maksimale frekvens, hvor der i andet forsøg blev opfanget grundtonen på den genererede frekvens. Disse to resultater skal være ens og derfor er de ikke tilfredsstillende.
+			
+			\subsubsection{Konklusion}
+			Ved generering af frekvenser lavere end 1000 Hz opfanges harmoniske overtoner, i stedet for grundtonen, som er det ønskede resultat. 
+			Ved generering af frekvenser lig 1000 Hz opfanges ustabile resultater. 
+			Ved generering af frekvenser højere end 1000 Hz, opnås pæne resultater, hvor den genererede frekvens er lig den opfangede frekvens.  
 			  
 			\subsubsection{Aktion}
 			Det skal undersøges, om målinger genereret med en frekvens lig eller højere end 1000 Hz er stabile. 

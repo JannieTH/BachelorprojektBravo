@@ -2,3 +2,11 @@
 
 \section{Testforløbets fem faser}
 
+\section{Mikrofonproblemet}
+
+Under udførslen af bordtest nr. 5, blev det observeret, at resultatet i VI'en \texttt{optagefrekvenssignal0.2.vi} blev opfanget af PC'ens indbyggede mikrofon og ikke Minijack PC Mikrofonen. 
+Der opstod en mistanke om problemet da resultaterne var ens uanset mikronfonens placering indeni samt uden for resonatoren. Der blev derefter testet ved at udtage Minijack PC Mikrofonen fra PC'en, hvorefter resultaterne stadig var ens. Dette medvirkede til en ny enhedstest, hvor mikrofonen blev placeret i et andet rum med en lukket branddør imellem. Da der ikke blev opfanget et signal i LabVIEW fra mikrofonen blev det konstateret, at mikrofonen ikke var aktiv. Årsagen til problemstillingen skyldes, at mikrofonen har et 3-pols stik, og mangler derfor en pol til lyd input. PC'en indlæser derfor mikrofonen som en højtaler, og forsøger dermed at udsende lyd gennem mikrofonen. 
+Løsningen på denne problemstilling er at anvende en mikrofon med 4-pols stik, en adaptaer eller en mikrofon med USB-stik.     
+
+Grundet denne nye viden, udføres enhedstest samt samtlige bordtest igen således resultaterne anses for at være valide. 
+
