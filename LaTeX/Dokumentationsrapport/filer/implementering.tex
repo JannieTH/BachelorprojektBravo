@@ -202,6 +202,57 @@
 		Mikrofonen opfanger intet frekvensudsving og det konkluderes, at den virker til at være deaktiv eller ude af funktion.
 		\subsubsection{Aktion}
 		Denne problemstilling må undersøges yderligere med henblik på at få en fungerende, aktiv mikrofon, som opfanger et frekvenssignal. 
+		
+\subsection{Elektret Mikrofon}
+		\subsubsection{Testformål}
+		Det afprøves, om mikrofonen opfanger et signal.
+		
+		\subsubsection{Produktspecifikationer}
+	
+			\textit{Hardware:}\\
+			\elektret\\
+			\pins\\
+			\mikrofonkabel\\
+			\krympeflex\\
+			\daq\\
+			\daqusb\\			
+			\PC\\
+	
+			\textit{Software:}\\
+			\labview\\
+	
+		\subsubsection{Opstilling og opsætning}
+		På mikrofonkablet er pins fastloddet, som igen er loddet fast til mikrofonprintet. Den røde ledning forbinder mikrofonprintets "AUD" til "+AI0"-indgangen på DAQ'en. Den sorte ledning forbinder mikrofonprintet til "GND". Den blå ledning forbinder "VCC" til  IC power-supply  
+		Rød ledning --> "AUD" --> "+AI0" 
+		Sort ledning --> "GND" --> "GND"
+		Blå ledning --> VCC --> "+5V"
+		
+		 mi ene ende er påsat kabelsko, som er påsat højtaleren. Til kablets anden ende er pin headere loddet fast. Pin headerne er isat Arduino'en i pin 46 (PL3(OC5A)), som et er digitalt PWM output, og til ground (GND). 
+		Arduino'en er med et USB kabel koblet til PC'en. Testopstillingen er vist i figur \ref{fig:ethb}.\\
+		
+		
+		er med en ledning tilsluttet PC'ens minijack-stik. Ledningens længde er godt en meter €€€SKAL MÅLES, og muliggør dermed, at PC'en er placeret i et rum, og mikrofonen med ledningen gennem den lukkede dør, er placeret i et andet rum. 
+	
+			På PC'en er VI'et \texttt{optagefrekvenssignal0.1.vi} åbnet i LabVIEW. Blokdiagrammet for VI'et er vist i figur \ref{fig:bdoptage}.   \\   
+			
+			Testopstillingen er vist i figur €€€€.\\ 
+	
+		\subsubsection{Udførsel}
+			\begin{enumerate}
+				\item I VI'et \texttt{optagefrekvenssignal0.1.vi}, trykkes på \textit{Run}.  
+				\item Der indtales en tone i mikrofonen. 
+				\item På frontpanelet i VI'et afventes frekvensudsving på en graf.  
+			\end{enumerate}
+		
+		\subsubsection{Resultater}
+		Mikronen har ikke opfanget et frekvenssignal. 
+		\subsubsection{Diskussion} 
+		-
+		\subsubsection{Konklusion}
+		Mikrofonen opfanger intet frekvensudsving og det konkluderes, at den virker til at være deaktiv eller ude af funktion.
+		\subsubsection{Aktion}
+		Denne problemstilling må undersøges yderligere med henblik på at få en fungerende, aktiv mikrofon, som opfanger et frekvenssignal. 
+		
 
 
 \section{Integrationstest}
