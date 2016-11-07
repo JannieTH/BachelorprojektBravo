@@ -24,3 +24,17 @@ Grundet denne nye viden, udføres enhedstest samt samtlige bordtest igen sålede
 \section{Fra Arduino til DAQ}
 
 I forbindelse med det indledende design af testopstilligen, blev Arduino Mega 2560 valgt frem for DAQ'en grundet økonomiske omstændigheder. Dog blev det hurtigt konstateret, at Arduinoen forårsagede uhensigtsmæssige udfordringer i forbindelse med frekvenssignalet, idet det kun er muligt at generere et firkantsignal igennem LINX MakerHub i LabVIEW. Det ønskede resultat var grundtonens frekvens, men i stedet blev firkantssignalets harmoniske overtoner opfanget som maksimum frekvens i  FFT'en. €€Ref til test€€ Efter samtale med lektor Tore Arne Skogberg, blev det påpeget, at det burde være muligt at måle brystvolumen med firkantsignaler. De harmoniske overtoner kunne muligvis dæmpes ved hjælp af resonatoren da denne har funktion som et lavpasfilter, og dette skulle hermed testes som en løsning til denne problemstilling. Således blev det besluttet at arbejde videre med Arduino'en da de økonomiske fordele stadig talte for. Der opstod endvidere en udfordring forårsaget af Arduino'en begrænsede ydeevne. Arduino´ens højeste Loop Rate ligger på omkring 122Hz. I og med at den valgte højtaler €€REF€€ er egnet til et frekvensområde fra 100 Hz op til 2 kHz vil der ikke kunne genereres et frekvenssignal, som er muligt at opfange. For at få en korrekt digital repræsentation af det analoge signal, der samples med det dobblete af indgangssignalet. Således vil det indsendte signal være begrænset til maksimalt 50 Hz, for at undgå aliasering. €€Nyquist frekvens€€. Til sidst blev det konkluderet, at udfordringerne ikke blev opvejet af de økonomiske fordele, og det blev derfor besluttet at udskifte Arduino'en til en DAQ da der kan samples med højere frekvens, og samtidig anvendes sinussignal for at undgå udfordringer med harmoniske overtoner.      
+
+\section{DAQ}
+
+Udviklingen af et VI til at generer en lyd igennem daq´en til højtaleren var mere udfordrende en først antaget. Det blev fundet flere guides på NI.com til at løse problemstillingen og koden dertil fandtes meget simpel. Disse guides blev brugt til at bygge \texttt{generefrekvenssignal0.4} VI´et men der opstod fejl i forbindelse med opsætning at DAQ Assistant-modulet. 
+
+\begin{figure}[htb]
+			\centering
+				\includegraphics[width=4in]{FejlDAQAssistant}
+				\caption{Diagrammet viser €€€}	
+				\label{fig:FejlDAQAssistant}
+			\end{figure}
+			
+			
+Dette blev løst ved at vælge generation mode til 1 sample(on Demand) og signal output range min til 0. Løsningen blev fundet ved brug af trail and error metoden sammen med vejleder. Der opstod herefter en ny fejl med kørslen af VI´et. Under fejlsøgning af denne problemstilling blev det opdaget at daq´en har en maksimal samplingsrate på 150Hz. Fejlsøgning blev afbrudt da denne nye viden sat udviklingen af VI´et i et nyt perspektiv. Med brug af dag´en vil der kunne generes  et maksimalt signal på 75Hz, når Nyquist-teorien er taget i betragtning og det er ønsket at kunne genere et bredt frekvensbånd fra 100Hz op til 1000Hz. Højtalerens begrænsede frekvensspektre fra 100Hz til 2kHz  gør det ikke muligt at anvende daq´en sammen med højtaleren. På denne begrund blev det besluttet ikke at anvende daq´en og højtaleren i det videre projektforløb. 
