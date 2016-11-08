@@ -297,7 +297,7 @@
 			\subsubsection{Resultater}
 			Den optagede frekvens var den generede udsendte frekvens (+/- 0.5 Hz). 
 			\subsubsection{Diskussion}
-			Der opnås nu pæne resultater, og der reflekteres over om resultaterne i \ref{bordtest1} skyldes fejl i højtaler i fejl i VI'et \texttt{genererfrekvenssignal0.2.vi}. 
+			Der opnås nu pæne resultater, og der reflekteres over om resultaterne i \ref{bordtest1} skyldes fejl i højtaler eller fejl i VI'et \texttt{genererfrekvenssignal0.2.vi}. 
 			\subsubsection{Konklusion}
 			Det konkluderes, at der ikke er fejl i VI'et \texttt{optagefrekvenssignal0.1.vi}. 
 			\subsubsection{Aktion}
@@ -442,7 +442,7 @@
 			Testen udføres med en frekvens på 200 Hz, 500 Hz, 1000 Hz og 1200 Hz. Der afprøves to gange med hvert frekvens  
 			
 			\subsubsection{Resultater}
-			Det blev observeret ved begge forsøg, at resultatet fra det generede frekvenssignal i VI'et \texttt{genererfrekvenssignal0.2.vi} på 500 Hz var  en af grundtonens harmoniske overtoner på 1500 Hz. Dette ses i figur \ref{fig:bt4500}. 
+			Det blev observeret ved begge forsøg, at resultatet fra det generede frekvenssignal i VI'et \texttt{genererfrekvenssignal0.2.vi} på 500 Hz var en af grundtonens harmoniske overtoner på 1500 Hz. Dette ses i figur \ref{fig:bt4500}. 
 
 			 Det blev observeret i første forsøg, at resultatet fra det generede frekvenssignal i VI'et \texttt{genererfrekvenssignal0.2.vi} på 200 Hz var en af grundtonens harmoniske overtone på 1803 Hz og i andet forsøg observeres en harmonisk overtone 1402,33 Hz. Resultatet fra første forsøg vises i figur \ref{fig:bt4200}.
 			 
@@ -500,7 +500,7 @@
 			
 			\subsection{Bordtest nr. 5} %% Skal måske omdøbes?!
 		\subsubsection{Testformål}
-		Det undersøges, om firkantsignaler genereret med frekvenser lig eller højere end 1000 Hz er stabile. 
+		Det undersøges, om firkantsignaler genereret med frekvenser lig eller højere end 1000 Hz er stabile og hvilken effekt helmHoltz resonatoren har på signalerne. 
 		
 		\subsubsection{Produktspecifikationer}
 		
@@ -550,7 +550,7 @@
 					\end{enumerate}	 	
 			\end{enumerate}
 			
-			Testen udføres med en frekvens på 950 Hz, 1000 Hz, 1100 Hz, 1200 Hz, 1300 Hz. Testen fortages to gange med hver frekvens.  
+			Testen udføres med en frekvens på 950 Hz, 1000 Hz, 1100 Hz, 1200 Hz og 1300 Hz. Testen fortages to gange med hver frekvens.  
 			
 			\subsubsection{Resultater}
 			
@@ -574,34 +574,19 @@
                    
 				\end{tabular}
 			\end{table}
-
-			Det blev observeret ved begge forsøg, at resultatet fra det generede frekvenssignal i VI'et \texttt{genererfrekvenssignal0.2.vi} på 950 Hz var  en af grundtonens harmoniske overtoner på 1500 Hz. Dette ses i figur \ref{fig:bt4500}. 
-
-			 Det blev observeret i første forsøg, at resultatet fra det generede frekvenssignal i VI'et \texttt{genererfrekvenssignal0.2.vi} på 200 Hz var en af grundtonens harmoniske overtone på 1803 Hz og i andet forsøg observeres en harmonisk overtone 1402,33 Hz. Resultatet fra første forsøg vises i figur \ref{fig:bt4200}.
-			 
-			 Det blev observeret i første forsøg, at resultatet fra det generede frekvenssignal i VI'et \texttt{genererfrekvenssignal0.2.vi} på 1000 Hz var en af grundtonens harmoniske overtoner på 3000,33 Hz i. Dette ses i figur \ref{fig:bt41000}. I det andet forsøg observeres det at resultatet stemmer overens med den afspillede grundtone. Dette ses på figur \ref{fig:bt41000b}.  
-			 
-			 Det blev observeret, at resultatet fra den generede frekvenssignal i VI'et \texttt{genererfrekvenssignal0.2.vi} på 1200 Hz stemmer overens med den afspillede grundtone. Dette ses på figur \ref{fig:bt41200}.  
-			 
-			\begin{figure}[htb]
-			\centering
-				\includegraphics[width=4in]{Bordtest4500Hz}
-				\caption{Resultat for for bordtest 4 ved anvendelse af 500 Hz}	
-				\label{fig:bt4500}
-			\end{figure} 
 			
+			Ud fra tabellen ses at de opfangede signaler er stabile ved alle udsendte frekvenser. Det ses ydermere at de afsendte signaler ikke ser ud til at være påvirket af Helmholtzresonatoren
 				
 			  
 			\subsubsection{Diskussion}
-			Ved forsøget med 1000 Hz observeres, at de to resultater ikke er tilnærmelsesvis ens. I første forsøg blev en harmonisk overtone opfanget, som den maksimale frekvens, hvor der i andet forsøg blev opfanget grundtonen på den genererede frekvens. Disse to resultater skal være ens og derfor er de ikke tilfredsstillende.
+			De opfangede frekvensers variation er tilfredsstillende til brug i det videre udviklingsforløb. De optagede frekvenser afviger ikke fra de udsendte frekvenser selvom de udsendte frekvenser er opfanget i resonatoren. Det er Helmholtz resonansen som ønskes opfanget og den formodes at afvige fra den udssendte frekvens. Dette er dog ikke tilfældet i denne tests resultater. Det undres over de optagede frekvenser ikke er påvirkede af resonatoren og der sås nu tvivl minijack mikrofonen opfanger signalerne eller om det er PC mikrofonen som opfanger signalerne
 			
 			\subsubsection{Konklusion}
-			Ved generering af frekvenser lavere end 1000 Hz opfanges harmoniske overtoner, i stedet for grundtonen, som er det ønskede resultat. 
-			Ved generering af frekvenser lig 1000 Hz opfanges ustabile resultater. 
-			Ved generering af frekvenser højere end 1000 Hz, opnås pæne resultater, hvor den genererede frekvens er lig den opfangede frekvens.  
-			  
+			Frekvenser over 950 Hz kan opfanges som grundtonen og det opfangede signal er ikke forstyrret at de harmoniske overtoner. Det ser ikke ud til at de opfangede frekvenser ikke er påvirket af resonatoren, hvilket vil være forventeligt. Det konkluderes at det det er nødverndigt at undersøge om minijack mikrofonen opfanger de afsendte signaler. 
+			
 			\subsubsection{Aktion}
-			Det skal undersøges, om målinger genereret med en frekvens lig eller højere end 1000 Hz er stabile. 
+			 Der udføres en ny enhedstest af minijack mikrofonen for at klarlægge om mikrofonen opfanger signalerne. 
+			
 
 
 		
