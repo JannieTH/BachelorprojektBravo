@@ -1,10 +1,51 @@
 \chapter{Udviklingsforløb}
 
 \section{Litteratursøgning}
+
+Der er praktiseret en omhyggelig, systematisk tilgang til litteratursøgningen, så resultatet af projektarbejdet bliver repræsentativt og uden bias. Søgeresultaterne danner grobund for den empiri, som projektarbejdet bygger videre på, og det er derfor vigtigt, at det er solidt nok til at bære analyser og konklusioner. Der er med andre ord, søgt, analyseret og vurderet ny viden som er relevant inden for projektets fagområde og rammer. For at overskueliggøre litteratursøgningen, er denne inddelt i en søgeproces bestående af fire faser, som vises i figur \ref{fig:littpro}, og som endvidere beskrives i nedenstående afsnit.  \\
+
+	\begin{figure}[htb]
+			\centering
+				\includegraphics[width=5in]{Littproces}
+				\caption{Litteratursøgningsprocessens fire faser}	
+				\label{fig:littpro}
+	\end{figure}
+	
+	\subsection{Søgestrategi}
+	Søgestrategien, beskrevet i søgeprotokollen bilag €€, er udarbejdet med tanke på, at fremsøge det mest relevante information, ud fra gigantiske datamængder. Endvidere er søgestrategien udarbejdet med henblik på at gøre søgningen reproducerbar for at sikre troværdighed.  
+	En søgestrategi der kombinerer ord i artiklernes titel og resumé med udvalgte emneord blev anvendt til at finde og screene artikler vedrørende den specifikke problemstilling. 
+	
+	 €€Her defineres forskningsspørgsmålet, søgeord og søgestrenge, og nævner de databaser man vil søge i. Der skal også være en beskrivelse af øvrige søgemetoder, man anvender, som fx håndsøgninger, citation tracking, konferencepapirer, Scholar Google, hjemmesider, personlige kontakter til eksperter, fagbøger osv. 
+		Nævn også: booleske operatorer, synonymer 
+	
+	\subsection{Dataindsamling}
+	I screeningen beskrevet ovenfor, blev artikler udvalgt, hvis ordene i artiklens titel og resumé matchede de udvalgte emneord. Derefter blev de udvalgte artikler selvstændigt bedømt af JH og JR, og artikeludvælgelsen blev foretaget sammenholdt med følgende inklusionskriterier:
+	
+		\begin{enumerate}
+			\item Intervention
+			\item Målgruppe
+			\item Succeskriterier 
+			Valgte emneord med dertilhørende problemstillinger synes besvaret
+			\item €€Noget GRADE-agtigt 
+			\item €€Noget med studie-typen
+			\item Etc. 
+		\end{enumerate} 
+		
+	Alle artikler, som opfyldte ovenstående inklusionskriterier gik videre til dataudvælgelse. 	
+		
+	\subsection{Dataudvælgelse}	
+	Information blev ekstraheret selvstændigt af JH og JR ved at bruge de foruddefinerede kriterier.  
+	
+	€€€Eksempler på, hvad der er udvalgt (tabeller, citater, diagrammer etc.
+	
+	
+	€€Beskriv: Hvad gjorde vi ved manglende fund af litt.? 
+	
+	\subsection{Dataanalyse} 
+ 
+
 \section{Design}
 \section{Testproces}	
-
-
 
 			\begin{figure}[htb]
 			\centering
@@ -14,7 +55,6 @@
 			\end{figure}
 
 \subsection{Beskrivelse af testforløbet}
-
 
 Projektet er et udviklingsprojekt, hvor der systematisk testes frem til en produktløsning. Projektet er derfor præget af et omfattende testforløb, hvor der med en systematisk tilgang er lagt vægt på reproducerbarhed samt sporbarhed. 
 
@@ -54,8 +94,19 @@ Testforløbet afspejler “God testpraksis”, som er et begreb anvendt inden fo
 
 Testproceduren beskriver den praktiske udførelse af testen, således den er reproducerbar og alle/ fagfolk vil have mulighed for at udføre testen, uden at have nogen specifik baggrundsviden. Dokumentationen af hver enkelte test starter med en kort beskrivelse af, hvad formålet med er test er. Derefter specificeres det anvendte udstyr og komponenter, og testopstillingen samt -opsætningen beskrives meget udførligt for at sikre en korrekt udførelse af testen. Selve udførelsen af testen beskrivelses med en høj detaljegrad og kan muligvis forekomme nedladende, men da resultatet kan afhænge af, hvordan testen udføres er dette et nødvendigt forhold. Slutvis fremvises testresultaterne, og disse diskuteres efterfølgende for at sikre en refleksion over de opnåede resultater. Testen afrundes med en konklusion af resultatet i sammenhold med formålet, og der planlægges en aktion for næste skridt.   
 
+\subsection{Beskrivelse af road blocks}
 
-\subsection{Mikrofonproblemet}
+€€Her skal beskrives og dokumenteres for at vi ikke har siddet fast undervejs selvom vi er stødt på road blocks. 
+Nævn, at vi har sat tidsbegrænsninger på os selv i forbindelse med LabVIEW, og vi har prioriteret arbejdet, vi har kørt med en plan B (DAQ), søgt hjælp ved fagfolk samt gået igang med andre opgaver. --> endda stoppet sprint, tidsplan mm. 
+
+\begin{figure}[htb]
+			\centering
+				\includegraphics[width=4in]{Proceslinjediagram}
+				\caption{Diagrammet viser €€€}	
+				\label{fig:proceslinjediagram}
+			\end{figure}
+
+\subsubsection{Mikrofonproblemet}
 
 Under udførslen af bordtest nr. 5, blev det observeret, at resultatet i VI'en \texttt{optagefrekvenssignal0.2.vi} blev opfanget af PC'ens indbyggede mikrofon og ikke Minijack PC Mikrofonen.
 Der opstod en mistanke om problemet da resultaterne var ens uanset mikronfonens placering indeni samt uden for resonatoren. Der blev derefter testet ved at udtage Minijack PC Mikrofonen fra PC'en, hvorefter resultaterne stadig var ens. Dette medvirkede til en ny enhedstest, hvor mikrofonen blev placeret i et andet rum med en lukket branddør imellem. Da der ikke blev opfanget et signal i LabVIEW fra mikrofonen blev det konstateret, at mikrofonen ikke var aktiv. Årsagen til problemstillingen skyldes, at mikrofonen har et 3-pols stik, og mangler derfor en pol til lyd input. PC'en indlæser derfor mikrofonen som en højtaler, og forsøger dermed at udsende lyd gennem mikrofonen.
@@ -66,11 +117,11 @@ anvende en adaptor hvor vi kan tilslutte vores nuværende mikrofon(€€€) og
 Det blev overvejet grundigt om adaptoren skulle anvendes eller om det var tid til at få tilsluttet Sparkfun mikrofonen til arduino´en og få den op at køre med LabView. Der er leveringstid på adaptoren og det vurderes at det ikke vil være så besværligt at få gang i sparkfun mikrofonen. Det kan dog ende med at arduinoen slet ikke kan bruges hvis problemet med de harmoniske overtoner ikke bliver løst med anvendelse af resonatoren. Det vælges alligevel at gå i kast med sparkfun mikrofonen da den er indkøbt og arbejdet kan gå i gang med det samme. 
 Grundet denne nye viden, udføres enhedstest samt samtlige bordtest igen således resultaterne anses for at være valide.
 
-\subsection{Fra Arduino til DAQ}
+\subsubsection{Fra Arduino til DAQ}
 
 I forbindelse med det indledende design af testopstilligen, blev Arduino Mega 2560 valgt frem for DAQ'en grundet økonomiske omstændigheder. Dog blev det hurtigt konstateret, at Arduinoen forårsagede uhensigtsmæssige udfordringer i forbindelse med frekvenssignalet, idet det kun er muligt at generere et firkantsignal igennem LINX MakerHub i LabVIEW. Det ønskede resultat var grundtonens frekvens, men i stedet blev firkantssignalets harmoniske overtoner opfanget som maksimum frekvens i  FFT'en. €€Ref til test€€ Efter samtale med lektor Tore Arne Skogberg, blev det påpeget, at det burde være muligt at måle brystvolumen med firkantsignaler. De harmoniske overtoner kunne muligvis dæmpes ved hjælp af resonatoren da denne har funktion som et lavpasfilter, og dette skulle hermed testes som en løsning til denne problemstilling. Således blev det besluttet at arbejde videre med Arduino'en da de økonomiske fordele stadig talte for. Der opstod endvidere en udfordring forårsaget af Arduino'en begrænsede ydeevne. Arduino´ens højeste Loop Rate ligger på omkring 122Hz. I og med at den valgte højtaler €€REF€€ er egnet til et frekvensområde fra 100 Hz op til 2 kHz vil der ikke kunne genereres et frekvenssignal, som er muligt at opfange. For at få en korrekt digital repræsentation af det analoge signal, der samples med det dobblete af indgangssignalet. Således vil det indsendte signal være begrænset til maksimalt 50 Hz, for at undgå aliasering. €€Nyquist frekvens€€. Til sidst blev det konkluderet, at udfordringerne ikke blev opvejet af de økonomiske fordele, og det blev derfor besluttet at udskifte Arduino'en til en DAQ da der kan samples med højere frekvens, og samtidig anvendes sinussignal for at undgå udfordringer med harmoniske overtoner.      
 
-\subsection{DAQ}
+\subsubsection{DAQ}
 
 Udviklingen af et VI til at generer en lyd igennem daq´en til højtaleren var mere udfordrende en først antaget. Det blev fundet flere guides på NI.com til at løse problemstillingen og koden dertil fandtes meget simpel. Disse guides blev brugt til at bygge \texttt{generefrekvenssignal0.4} VI´et men der opstod fejl i forbindelse med opsætning at DAQ Assistant-modulet. 
 
