@@ -1,0 +1,95 @@
+\chapter{Udviklingsforløb}
+
+\section{Litteratursøgning}
+\section{Design}
+\section{Testproces}	
+
+
+
+			\begin{figure}[htb]
+			\centering
+				\includegraphics[width=4in]{AgileTesting}
+				\caption{Diagrammet viser €€€}	
+				\label{fig:agiletesting}
+			\end{figure}
+
+\subsection{Beskrivelse af testforløbet}
+
+
+Projektet er et udviklingsprojekt, hvor der systematisk testes frem til en produktløsning. Projektet er derfor præget af et omfattende testforløb, hvor der med en systematisk tilgang er lagt vægt på reproducerbarhed samt sporbarhed. 
+
+
+Det indledende testforløb blev udarbejdet med inspiration fra “Projekteringshåndbogen”, skrevet af Søren Lyngsø-Petersen, som beskriver test af produktionsudstyr til Health Care branchen. Lyngsø-Petersen beskriver, hvorledes et testforløb overordnet kan inddeles i fem faser;  
+
+	\begin{enumerate}
+		\item Indledende funktionstest
+		\item Pre-FAT
+		\item SAT
+		\item Kvalificeringstest
+	\end{enumerate}
+
+€€€[Beskrivelse af hvad faserne er?]
+
+
+Det blev overvejet at følge disse faser, da det var et ønske at arbejde med et testforløb fra Health Care industrien. Et muligt testforløb blev skitseret, [Billede af tavle] og efter en grundig gennemgang med mange spændende refleksioner over, hvorledes projektets testforløb kunne tilpasses det beskrevede testforløb fra “Projekteringshåndbogen”, blev det konkluderet, at bogens testforløb er for rettet mod produktionen af det medicinske udstyr i forhold til projektet, og derfor var uhensigtsmæssigt at følge. Dog blev det besluttet at anvende enkelte tilpassede metoder i den videre udarbejdelse af projektets testforløb. Således blev testforløb-modellen tilpasset projektets testforløb, som endte ud med at være et testforløb inddelt i følgende fem faser:    
+
+	\begin{enumerate}
+		\item Enhedstest
+		\item Integrationstest
+		\item Accepttest
+		\item Lab PoC
+		\item Kvalificeringstest 
+	\end{enumerate}
+
+I første fase, enhedstest, testes de indgående komponenter, for at sikre disses funktion. I anden fase, integrationstest, er hovedformålet at foretage verificeringer af de forskellige funktionaliteter og processer i elementer, som anvendes i det videre testforløb. I tredje fase, accepttest, eftervises alle specificerede krav fra Kravspecifikationen. I fjerde fase, Lab PoC, testes diverse forhold og hypoteser, og der udvikles mod en ny og bedre version af produktet. I femte fase, kvalificeringstest, foretages en systemvalidering til/med kunden. Alle fem faser er struktureret ud fra???
+
+
+Testforløbet afspejler “God testpraksis”, som er et begreb anvendt inden for Health Care Industrien (KILDE). “God testpraksis” beskriver en testprocedure, hvor man udfører og dokumenterer sine tests på en måde, som gør dem valide, hvilket afspejles i den måde, hvorpå dokumentationen af de foretagede tests i projektet er opbygget. Projektets testudførelse består derfor af følgende tre forhold;
+
+	\begin{enumerate}
+	\item beskrivelse af, hvordan testen skal udføres (testprocedure) 
+	\item Selve udførelsen af testen 
+	\item Dokumentation af testresultatet
+	\end{enumerate}
+
+Testproceduren beskriver den praktiske udførelse af testen, således den er reproducerbar og alle/ fagfolk vil have mulighed for at udføre testen, uden at have nogen specifik baggrundsviden. Dokumentationen af hver enkelte test starter med en kort beskrivelse af, hvad formålet med er test er. Derefter specificeres det anvendte udstyr og komponenter, og testopstillingen samt -opsætningen beskrives meget udførligt for at sikre en korrekt udførelse af testen. Selve udførelsen af testen beskrivelses med en høj detaljegrad og kan muligvis forekomme nedladende, men da resultatet kan afhænge af, hvordan testen udføres er dette et nødvendigt forhold. Slutvis fremvises testresultaterne, og disse diskuteres efterfølgende for at sikre en refleksion over de opnåede resultater. Testen afrundes med en konklusion af resultatet i sammenhold med formålet, og der planlægges en aktion for næste skridt.   
+
+
+\subsection{Mikrofonproblemet}
+
+Under udførslen af bordtest nr. 5, blev det observeret, at resultatet i VI'en \texttt{optagefrekvenssignal0.2.vi} blev opfanget af PC'ens indbyggede mikrofon og ikke Minijack PC Mikrofonen.
+Der opstod en mistanke om problemet da resultaterne var ens uanset mikronfonens placering indeni samt uden for resonatoren. Der blev derefter testet ved at udtage Minijack PC Mikrofonen fra PC'en, hvorefter resultaterne stadig var ens. Dette medvirkede til en ny enhedstest, hvor mikrofonen blev placeret i et andet rum med en lukket branddør imellem. Da der ikke blev opfanget et signal i LabVIEW fra mikrofonen blev det konstateret, at mikrofonen ikke var aktiv. Årsagen til problemstillingen skyldes, at mikrofonen har et 3-pols stik, og mangler derfor en pol til lyd input. PC'en indlæser derfor mikrofonen som en højtaler, og forsøger dermed at udsende lyd gennem mikrofonen.
+Løsningen på denne problemstilling er at anvende en mikrofon med 4-pols stik, en adaptaer eller en mikrofon med USB-stik.
+Det blev forsøgt at optage lyd med et headset med indbygget mikrofon som havde et 4-pols jackstik. Headsettet blev indlæst på PC´en som et headset og derfor var det ikke muligt at vælge headsetmikrofonen som lydkilde under controlpanel → sound. Det var heller ikke muligt at få forbindelse til mikrofonen igennem LabView.  Konklusionen på denne problemstilling er at der må siddet et 3 pols jack hun stik i PC´en. Der er foretaget en internetsøgning på indholdet af stik i en Macbook Pro 2009 model for at understøttet denne konklusion. Det lykkedes ikke at finde specifikationer som klart udspecificerer hvilket hun jackstik som er indbygget i omhandlende PC. Det vælges at gå videre til test med webkameraet da dette kan være en hurtig løsning af problemstillingen. 
+USB kameraet med indbygget mikrofon blev dernæst testet. USB kameraet blev koblet til computeren og under >>sound<< modulet i kontrolpanelet, var det nu muligt at vælge mikrofonen på webkameraet som lydkilde. De andre indbyggede lydkilder fravalgte(Måske et billede af kontrolpanlet) og det blev nu forsøgt at optage en lyd i labview. (enhedstest €€€). Den blev konkluderet at det er muligt at anvende en mikrofon med USB stik til indlæsning af lydsignaler i LabView. Med denne nye viden til rådighed blev det undersøgt om det muligt at
+anvende en adaptor hvor vi kan tilslutte vores nuværende mikrofon(€€€) og få en USB-udgang. Det lykkedes at finde denne model(€€€) som har den ønskede funktion. 
+Det blev overvejet grundigt om adaptoren skulle anvendes eller om det var tid til at få tilsluttet Sparkfun mikrofonen til arduino´en og få den op at køre med LabView. Der er leveringstid på adaptoren og det vurderes at det ikke vil være så besværligt at få gang i sparkfun mikrofonen. Det kan dog ende med at arduinoen slet ikke kan bruges hvis problemet med de harmoniske overtoner ikke bliver løst med anvendelse af resonatoren. Det vælges alligevel at gå i kast med sparkfun mikrofonen da den er indkøbt og arbejdet kan gå i gang med det samme. 
+Grundet denne nye viden, udføres enhedstest samt samtlige bordtest igen således resultaterne anses for at være valide.
+
+\subsection{Fra Arduino til DAQ}
+
+I forbindelse med det indledende design af testopstilligen, blev Arduino Mega 2560 valgt frem for DAQ'en grundet økonomiske omstændigheder. Dog blev det hurtigt konstateret, at Arduinoen forårsagede uhensigtsmæssige udfordringer i forbindelse med frekvenssignalet, idet det kun er muligt at generere et firkantsignal igennem LINX MakerHub i LabVIEW. Det ønskede resultat var grundtonens frekvens, men i stedet blev firkantssignalets harmoniske overtoner opfanget som maksimum frekvens i  FFT'en. €€Ref til test€€ Efter samtale med lektor Tore Arne Skogberg, blev det påpeget, at det burde være muligt at måle brystvolumen med firkantsignaler. De harmoniske overtoner kunne muligvis dæmpes ved hjælp af resonatoren da denne har funktion som et lavpasfilter, og dette skulle hermed testes som en løsning til denne problemstilling. Således blev det besluttet at arbejde videre med Arduino'en da de økonomiske fordele stadig talte for. Der opstod endvidere en udfordring forårsaget af Arduino'en begrænsede ydeevne. Arduino´ens højeste Loop Rate ligger på omkring 122Hz. I og med at den valgte højtaler €€REF€€ er egnet til et frekvensområde fra 100 Hz op til 2 kHz vil der ikke kunne genereres et frekvenssignal, som er muligt at opfange. For at få en korrekt digital repræsentation af det analoge signal, der samples med det dobblete af indgangssignalet. Således vil det indsendte signal være begrænset til maksimalt 50 Hz, for at undgå aliasering. €€Nyquist frekvens€€. Til sidst blev det konkluderet, at udfordringerne ikke blev opvejet af de økonomiske fordele, og det blev derfor besluttet at udskifte Arduino'en til en DAQ da der kan samples med højere frekvens, og samtidig anvendes sinussignal for at undgå udfordringer med harmoniske overtoner.      
+
+\subsection{DAQ}
+
+Udviklingen af et VI til at generer en lyd igennem daq´en til højtaleren var mere udfordrende en først antaget. Det blev fundet flere guides på NI.com til at løse problemstillingen og koden dertil fandtes meget simpel. Disse guides blev brugt til at bygge \texttt{generefrekvenssignal0.4} VI´et men der opstod fejl i forbindelse med opsætning at DAQ Assistant-modulet. 
+
+\begin{figure}[htb]
+			\centering
+				\includegraphics[width=4in]{FejlDAQAssistant}
+				\caption{Diagrammet viser €€€}	
+				\label{fig:FejlDAQAssistant}
+			\end{figure}
+			
+			
+Dette blev løst ved at vælge generation mode til 1 sample(on Demand) og signal output range min til 0. Løsningen blev fundet ved brug af trail and error metoden sammen med vejleder. Der opstod herefter en ny fejl med kørslen af VI´et. Under fejlsøgning af denne problemstilling blev det opdaget at daq´en har en maksimal samplingsrate på 150Hz. Fejlsøgning blev afbrudt da denne nye viden sat udviklingen af VI´et i et nyt perspektiv. Med brug af dag´en vil der kunne generes  et maksimalt signal på 75Hz, når Nyquist-teorien er taget i betragtning og det er ønsket at kunne genere et bredt frekvensbånd fra 100Hz op til 1000Hz. Højtalerens begrænsede frekvensspektre fra 100Hz til 2kHz  gør det ikke muligt at anvende daq´en sammen med højtaleren. 
+På denne begrund blev det besluttet ikke at anvende daq´en og højtaleren i det videre projektforløb. 	
+	
+\section{Lovgivning}
+
+\subsection{Definition af BVM som medicinsk udstyr}
+BMV kategoriseres som et medicinsk udstyr ud fra definitionen af medicinsk udstyr i Direktivet for Medicinsk Udstyr 93/42/ EEC, artikel 1.2 (a) og B(e). BMV ´s anvendelsesformål er at bestemme volumen af et bryst med henblik på modificering af anatomien på en patient, og dette formål myndiggører derved brystvolumenmåleren som værende et medicinsk udstyr. 
+
+€€€€Evt billede af M5
+
+\subsection{Direktiver gældende for brystvolumenmåleren, i anvendelse som medicinsk udstyr}For at klarlægge, hvilke lovgivningsmæssige krav BMV´en skal være i overensstemmelse med, er det nødvendigt at klassificere BMV´en. Ved brug af MEDDEV (REF) guidelines klassificeres BMV´en i klasse I, ud fra regel 1.  \textit{Devices that either do not touch the patient or contact intact skin only .} Ved en klasse I klassificering skal BMV være i overensstemmelse med annex 7 i direktivet for medicinsk udstyr.Udstyr med målingsfunktion er det ekstra regler for MEDDEV 2-1-5
