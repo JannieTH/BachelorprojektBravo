@@ -75,7 +75,7 @@
 		- 
 	\subsection{Minijack PC Mikrofon}
 		\subsubsection{Testformål}
-		Det afprøves, om mikrofonen kan optage en tone.
+		Det afprøves, om mikrofonen kan optage en hørbar lyd. 
 		\subsubsection{Produktspecifikationer}
 	
 			\textit{Hardware:}\\
@@ -107,16 +107,27 @@
 		\subsubsection{Udførsel}
 			\begin{enumerate}
 				\item I VI'et \texttt{optagefrekvenssignal0.1.vi}, trykkes på \textit{Run}.  
-				\item Der indtales en tone i mikrofonen. 
-				\item På frontpanelet i VI'et ses frekvensudsving på en graf.  
+				\begin{enumerate}
+				\item Der genereres en hørbar lyd til mikrofonen. 
+				\item På frontpanelet i VI'et observeres et evt. frekvensudsving på grafen.
+				\end{enumerate}
+				\item I VI'et \texttt{optagefrekvenssignal0.1.vi}, trykkes på \textit{Run}. 
+				\begin{enumerate}
+				\item Mikronfonen dækkes nu med en hånd mhp. at mikrofonen ikke opfanger en lyd. 
+				\item Der generes en hørbar lyd til mikrofonen. 
+				\item På frontpanelet i VI'et observeres et evt. frekvensudsving på grafen.
+				\end{enumerate}
 			\end{enumerate}
-		
+			
 		\subsubsection{Resultater}
-		Mikronen har opfanget et frekvenssignal. 
+		Ad1. Mikronen har opfanget et frekvenssignal. \\
+		Ad2. Mikrofonen har ikke opfanget et frekvenssignal. 
+		
 		\subsubsection{Diskussion} 
 		-
 		\subsubsection{Konklusion}
-		Mikrofonen opfylder testen idet der optages en tone. 
+		Idet der ikke optages en hørbar lyd i Ad2., konkluderes det, at den hørbare lyd, optages gennem Ad1. 
+		Mikrofonen opfylder testen. 
 		\subsubsection{Aktion}
 		- 
 	
@@ -202,6 +213,61 @@
 		Mikrofonen opfanger intet frekvensudsving og det konkluderes, at den virker til at være deaktiv eller ude af funktion.
 		\subsubsection{Aktion}
 		Denne problemstilling må undersøges yderligere med henblik på at få en fungerende, aktiv mikrofon, som opfanger et frekvenssignal. 
+		
+	\subsection{Enhedstest af indbygget mikrofon i \webcammic}
+		\subsubsection{Testformål}
+		Det afprøves, om den indbyggede mikrofon i webkameraet opfanger en hørbar lyd. 
+		
+		\subsubsection{Produktspecifikationer}
+	
+			\textit{Hardware:}\\
+			\webcammic\\
+			\PC\\
+	
+			\textit{Software:}\\
+			\labview\\
+	
+		\subsubsection{Opstilling og opsætning}
+		Webkameraet er tilsluttet PC'ens USB-port. PC'en er placeret i et rum med en dør, og webkameraet er placeret uden for døren. 
+			
+			På PC'en er VI'et \texttt{optagefrekvenssignal0.1.vi} åbnet i LabVIEW. Blokdiagrammet for VI'et er vist i figur \ref{fig:bdoptage}.   \\   
+			
+			Testopstillingen er vist i figur \ref{fig:webop}.\\ 
+		
+		
+			
+		\begin{figure}
+			\begin{subfigure}[b]{0.4\textwidth}
+			\includegraphics[width=\textwidth]{webcam2}
+			\caption{Placering af PC}
+			\label{fig:webop1}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}[b]{0.4\textwidth}
+			\includegraphics[width=\textwidth]{webcam1}
+			\caption{Placering af webkamera}
+			\label{fig:webop2}
+			\end{subfigure}	
+		\caption{Testopstilling for enhedstest af indbygget mikrofon i \webcammic.}	
+		\label{fig:webop}
+		\end{figure}
+	
+		\subsubsection{Udførsel}
+			\begin{enumerate}
+				\item I VI'et \texttt{optagefrekvenssignal0.1.vi}, trykkes på \textit{Run}.  
+				\item Der generes en hørbar lyd til webkameraet. 
+				\item På frontpanelet i VI'et afventes frekvensudsving på en graf.  
+			\end{enumerate}
+		
+		\subsubsection{Resultater}
+		Mikrofonen i webkameraet har opfanget en hørbar lyd.  
+		\subsubsection{Diskussion} 
+		-
+		\subsubsection{Konklusion}
+		Den indbyggede mikrofon i webkameraet opfanger et frekvensudsving, og det konkluderes, at den opfylder testen. 
+		
+		\subsubsection{Aktion}
+		Denne mikrofon er ikke hensigtsmæssig til brug i den videre test, da den er for stor til at kunne påsættes resonatoren. Næste skridt er at finde en mindre mikrofon med USB-stik. 
 		
 \subsection{Elektret Mikrofon}
 		\subsubsection{Testformål}
