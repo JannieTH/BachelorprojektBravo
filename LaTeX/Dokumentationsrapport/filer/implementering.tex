@@ -255,12 +255,12 @@
 		\subsubsection{Udførsel}
 			\begin{enumerate}
 				\item I VI'et \texttt{optagefrekvenssignal0.1.vi}, trykkes på \textit{Run}.  
-				\item Der generes en hørbar lyd til webkameraet. 
-				\item På frontpanelet i VI'et afventes frekvensudsving på en graf.  
+				\item På frontpanelet i VI'et afventes frekvensudsving på en graf. 
 			\end{enumerate}
 		
 		\subsubsection{Resultater}
 		Mikrofonen i webkameraet har opfanget en hørbar lyd.  
+		
 		\subsubsection{Diskussion} 
 		-
 		\subsubsection{Konklusion}
@@ -269,15 +269,15 @@
 		\subsubsection{Aktion}
 		Denne mikrofon er ikke hensigtsmæssig til brug i den videre test, da den er for stor til at kunne påsættes resonatoren. Næste skridt er at finde en mindre mikrofon med USB-stik. 
 		
-\subsection{Elektret Mikrofon}
+\subsection{Elektret mikrofon BOB 12758}
 		\subsubsection{Testformål}
-		Det afprøves, om mikrofonen opfanger et signal.
+		Det afprøves, om mikrofonen opfanger signaler med frekvenser i intervallet 20 Hz - 10 kHz.
 		
 		\subsubsection{Produktspecifikationer}
 	
 			\textit{Hardware:}\\
 			\elektret\\
-			\pins\\
+			\pinstre\\
 			\mikrofonkabel\\
 			\krympeflex\\
 			\daq\\
@@ -286,38 +286,67 @@
 	
 			\textit{Software:}\\
 			\labview\\
+			\daqsoft\\
 	
 		\subsubsection{Opstilling og opsætning}
-		På mikrofonkablet er pins fastloddet, som igen er loddet fast til mikrofonprintet. Den røde ledning forbinder mikrofonprintets "AUD" til "+AI0"-indgangen på DAQ'en. Den sorte ledning forbinder mikrofonprintet til "GND". Den blå ledning forbinder "VCC" til  IC power-supply  
-		Rød ledning --> "AUD" --> "+AI0" 
-		Sort ledning --> "GND" --> "GND"
-		Blå ledning --> VCC --> "+5V"
+		På kablerne er pins fastloddet, som igen er loddet fast til mikrofonprintet. Det røde kabel forbinder mikrofonprintets "AUD" til "+AI0"-indgangen på DAQ'en. Det sorte kabel forbinder mikrofonprintets GND til "GND"-indgangen på DAQ'en. Det blå kabel forbinder mikrofonprintets "VCC" til "+5V" på DAQ'en. DAQ'en er med USB-kablet tilkoblet PC'en, hvorpå VI'et \texttt{optagefrekvenssignal0.4.vi} er åbnet i LabVIEW. Blockdiagrammet for VI'et er vist i figur \ref{fig:webvi}.   
 		
-		 mi ene ende er påsat kabelsko, som er påsat højtaleren. Til kablets anden ende er pin headere loddet fast. Pin headerne er isat Arduino'en i pin 46 (PL3(OC5A)), som et er digitalt PWM output, og til ground (GND). 
-		Arduino'en er med et USB kabel koblet til PC'en. Testopstillingen er vist i figur \ref{fig:ethb}.\\
+		\begin{figure}
+			\centering
+			\includegraphics[width=3in]{optagefrekvenssignal04}
+			\caption{Blokdiagram for VI'et \texttt{optagefrekvenssignal0.4.vi}.}
+			\label{fig:webvi}
+		\end{figure}
 		
+		Testopstillingen er vist i figur \ref{fig:webop}.\\
 		
-		er med en ledning tilsluttet PC'ens minijack-stik. Ledningens længde er godt en meter €€€SKAL MÅLES, og muliggør dermed, at PC'en er placeret i et rum, og mikrofonen med ledningen gennem den lukkede dør, er placeret i et andet rum. 
-	
-			På PC'en er VI'et \texttt{optagefrekvenssignal0.1.vi} åbnet i LabVIEW. Blokdiagrammet for VI'et er vist i figur \ref{fig:bdoptage}.   \\   
-			
-			Testopstillingen er vist i figur €€€€.\\ 
+		\begin{figure}
+			\centering
+			\includegraphics[width=3in]{webcamop.jpg}
+			\caption{Opstilling for enhedstest af elektret mikrofon.}
+			\label{fig:webop}
+		\end{figure}
 	
 		\subsubsection{Udførsel}
 			\begin{enumerate}
-				\item I VI'et \texttt{optagefrekvenssignal0.1.vi}, trykkes på \textit{Run}.  
-				\item Der indtales en tone i mikrofonen. 
+				\item I VI'et \texttt{optagefrekvenssignal0.4.vi}, trykkes på \textit{Run}.  
+				\item Der generes et signal med følgende frekvens: 100 Hz, 1 kHz og 10 KHz. 
 				\item På frontpanelet i VI'et afventes frekvensudsving på en graf.  
+				\item Resultatet aflæses i \textit{Max Frequency}
 			\end{enumerate}
+			
+			Testen fortages to gange for hver frekvens.  
 		
 		\subsubsection{Resultater}
-		Mikronen har ikke opfanget et frekvenssignal. 
+		
+		\begin{table}[]
+				\centering
+				\caption{Tabel over resultater}
+				\label{bordtest5resultater}
+				\begin{tabular}{lll}
+					\multicolumn{1}{l|}{\textbf{Udsendt frekvens {[}Hz{]}}} & 	
+					\multicolumn{1}{l|}{\textbf{1. resultat}} & \textbf{2. resultat} \\ \hline
+					\multicolumn{1}{c|}{100}& 
+					\multicolumn{1}{c|}{20}&40\\
+					\multicolumn{1}{c|}{500}& 
+					\multicolumn{1}{c|}{500}&500\\
+					\multicolumn{1}{c|}{1000}& 
+					\multicolumn{1}{c|}{1000}&1000\\
+					\multicolumn{1}{c|}{5000}& 
+					\multicolumn{1}{c|}{3000}&3000\\
+					\multicolumn{1}{c|}{10000}& 
+					\multicolumn{1}{c|}{20}&50\\
+                   
+				\end{tabular}
+			\end{table}
+		
 		\subsubsection{Diskussion} 
-		-
+		Skyldes de dårlige resultater ved 100 Hz, at PC'ens frekvensbånd ikke er lavt nok til at udsende et signal med en frekvens på 100 Hz? 
 		\subsubsection{Konklusion}
-		Mikrofonen opfanger intet frekvensudsving og det konkluderes, at den virker til at være deaktiv eller ude af funktion.
+	Ved et signal med en frekvens på hhv. 100 Hz, 5 kHz og 10 kHz er resultaterne ikke tilnærmelsesvis de udsendte frekvenser. 
+	Det kan ikke konkluderes, hvorvidt det skyldes mikrofonen eller PC'ens højtalere. 
 		\subsubsection{Aktion}
-		Denne problemstilling må undersøges yderligere med henblik på at få en fungerende, aktiv mikrofon, som opfanger et frekvenssignal. 
+		Der skal udføres en ny enhedstest af mikrofonen, hvor der er sikkert, at lydgiveren kan afgive frekvenser i mikrofonens frekvensbånd. 
 		
 
 
