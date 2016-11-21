@@ -348,6 +348,165 @@
 		\subsubsection{Aktion}
 		Der skal udføres en ny enhedstest af mikrofonen, hvor der er sikkert, at lydgiveren kan afgive frekvenser i mikrofonens frekvensbånd. 
 		
+\subsection{\elektretto}
+		\subsubsection{Testformål}
+		Det afprøves, om mikrofonen opfanger signaler med frekvenser i intervallet 20 Hz - 1 kHz.
+		
+		\subsubsection{Produktspecifikationer}
+	
+			\textit{Hardware:}\\
+			\elektretto\\
+			\pinstre\\
+			\mikrofonkabel\\
+			\krympeflex\\
+			\daq\\
+			\daqusb\\			
+			\PC\\
+	
+			\textit{Software:}\\
+			\labview\\
+			\daqsoft\\
+	
+		\subsubsection{Opstilling og opsætning}
+		På kablerne er pins fastloddet, som igen er loddet fast til mikrofonprintet. Det røde kabel forbinder mikrofonprintets "AUD" til "+AI0"-indgangen på DAQ'en. Det sorte kabel forbinder mikrofonprintets GND til "GND"-indgangen på DAQ'en. Det blå kabel forbinder mikrofonprintets "VCC" til "+5V" på DAQ'en. DAQ'en er med USB-kablet tilkoblet PC'en, hvorpå VI'et \texttt{optagefrekvenssignal0.4.vi} er åbnet i LabVIEW. Blockdiagrammet for VI'et er vist i figur \ref{fig:webvi}.   
+		
+		Testopstillingen er vist i figur \ref{fig:elektrettoop}.\\
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=3in]{elektrettoop.jpg}
+			\caption{Opstilling for enhedstest af \elektretto.}
+			\label{fig:elektrettoop}
+		\end{figure}
+	
+		\subsubsection{Udførsel}
+			\begin{enumerate}
+				\item I VI'et \texttt{optagefrekvenssignal0.4.vi}, trykkes på \textit{Run}.  
+				\item Der generes et signal med følgende frekvens: 20 Hz, 50 Hz, 100 Hz, 1 kHz og 10 KHz. 
+				\item På frontpanelet i VI'et afventes frekvensudsving på en graf.  
+				\item Resultatet aflæses i \textit{Max Frequency}
+			\end{enumerate}
+			
+			Testen fortages to gange for hver frekvens.  
+		
+		\subsubsection{Resultater}
+		Resultaterne vises i tabel \ref{elektrettoresultater}. 
+		\begin{table}[]
+				\centering
+				\caption{Tabel over resultater}
+				\label{elektrettoresultater}
+				\begin{tabular}{lll}
+					\multicolumn{1}{l|}{\textbf{Udsendt frekvens {[}Hz{]}}} & 	
+					\multicolumn{1}{l|}{\textbf{1. resultat}} & \textbf{2. resultat} \\ \hline
+					\multicolumn{1}{c|}{20}& 
+					\multicolumn{1}{c|}{96}&96\\
+					\multicolumn{1}{c|}{50}& 
+					\multicolumn{1}{c|}{22}&15\\
+					\multicolumn{1}{c|}{100}& 
+					\multicolumn{1}{c|}{95}&95\\
+					\multicolumn{1}{c|}{1000}& 
+					\multicolumn{1}{c|}{1000}&1000\\
+					\multicolumn{1}{c|}{10000}& 
+					\multicolumn{1}{c|}{4}&15\\
+                   
+				\end{tabular}
+			\end{table}
+		
+		\subsubsection{Diskussion} 
+		Skyldes de dårlige resultater ved 100 Hz, at PC'ens frekvensbånd ikke er lavt nok til at udsende et signal med en frekvens på 100 Hz? 
+		\subsubsection{Konklusion}
+	Ved et signal med en frekvens på hhv. 100 Hz, 5 kHz og 10 kHz er resultaterne ikke tilnærmelsesvis de udsendte frekvenser. 
+	Det kan ikke konkluderes, hvorvidt det skyldes mikrofonen eller PC'ens højtalere. 
+		\subsubsection{Aktion}
+
+\subsection{\usbhøj}
+		\subsubsection{Testformål}
+		Det afprøves, om højtaleren kan generere en lyd.
+		
+		\subsubsection{Produktspecifikationer}
+	
+			\textit{Hardware:}\\
+			\usbhøj\\		
+			\PC\\
+	
+			\textit{Software:}\\
+			
+	
+		\subsubsection{Opstilling og opsætning}
+		På kablerne er pins fastloddet, som igen er loddet fast til mikrofonprintet. Det røde kabel forbinder mikrofonprintets "AUD" til "+AI0"-indgangen på DAQ'en. Det sorte kabel forbinder mikrofonprintets GND til "GND"-indgangen på DAQ'en. Det blå kabel forbinder mikrofonprintets "VCC" til "+5V" på DAQ'en. DAQ'en er med USB-kablet tilkoblet PC'en, hvorpå VI'et \texttt{optagefrekvenssignal0.4.vi} er åbnet i LabVIEW. Blockdiagrammet for VI'et er vist i figur \ref{fig:webvi}.   
+		
+		Testopstillingen er vist i figur \ref{fig:elektrettoop}.\\
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=3in]{webcamop.jpg}
+			\caption{Opstilling for enhedstest af \elektretto.}
+			\label{fig:elektrettoop}
+		\end{figure}
+	
+		\subsubsection{Udførsel}
+			\begin{enumerate}
+				\item I VI'et \texttt{optagefrekvenssignal0.4.vi}, trykkes på \textit{Run}.  
+				\item Der generes et signal med følgende frekvens: 20 Hz, 50 Hz, 100 Hz, 1 kHz og 10 KHz. 
+				\item På frontpanelet i VI'et afventes frekvensudsving på en graf.  
+				\item Resultatet aflæses i \textit{Max Frequency}
+			\end{enumerate}
+			
+			Testen fortages to gange for hver frekvens.  
+		
+		\subsubsection{Resultater}
+		Resultaterne fremgår af tabel \ref{elektotabet} og \ref{elektotabto}. 
+		
+		Tabel over resultater ved strømforsyning på 2.5 V. 
+		\begin{table}[]
+				\centering
+				\caption{Tabel over resultater ved strømforsyning på 2.5 V }}
+				\label{elektotabet}
+				\begin{tabular}{lll}
+					\multicolumn{1}{l|}{\textbf{Udsendt frekvens {[}Hz{]}}} & 	
+					\multicolumn{1}{l|}{\textbf{1. resultat}} & \textbf{2. resultat} \\ \hline
+					\multicolumn{1}{c|}{20}& 
+					\multicolumn{1}{c|}{96}&96\\
+					\multicolumn{1}{c|}{50}& 
+					\multicolumn{1}{c|}{22}&15\\
+					\multicolumn{1}{c|}{100}& 
+					\multicolumn{1}{c|}{95}&95\\
+					\multicolumn{1}{c|}{1000}& 
+					\multicolumn{1}{c|}{1000}&1000\\
+					\multicolumn{1}{c|}{10000}& 
+					\multicolumn{1}{c|}{4}&15\\  
+				\end{tabular}
+			\end{table}
+		
+		Tabel over resultater ved strømforsyning på 5 V. 
+				\begin{table}[]
+				\centering
+				\caption{Tabel over resultater ved strømforsyning på 5 V}
+				\label{elektotabto}
+				\begin{tabular}{lll}
+					\multicolumn{1}{l|}{\textbf{Udsendt frekvens {[}Hz{]}}} & 	
+					\multicolumn{1}{l|}{\textbf{1. resultat}} & \textbf{2. resultat} \\ \hline
+					\multicolumn{1}{c|}{20}& 
+					\multicolumn{1}{c|}{20}&40\\
+					\multicolumn{1}{c|}{50}& 
+					\multicolumn{1}{c|}{80}&100\\
+					\multicolumn{1}{c|}{100}& 
+					\multicolumn{1}{c|}{20}&700\\
+					\multicolumn{1}{c|}{1000}& 
+					\multicolumn{1}{c|}{1000}&1000\\
+					\multicolumn{1}{c|}{10000}& 
+					\multicolumn{1}{c|}{40}&20\\ 
+				\end{tabular}
+			\end{table}
+	
+		
+		\subsubsection{Diskussion} 
+		Skyldes de dårlige resultater ved 100 Hz, at PC'ens frekvensbånd ikke er lavt nok til at udsende et signal med en frekvens på 100 Hz? 
+		\subsubsection{Konklusion}
+	Ved et signal med en frekvens på hhv. 100 Hz, 5 kHz og 10 kHz er resultaterne ikke tilnærmelsesvis de udsendte frekvenser. 
+	Det kan ikke konkluderes, hvorvidt det skyldes mikrofonen eller PC'ens højtalere. 
+		\subsubsection{Aktion}
+			
 
 
 \section{Integrationstest}
