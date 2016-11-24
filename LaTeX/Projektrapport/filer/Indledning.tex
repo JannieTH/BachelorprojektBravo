@@ -20,19 +20,38 @@ Helmholtz resonans teorien ligger til grund for udviklingen af brystvolumenmåle
 \begin{figure}[htb]
 \centering
 \includegraphics[width=4in]{Helmholtzresonans}
-\caption{€€}
+\caption{€€ https://newt.phys.unsw.edu.au/jw/Helmholtz.html}
 \label{fig:Helmholtzteori}
 \end{figure}
+
+
  
-Helmholtsresonansfrekvens er givet i dette udtryk. 
-
+Helmholtsresonansfrekvensen er givet i dette udtryk. 
 \begin{eqnarray}
-f_{0}&=&\frac{c}{2\pi}\sqrt{\frac{S_{p}}{\left(l_{p}+\Delta l\right)}}
+\label{eqn:fnul}
+f_{0}&=&\frac{c}{2\pi}\sqrt{\frac{S_{p}}{V \left(l_{p}+\Delta l\right)}}
 \end{eqnarray}
+hvor c er lydens hastighed i luft, $S_{p}$ er tværsnitsarealet af resonanshalsen, $l_{p}$ er længden af resonanshalsen og $\Delta l$ er en forlængelsesværdi. 
 
-hvor c er lydens hastighed i luft, $S_{p}$ er tværsnitsarealet af resonanshalsen, $l_{p}$ er længden af resonanshalsen og $\Delta l$ er kompensationsværdien. 
+Lydens transmitteres resonatorhalsens længde samt en merværdi grundet luftens massefylde. Denne merværdi udtrykkes ved $\Delta l$ og kan findes ud fra følgende formel. 
+\begin{eqnarray}
+\Delta l&=&0.6r+\frac{8}{3\pi}r
+\end{eqnarray}
+hvor r er radius af resonatorhalsen.
 
-Kompensationsværdien er ...
+Ved at placerer et bryst i resonatoren vil resonansfrekvensen ændre sig og kan udtrykkes ved følgende ligning
+\begin{eqnarray}
+\label{eqn:fbryst}
+f_{0}&=&\frac{c}{2\pi}\sqrt{\frac{S_{p}}{(V-W)\left(l_{p}+\Delta l\right)}}
+\end{eqnarray}
+hvor W er volumet af brystet. 
+
+Ved at måle resonansfrekvensen af det tomme kammer og resonansfrekvensen af kammeret med brystet placeret deri, kan volumet af brystet bestemmes ved hjælp af ligning \ref{eqn:fnul} og ligning \ref{eqn:fbryst}. Husk reference €€
+
+
+
+
+
 
 
 
