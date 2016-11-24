@@ -358,7 +358,7 @@
 		\subsubsection{Aktion}
 		Der skal udføres en ny enhedstest af mikrofonen, hvor der er sikkert, at lydgiveren kan afgive frekvenser i mikrofonens frekvensbånd. 
 		
-\subsection{\elektretto}
+\subsection{\elektretto 2.5V}
 		\subsubsection{Testformål}
 		Det afprøves, om mikrofonen opfanger signaler med frekvenser i intervallet 20 Hz - 1 kHz.
 		
@@ -372,11 +372,12 @@
 			\daq\\
 			\daqusb\\			
 			\PC\\
-			\onlineg\\
 	
 			\textit{Software:}\\
 			\labview\\
 			\daqsoft\\
+			\onlineg\\
+
 	
 		\subsubsection{Opstilling og opsætning}
 		På kablerne er pins fastloddet, som igen er loddet fast til mikrofonprintet. Det røde kabel forbinder mikrofonprintets "AUD" til "+AI0"-indgangen på DAQ'en. Det sorte kabel forbinder mikrofonprintets GND til "GND"-indgangen på DAQ'en. Det blå kabel forbinder mikrofonprintets "VCC" til "+2.5V" på DAQ'en. DAQ'en er med USB-kablet tilkoblet PC'en, hvorpå VI'et \texttt{optagefrekvenssignal0.4.vi} er åbnet i LabVIEW. Blockdiagrammet for VI'et er vist i figur \ref{fig:webvi}. I en browser på PC´en er onlinetonegenerator.com åbnet.       
@@ -445,11 +446,12 @@
 			\daq\\
 			\daqusb\\			
 			\PC\\
-			\onlineg\\
 	
 			\textit{Software:}\\
 			\labview\\
 			\daqsoft\\
+			\onlineg\\
+
 	
 		\subsubsection{Opstilling og opsætning}
 		På kablerne er pins fastloddet, som igen er loddet fast til mikrofonprintet. Det røde kabel forbinder mikrofonprintets "AUD" til "+AI0"-indgangen på DAQ'en. Det sorte kabel forbinder mikrofonprintets GND til "GND"-indgangen på DAQ'en. Det blå kabel forbinder mikrofonprintets "VCC" til "+5V" på DAQ'en. DAQ'en er med USB-kablet tilkoblet PC'en, hvorpå VI'et \texttt{optagefrekvenssignal0.4.vi} er åbnet i LabVIEW. Blockdiagrammet for VI'et er vist i figur \ref{fig:webvi}. I en browser på PC´en er onlinetonegenerator.com åbnet.       
@@ -474,11 +476,11 @@
 			Testen fortages to gange for hver frekvens.  
 		
 		\subsubsection{Resultater}
-		Resultaterne vises i tabel \ref{elektrettoresultater}. 
+		Resultaterne vises i tabel \ref{elektrettofemresultater}. 
 		\begin{table}[]
 				\centering
 				\caption{Tabel over resultater}
-				\label{elektrettoresultater}
+				\label{elektrettofemresultater}
 				\begin{tabular}{lll}
 					\multicolumn{1}{l|}{\textbf{Udsendt frekvens {[}Hz{]}}} & 	
 					\multicolumn{1}{l|}{\textbf{1. resultat}} & \textbf{2. resultat} \\ \hline
@@ -497,37 +499,42 @@
 			\end{table}
 		
 		\subsubsection{Diskussion} 
-		Strømforsyningen på 5V gjorde i afvigelserne i resultaterne mindre. Kan det være frekvensbåndet i PC´ens højtalere som ikke er bredt nok til at afspiller det ønskede frekvensbånd. 
+		Strømforsyningen på 5V gjorde ikke afvigelserne i resultaterne mindre. Kan det være frekvensbåndet i PC´ens højtalere som ikke er bredt nok til at afspiller det ønskede frekvensbånd. 
 		\subsubsection{Konklusion}
 	Ved et signal med en frekvens på hhv. 20 Hz, 50 Hz, 100 Hz, og 10 kHz er resultaterne ikke tilnærmelsesvis de udsendte frekvenser. 
 	Det kan ikke konkluderes, hvorvidt det skyldes mikrofonen eller et begrænset frekvensbånd på PC'ens højtaler. 
 		\subsubsection{Aktion}
 		Frekvensbåndet mellem 100 og 1000 Hz ønskes testet, da det muligvis kan være tilstrækkeligt til de videre tests. 
 		
-		
-		
-
-\subsection{\usbhøj}
+\subsection{\elektretto - frekvensbånd}
 		\subsubsection{Testformål}
-		Det afprøves, om højtaleren kan generere en lyd.
+		Det afprøves, om mikrofonen opfanger signaler med frekvenser i intervallet 100 Hz - 1 kHz.
 		
 		\subsubsection{Produktspecifikationer}
 	
 			\textit{Hardware:}\\
-			\usbhøj\\		
+			\elektretto\\
+			\pinstre\\
+			\mikrofonkabel\\
+			\krympeflex\\
+			\daq\\
+			\daqusb\\			
 			\PC\\
 	
 			\textit{Software:}\\
-			
+			\labview\\
+			\daqsoft\\
+			\onlineg\\
+
 	
 		\subsubsection{Opstilling og opsætning}
-		På kablerne er pins fastloddet, som igen er loddet fast til mikrofonprintet. Det røde kabel forbinder mikrofonprintets "AUD" til "+AI0"-indgangen på DAQ'en. Det sorte kabel forbinder mikrofonprintets GND til "GND"-indgangen på DAQ'en. Det blå kabel forbinder mikrofonprintets "VCC" til "+5V" på DAQ'en. DAQ'en er med USB-kablet tilkoblet PC'en, hvorpå VI'et \texttt{optagefrekvenssignal0.4.vi} er åbnet i LabVIEW. Blockdiagrammet for VI'et er vist i figur \ref{fig:webvi}.   
+		På kablerne er pins fastloddet, som igen er loddet fast til mikrofonprintet. Det røde kabel forbinder mikrofonprintets "AUD" til "+AI0"-indgangen på DAQ'en. Det sorte kabel forbinder mikrofonprintets GND til "GND"-indgangen på DAQ'en. Det blå kabel forbinder mikrofonprintets "VCC" til "+5V" på DAQ'en. DAQ'en er med USB-kablet tilkoblet PC'en, hvorpå VI'et \texttt{optagefrekvenssignal0.4.vi} er åbnet i LabVIEW. Blockdiagrammet for VI'et er vist i figur \ref{fig:webvi}. I en browser på PC´en er onlinetonegenerator.com åbnet.       
 		
 		Testopstillingen er vist i figur \ref{fig:elektrettoop}.\\
 		
 		\begin{figure}
 			\centering
-			\includegraphics[width=3in]{webcamop.jpg}
+			\includegraphics[width=3in]{elektrettoop.jpg}
 			\caption{Opstilling for enhedstest af \elektretto.}
 			\label{fig:elektrettoop}
 		\end{figure}
@@ -535,67 +542,155 @@
 		\subsubsection{Udførsel}
 			\begin{enumerate}
 				\item I VI'et \texttt{optagefrekvenssignal0.4.vi}, trykkes på \textit{Run}.  
-				\item Der generes et signal med følgende frekvens: 20 Hz, 50 Hz, 100 Hz, 1 kHz og 10 KHz. 
-				\item På frontpanelet i VI'et afventes frekvensudsving på en graf.  
-				\item Resultatet aflæses i \textit{Max Frequency}
+				\item Der generes et signal med følgende frekvens: 100 Hz, 150 Hz, 200 Hz, 300, 400 Hz, 500 Hz, 600 Hz, 700 Hz, 800 Hz, 900 Hz og 1 kHz fra onlinetonegenrator.com.
+				\item På frontpanelet i VI'et observeres frekvensudsving på grafen.   
+				\item Resultatet aflæses i \textit{Max Frequency} på VI´ets frontpanel.
 			\end{enumerate}
 			
 			Testen fortages to gange for hver frekvens.  
 		
 		\subsubsection{Resultater}
-		Resultaterne fremgår af tabel \ref{elektotabet} og \ref{elektotabto}. 
-		
-%		Tabel over resultater ved strømforsyning på 2.5 V. 
-%		\begin{table}[]
-%				\centering
-%				\caption{Tabel over resultater ved strømforsyning på 2.5 V }}
-%				\label{elektotabet}
-%				\begin{tabular}{lll}
-%					\multicolumn{1}{l|}{\textbf{Udsendt frekvens {[}Hz{]}}} & 	
-%					\multicolumn{1}{l|}{\textbf{1. resultat}} & \textbf{2. resultat} \\ \hline
-%					\multicolumn{1}{c|}{20}& 
-%					\multicolumn{1}{c|}{96}&96\\
-%					\multicolumn{1}{c|}{50}& 
-%					\multicolumn{1}{c|}{22}&15\\
-%					\multicolumn{1}{c|}{100}& 
-%					\multicolumn{1}{c|}{95}&95\\
-%					\multicolumn{1}{c|}{1000}& 
-%					\multicolumn{1}{c|}{1000}&1000\\
-%					\multicolumn{1}{c|}{10000}& 
-%					\multicolumn{1}{c|}{4}&15\\  
-%				\end{tabular}
-%			\end{table}
-%%		
-%		Tabel over resultater ved strømforsyning på 5 V. 
-%				\begin{table}[]
-%				\centering
-%				\caption{Tabel over resultater ved strømforsyning på 5 V}
-%				\label{elektotabto}
-%				\begin{tabular}{lll}
-%					\multicolumn{1}{l|}{\textbf{Udsendt frekvens {[}Hz{]}}} & 	
-%					\multicolumn{1}{l|}{\textbf{1. resultat}} & \textbf{2. resultat} \\ \hline
-%					\multicolumn{1}{c|}{20}& 
-%					\multicolumn{1}{c|}{20}&40\\
-%					\multicolumn{1}{c|}{50}& 
-%					\multicolumn{1}{c|}{80}&100\\
-%					\multicolumn{1}{c|}{100}& 
-%					\multicolumn{1}{c|}{20}&700\\
-%					\multicolumn{1}{c|}{1000}& 
-%					\multicolumn{1}{c|}{1000}&1000\\
-%					\multicolumn{1}{c|}{10000}& 
-%					\multicolumn{1}{c|}{40}&20\\ 
-%				\end{tabular}
-%			\end{table}
-%	
+		Resultaterne vises i tabel \ref{elektretfrekresultater}. 
+		\begin{table}[]
+				\centering
+				\caption{Tabel over resultater}
+				\label{elektrettofrekresultater}
+				\begin{tabular}{lll}
+					\multicolumn{1}{l|}{\textbf{Udsendt frekvens {[}Hz{]}}} & 	
+					\multicolumn{1}{l|}{\textbf{1. resultat}} & \textbf{2. resultat} \\ \hline
+					\multicolumn{1}{c|}{100}& 
+					\multicolumn{1}{c|}{20}&80\\
+					\multicolumn{1}{c|}{150}& 
+					\multicolumn{1}{c|}{150}&150\\
+					\multicolumn{1}{c|}{200}& 
+					\multicolumn{1}{c|}{200}&200\\
+					\multicolumn{1}{c|}{300}& 
+					\multicolumn{1}{c|}{300}&300\\
+					\multicolumn{1}{c|}{400}& 
+					\multicolumn{1}{c|}{400}&400\\
+					\multicolumn{1}{c|}{500}& 
+					\multicolumn{1}{c|}{500}&500\\
+					\multicolumn{1}{c|}{600}& 
+					\multicolumn{1}{c|}{600}&600\\
+					\multicolumn{1}{c|}{700}& 
+					\multicolumn{1}{c|}{700}&700\\
+					\multicolumn{1}{c|}{800}& 
+					\multicolumn{1}{c|}{800}&800\\
+					\multicolumn{1}{c|}{900}& 
+					\multicolumn{1}{c|}{900}&900\\
+					\multicolumn{1}{c|}{1000}& 
+					\multicolumn{1}{c|}{1000}&1000\\
+                   
+				\end{tabular}
+			\end{table}
 		
 		\subsubsection{Diskussion} 
-		Skyldes de dårlige resultater ved 100 Hz, at PC'ens frekvensbånd ikke er lavt nok til at udsende et signal med en frekvens på 100 Hz? 
+		Resultaterne af det udsendte frekvenssignal på 100 Hz er afvigende. Det kan muligvis skyldes et begrænset frekvensbånd i PC-højtaleren. 
 		\subsubsection{Konklusion}
-	Ved et signal med en frekvens på hhv. 100 Hz, 5 kHz og 10 kHz er resultaterne ikke tilnærmelsesvis de udsendte frekvenser. 
-	Det kan ikke konkluderes, hvorvidt det skyldes mikrofonen eller PC'ens højtalere. 
+	Det anvendte hardware kan opfange et frekvensbånd fra 150 Hz - 1 kHz med en nøjagtighed på 100 pct.  
 		\subsubsection{Aktion}
+		Det er besluttet at anvende mikrofonen i det videre testforløb. 
+		
+\subsection{\usbhøj}
+		\subsubsection{Testformål}
+		Det afprøves, om højtaleren kan generere signaler med frekvenser i intervallet 20 Hz - 1500 Hz.
+		
+		\subsubsection{Produktspecifikationer}
+	
+			\textit{Hardware:}\\
+			\elektretto\\
+			\pinstre\\
+			\mikrofonkabel\\
+			\krympeflex\\
+			\daq\\
+			\daqusb\\	
+			\usbhøj\\		
+			\PC\\
+	
+			\textit{Software:}\\
+			\labview\\
+			\daqsoft\\
+			\onlineg\\
+	
+		\subsubsection{Opstilling og opsætning}
+		På kablerne er pins fastloddet, som igen er loddet fast til mikrofonprintet. Det røde kabel forbinder mikrofonprintets "AUD" til "+AI0"-indgangen på DAQ'en. Det sorte kabel forbinder mikrofonprintets GND til "GND"-indgangen på DAQ'en. Det blå kabel forbinder mikrofonprintets "VCC" til "+5V" på DAQ'en. DAQ'en er med USB-kablet tilkoblet PC'en, hvorpå VI'et \texttt{optagefrekvenssignal0.4.vi} er åbnet i LabVIEW. Blockdiagrammet for VI'et er vist i figur \ref{fig:webvi}. Højtaleren er tilsluttet PC'ens USB-port og minijack-stik, og er placeret ca. 2 cm. fra mikrofonen. I en browser på PC´en er onlinetonegenerator.com åbnet.       
+		
+		Testopstillingen er vist i figur \ref{fig:usbhojop}.\\
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=3in]{usbhojop.jpg}
+			\caption{Opstilling for enhedstest af \elektretto.}
+			\label{fig:usbhojop}
+		\end{figure}
+	
+		\subsubsection{Udførsel}
+			\begin{enumerate} 
+				\item Der generes et signal med henholdvis følgende frekvens: 20 Hz, 75 Hz, 80 Hz, 90 Hz, 100 Hz, 150 Hz, 200 Hz, 300, 400 Hz, 500 Hz, 600 Hz, 700 Hz, 800 Hz, 900 Hz, 1000 Hz, 1100 Hz, 1200 Hz, 1300 Hz, 1400 Hz og 1500 Hz fra onlinetonegenrator.com.
+				\item \item I VI'et \texttt{optagefrekvenssignal0.4.vi}, trykkes på \textit{Run} efter hvert genereret frekvens.  
+				\item På frontpanelet i VI'et aflæses frekvensen i \textit{Maks frekvens}
+			\end{enumerate}
 			
-
+			Testen fortages to gange for hver frekvens.  
+		
+		\subsubsection{Resultater}
+		Resultaterne vises i tabel \ref{usbhojresul}. 
+		\begin{table}[]
+				\centering
+				\caption{Tabel over resultater}
+				\label{usbhojresul}
+				\begin{tabular}{lll}
+					\multicolumn{1}{l|}{\textbf{Udsendt frekvens {[}Hz{]}}} & 	
+					\multicolumn{1}{l|}{\textbf{1. resultat}} & \textbf{2. resultat} \\ \hline
+					\multicolumn{1}{c|}{20}& 
+					\multicolumn{1}{c|}{20}&50\\
+					\multicolumn{1}{c|}{75}& 
+					\multicolumn{1}{c|}{70}&80\\
+					\multicolumn{1}{c|}{80}& 
+					\multicolumn{1}{c|}{90}&80\\
+					\multicolumn{1}{c|}{90}& 
+					\multicolumn{1}{c|}{90}&90\\
+					\multicolumn{1}{c|}{100}& 
+					\multicolumn{1}{c|}{100}&100\\
+					\multicolumn{1}{c|}{150}& 
+					\multicolumn{1}{c|}{150}&150\\
+					\multicolumn{1}{c|}{200}& 
+					\multicolumn{1}{c|}{200}&200\\
+					\multicolumn{1}{c|}{300}& 
+					\multicolumn{1}{c|}{300}&300\\
+					\multicolumn{1}{c|}{400}& 
+					\multicolumn{1}{c|}{400}&400\\
+					\multicolumn{1}{c|}{500}& 
+					\multicolumn{1}{c|}{500}&500\\
+					\multicolumn{1}{c|}{600}& 
+					\multicolumn{1}{c|}{600}&600\\
+					\multicolumn{1}{c|}{700}& 
+					\multicolumn{1}{c|}{700}&700\\
+					\multicolumn{1}{c|}{800}& 
+					\multicolumn{1}{c|}{800}&800\\
+					\multicolumn{1}{c|}{900}& 
+					\multicolumn{1}{c|}{900}&900\\
+					\multicolumn{1}{c|}{1000}& 
+					\multicolumn{1}{c|}{1000}&1000\\
+					\multicolumn{1}{c|}{1100}& 
+					\multicolumn{1}{c|}{1100}&1100\\
+					\multicolumn{1}{c|}{1200}& 
+					\multicolumn{1}{c|}{1200}&1200\\
+					\multicolumn{1}{c|}{1300}& 
+					\multicolumn{1}{c|}{1200}&1200\\
+					\multicolumn{1}{c|}{1400}& 
+					\multicolumn{1}{c|}{1100}&1100\\
+					\multicolumn{1}{c|}{1500}& 
+					\multicolumn{1}{c|}{1000}&1000\\
+                   \end{tabular}
+			\end{table}
+		
+		\subsubsection{Diskussion} 
+		Frekvenser op til 90 Hz og frekvenser fra 1300 Hz til 1500 afviger fra de udsendte frekvenser. Kan det muligvis skyldes mikrofonen ikke kan optage disse signaler eller skyldes det højtaleren ikke kan generere frekvenserne? 
+		\subsubsection{Konklusion}
+	Det konkluderes at højtaleren kan leverer frekvenser fra 90 til 1200 Hz. 
+	    \subsubsection{Aktion}
+	    Det vælges at anvende denne højtaler til det videre testforløb, hvor resonansfrekvens i et tomt kammer måles. 
 
 \section{Integrationstest}
 
