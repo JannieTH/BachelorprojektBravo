@@ -1077,16 +1077,17 @@
 			 
 	\subsection{	Bordtest nr. 6 - resonansfrekvens i tomt kammer}
 	
-	\subsubsection{Testformål)
-	Det ønskes, at finde resonansfrekvensen 
- i den tomme resonator, således denne kan verificeres i forhold til resonatorens kendte volumen.  	
+	\subsubsection{Testformål}
+	Det ønskes, at finde resonansfrekvensen $f_{0}$ i den tomme resonator, således denne kan verificeres i forhold til resonatorens kendte volumen.  	
 	
 	\subsubsection{Produktspecifikationer}
 	\textit{Hardware:}\\
-	\usbhoj\\
+	\usbhøj\\
 	\elektretto\\
 	\daq\\
 	\sprøjtebeholder\\	
+	\snot\\	
+	Lineal\\
 	\modellervoks\\
 	\plade\\
 	\PC\\
@@ -1097,7 +1098,33 @@
 	\onlineg\\
 	
 	\subsubsection{Opstilling og opsætning}
+	Flasken er skruet af tryksprøjten, og bunden er savet af i et lige snit. Denne flaske har funktionen som resonator i testen. Resonatoren vises i figur \ref{fig:resonator}. Resonatoren er placeret på pladen, og er tætnet med modellervoks i kanten mellem resonator og plade. Trykventilen på flasken er også tætnet med modellervoks. En lineal er påsat flaskehalsen, og benyttes til afstandsmåling. Mikrofonen er monteret på resonatorens inderside med klæbemasse. Mikrofonen placeres mindre end resonatorhalsens længde fra  resonatorhalsens indre åbning. Mikrofonen er endvidere tilkoblet DAQ'en, som er tilsluttet PC'en. På PC'en er LabVIEW VI'et \texttt{optagefrekvenssignal06.vi} åbnet. Blokdiagrammet vises i figur \ref{fig:optagefrekvenssignal06}. Højtaleren er tilsluttet PC'en, og \onlineg er åbnet i en browser, hvor pink noise genereres. Højtaleren holdes i en afstand på en halv diameter af halsåbningen fra halsens indgangen.  
 	
+	\begin{figure}
+	\centering
+	\includegraphics[width=3in]{resonator.jpg}
+	\caption{Resonator fremstillet af \sprøjtebeholder.}
+	\label{fig:resonator}	
+	\end{figure}
+
+	\begin{figure}
+	\centering
+	\includegraphics[width=4in]{optagefrekvenssignal06.jpeg}
+	\caption{Bolkdiagram for LabVIEW VI'et \texttt{optagefrekvenssignal06.vi}.}
+	\label{fig:optagefrekvenssignal06}	
+	\end{figure}
+	
+	\subsubsection{Udførsel}
+			
+			\begin{enumerate}
+			\item Pink noise genereres fra \onlineg  ud gennem højtaleren. 
+			\item Gentagelse af antal loops i blokdiagrammet sættes til 10, og der optages 4 sekunder af gangen. 
+			\item Der tykkes \textit{Run} i VI'et. 
+			\item Resonansfrekvens $f_{0}$ aflæses i \textit{Resonansfrekvens af kammer med objekt}.
+			\end{enumerate}
+			
+			
+			
 	
 		
 	
