@@ -709,18 +709,39 @@
 		\onlineg\\ 
 	
 		\subsubsection{Opstilling og opsætning}
-		\texttt{optagefrekvenssignal0.5.vi} er åbnet og onlinetonegeneratoren er åbnet i browseren på PC´en. I onlinetonegeneratoren åbnes DMTF generatoren. Blokdiagrammet for {optagefrekvenssignal0.5.vi} er vist i figur \ref{fig:vio5}
+		\texttt{optagefrekvenssignal0.5.vi} er åbnet og onlinetonegeneratoren er åbnet i browseren på PC´en. DAQ assistant modulet åbnes i blokdiagrammet og i \textit{Samples to read} indtastes 800 og i \textit{Rate(Hz} indtastes 8000. Dette vises i figur \ref{fig:daq}. I blokdiagrammet for \texttt{optagefrekvenssignal0.5.vi sætte antal loops til 1. 
+		 Onlinetonegeneratoren åbnes DMTF generatoren. Blokdiagrammet for {optagefrekvenssignal0.5.vi} er vist i figur \ref{fig:vio5}
+		
+\begin{figure}
+			\centering
+			\includegraphics[width=3in]{DAQassistant}
+			\caption{DAQ assistant modulet med korrekt indtastet værdier}
+			\label{fig:daq}
+		\end{figure}		
 		
 		\begin{figure}
 			\centering
-			\includegraphics[width=3in]{optagefrekvenssignal05}
+			\includegraphics[width=3in]{optagefrekvenssignasl05}
 			\caption{Blokdiagram for VI'et \texttt{optagefrekvenssignal0.5.vi}.}
 			\label{fig:vio5}
 		\end{figure}
 	
 		\subsubsection{Udførsel}
-			En DTMF tone vælges i tonegeneratoren. Den højste frekvens i DTMF tonen noteres. VI´et åbnes og på frontpanelet indstilles optagelsestiden til 4 sekunder. Tonen afspilles og der trykkes på run i VI´et som nu optager tonen. Maksfrekvensen aflæses på frontpanlet i \textit{nuværende maksfrekvens} og sammenholdes med den tidligere noteret maksfrekvens. Disse skulle gerne stemme overens. 
-
+			\begin{enumerate}
+			\item En DTMF tone 1 vælges i tonegeneratoren. Den højste frekvens i DTMF tonen noteres.
+			\item  VI´et åbnes og på frontpanelet indstilles optagelsestiden til 4 sekunder.
+			\item 
+			\end{enumerate}
+			    			  
+			 
+			 Tonen afspilles og der trykkes på run i VI´et som nu optager tonen. 
+		  Maksfrekvensen aflæses på frontpanlet i \textit{nuværende maksfrekvens} og sammenholdes med den tidligere noteret maksfrekvens. Disse skulle gerne stemme overens. 
+			
+			
+		\subsubsection{Resultater}
+		
+		
+	
 		\subsubsection{Diskussion} 
 	-
 	
