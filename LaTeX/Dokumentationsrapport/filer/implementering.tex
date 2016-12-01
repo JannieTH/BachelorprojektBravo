@@ -24,7 +24,7 @@
 	
 		\textit{Hardware:}\\
 		\abshøj\\
-		\højtalerkabel\\
+		\hojtalerkabel\\
 		\pins\\
 		\arduino\\
 		\PC\\
@@ -142,7 +142,7 @@
 	
 		\textit{Hardware:}\\
 		\tores\\
-		\højtalerkabel\\
+		\hojtalerkabel\\
 		\kabelsko\\
 		\pins\\
 		\arduino\\
@@ -799,7 +799,7 @@
 		På TI-89´eren indtastes formlen for udregningen af volumen ud fra helmholtzresonansen. Formel defineres således 
 		
 		\begin{equation}
-		W = V*\left(1-\left(\frac{f_{0}}{f_{b}}\right)^2\right)
+		W = V\left(1-\left(\frac{f_{0}}{f_{b}}\right)^2\right)
 		\end{equation}
 		
 		Indtastningen op TI-89´eren ses på figur \ref{fig:TI89},hvor værdierne er angivet således at $v=1671$, $f_0=150$ og $f_b=250$. Resultatet af indtastning giver volumet $W=1069.44$
@@ -850,7 +850,7 @@ Det besluttes at den kodede formel fra VI´et kan bruges i det videre udviklings
 		
 		\textit{Hardware:}\\
 		\abshøj\\
-		\højtalerkabel\\
+		\hojtalerkabel\\
 		\pins\\
 		\arduino\\
 		\PC\\
@@ -947,7 +947,7 @@ Det besluttes at den kodede formel fra VI´et kan bruges i det videre udviklings
 		
 		\textit{Hardware:}\\
 		\abshøj\\
-		\højtalerkabel\\
+		\hojtalerkabel\\
 		\pins\\
 		\krympeflex
 		\arduino\\
@@ -1022,7 +1022,7 @@ Det besluttes at den kodede formel fra VI´et kan bruges i det videre udviklings
 		
 		\textit{Hardware:}\\
 		\tores\\
-		\højtalerkabel\\
+		\hojtalerkabel\\
 		\kabelsko\\
 		\pins\\
 		\krympeflex\\
@@ -1142,7 +1142,7 @@ Det besluttes at den kodede formel fra VI´et kan bruges i det videre udviklings
 		
 		\textit{Hardware:}\\
 		\tores\\
-		\højtalerkabel\\
+		\hojtalerkabel\\
 		\kabelsko\\
 		\pins\\
 		\krympeflex\\
@@ -1267,7 +1267,7 @@ Det besluttes at den kodede formel fra VI´et kan bruges i det videre udviklings
 			\begin{enumerate}
 			\item Pink noise genereres fra \onlineg  ud gennem højtaleren. 
 			\item Gentagelse af antal loops i blokdiagrammet sættes til 10, og der optages 4 sekunder af gangen. 
-			\item Der tykkes \textit{Run} i VI'et. 
+			\item Der trykkes \textit{Run} i VI'et. 
 			\item Resonansfrekvens $f_{0}$ aflæses i \textit{Resonansfrekvens af kammer med objekt}.
 			\end{enumerate}
 			
@@ -1279,7 +1279,7 @@ Det besluttes at den kodede formel fra VI´et kan bruges i det videre udviklings
 \centering
 \caption{Tabel over resultater}
 \label{bordtest6resultater}
-\begin{tabular}{l|l}
+\begin{tabular}{c|l}
 \textbf{\#}& \textbf{$f_{0}$ {[Hz]}} \\
 \hline
 1  &                  \\
@@ -1296,6 +1296,94 @@ Det besluttes at den kodede formel fra VI´et kan bruges i det videre udviklings
 \end{table}
 			
 	
+	\subsection{Bordtest nr. 6.1 - resonansfrekvens i tomt kammer}
+	
+		\subsubsection{Testformål}
+	Det ønskes, at finde resonansfrekvensen $f_{0}$ i den tomme resonator, således denne kan verificeres i forhold til resonatorens kendte volumen.  	
+	
+	\subsubsection{Produktspecifikationer}
+	\textit{Hardware:}\\
+	\usbhøj\\
+	\elektretto\\
+	\daq\\
+	\sprøjtebeholder\\	
+	\snot\\	
+	\højtalerholder til \usbhøj\\
+	\modellervoks\\
+	\plade\\
+	\PC\\
+	Termometer\\
+	
+	\textit{Software:}\\
+	\labview\\
+	\daqsoft\\
+	\onlineg\\
+	
+		\subsubsection{Opstilling og opsætning}
+	Flasken er skruet af tryksprøjten, og bunden er savet af i et lige snit. Denne flaske har funktionen som resonator i testen. Resonatoren vises i figur \ref{fig:resonator}. Resonatoren er placeret på pladen, og er tætnet med modellervoks i kanten mellem resonator og plade. Trykventilen på flasken er også tætnet med modellervoks.
+Mikrofonen er monteret på resonatorens inderside med klæbemasse. Mikrofonen placeres mindre end resonatorhalsens længde fra  resonatorhalsens indre åbning. Mikrofonen er endvidere tilkoblet DAQ'en, som er tilsluttet PC'en. På PC'en er LabVIEW VI'et \texttt{optagefrekvenssignal05.vi} åbnet. Blokdiagrammet vises i figur \ref{fig:optagefrekvenssignal05}. En 3D-printet holder er skruet på flaskens gevind. Holderen sikrer, at højtaleren holdes i en afstand på $\geq$ en diameter af halsåbningen fra halsens indgangen. Højtaleren er tilsluttet PC'en, og \onlineg er åbnet i en browser, hvor pink noise genereres. 
+	Et termometer sættes til at måle rumtemperaturen, imens testen udføres. 
+	
+	\begin{figure}[htb]
+	\centering
+		\includegraphics[width=4in]{bordtest61.jpg}	
+		\caption{Opstillingen for testen fremgår af denne figur}
+		\label{bordetest61op}
+	\end{figure}
+	
+		\subsubsection{Udførsel}
+			
+			\begin{enumerate}
+			\item Pink noise genereres fra \onlineg  ud gennem højtaleren. 
+			\item Gentagelse af antal loops i blokdiagrammet sættes til 100, og der optages 4 sekunder af gangen. 
+			\item Der trykkes \textit{Run} i VI'et. 
+			\item Resonansfrekvens $f_{0}$ aflæses i \textit{Resonansfrekvens af kammer med objekt}.
+			\end{enumerate}
+			
+	\subsubsection{Resultater}
+	
+	Rumtemperatur: 23.7\degree C
+	
+	$f_{0}$ udregnet ud fra Helmholtz resonans ligningen:
+	
+		\fnul,
+		
+		hvor c er givet ved: 
+		\c, og T er bestemt ved.: 
+		\T
+		
+		Tværsnitsarealet S_{p} er bestemt ved
+		
+		Endvidere er \Delta l bestemt ved: 
+		\deltal
+		\Sp
+	
+	
+
+	
+	
+			
+		\begin{table}[]
+\centering
+\caption{Tabel over resultater}
+\label{bordtest6resultater}
+\begin{tabular}{c|l}
+\textbf{\#}& \textbf{$f_{0}$ {[Hz]}} \\
+\hline
+1  &                  \\
+2  &                  \\
+3  &                  \\
+4  &                  \\
+5  &                  \\
+6  &                  \\
+7  &                  \\
+8  &                  \\
+9  &                  \\
+10 &                 
+\end{tabular}
+\end{table}
+			
+
 		
 	
 

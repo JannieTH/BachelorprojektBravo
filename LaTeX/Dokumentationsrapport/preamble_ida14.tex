@@ -235,7 +235,7 @@
     \rule{#1\linewidth}{0pt}\makebox[0pt][c]{#2}\hfill}
 
 %%%% noget June har smidt ind %%%%
-
+\usepackage{gensymb}
 \usepackage{subcaption}
 
 %%%%% Definitioner %%%%%
@@ -244,7 +244,7 @@
 \def\tores{Tores højtaler}
 \def\usbhøj{Multimedia USB Speaker HP-1800}
 \def\kabelsko{Kabelsko: Rød fladstik hun, str. 0.25-1.65 mm2, 6.6 mm bred fladstik} 
-\def\højtalerkabel{Højtalerkabel: Rød/Sort}
+\def\hojtalerkabel{Højtalerkabel: Rød/Sort}
 \def\mikrofonkabel{Mikrofonkabler: Rød/Sort/Blå}
 \def\pins{2 stk. Male Single Row Pin Header Strip 2.54 mm.}
 \def\pinstre{3 stk. Male Single Row Pin Header Strip 2.54 mm.}
@@ -268,7 +268,33 @@
 \def\onlineg{www.onlinetonegenerator.com}
 \def\modellervoks{MY DOUGH modellervoks}
 \def\plade{Etronit MBM PhenolicMelamine plade}
+\def\højtalerholder{3D-printet holder}
+\def\fnul{
+\begin{equation}
+		f_{0} = \frac{c}{2\pi}\sqrt{\frac{S_{p}}{V(l_{p}+\Delta l)}}
+	\end{equation}}
+\def\c{
+\begin{equation}
+		c = {\SI{331,5}{\meter / \second}}\sqrt{\frac{T}{\SI{273,15}{\kelvin}}}	\end{equation}}
+		
+\def\T{
+\begin{equation}
+		T = t + {\SI{273,15}{\kelvin}} 	
+\end{equation}}
 
+\def\deltal{
+\begin{equation}
+		\Delta l = 0,6 r + \frac{8}{3\pi} r
+\end{equation}}
+
+\def\Sp{
+\begin{equation}
+		S_{p} = r^2\pi	
+\end{equation}}
+
+
+
+	
    
  
 %%%% the end %%%%
