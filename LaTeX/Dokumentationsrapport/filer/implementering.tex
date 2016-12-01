@@ -758,24 +758,25 @@
 					\multicolumn{1}{c|}{9}& 
 					\multicolumn{1}{c|}{1477}&1475,84\\
 					\multicolumn{1}{c|}{D}& 
-					\multicolumn{1}{c|}{1630,4}&1000\\
+					\multicolumn{1}{c|}{1633}&1633,4\\
                    
 				\end{tabular}
 			\end{table}
-		
-		Håber ikke den kager!
 	
 		\subsubsection{Diskussion} 
-	-
-	
+		
+		-
 	
 		\subsubsection{Konklusion}
 		 
-	- 
+	Resultaterne af testen ligger acceptabelt tæt på de afsendte frekvenser. 
+	
+	    \subsubsection{Aktion}
+	    Det besluttes at godkende testen og bruge koden i det videre forløb. 
 
-\subsection{SW LabVIEW Helmholtzresonansformel}	
+\subsection{SW LabVIEW volumenformel}	
 \subsubsection{Testformål}
-		Denne test har til formål at afklare om den kodet helmholtzresonansformel i LabVIEW udregner korrekt ud fra givet værdier. 
+		Denne test har til formål at afklare om den kodet helmholtzresonansformel i LabVIEW udregner korrekt volumen ud fra givet værdier. 
 		\subsubsection{Produktspecifikationer}
 	
 		\textit{Hardware:}\\
@@ -786,7 +787,7 @@
 		\labview\\
 	
 		\subsubsection{Opstilling og opsætning}
-		\texttt{Test af Helmholtzresonansformel.vi} er åbnet. Blokdiagrammet for VI´et ses i figur \ref{fig:HHRF} 
+		\texttt{ HelmholtzresonansVolumenformel.vi} er åbnet. Blokdiagrammet for VI´et ses i figur \ref{fig:HHRF} 
 		
 		\begin{figure}
 			\centering
@@ -794,10 +795,37 @@
 			\caption{Blokdiagram for VI'et \texttt{Helmholtzresonansformel}.}
 			\label{fig:HHRF}
 		\end{figure}
+		
+		På TI-89´eren indtastes formlen for udregningen af volumen ud fra helmholtzresonansen. Formel defineres således 
+		
+		\begin{equation}
+		W = V*\left(1-\left(\frac{f_{0}}{f_{b}}\right)^2\right)
+		\end{equation}
+		
+		Indtastningen op TI-89´eren ses på figur \ref{fig:TI89},hvor værdierne er angivet således at $v=1671$, $f_0=150$ og $f_b=250$. Resultatet af indtastning giver volumet $W=1069.44$
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=3in]{TI-89}
+			\caption{Indtastning af formel på TI-89 }
+			\label{fig:TI89}
+		\end{figure}
+		
+	
 	
 		\subsubsection{Udførsel}
 			 
-			 Husk at angive intastningen på TI-89
+         \begin{enumerate}
+         \item De overnævnte værdier indtastes i blokdiagrammet på de korrekte pladser.
+         \item Der trykkes på \textit{Run} 
+         \item Resultat af udregningen aflæses på frontpanelet i feltet \textit{Resultat}. 
+         \item Resultatet fra TI-89 og VI´et sammenlignes.  
+         \end{enumerate}
+         
+        \subsubsection{Resultat}
+        
+        Volumet, regnet på TI-89´erne, angav at $W=1069.44$.
+        Volumet, regnet i VI´et, angav at $W=1069.44$.
 
 		\subsubsection{Diskussion} 
 	-
@@ -805,8 +833,10 @@
 	
 		\subsubsection{Konklusion}
 		 
-	- 
-
+	Da resultatet af udregningen er ens for begge metoder, godkendes testen. 
+	
+	   \subsubsection{Aktion}
+Det besluttes at den kodede formel fra VI´et kan bruges i det videre udviklingsforløb i LabVIEW. 
 
 
 
