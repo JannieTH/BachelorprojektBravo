@@ -774,6 +774,143 @@
 	    \subsubsection{Aktion}
 	    Det besluttes at godkende testen og bruge koden i det videre forløb. 
 
+\subsection{E09-VI02G}
+\subsubsection{Testformål} 
+Testhypotese: Der kan igennem LINX LabVIEW Makerhub oprettes en forbindelse til Arduino Mega 2560 r3. 
+\subsubsection{Produktspecifikationer}
+
+\textit{Hardware:}\\
+		\abshøj\\
+		\hojtalerkabel\\
+		\pins\\
+		\arduino\\
+		\PC\\
+		\usbkabel\\
+	
+		\textit{Software:}\\
+		\labview\\
+		\visa\\
+		\vi\\
+		\ardsw\
+
+
+\subsubsection{Opstilling og opsætning}
+
+		Højtaleren er loddet til højtalerkablets ene ende, og pin headerne er loddet til kablets anden ende. 
+		Pin headerne er isat Arduino'en i pin 46 (PL3(OC5A)), som et er digitalt PWM output, og til ground (GND). 
+		Arduino'en er med et USB kabel koblet til PC'en. Testopstillingen er vist i figur \ref{fig:etha1}.\\ 
+	  
+			\begin{figure}[htb]
+			\centering
+				\includegraphics[width=3in]{haArduino}
+				\caption{Arduino med tilkoblet højtaler}	
+				\label{fig:etha1}
+			\end{figure}
+
+I LabVIEW er det opbygget et VI \textit{genererfrekvenssignal.VI} af LINX MakerHub komponenterne \textit{Initialize.VI}, \textit{Write square signal.VI} og \textit{Close.VI}. I blokdiagrammet angives \textit{serial port},\textit{Channel} og \textit{Duration}.  	Blokdiagrammet ses i figur \ref{fig:gf02} 
+
+\begin{figure}[htb]
+			\centering
+				\includegraphics[width=3in]{gf02}
+				\caption{Blokdiagram for \textit{genererfrekvnessignal02.VI}}	
+				\label{fig:gf02}
+			\end{figure}
+				
+\subsubsection{Udførsel}
+
+\begin{enumerate}
+				\item I \textit{Enter Frequency} på frontpanelet i \texttt{genererfrekvenssignal0.2.vi}, indtastes en selvvalgt frekvens. 
+				\item Der trykkes på \textit{Run}. 
+				\item Der lyttes efter lydsignal fra højtaleren.  
+			\end{enumerate}
+
+\subsubsection{Resultat}
+
+Der observeres en lyd ud fra højtaleren
+
+\subsubsection{Diskusion}
+-
+\subsubsection{Konklusion}
+
+Det konkluderes at det har været muligt at skabe en forbindelse  
+igennem LINX LabVIEW Makerhub til Arduino Mega 2560 r3.
+
+
+
+\subsection{E10-VI01\underline{O}}
+\subsubsection{Testformål}
+Testhypotese: Det er muligt at opfange en lyd ved brug af LabVIEWs \textit{Graphics and sound} VI´er. 
+\subsubsection{Produktspecifikationer}
+
+		\textit{Hardware:}\\
+		\PC\\
+	
+		\textit{Software:}\\
+		\labview\\
+
+\subsubsection{Opstilling og opsætning}
+
+I LabVIEW er det opbygget et VI \textit{optagefrekvenssignal01.VI} af \textit{Graphics and sound} komponenter. Komponenterne, forbindelserne og de angivede værdier er vist i figur \ref{fig:of01}
+
+\begin{figure}[htb]
+			\centering
+				\includegraphics[width=3in]{of01}
+				\caption{Blokdiagram for \textit{optagefrekvenssignal01.VI}}	
+				\label{fig:of01}
+			\end{figure}
+
+\subsubsection{Udførsel}
+\begin{enumerate} 
+				\item Der trykkes på \textit{Run}. 
+				\item Det snakkes ind i PC mikrofonen.
+				\item Der observeres efter udsving af amplituden i grafen på frontpanelet.  
+			\end{enumerate}
+
+\subsubsection{Resultat}
+I grafen på frontpanelet ses der udsving på amplituden når der snakkes til PC mikrofonen. 
+\subsubsection{Diskusion}
+-
+\subsubsection{Konklusion}
+Hypotesen accepteres. Det har været muligt at opfange en lyd ved brug af LabVIEWs \textit{Graphics and sound} VI´er. 
+
+
+
+\subsection{E11-VI02\underline{O}}
+\subsubsection{Testformål}
+\subsubsection{Produktspecifikationer}
+\subsubsection{Opstilling og opsætning}
+\subsubsection{Udførsel}
+\subsubsection{Resultat}
+\subsubsection{Diskusion}
+\subsubsection{Konklusion}
+
+\subsection{E12-VI05\underline{O}}
+\subsubsection{Testformål}
+\subsubsection{Produktspecifikationer}
+\subsubsection{Opstilling og opsætning}
+\subsubsection{Udførsel}
+\subsubsection{Resultat}
+\subsubsection{Diskusion}
+\subsubsection{Konklusion}
+
+\subsection{E13-VI06\underline{O}}
+\subsubsection{Testformål}
+\subsubsection{Produktspecifikationer}
+\subsubsection{Opstilling og opsætning}
+\subsubsection{Udførsel}
+\subsubsection{Resultat}
+\subsubsection{Diskusion}
+\subsubsection{Konklusion}
+
+\subsection{E14-VI08\underline{O}}
+\subsubsection{Testformål}
+\subsubsection{Produktspecifikationer}
+\subsubsection{Opstilling og opsætning}
+\subsubsection{Udførsel}
+\subsubsection{Resultat}
+\subsubsection{Diskusion}
+\subsubsection{Konklusion}
+
 \subsection{SW LabVIEW volumenformel}	
 \subsubsection{Testformål}
 		Denne test har til formål at afklare om den kodet helmholtzresonansformel i LabVIEW udregner korrekt volumen ud fra givet værdier. 
