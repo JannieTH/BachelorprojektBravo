@@ -1,13 +1,13 @@
 \chapter{Implementering}
 
 \section{Indledning}
-	Dette kapitel indeholder enhedstest,integrationstest samt €€€€€€€€€€acceptest. Alle udførte tests er reproducerbare, hvilket afspejles i den høje detaljegrad som testene er beskrevet i. For at kunne reproducere beskrevne tests, forventes et kendskab til Labview, herunder LINX [LabVIEW MakerHub]. 
+	Dette kapitel indeholder enhedstest, integrationstest samt €€€€€€€€€€acceptest. Alle udførte tests er reproducerbare, hvilket afspejles i den høje detaljegrad som testene er beskrevet i. For at kunne reproducere beskrevne tests, forventes et kendskab til Labview, herunder LINX [LabVIEW MakerHub]. 
 	
 	    	  
 		\subsection{Formål}
 	
 		\subsection{Læsevejledning}	
-	
+	€ Her indsættes beskrivelse samt oversigt at navngivning til tests (i en smuk tabel)
 		
 		\subsection{Versionshistorik}
 
@@ -15,10 +15,10 @@
 \section{Enhedstest}
 	Dette afsnit beskriver de indledende funktionstests, hvor hver enkelte selvstændige funktion i systemet afprøves. 
 	
-	\subsection{Højtaler ABS-224-RC}
-	\label{etha}
-		\subsubsection{Testformål}
-		Det afprøves, om højtaleren kan generere en lyd.
+	\subsection{E01-H1}
+	\label{subsec:E01}
+		\subsubsection{Testhypotese}
+		Der kan genereres en lyd gennem højtaleren ved brug af \arduino og \labview.		
 		\subsubsection{Produktspecifikationer}
 	
 	
@@ -28,7 +28,7 @@
 		\pins\\
 		\arduino\\
 		\PC\\
-		\usbkabel\\
+		\usbkabel
 	
 		\textit{Software:}\\
 		\labview\\
@@ -39,98 +39,94 @@
 		\subsubsection{Opstilling og opsætning}
 		Højtaleren er loddet til højtalerkablets ene ende, og pin headerne er loddet til kablets anden ende. 
 		Pin headerne er isat Arduino'en i pin 46 (PL3(OC5A)), som et er digitalt PWM output, og til ground (GND). 
-		Arduino'en er med et USB kabel koblet til PC'en. Testopstillingen er vist i figur \ref{fig:etha}.\\ 
+		Arduino'en er med et USB kabel koblet til PC'en. Delopstillingen er vist i figur \ref{fig:E01}.\\ 
 	  
 			\begin{figure}[htb]
 			\centering
 				\includegraphics[width=3in]{haArduino}
-				\caption{Testopstilling for enhedstest af Højtaler ABS-224-RC.}	
-				\label{fig:etha}
+				\caption{Delopstilling af \ref{subsec:E01} E01-H1, hvor højtaler er tilkoblet Arduino.}	
+				\label{fig:E01}
 			\end{figure}
 	
-		På PC'en er VI'et \texttt{genererfrekvenssignal0.2.vi} åbnet i LabVIEW. Blokdiagrammet for VI'et er vist i figur \ref{fig:bdgenerer}.   \\   
+		På PC'en er \texttt{genererfrekvenssignal02.vi} åbnet i LabVIEW. \textit{Serial port}, \textit{Channel} og \textit{Duration} er sat op, som givet i blokdiagrammet, vist i figur \ref{fig:bdgenerer}.   \\   
 	
 			\begin{figure}[htb]
 			\centering
 				\includegraphics[width=4in]{genererfrekvenssignal02}
-				\caption{I blokdiagrammet \texttt{genererfrekvenssignal0.2.vi} er der anvendt følgende LINX-VI'er; Initialize, Digital Write Square Wave samt Close.}	
+				\caption{I blokdiagrammet \texttt{genererfrekvenssignal02.vi} er der anvendt følgende LINX-VI'er; Initialize, Digital Write Square Wave samt Close.}	
 				\label{fig:bdgenerer}
 			\end{figure}	  
 	
 		\subsubsection{Udførsel}
-			\begin{enumerate}
+			\begin{enumerate} 
 				\item I \textit{Enter Frequency} på frontpanelet i \texttt{genererfrekvenssignal0.2.vi}, indtastes 500. 
 				\item Der trykkes på \textit{Run}. 
 				\item Der lyttes efter lydsignal fra højtaleren.  
 			\end{enumerate}
 			
 		\subsubsection{Resultater}
-		Lydsignal blev generet og afspillet. 
+		Der høres en lyd fra højtaleren. 
 		\subsubsection{Diskussion} 
 		-
 		\subsubsection{Konklusion}
-		Højtaleren opfylder testen idet der generes en lyd. Samtidig konkluderes, at øvrigt anvendt HW og SW i denne test virker tilfredsstillende, og der vil derfor ikke blive lavet yderligere enhedstests på disse komponenter. 
-	
+		Hypotesen er accepteret idet der kan genereres en lyd gennem højtaleren ved brug af \arduino og \labview. 
+		
 		\subsubsection{Aktion}
 		- 
-	\subsection{Minijack PC Mikrofon}
-		\subsubsection{Testformål}
-		Det afprøves, om mikrofonen kan optage en hørbar lyd og at det ikke er PC´ens indbyggede mikrofon som opfanger lyden 
+		
+	\subsection{E02-M1}
+		\subsubsection{Testhypotese}
+		Der kan gennem \mikrofon opfanges en lyd. 
+		
 		\subsubsection{Produktspecifikationer}
 	
 			\textit{Hardware:}\\
 			\mikrofon\\
-			\PC\\
+			\PC
 	
 			\textit{Software:}\\
 			\labview\\
 			\onlineg\\
 	
 		\subsubsection{Opstilling og opsætning}
-		Mikrofonen er sat i PC'ens minijack-stik. Testopstillingen er vist i figur \ref{fig:etmik}.\\ 
+		Mikrofonen er sat i PC'ens minijack-stik. 
 	  
-			\begin{figure}[htb]
-			\centering
-				\includegraphics[width=3in]{mikopstilling}
-				\caption{Testopstilling for enhedstest af Minijack PC Mikrofon.}	
-				\label{fig:etmik}
-			\end{figure}
-	
-			På PC'en er VI'et \texttt{optagefrekvenssignal0.1.vi} åbnet i LabVIEW. Blokdiagrammet for VI'et er vist i figur \ref{fig:bdoptage}.   \\   
+			På PC'en er \texttt{optagefrekvenssignal01.vi} åbnet i LabVIEW. VI'et er opbygget af \textit{Graphics and sound} komponenter. Komponenterne, forbindelserne og de angivede værdier er vist i blokdiagrammet, i figur \ref{fig:bdoptage}.   \\   
 	
 			\begin{figure}[htb]
 			\centering
-				\includegraphics[width=4in]{optagefrekvenssignal01}
-				\caption{I blokdiagrammet \texttt{optagefrekvenssignal0.1.vi} opsamles lydsignalet, som vises i en graf på frontpanelet.}	
+				\includegraphics[width=5in]{of01.PNG}
+				\caption{I blokdiagrammet \texttt{optagefrekvenssignal01.vi} opsamles lydsignalet, som vises i en graf på frontpanelet.}	
 				\label{fig:bdoptage}
 			\end{figure}	  
 			
-			www.onlinegenerator.com er åben i en browser på PC´en. 
+			\texttt{www.onlinetonegenerator.com} er åbnet i en browser på PC´en. 
 	
 		\subsubsection{Udførsel}
 			\begin{enumerate}
-				\item I VI'et \texttt{optagefrekvenssignal0.1.vi}, trykkes på \textit{Run}.  
+				\item I VI'et \texttt{optagefrekvenssignal01.vi}, trykkes på \textit{Run}.  
 				\begin{enumerate}
-				\item Der genereres en hørbar lyd til mikrofonen fra onlinegenerator.com. 
-				\item På frontpanelet i VI'et observeres om grafen viser frekvensudsving.
+				\item Der genereres en hørbar lyd til mikrofonen fra onlinetonegenerator.com. 
+				\item På frontpanelet i VI'et observeres om mikrofonen opfanger en lyd, ved at grafen viser amplitudeudsving.
 				\end{enumerate}
-				\item I VI'et \texttt{optagefrekvenssignal0.1.vi}, trykkes på \textit{Run}. 
+				\item I VI'et \texttt{optagefrekvenssignal01.vi}, trykkes på \textit{Run}. 
 				\begin{enumerate}
 				\item Mikronfonen dækkes nu med en hånd mhp. at mikrofonen ikke opfanger en lyd. 
-				\item Der generes en hørbar lyd til mikrofonen fra onlinegenerator.com. 
-				\item På frontpanelet i VI'et observeres om grafen viser frekvensudsving.
+				\item Der generes en hørbar lyd til mikrofonen fra onlinetonegenerator.com. 
+				\item På frontpanelet i VI'et observeres om mikrofonen opfanger en lyd, ved at grafen viser amplitudeudsving.
 				\end{enumerate}
 			\end{enumerate}
 			
 		\subsubsection{Resultater}
-		Ad1. Der er observeret et udsving på grafen. Mikronen har opfanget et frekvenssignal. \\
-		Ad2. Der er ikke observeret et udsving på grafen. Mikrofonen har ikke opfanget et frekvenssignal. 
+		Ad1. Der er observeret et amplitudeudsving på grafen. Mikronen har opfanget en lyd. \\
+		Ad2. Der er ikke observeret et amplitudeudsving på grafen. Mikrofonen har ikke opfanget en lyd. 
 		
 		\subsubsection{Diskussion} 
-		-
+		- 
+		
 		\subsubsection{Konklusion}
-		Idet der ikke optages en hørbar lyd i Ad2., konkluderes det, at den hørbare lyd, optages gennem Ad1. 
-		Mikrofonen opfylder testen. 
+		Idet der ikke opfanges en hørbar lyd i Ad2., konkluderes det, at den hørbare lyd, opfanges gennem Ad1. 
+		Hypotesen accepteres idet mikrofonen opfanger en lyd. 
 		\subsubsection{Aktion}
 		- 
 	
