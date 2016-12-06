@@ -18,7 +18,7 @@
 	\subsection{E01-H1}
 	\label{subsec:E01}
 		\subsubsection{Testhypotese}
-		Der kan genereres en lyd gennem højtaleren ved brug af \arduino og \labview.		
+		Der kan genereres en lyd gennem højtaleren ved brug af \arduino{} og \labview.		
 		\subsubsection{Produktspecifikationer}
 	
 	
@@ -59,7 +59,7 @@
 	
 		\subsubsection{Udførsel}
 			\begin{enumerate} 
-				\item I \textit{Enter Frequency} på frontpanelet i \texttt{genererfrekvenssignal0.2.vi}, indtastes 500. 
+				\item I \textit{Enter Frequency} på frontpanelet i \texttt{genererfrekvenssignal02.vi}, indtastes 500. 
 				\item Der trykkes på \textit{Run}. 
 				\item Der lyttes efter lydsignal fra højtaleren.  
 			\end{enumerate}
@@ -69,7 +69,7 @@
 		\subsubsection{Diskussion} 
 		-
 		\subsubsection{Konklusion}
-		Hypotesen er accepteret idet der kan genereres en lyd gennem højtaleren ved brug af \arduino og \labview. 
+		Hypotesen er accepteret idet der kan genereres en lyd gennem højtaleren ved brug af \arduino{} og \labview. 
 		
 		\subsubsection{Aktion}
 		- 
@@ -130,9 +130,10 @@
 		\subsubsection{Aktion}
 		- 
 	
-	\subsection{Tores højtaler}
-		\subsubsection{Testformål}
-		Det afprøves, om højtaleren kan generere en lyd.
+	\subsection{E03-H2}
+	\label{subsec:E03}
+		\subsubsection{Testhypotese}
+		Der kan genereres en lyd gennem højtaleren ved brug af \arduino{} og \labview.
 		\subsubsection{Produktspecifikationer}
 	
 	
@@ -143,7 +144,7 @@
 		\pins\\
 		\arduino\\
 		\PC\\
-		\usbkabel\\
+		\usbkabel
 	
 		\textit{Software:}\\
 		\labview\\
@@ -153,76 +154,79 @@
 	
 		\subsubsection{Opstilling og opsætning}
 		Højtalerkablets ene ende er påsat kabelsko, som er påsat højtaleren. Til kablets anden ende er pin headere loddet fast. Pin headerne er isat Arduino'en i pin 46 (PL3(OC5A)), som et er digitalt PWM output, og til ground (GND). 
-		Arduino'en er med et USB kabel koblet til PC'en. Testopstillingen er vist i figur \ref{fig:ethb}.\\ 
+		Arduino'en er med et USB kabel koblet til PC'en. Delopstillingen er vist i figur \ref{fig:tores}.\\ 
 	  
 			\begin{figure}[htb]
 			\centering
 				\includegraphics[width=3in]{hbArduino}
-				\caption{Testopstilling for enhedstest af Tores højtaler.}	
-				\label{fig:ethb}
+				\caption{Delopstilling af \ref{subsec:E03} E03-H2, hvor højtaler er tilkoblet Arduino.}	
+				\label{fig:tores}
 			\end{figure}
+	  
+		På PC'en er \texttt{genererfrekvenssignal02.vi} åbnet i LabVIEW. \textit{Serial port}, \textit{Channel} og \textit{Duration} er sat op, som givet i blokdiagrammet, vist i figur \ref{fig:bdgenerer}.   \\   
 	
-		På PC'en er VI'et \texttt{genererfrekvenssignal0.2.vi} åbnet i LabVIEW. Blokdiagrammet for VI'et er vist i figur \ref{fig:bdgenerer}.   \\   
-	
-		
-	
-		\subsubsection{Udførsel}
-			Udføres på samme vis, som ved enhedstest af \ref{etha} Højtaler ABS-224-RC. 
+	\subsubsection{Udførsel}
+			\begin{enumerate} 
+				\item I \textit{Enter Frequency} på frontpanelet i \texttt{genererfrekvenssignal02.vi}, indtastes 500. 
+				\item Der trykkes på \textit{Run}. 
+				\item Der lyttes efter lydsignal fra højtaleren.  
+			\end{enumerate}
 			
 		\subsubsection{Resultater}
-		Lydsignal blev generet og afspillet. 
+		Der høres en lyd fra højtaleren. 
 		\subsubsection{Diskussion} 
 		-
 		\subsubsection{Konklusion}
-		Højtaleren opfylder testen idet der generes en lyd. 
+		Hypotesen er accepteret idet der kan genereres en lyd gennem højtaleren ved brug af \arduino{} og \labview. 
+		
 		\subsubsection{Aktion}
 		- 
 		
-		\subsection{Ny enhedstest af Minijack PC Mikrofon d. 25.10.16}
-		\subsubsection{Testformål}
-		Det afprøves, om mikrofonen kan optage en hørbar lyd og at det ikke er PC´ens indbyggede mikrofon som opfanger lyden 
+		\subsection{E04-M1}
+		\label{subsec:E04}
+		\subsubsection{Testhypotese}
+		Der kan gennem \mikrofon opfanges en lyd. 
+		
 		\subsubsection{Produktspecifikationer}
 	
 			\textit{Hardware:}\\
-			\mikrofon\\
+			\mikrofon{} (med 2 meter ledning)\\
 			\PC\\
-			Smartphone
+			Smartphone 
 	
 			\textit{Software:}\\
 			\labview\\
 			\onlineg\\
 	
 		\subsubsection{Opstilling og opsætning}
-		Mikrofonen er med en ledning tilsluttet PC'ens minijack-stik. Ledningens længde er godt en meter €€€SKAL MÅLES, og muliggør dermed, at PC'en er placeret i et rum, og mikrofonen med ledningen gennem den lukkede dør, er placeret i et andet rum. I en browser på smartphonen åbnes onlinetonegenerator.com. Smartphonen placeres ca. 2 cm fra mikrofonen. 
+		Mikrofonen er med en ledning tilsluttet PC'ens minijack-stik. PC'en er placeret i et rum, og mikrofonen med ledningen gennem den lukkede dør, er placeret i et andet rum. I en browser på smartphonen åbnes onlinetonegenerator.com. Smartphonen placeres ca. 2 cm fra mikrofonen. 
 	
-			På PC'en er VI'et \texttt{optagefrekvenssignal0.1.vi} åbnet i LabVIEW. Blokdiagrammet for VI'et er vist i figur \ref{fig:bdoptage}.   \\   
-			
-			Testopstillingen er vist i figur €€€€.\\ 
+			På PC'en er \texttt{optagefrekvenssignal01.vi} åbnet i LabVIEW. VI'et er opbygget af \textit{Graphics and sound} komponenter. Komponenterne, forbindelserne og de angivede værdier er vist i blokdiagrammet, i figur \ref{fig:bdoptage}.   \\    
 	
 		\subsubsection{Udførsel}
 			\begin{enumerate}
-				\item I VI'et \texttt{optagefrekvenssignal0.1.vi}, trykkes på \textit{Run}.  
-				\item Der generes en hørbar lyd i onlinegenerator.com til mikrofonen. 
-				\item På frontpanelet i VI'et observeres frekvensudsving på grafen.  
+				\item I VI'et \texttt{optagefrekvenssignal01.vi}, trykkes på \textit{Run}.  
+				\item Der generes en lyd i onlinetonegenerator.com til mikrofonen. 
+				\item På frontpanelet i VI'et observeres amplitudeudsving på grafen.  
 			\end{enumerate}
 		
 		\subsubsection{Resultater}
-		Der blev ikke observeret et frekvensudsving på grafen. Mikronen har ikke opfanget et frekvenssignal. 
+		Der blev ikke observeret et amplitudeudsving på grafen. 
 		\subsubsection{Diskussion} 
 		-
 		\subsubsection{Konklusion}
-		Mikrofonen opfanger intet frekvensudsving og det konkluderes, at den virker til at være deaktiv eller ude af funktion.
+		Mikrofonen har ikke opfanget en lyd, og hypotesen forkastes. 
 		\subsubsection{Aktion}
-		Denne problemstilling må undersøges yderligere med henblik på at få en fungerende, aktiv mikrofon, som opfanger et frekvenssignal. 
+		Det undersøges, hvilke årsager der er skyld i, at mikrofonen ikke opfanger et frekvenssignal.  
 		
-	\subsection{Enhedstest af indbygget mikrofon i \webcammic}
-		\subsubsection{Testformål}
-		Det afprøves, om den indbyggede mikrofon i webkameraet opfanger en hørbar lyd. 
+	\subsection{E05-M2}
+		\subsubsection{Testhypotese}
+		Der kan gennem \webcammic{} opfanges en lyd.  
 		
 		\subsubsection{Produktspecifikationer}
 	
 			\textit{Hardware:}\\
-			\webcammic\\
+			\webcammic{} (med 1,5 meter ledning)\\
 			\PC\\
 			Smartphone
 	
@@ -231,51 +235,32 @@
 			\onlineg\\
 	
 		\subsubsection{Opstilling og opsætning}
-		Webkameraet er tilsluttet PC'ens USB-port. PC'en er placeret i et rum med en dør, og webkameraet er placeret uden for døren. I en browser på smartphonen åbnes onlinetonegenerator.com. Smartphonen placeres ca. 2 cm fra webkameraet.  
+		Webkameraet er tilsluttet PC'ens USB-port. PC'en er placeret i et rum, og webkameraet med ledningen gennem den lukkede dør, er placeret i et andet rum. I en browser på smartphonen åbnes onlinetonegenerator.com. Smartphonen placeres ca. 2 cm fra mikrofonen.  
 			
-			På PC'en er VI'et \texttt{optagefrekvenssignal0.1.vi} åbnet i LabVIEW. Blokdiagrammet for VI'et er vist i figur \ref{fig:bdoptage}.   \\   
-			
-			Testopstillingen er vist i figur \ref{fig:webop}.\\ 
-		
-		
-			
-		\begin{figure}
-			\begin{subfigure}[b]{0.4\textwidth}
-			\includegraphics[width=\textwidth]{webcam2}
-			\caption{Placering af PC}
-			\label{fig:webop1}
-			\end{subfigure}
-			\hfill
-			\begin{subfigure}[b]{0.4\textwidth}
-			\includegraphics[width=\textwidth]{webcam1}
-			\caption{Placering af webkamera}
-			\label{fig:webop2}
-			\end{subfigure}	
-		\caption{Testopstilling for enhedstest af indbygget mikrofon i \webcammic.}	
-		\label{fig:webop}
-		\end{figure}
-	
+			På PC'en er \texttt{optagefrekvenssignal01.vi} åbnet i LabVIEW. VI'et er opbygget af \textit{Graphics and sound} komponenter. Komponenterne, forbindelserne og de angivede værdier er vist i blokdiagrammet, i figur \ref{fig:bdoptage}.   \\ 
+			 
 		\subsubsection{Udførsel}
 			\begin{enumerate}
-				\item I VI'et \texttt{optagefrekvenssignal0.1.vi}, trykkes på \textit{Run}.  
-				\item Der generes en hørbar lyd i onlinegenerator.com til webkameraet.
-				\item På frontpanelet i VI'et afventes frekvensudsving på en graf. 
+				\item I VI'et \texttt{optagefrekvenssignal01.vi}, trykkes på \textit{Run}.  
+				\item Der generes en lyd i onlinetonegenerator.com til mikrofonen. 
+				\item På frontpanelet i VI'et observeres amplitudeudsving på grafen.  
 			\end{enumerate}
 		
 		\subsubsection{Resultater}
-		Der observeres et udsving på grafen. Mikrofonen i webkameraet har opfanget en hørbar lyd.  
-		
+		Der blev observeret et amplitudeudsving på grafen. 
 		\subsubsection{Diskussion} 
 		-
 		\subsubsection{Konklusion}
-		Den indbyggede mikrofon i webkameraet opfanger et frekvensudsving, og det konkluderes, at den opfylder testen. 
+		Mikrofonen har opfanget en lyd, og hypotesen accepteres. 
 		
 		\subsubsection{Aktion}
 		Denne mikrofon er ikke hensigtsmæssig til brug i den videre test, da den er for stor til at kunne påsættes resonatoren. Næste skridt er at finde en mindre mikrofon med USB-stik. 
 		
-\subsection{Elektret mikrofon BOB 12758}
-		\subsubsection{Testformål}
-		Det afprøves, om mikrofonen opfanger signaler med frekvenser i intervallet 20 Hz - 10 kHz.
+\subsection{E06-M3}
+\label{subsec:E06}
+		\subsubsection{Testhypotese}
+		Der kan gennem \elektret{} opfanges lydsignaler i frekvensbåndet i intervallet 20 Hz - 10 kHz.
+	
 		
 		\subsubsection{Produktspecifikationer}
 	
@@ -286,8 +271,7 @@
 			\krympeflex\\
 			\daq\\
 			\daqusb\\			
-			\PC\\
-		
+			\PC
 	
 			\textit{Software:}\\
 			\labview\\
@@ -295,12 +279,12 @@
 			\onlineg\\
 	
 		\subsubsection{Opstilling og opsætning}
-		På kablerne er pins fastloddet, som igen er loddet fast til mikrofonprintet. Det røde kabel forbinder mikrofonprintets "AUD" til "+AI0"-indgangen på DAQ'en. Det sorte kabel forbinder mikrofonprintets GND til "GND"-indgangen på DAQ'en. Det blå kabel forbinder mikrofonprintets "VCC" til "+5V" på DAQ'en. DAQ'en er med USB-kablet tilkoblet PC'en, hvorpå VI'et \texttt{optagefrekvenssignal0.4.vi} er åbnet i LabVIEW. Blockdiagrammet for VI'et er vist i figur \ref{fig:webvi}.I en browser på PC´en er onlinetonegenerator.com åbnet.    
+		På kablerne er pins fastloddet, som igen er loddet fast til mikrofonprintet. Det røde kabel forbinder mikrofonprintets "AUD"{} til "+AI0"{}-indgangen på DAQ'en. Det sorte kabel forbinder mikrofonprintets GND til "GND"{}-indgangen på DAQ'en. Det blå kabel forbinder mikrofonprintets "VCC"{} til "+5V"{} på DAQ'en. DAQ'en er med USB-kablet tilkoblet PC'en, hvorpå \texttt{optagefrekvenssignal04.vi} er åbnet i LabVIEW. Blockdiagrammet for VI'et er vist i figur \ref{fig:webvi}. I en browser på PC´en er onlinetonegenerator.com åbnet.    
 		
 		\begin{figure}
 			\centering
 			\includegraphics[width=3in]{optagefrekvenssignal04}
-			\caption{Blokdiagram for VI'et \texttt{optagefrekvenssignal0.4.vi}.}
+			\caption{Blokdiagram for VI'et \texttt{optagefrekvenssignal04.vi}.}
 			\label{fig:webvi}
 		\end{figure}
 		
@@ -309,29 +293,29 @@
 		\begin{figure}
 			\centering
 			\includegraphics[width=3in]{webcamop.jpg}
-			\caption{Opstilling for enhedstest af elektret mikrofon.}
+			\caption{Testopstilling for \ref{subsec:E06} E06-M3}
 			\label{fig:webop}
 		\end{figure}
 	
 		\subsubsection{Udførsel}
 			\begin{enumerate}
-				\item I VI'et \texttt{optagefrekvenssignal0.4.vi}, trykkes på \textit{Run}.  
+				\item I VI'et \texttt{optagefrekvenssignal04.vi}, trykkes på \textit{Run}.  
 				\item Der generes et signal med følgende frekvens: 100 Hz, 500 Hz, 1 kHz , 5 kHz og 10 KHz fra onlinetonegenerator.com
-				\item På frontpanelet i VI'et observeres frekvensudsving på grafen.  
-				\item Resultatet aflæses i \textit{Max Frequency} på VI'ets frontpanel.
+				\item På frontpanelet i VI'et observeres amplitudeudsving på grafen.  
+				\item Resultatet aflæses i \textit{Maks. frekvens} på VI'ets frontpanel.
 			\end{enumerate}
 			
 			Testen fortages to gange for hver frekvens.  
 		
 		\subsubsection{Resultater}
-		
+		Resultaterne vises i tabel \ref{E06 resultater}
 		\begin{table}[]
 				\centering
 				\caption{Tabel over resultater}
-				\label{bordtest5resultater}
-				\begin{tabular}{lll}
-					\multicolumn{1}{l|}{\textbf{Udsendt frekvens {[}Hz{]}}} & 	
-					\multicolumn{1}{l|}{\textbf{1. resultat}} & \textbf{2. resultat} \\ \hline
+				\label{E06 resultater}
+				\begin{tabular}{ccc}
+					\multicolumn{1}{c|}{\textbf{Udsendt frekvens {[}Hz{]}}} & 	
+					\multicolumn{1}{c|}{\textbf{1. resultat}} & \textbf{2. resultat} \\ \hline
 					\multicolumn{1}{c|}{100}& 
 					\multicolumn{1}{c|}{20}&40\\
 					\multicolumn{1}{c|}{500}& 
@@ -347,12 +331,13 @@
 			\end{table}
 		
 		\subsubsection{Diskussion} 
-		Skyldes de upræcise resultater ved 100 Hz, at PC højtaleren´s frekvensbånd ikke er lavt nok til at udsende et signal med en frekvens på 100 Hz? 
-		\subsubsection{Konklusion}
+		Skyldes de unøjagtige resultater ved 100 Hz, 500 Hz og 10000 Hz, at PC højtalerens frekvensbånd ikke er bredt nok til at udsende disse signaler?
+		 \subsubsection{Konklusion}
 	Ved et signal med en frekvens på hhv. 100 Hz, 5 kHz og 10 kHz er resultaterne ikke tilnærmelsesvis de udsendte frekvenser. 
-	Det kan ikke konkluderes, hvorvidt det skyldes mikrofonen eller PC'ens højtalere. 
+	Det kan ikke konkluderes, hvorvidt det skyldes mikrofonen eller PC'ens højtalere. Hypotesen må derfor forkastes.  
 		\subsubsection{Aktion}
-		Der skal udføres en ny enhedstest af mikrofonen, hvor der er sikkert, at lydgiveren kan afgive frekvenser i mikrofonens frekvensbånd. 
+		Det undersøges, hvilke årsager der er skyld i, at der opnås unøjagtige resultater.  
+		
 		
 \subsection{\elektretto 2.5V}
 		\subsubsection{Testformål}
@@ -815,7 +800,7 @@ I LabVIEW er det opbygget et VI \textit{genererfrekvenssignal.VI} af LINX MakerH
 \subsubsection{Udførsel}
 
 \begin{enumerate}
-				\item I \textit{Enter Frequency} på frontpanelet i \texttt{genererfrekvenssignal0.2.vi}, indtastes en selvvalgt frekvens. 
+				\item I \textit{Enter Frequency} på frontpanelet i \texttt{genererfrekvenssignal02.vi}, indtastes en selvvalgt frekvens. 
 				\item Der trykkes på \textit{Run}. 
 				\item Der lyttes efter lydsignal fra højtaleren.  
 			\end{enumerate}
@@ -1000,7 +985,7 @@ Det besluttes at den kodede formel fra VI´et kan bruges i det videre udviklings
 		Højtaleren er loddet til højtalerkablets ene ende, og pin headerne er loddet til kablets anden ende. 
 		Pin headerne er isat Arduino'en i pin 46 (PL3(OC5A)), som et er digitalt PWM output, og til ground (GND). 
 		Arduino'en er med et USB kabel koblet til PC'en. 		
-		På PC'en er VI'et \texttt{genererfrekvenssignal0.2.vi} åbnet i LabVIEW. Testopstillingen for denne del er vist i figur \ref{fig:etha}, og blokdiagrammet er vist i figur \ref{fig:bdgenerer}.\\ 
+		På PC'en er VI'et \texttt{genererfrekvenssignal02.vi} åbnet i LabVIEW. Testopstillingen for denne del er vist i figur \ref{fig:etha}, og blokdiagrammet er vist i figur \ref{fig:bdgenerer}.\\ 
  
 		\textit{2. delopstilling}:\\
 		Mikrofonen er sat i PC'ens minijack-stik. På PC'en er VI'et \texttt{optagefrekvenssignal0.1.vi} åbnet i LabVIEW. Testopstillingen for denne del er vist i figur \ref{fig:etmik}, og blokdiagrammet er vist i figur \ref{fig:bdoptage}.\\ 
@@ -1009,7 +994,7 @@ Det besluttes at den kodede formel fra VI´et kan bruges i det videre udviklings
 			\begin{enumerate}
 				\item Højtaleren holdes manuelt således membranen står i lodret position. 
 				\item Mikrofonen holdes manuelt, vendt mod højtaleren, i en afstand på 5 cm. 
-				\item I VI'et \texttt{genererfrekvenssignal0.2.vi} indtastes den ønskede frekvens i den numeriske kontrol \textit{Enter Frequency}. 
+				\item I VI'et \texttt{genererfrekvenssignal02.vi} indtastes den ønskede frekvens i den numeriske kontrol \textit{Enter Frequency}. 
 					\begin{enumerate}
 						\item Koden eksekveres ved at trykke på \textit{Run}. 
 					\end{enumerate} 
@@ -1066,7 +1051,7 @@ Det besluttes at den kodede formel fra VI´et kan bruges i det videre udviklings
 			\subsubsection{Resultater}
 			Den optagede frekvens var den generede udsendte frekvens (+/- 0.5 Hz). 
 			\subsubsection{Diskussion}
-			Der opnås nu pæne resultater, og der reflekteres over om resultaterne i \ref{bordtest1} skyldes fejl i højtaler eller fejl i VI'et \texttt{genererfrekvenssignal0.2.vi}. 
+			Der opnås nu pæne resultater, og der reflekteres over om resultaterne i \ref{bordtest1} skyldes fejl i højtaler eller fejl i VI'et \texttt{genererfrekvenssignal02.vi}. 
 			\subsubsection{Konklusion}
 			Det konkluderes, at der ikke er fejl i VI'et \texttt{optagefrekvenssignal0.1.vi}. 
 			\subsubsection{Aktion}
@@ -1100,7 +1085,7 @@ Det besluttes at den kodede formel fra VI´et kan bruges i det videre udviklings
 		Højtaleren er loddet til højtalerkablets ene ende, og pin headerne er loddet til kablets anden ende. 
 		Pin headerne er isat Arduino'en i pin 46 (PL3(OC5A)), som et er digitalt PWM output, og til ground (GND). 
 		Arduino'en er med et USB kabel koblet til PC'en. 		
-		På PC'en er VI'et \texttt{genererfrekvenssignal0.2.vi} åbnet i LabVIEW. Testopstillingen for denne del er vist i figur \ref{fig:etha}, og blokdiagrammet er vist i figur \ref{fig:bdgenerer}.\\ 
+		På PC'en er VI'et \texttt{genererfrekvenssignal02.vi} åbnet i LabVIEW. Testopstillingen for denne del er vist i figur \ref{fig:etha}, og blokdiagrammet er vist i figur \ref{fig:bdgenerer}.\\ 
  
 		\textit{2. delopstilling}:\\
 		Mikrofonen er sat i PC'ens minijack-stik. På PC'en er VI'et \texttt{optagefrekvenssignal0.1.vi} åbnet i LabVIEW. Testopstillingen for denne del er vist i figur \ref{fig:etmik}, og blokdiagrammet er vist i figur \ref{fig:bdoptage}.\\  
@@ -1114,7 +1099,7 @@ Det besluttes at den kodede formel fra VI´et kan bruges i det videre udviklings
 			\begin{enumerate}
 				\item Højtaleren holdes manuelt således membranen står i lodret position. 
 				\item Mikrofonen holdes manuelt, vendt mod højtaleren, i en afstand på 5 cm. 
-				\item I VI'et \texttt{genererfrekvenssignal0.2.vi} indtastes den ønskede frekvens i den numeriske kontrol \textit{Enter Frequency}. 
+				\item I VI'et \texttt{genererfrekvenssignal02.vi} indtastes den ønskede frekvens i den numeriske kontrol \textit{Enter Frequency}. 
 					\begin{enumerate}
 						\item Koden eksekveres ved at trykke på \textit{Run}. 
 					\end{enumerate} 
@@ -1138,7 +1123,7 @@ Det besluttes at den kodede formel fra VI´et kan bruges i det videre udviklings
 			Deltestene gentages med frekvenser på: 100 Hz, 150 Hz, 200 Hz, 400 Hz, 500 Hz, 600 Hz, 700, 1000 0g 1200 Hz, og resultaterne sammenholdes. 
 			
 			\subsubsection{Resultater}
-			 Det blev observeret, at resultaterne fra det generede frekvenssignal i VI'et \texttt{genererfrekvenssignal0.2.vi} var grundtonens harmoniske overtoner, idet frekvensen udsendes som et firkantsignal. Kun ved højfrekvente signaler (<1 kHz), blev grundtonen opfanget. 
+			 Det blev observeret, at resultaterne fra det generede frekvenssignal i VI'et \texttt{genererfrekvenssignal02.vi} var grundtonens harmoniske overtoner, idet frekvensen udsendes som et firkantsignal. Kun ved højfrekvente signaler (<1 kHz), blev grundtonen opfanget. 
 			 Ved at benytte \texttt{onlinetonegenerator.com}, kunne der udsendes et sinussignal med en given frekvens, som blev korrekt opfanget (+/- 0.5 Hz).     
 			\subsubsection{Diskussion}
 			Der opnås pæne resultater ved at bruge et sinussignal, men der er desværre meget kompliceret at generere sinussignaler til en Arduino.   
@@ -1179,7 +1164,7 @@ Det besluttes at den kodede formel fra VI´et kan bruges i det videre udviklings
 		Arduino'en er med et USB kabel koblet til PC'en.	
 		Mikrofonen er sat i PC'ens minijack-stik og er ført ned i resonatoren hvor den ligger i bunden. Højtaleren placeres i en afstand på en halv diameter af højtalerens membran, ovenfor resonatorens hals. 
 		
-		På PC'en er VI'erne \texttt{genererfrekvenssignal0.2.vi} og \texttt{optagefrekvenssignal0.2.vi} åbnet i LabVIEW og blokdiagrammerne er vist i figur \ref{fig:bdgenerer} og \ref{fig:bdoptage} \\ Testopstillingen kan ses på figur \ref{fig:bt4}.  
+		På PC'en er VI'erne \texttt{genererfrekvenssignal02.vi} og \texttt{optagefrekvenssignal02.vi} åbnet i LabVIEW og blokdiagrammerne er vist i figur \ref{fig:bdgenerer} og \ref{fig:bdoptage} \\ Testopstillingen kan ses på figur \ref{fig:bt4}.  
 		
 		\begin{figure}[htb]
 			\centering
@@ -1197,11 +1182,11 @@ Det besluttes at den kodede formel fra VI´et kan bruges i det videre udviklings
 				\item Mikrofonen føres ned i resonatoren og ligger i resonatorens bund. 
 				\item Linealen påsættes resonatorens hals så den fungerer som afstandsmåler fra halsåbningen.
 				\item Højtaleren holdes manuelt over resonatorhalsen i en afstand på en halv diameter af højtalermembranen. Ved anvendelse ef den specificerede højtaler er afstanden to centimeter. 
-				\item I VI'et \texttt{genererfrekvenssignal0.2.vi} indtastes den ønskede frekvens i den numeriske kontrol \textit{Enter Frequency}. 
+				\item I VI'et \texttt{genererfrekvenssignal02.vi} indtastes den ønskede frekvens i den numeriske kontrol \textit{Enter Frequency}. 
 					\begin{enumerate}
 						\item Koden eksekveres ved at trykke på \textit{Run}. 
 					\end{enumerate} 
-				\item I VI'et \texttt{optagefrekvenssignal0.2.vi} trykkes på \textit{Run}. 
+				\item I VI'et \texttt{optagefrekvenssignal02.vi} trykkes på \textit{Run}. 
 					\begin{enumerate}
 						\item Den maksimale optagede frekvens aflæses i \textit{Max Frequency}. 
 					\end{enumerate}	 	
@@ -1211,13 +1196,13 @@ Det besluttes at den kodede formel fra VI´et kan bruges i det videre udviklings
 			Testen udføres med en frekvens på 200 Hz, 500 Hz, 1000 Hz og 1200 Hz. Der afprøves to gange med hvert frekvens  
 			
 			\subsubsection{Resultater}
-			Det blev observeret ved begge forsøg, at resultatet fra det generede frekvenssignal i VI'et \texttt{genererfrekvenssignal0.2.vi} på 500 Hz var en af grundtonens harmoniske overtoner på 1500 Hz. Dette ses i figur \ref{fig:bt4500}. 
+			Det blev observeret ved begge forsøg, at resultatet fra det generede frekvenssignal i VI'et \texttt{genererfrekvenssignal02.vi} på 500 Hz var en af grundtonens harmoniske overtoner på 1500 Hz. Dette ses i figur \ref{fig:bt4500}. 
 
-			 Det blev observeret i første forsøg, at resultatet fra det generede frekvenssignal i VI'et \texttt{genererfrekvenssignal0.2.vi} på 200 Hz var en af grundtonens harmoniske overtone på 1803 Hz og i andet forsøg observeres en harmonisk overtone 1402,33 Hz. Resultatet fra første forsøg vises i figur \ref{fig:bt4200}.
+			 Det blev observeret i første forsøg, at resultatet fra det generede frekvenssignal i VI'et \texttt{genererfrekvenssignal02.vi} på 200 Hz var en af grundtonens harmoniske overtone på 1803 Hz og i andet forsøg observeres en harmonisk overtone 1402,33 Hz. Resultatet fra første forsøg vises i figur \ref{fig:bt4200}.
 			 
-			 Det blev observeret i første forsøg, at resultatet fra det generede frekvenssignal i VI'et \texttt{genererfrekvenssignal0.2.vi} på 1000 Hz var en af grundtonens harmoniske overtoner på 3000,33 Hz i. Dette ses i figur \ref{fig:bt41000}. I det andet forsøg observeres det at resultatet stemmer overens med den afspillede grundtone. Dette ses på figur \ref{fig:bt41000b}.  
+			 Det blev observeret i første forsøg, at resultatet fra det generede frekvenssignal i VI'et \texttt{genererfrekvenssignal02.vi} på 1000 Hz var en af grundtonens harmoniske overtoner på 3000,33 Hz i. Dette ses i figur \ref{fig:bt41000}. I det andet forsøg observeres det at resultatet stemmer overens med den afspillede grundtone. Dette ses på figur \ref{fig:bt41000b}.  
 			 
-			 Det blev observeret, at resultatet fra den generede frekvenssignal i VI'et \texttt{genererfrekvenssignal0.2.vi} på 1200 Hz stemmer overens med den afspillede grundtone. Dette ses på figur \ref{fig:bt41200}.  
+			 Det blev observeret, at resultatet fra den generede frekvenssignal i VI'et \texttt{genererfrekvenssignal02.vi} på 1200 Hz stemmer overens med den afspillede grundtone. Dette ses på figur \ref{fig:bt41200}.  
 			 
 			\begin{figure}[htb]
 			\centering
@@ -1299,7 +1284,7 @@ Det besluttes at den kodede formel fra VI´et kan bruges i det videre udviklings
 		Arduino'en er med et USB kabel koblet til PC'en.	
 		Mikrofonen er sat i PC'ens minijack-stik og er ført ned i resonatoren hvor den ligger i bunden. Højtaleren placeres i en afstand på en halv diameter af højtalerens membran, ovenfor resonatorens hals. 
 		
-		På PC'en er VI'erne \texttt{genererfrekvenssignal0.2.vi} og \texttt{optagefrekvenssignal0.2.vi} åbnet i LabVIEW og blokdiagrammerne er vist i figur \ref{fig:bdgenerer} og \ref{fig:bdoptage} \\ Testopstillingen er den samme som i bordtest 4, og vises i figur \ref{fig:bt4}.  
+		På PC'en er VI'erne \texttt{genererfrekvenssignal02.vi} og \texttt{optagefrekvenssignal02.vi} åbnet i LabVIEW og blokdiagrammerne er vist i figur \ref{fig:bdgenerer} og \ref{fig:bdoptage} \\ Testopstillingen er den samme som i bordtest 4, og vises i figur \ref{fig:bt4}.  
 		
 
 		\subsubsection{Udførsel}
@@ -1309,11 +1294,11 @@ Det besluttes at den kodede formel fra VI´et kan bruges i det videre udviklings
 				\item Mikrofonen føres ned i resonatoren og ligger i resonatorens bund. 
 				\item Linealen påsættes resonatorens hals så den fungere som afstandsmåler fra halsåbningen.
 				\item Højtaleren holdes manuelt over resonatorhalsen i en afstand på en halv diameter af højtalermembranen. Ved anvendelse ef den specificerede højtaler er afstanden to centimeter. 
-				\item I VI'et \texttt{genererfrekvenssignal0.2.vi} indtastes den ønskede frekvens i den numeriske kontrol \textit{Enter Frequency}. 
+				\item I VI'et \texttt{genererfrekvenssignal02.vi} indtastes den ønskede frekvens i den numeriske kontrol \textit{Enter Frequency}. 
 					\begin{enumerate}
 						\item Koden eksekveres ved at trykke på \textit{Run}. 
 					\end{enumerate} 
-				\item I VI'et \texttt{optagefrekvenssignal0.2.vi} trykkes på \textit{Run}. 
+				\item I VI'et \texttt{optagefrekvenssignal02.vi} trykkes på \textit{Run}. 
 					\begin{enumerate}
 						\item Den maksimale optagede frekvens aflæses i \textit{Max Frequency}. 
 					\end{enumerate}	 	
