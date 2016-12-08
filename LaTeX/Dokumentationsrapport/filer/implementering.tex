@@ -12,7 +12,7 @@
 	
 	€ Her indsættes beskrivelse samt oversigt at navngivning til tests (i en smuk tabel)
 	
-	\begin{table}[]
+	\begin{table}[htb]
 				\centering
 				\caption{Tabeloversigt over udførte enhedstests} 
 				\label{enhedstests}
@@ -56,7 +56,7 @@
 				\end{tabular}
 			\end{table}
 	
-	\begin{table}[]
+	\begin{table}[htb]
 				\centering
 				\caption{Tabeloversigt over udførte enhedstests 2} 
 				\label{enhedstests 2}
@@ -374,7 +374,7 @@
 		\subsubsection{Opstilling og opsætning}
 		På kablerne er pins fastloddet, som igen er loddet fast til mikrofonprintet. Det røde kabel forbinder mikrofonprintets "AUD"{} til "+AI0"{}-indgangen på DAQ'en. Det sorte kabel forbinder mikrofonprintets "GND"{} til "GND"{}-indgangen på DAQ'en. Det blå kabel forbinder mikrofonprintets "VCC"{} til "+5V"{} på DAQ'en. DAQ'en er med USB-kablet tilkoblet PC'en, hvorpå \texttt{optagefrekvenssignal04.vi} er åbnet i LabVIEW. Blockdiagrammet for VI'et er vist i figur \ref{fig:op04}. I en browser på PC´en er onlinetonegenerator.com åbnet.    
 		
-		\begin{figure}
+		\begin{figure}[htb]
 			\centering
 			\includegraphics[width=3in]{optagefrekvenssignal04}
 			\caption{Blokdiagram for VI'et \texttt{optagefrekvenssignal04.vi}.}
@@ -383,7 +383,7 @@
 		
 		Testopstillingen er vist i figur \ref{fig:webop}.\\
 		
-		\begin{figure}
+		\begin{figure}[htb]
 			\centering
 			\includegraphics[width=3in]{webcamop.jpg}
 			\caption{Testopstilling for \ref{subsec:E06} E06-M3}
@@ -402,7 +402,7 @@
 		
 		\subsubsection{Resultater}
 		Resultaterne vises i tabel \ref{E06 resultater}
-		\begin{table}[]
+		\begin{table}[htb]
 				\centering
 				\caption{Tabel over resultater af \ref{subsec:E06} E06-M3.} 
 				\label{E06 resultater}
@@ -469,7 +469,7 @@
 		
 		\subsubsection{Resultater}
 		Resultaterne vises i tabel \ref{elektrettoresultater}. 
-		\begin{table}[]
+		\begin{table}[htb]
 				\centering
 				\caption{Tabel over resultater af \ref{subsec:E07} E07-M4.} 
 				\label{elektrettoresultater}
@@ -535,7 +535,7 @@
 		
 		\subsubsection{Resultater}
 		Resultaterne vises i tabel \ref{E08resultater}. 
-		\begin{table}[]
+		\begin{table}[htb]
 				\centering
 				\caption{Tabel over resultater af \ref{subsec:E08} E08-M4.} 
 				\label{E08resultater}
@@ -892,21 +892,23 @@ Hypotesen accepteres. Det har været muligt at opfange en lyd ved brug af LabVIE
 		\texttt{optagefrekvenssignal0.4.vi} er åbnet og onlinetonegeneratoren er åbnet i browseren på PC´en. Blokdiagrammet er vist i figur \ref{fig:vio5}. I blokdiagrammet i \texttt{optagefrekvenssignal0.4.vi} åbnes DAQ assistant modulet og i \textit{Samples to read} indtastes 800 og i \textit{Rate(Hz)} indtastes 8000. Dette vises i figur \ref{fig:daq}.   
 		 I onlinetonegeneratoren åbnes DMTF generatoren som er vist i figur \ref{fig:DTMF}  
 		
-\begin{figure}
+\begin{figure}[htb]
 			\centering
 			\includegraphics[width=3in]{DAQassistant}
 			\caption{DAQ assistant modulet med korrekt indtastet værdier}
 			\label{fig:daq}
 		\end{figure}		
 		
-		\begin{figure}
+		\begin{figure}[htb]
+
 			\centering
 			\includegraphics[width=3in]{optagefrekvenssignal04}
 			\caption{Blokdiagram for VI'et \texttt{optagefrekvenssignal0.4.vi}.}
 			\label{fig:vio4}
 		\end{figure}
 		
-		\begin{figure}
+		\begin{figure}[htb]
+
 			\centering
 			\includegraphics[width=3in]{DTMF}
 			\caption{DTMF generatoren}
@@ -969,7 +971,7 @@ Hypotesen accepteres. Det har været muligt at opfange en lyd ved brug af LabVIE
 		\subsubsection{Opstilling og opsætning}
 		\texttt{ HelmholtzresonansVolumenformel.vi} er åbnet. Blokdiagrammet for VI´et ses i figur \ref{fig:HHRF} 
 		
-		\begin{figure}
+		\begin{figure}[htb]
 			\centering
 			\includegraphics[width=3in]{HelmholtzformelLabVIEW}
 			\caption{Blokdiagram for VI'et \texttt{Helmholtzresonansformel}.}
@@ -984,7 +986,7 @@ Hypotesen accepteres. Det har været muligt at opfange en lyd ved brug af LabVIE
 		
 		Indtastningen op TI-89´eren ses på figur \ref{fig:TI89},hvor værdierne er angivet således at $v=1671$, $f_0=150$ og $f_b=250$. Resultatet af indtastning giver volumet $W=1069.44$
 		
-		\begin{figure}
+		\begin{figure}[htb]
 			\centering
 			\includegraphics[width=3in]{TI-89}
 			\caption{Indtastning af formel på TI-89 }
@@ -1021,6 +1023,31 @@ Det besluttes at den kodede formel fra VI´et kan bruges i det videre udviklings
 
 
 \section{Integrationstest}
+
+\begin{table}[htb]
+				\centering
+				\caption{Tabeloversigt over udførte integrationstests} 
+				\label{integrationstest}
+				\begin{tabular}{ll}
+					\multicolumn{1}{l|}{\textbf{Test-ID}} & 	  \textbf{Testformål} \\ \hline
+					\multicolumn{1}{l|}{I01-H1/M1/VI02G/VI01\underline{O}}&Generere og opfange lydsignal\\		
+				\end{tabular}
+			\end{table}
+			
+\begin{table}[htb]
+				\centering
+				\caption{Tabeloversigt over udførte integrationstests} 
+				\label{integrationstest}
+				\begin{tabular}{cll}
+					\multicolumn{1}{c|}{\textbf{Test-ID}} &
+					\multicolumn{1}{l|}{\textbf{Indgående enheder}} & 	  \textbf{Testformål} \\ \hline
+					\multicolumn{1}{l|}{I01} &
+					\multicolumn{1}{l|}{H1/M1/VI02G/VI01\underline{O}}&Generere og opfange lydsignal\\		
+				\end{tabular}
+			\end{table}
+	
+
+
 
 	\subsection{Bordtest nr. 1} %% Skal måske omdøbes?!
 	\label{bordtest1}
@@ -1428,17 +1455,17 @@ Det besluttes at den kodede formel fra VI´et kan bruges i det videre udviklings
 	\subsubsection{Opstilling og opsætning}
 	Flasken er skruet af tryksprøjten, og bunden er savet af i et lige snit. Denne flaske har funktionen som resonator i testen. Resonatoren vises i figur \ref{fig:resonator}. Resonatoren er placeret på pladen, og er tætnet med modellervoks i kanten mellem resonator og plade. Trykventilen på flasken er også tætnet med modellervoks. En lineal er påsat flaskehalsen, og benyttes til afstandsmåling. Mikrofonen er monteret på resonatorens inderside med klæbemasse. Mikrofonen placeres mindre end resonatorhalsens længde fra  resonatorhalsens indre åbning. Mikrofonen er endvidere tilkoblet DAQ'en, som er tilsluttet PC'en. På PC'en er LabVIEW VI'et \texttt{optagefrekvenssignal05.vi} åbnet. Blokdiagrammet vises i figur \ref{fig:optagefrekvenssignal05}. Højtaleren er tilsluttet PC'en, og \onlineg er åbnet i en browser, hvor pink noise genereres. Højtaleren holdes i en afstand på en halv diameter af halsåbningen fra halsens indgangen.  
 	
-	\begin{figure}
+	\begin{figure}[htb]
 	\centering
 	\includegraphics[width=3in]{resonator.jpg}
 	\caption{Resonator fremstillet af \sprøjtebeholder.}
 	\label{fig:resonator}	
 	\end{figure}
 
-	\begin{figure}
+	\begin{figure}[htb]
 	\centering
 	\includegraphics[width=4in]{optagefrekvenssignal05.png}
-	\caption{Bolkdiagram for LabVIEW VI'et \texttt{optagefrekvenssignal05.vi}.}
+	\caption{Blokdiagram for LabVIEW VI'et \texttt{optagefrekvenssignal05.vi}.}
 	\label{fig:optagefrekvenssignal05}	
 	\end{figure}
 	
