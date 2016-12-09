@@ -194,12 +194,16 @@ Når bilag VII samt en af de ovenstående kvalitetssikringsbilag er opfyldt, gen
 Det gøres opmærksom på, at producenten er forpligtiget til at vedligeholde sit markedsovervågningssystem, som oprettes jvf. bilag VII. Efter markedsføringen skal producenten fortsat systematisk indsamle og vurdere erfaringer, som opnås ved brug af det medicinske udstyr på markedet. 
 
 \subsection{Risikovurdering}
-I dette afsnit eksemplificeres udførslen af en risikovurdering af anvendelsen af brystvolumenmåleren. Denne risikovurdering er en systematisk fremgangsmåde, hvor identificering og vurdering af risikofaktorer og usikkerhed behandles. 
+I dette afsnit eksemplificeres udførslen af en risikovurdering af anvendelsen af brystvolumenmåleren. Denne risikovurdering er en systematisk fremgangsmåde, hvor sporbarhed er essentielt. Her identificeres og vurderes risikofaktorer, og usikkerhed behandles. 
 Det anbefales, at risikovurderingen udarbejdes af et tværfagligt team med eksperter på deres respektive områder, for at opnå en fyldestgørende og helhedsbetragtende risikovurdring.   
 En risikovurdering består af en \textit{risikoanalyse} og en \textit{risikoevaluering}. I risikoanalysen identificeres en given fare, hvortil risikoen estimeres. I risikoevalueringen vurderes og vælges hvilke risikoniveauer, der er acceptable, og endvidere analyseres muligheder for en evt. risikoreduktion.
 
 	\subsubsection{Risikoanalyse}
-	Der findes forskellige analysemetoder til at identificere risici, og dette eksempel tager udgangspunkt i metoden kaldet \textit{Failure Mode and Effect Analysis}{} (FMEA). Ved brug af FMEA inddeles BMV'en i uafhængige undersystemer, som med fordel kan identificeres ud fra BBD- og IBD-diagrammer€€€€REF. Ved denne inddeling opnås en kvalitativ og systematisk identificering af risikofaktorer. Risikofaktorerne vurderes derefter ud fra en kvantitativ scoring fra 1-10 i hht. \textit{Risk Priority Number}{} (RPN), som fremgår af figur \ref{fig:rpn}. \textit{Sandsynlighed} er et begreb for, hvor ofte årsagen til fejltilstanden opstår. \textit{Konsekvens} definerer, hvilken effekt fejltilstanden har. \textit{Detektion} er et begreb for sandsynligheden for at detektere fejltilstanden. 	 
+	Der findes forskellige analysemetoder til at identificere risici, og dette eksempel tager udgangspunkt i metoden kaldet \textit{Failure Mode and Effect Analysis}{} (FMEA). Ved brug af FMEA inddeles BMV'en i uafhængige undersystemer, som med fordel kan identificeres ud fra BBD- og IBD-diagrammer€€€€REF. Ved denne inddeling opnås en kvalitativ og systematisk identificering af risikofaktorer.
+	I udarbejdelsen af identificering af farer i forbindelse med BVM, er der blevet taget udgangspunkt i det fundne litteratur, sparring med fagpersoner samt egne udviklingserfaringer. Der blev genereret en liste over identificerede farer som er blevet videreudviklet til en FMEA-tabel.  
+	
+	Risikofaktorerne vurderes derefter ud fra en kvantitativ scoring fra 1-10 i hht. \textit{Risk Priority Number}{} (RPN), som fremgår af figur \ref{fig:rpn}. \textit{Sandsynlighed}{}(S) er et begreb for, hvor ofte årsagen til fejltilstanden opstår. \textit{Konsekvens}{}(K) definerer, hvilken effekt fejltilstanden har. \textit{Detektion}{}(D) er et begreb for sandsynligheden for at detektere fejltilstanden. 	
+	 
 	\begin{figure}[htb]
 	\centering
 	\includegraphics[width=5in]{RPN}
@@ -207,14 +211,25 @@ En risikovurdering består af en \textit{risikoanalyse} og en \textit{risikoeval
 	\label{fig:rpn}
 	\end{figure}
 
-	
-		
+\begin{landscape}
+\centering
+\label{my-label}
+\begin{tabular}{llllllllllll}
+\hline
+\multicolumn{1}{|l|}{\textbf{Enhed}} & \multicolumn{1}{l|}{\textbf{Ref.nr.}} & \multicolumn{1}{l|}{\textbf{Funktion}} & \multicolumn{1}{l|}{\textbf{Fare eller fejltilstand}} & \multicolumn{1}{l|}{\textbf{Effekt af fare eller fejltilstand}} & \multicolumn{1}{l|}{\textbf{Årsag til fare eller fejltilstand}} & \multicolumn{1}{l|}{\textbf{S}} & \multicolumn{1}{l|}{\textbf{K}} & \multicolumn{1}{l|}{\textbf{D}} & \multicolumn{1}{l|}{\textbf{RPN}} & \multicolumn{1}{l|}{\textbf{\begin{tabular}[c]{@{}l@{}}Ansvar og\\ deadline\end{tabular}}} & \multicolumn{1}{l|}{\textbf{Ændringsdato}} \\ \hline
+   
+    \multicolumn{1}{|l|}{Resonator} & \multicolumn{1}{l|}{R1} & \multicolumn{1}{l|}{Danner Helmholtz resonans} & \multicolumn{1}{l|}{Ikke-ideel opførelse i port} & \multicolumn{1}{l|}{Fejl i volumenudregning} & \multicolumn{1}{l|}{Fejlberegning af endekorrektion $\Delta l$} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{-} & \multicolumn{1}{l|}{10} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{\begin{tabular}[c]{@{}l@{}}Ansvar og\\ deadline\end{tabular}}} & \multicolumn{1}{l|}{\textbf{Ændringsdato}} \\ \hline
+    
+      \multicolumn{1}{|l|}{} &
+       \multicolumn{1}{l|}{R2} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{Indlejrer luft} & \multicolumn{1}{l|}{Afvigende temperatur} & \multicolumn{1}{l|}{Fejl i volumenudregning} & \multicolumn{1}{l|}{Ukorrekt værdi for temperatur i udregning} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{\begin{tabular}[c]{@{}l@{}}Ansvar og\\ deadline\end{tabular}}} & \multicolumn{1}{l|}{\textbf{Ændringsdato}} \\ \hline  
+      
+       \multicolumn{1}{|l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{\begin{tabular}[c]{@{}l@{}}Ansvar og\\ deadline\end{tabular}}} & \multicolumn{1}{l|}{\textbf{Ændringsdato}} \\ \hline                                                                                                                   
+\end{tabular}
+
+\end{landscape}
+
 	\subsubsection{Risikoevaluering}  
-
-
-
-
-
+	I risikoevalueringen vurderes og bestemmes, hvilke risikoniveauer der er acceptable samt hvilke niveauer der skal behandles mhp. risikoreduktion. Der sættes en tærskelværdi ud fra den definerede RPN-skala, som skelner mellem det acceptable og ikke-acceptable niveau. De risici, som overskider tærskelværdien skal reduceres. Denne risikoreduktion kan foretages ved anvendelse af princippet \textit{as low as reasonably practical}{} (ALARP). ALARP-niveauet er nået, når omkostningerne af ydereligere reduktion bliver uhensigtsmæssigt disproportioneret i forhold til den ellers opnåede risikoreduktion.    
 
 \subsection{Kvalitetssikringssystem}
 
