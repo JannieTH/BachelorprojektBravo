@@ -64,41 +64,56 @@
 	
 	\section{Ikke-funktionelle krav}
 	
-	\subsection{Usability}
+	\subsection{Usability krav}
 	
 \begin{table*}[htb]
 \begin{tabular}{|l|l|l|l|}
 \hline
 \textbf{ID\#} & \textbf{Krav} & \textbf{Kriterie} & \textbf{Baggrund for krav} \\ \hline
-UK1 & \begin{tabular}[c]{@{}l@{}}Volumen angives i\\ afrundet milliliter {[}ml{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}ml anføres efter talværdi, \\ ex. 300 ml\end{tabular} & \begin{tabular}[c]{@{}l@{}}Standard inden for \\ plastikkirurgi\end{tabular} \\ \hline
+UK1 & \begin{tabular}[c]{@{}l@{}}Volumen angives i\\ afrundet milliliter {[}ml{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}ml anføres efter talværdi, \\ \textit{ex. 300 ml}\end{tabular} & \begin{tabular}[c]{@{}l@{}}Standard inden for \\ plastikkirurgi\end{tabular} \\ \hline
 UK2 & \begin{tabular}[c]{@{}l@{}}Volumenangivelse \\ skal kunne aflæses på \\ en afstand af 50 cm.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Talværdi angives i \\ digital talform \\ med en højde på 1 cm.\end{tabular} & Tænkt arbejdssituation \\ \hline
 UK3 & \begin{tabular}[c]{@{}l@{}}Det anvendte sprog er \\ engelsk\end{tabular} & \begin{tabular}[c]{@{}l@{}}Der anvendes ikke \\ andet sprog\end{tabular} & \begin{tabular}[c]{@{}l@{}}Rammer en bred målgruppe \\ på markedet\end{tabular} \\ \hline
 UK4 & \begin{tabular}[c]{@{}l@{}}Design er holdt \\ simpelt\end{tabular} & \begin{tabular}[c]{@{}l@{}}Design er intuitivt og \\ uden unødige funktioner\end{tabular} & Kundekrav \\ \hline
 UK5 & \begin{tabular}[c]{@{}l@{}}Design er i kolde \\ farver\end{tabular} & \begin{tabular}[c]{@{}l@{}}Anvendte farver er fra \\ den kolde farveskala\end{tabular} & \begin{tabular}[c]{@{}l@{}}Repræsenterer et æstestisk, \\ klinisk udtryk som gør \\ patient tryg ved \\ brugsoplevelse\end{tabular} \\ \hline
 \end{tabular}
 \end{table*}
+
+	\subsection{Performance krav}
+	\begin{table*}[htb]
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{ID\#} & \textbf{Krav} & \textbf{Kriterie} & \textbf{Baggrund for krav} \\ \hline
+PK1 & \begin{tabular}[c]{@{}l@{}}Måling skal foretages  \\ hurtigt\end{tabular} & \begin{tabular}[c]{@{}l@{}}Målingen skal være foretaget \\ inden for 10 sekunder\end{tabular} & Kundekrav \\ \hline
+PK2 & \begin{tabular}[c]{@{}l@{}}Lydniveau må ikke \\ være skadeligt for \\ aktører\end{tabular} & \begin{tabular}[c]{@{}l@{}}Lydniveau skal være mindre \\ end 75 dB\end{tabular} & \begin{tabular}[c]{@{}l@{}}Anbefaling fra \\ Sundhedsstyrelsen\end{tabular} \\ \hline
+\end{tabular}
+\end{table*}
+
+\subsection{Supportability krav}
+\begin{table*}[htb]
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{ID\#} & \textbf{Krav} & \textbf{Kriterie} & \textbf{Baggrund for krav} \\ \hline
+SK1 & \begin{tabular}[c]{@{}l@{}}Produktmateriale \\ skal tåle rengøring\end{tabular} & Skal tåle rengøring med sprit & Tænkt arbejdssituation \\ \hline
+SK2 & UI skal tåle rengøring & Skal tåle rengøring med sprit & Tænkt arbejdssituation \\ \hline
+\end{tabular}
+\end{table*}	
+
+\subsection{Design krav}
+\begin{table*}[htb]
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{ID\#} & \textbf{Krav} & \textbf{Kriterie} & \textbf{Baggrund for krav} \\ \hline
+DK1 & \begin{tabular}[c]{@{}l@{}}Skal være intuitiv at \\ anvende\end{tabular} & \begin{tabular}[c]{@{}l@{}}Funktioner skal være af \\ standardiseret design\end{tabular} & \begin{tabular}[c]{@{}l@{}}Organisatoriske og \\ økonomiske overvejelser\end{tabular} \\ \hline
+DK2 & \begin{tabular}[c]{@{}l@{}}Skal kunne anvendes \\ på forskellige \\ bryststørrelser og \\ -former\end{tabular} & \begin{tabular}[c]{@{}l@{}}Skal kunne anvendes på \\ 90\% af tilfældigt udvalgte \\ kvinder\end{tabular} & Tænkt arbejdssituation \\ \hline
+DK3 & \begin{tabular}[c]{@{}l@{}}Må ikke give gener \\ under måling\end{tabular} & \begin{tabular}[c]{@{}l@{}}Resonatoråbning skal være \\ anatomisk udformet\end{tabular} & Etiske overvejelser \\ \hline
+DK4 & \begin{tabular}[c]{@{}l@{}}Må ikke forårsage \\ arbejdsskader\end{tabular} & \begin{tabular}[c]{@{}l@{}}Skal være ergonomisk at \\ anvende\end{tabular} & \begin{tabular}[c]{@{}l@{}}Arbejdsmiljømæssige \\ overvejelser\end{tabular} \\ \hline
+DK5 & \begin{tabular}[c]{@{}l@{}}Design skal være \\ trådløst\end{tabular} & \begin{tabular}[c]{@{}l@{}}Ingen eksterne tilkoblinger \\ med kabler\end{tabular} & Kundekrav \\ \hline
+DK6 & \begin{tabular}[c]{@{}l@{}}Design skal overholde \\ klassificering Im i hht. \\ MDD 93/42/EEC\end{tabular} & \begin{tabular}[c]{@{}l@{}}Dokumentation skal \\ foreligge\end{tabular} & \begin{tabular}[c]{@{}l@{}}Godkendelse af \\ medicinsk udstyr\end{tabular} \\ \hline
+\end{tabular}
+\end{table*}
+	
+	
 		
-	
-	
-		\subsubsection{Tid}
- 		Efter kalibrering må målingen maksimalt tage 10 sek. Dette er et kundekrav fra Pavia Lumholt.
- 		BMV'en skal melde om kalibrereingsbehov hver 10. minut
-		\subsubsection{Enheder}
- 		Målingen skal angives til PK i milliliter(ml.)Plastikkirurger bruger milliliter enheder når de angiver bryststørrelse. 
- 		\subsubsection{UI}
- 		UI skal være en touch-screen, da denne form for skærm er rengøringsvenlig. 
- 		Tekst skal være synligt på en halv meters afstand, da det skal være muligt at aflæse teksten når man står med BVM'en i nogelunde strakt arm.
- 		Sproget skal være engelsk, da der ønskes et sprog som kan læses af formentlig alle plastikkirurger.
-		 UI skal fejlmelde når der opstår uventet fejl 
- 		\subsubsection{Lovgivning for medicinsk udstyr}
- 		BMV'en skal overholde lovgivningen for et medicinsk device. BMV'en skal som et klasse I udstyr og et målingsudstyr opfylde bilag VII og være i overensstemmelse med processerne i bilag VI,V eller VI gældende for metrologisk udstyr.
- 		\subsection{Kalibrering}
- 		BMV'en skal kunne kalibreres efter temperatur og luftfugtighed, da disse kan have en indflydelse på målingens output. 
- 		\subsection*{Nøjagtighed, præcision og linearitet}
- 		BMV'en skal måle nøjagtige og præcice, for at målingerne er valide og kan bruge i praksis. 
- 		Der skal kunne vises en linearitet ved målinger, så målingerne kan bruge i hele bryststørrelsesspektret. 
-	
-	\pagebreak
 	
 	\section{Projektafgrænsning}
 	MoSCoW-modellen er en prioriteringsmetode, som anvendes til afgræsning af projektet. Modellen beskriver, hvilke dele og krav i projektet, som skal opfyldes (\textbf{M}ust), bør opfyldes (\textbf{S}hould), kan opfyldes (\textbf{C}ould) og ikke vil opfyldes (\textbf{W}ould not have). Således gives en struktureret oversigt over, hvilke krav, der er vigtigst at få opfyldt inden for den givne tidsramme, og endvidere, hvilke krav, som efterfølgende med fordel kan implementeres, hvis tidensramme tillader det. Figur \ref{fig:MoSCoW} viser, hvordan de enkelte dele og krav i projektet prioriteres i henhold til MoSCoW-metoden.  
