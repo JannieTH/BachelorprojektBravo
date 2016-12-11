@@ -122,7 +122,7 @@
 \textbf{Test Case:} normalforløb \\
 \textbf{Testforberedelse:} BVM skal være tændt. \\
 
-\begin{tabular}{|l|l|}
+\begin{tabularx}{1\textwidth}{|l|X|}
 \hline
 \textbf{Krav nr.}              & UC1.1  \\ \hline
 \textbf{Acceptkriterie}        & BVM er kalibreret \\ \hline
@@ -130,11 +130,11 @@
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
-\end{tabular}
+\end{tabularx}
 				
 
 
-\begin{tabular}{|l|l|}
+\begin{tabularx}{1\textwidth}{|l|X|}
 \hline
 \textbf{Krav nr.}              & UC1.2-3  \\ \hline
 \textbf{Acceptkriterie}        & Patientens bryst er omsluttet af BVM \\ \hline
@@ -142,10 +142,10 @@
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
-\end{tabular}
+\end{tabularx}
 		
 
-\begin{tabular}{|l|l|}
+\begin{tabularx}{1\textwidth}{|l|X|}
 \hline
 \textbf{Krav nr.}              & UC1.4  \\ \hline
 \textbf{Acceptkriterie}        & BVM er placeret med et ensartet tryk \\ \hline
@@ -153,11 +153,11 @@
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
-\end{tabular}
+\end{tabularx}
 		
 			
 
-\begin{tabular}{|l|l|}
+\begin{tabularx}{1\textwidth}{|l|X|}
 \hline
 \textbf{Krav nr.}              & UC1.5-6  \\ \hline
 \textbf{Acceptkriterie}        & Der er foretaget en måling\\ \hline
@@ -165,10 +165,10 @@
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
-\end{tabular}
+\end{tabularx}
 
 
-\begin{tabular}{|l|l|}
+\begin{tabularx}{1\textwidth}{|l|X|}
 \hline
 \textbf{Krav nr.}              & UC1.7  \\ \hline
 \textbf{Acceptkriterie}        & BVM slukkes\\ \hline
@@ -176,7 +176,7 @@
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
-\end{tabular}\\
+\end{tabularx}\\
 	
 		
 \pagebreak
@@ -184,7 +184,7 @@
 \textbf{Testforberedelse:} BVM skal være tændt\\
 
 
-\begin{tabular}{|l|l|}
+\begin{tabularx}{1\textwidth}{|l|X|}
 \hline
 \textbf{Krav nr.}              & UC1.A1  \\ 
 \hline
@@ -194,14 +194,16 @@
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
-\end{tabular}
+\end{tabularx}
 
 
 \subsection{Ikke-funktionelle krav}
 
 \vspace{5mm}
 
-\begin{tabular}{|l|l|}
+\subsubsection{Usability krav}
+
+\begin{tabularx}{1\textwidth}{|l|X|}
 \hline
 \textbf{Krav nr.}              & UK1  \\ \hline
 \textbf{Acceptkriterie}        & ml. anføres efter talværdi \\ \hline
@@ -209,27 +211,100 @@
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
-\end{tabular}
+\end{tabularx}
 
-\begin{tabular}{|l|l|}
+\begin{tabularx}{1\textwidth}{|l|X|}
 \hline
 \textbf{Krav nr.}              & UK2  \\ \hline
 \textbf{Acceptkriterie}        & Talværdi angives i digital talform med en højde på 1 cm. \\ \hline
-\textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}}UC1.5-6 følges.\\ Det observeres på UI om talværdi er angivet i digital form og\\ skriftstørrelse måles.\end{tabular}  \\ \hline
+\textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}}UC1.5-6 følges.\\ Det observeres på UI om talværdi er angivet\\ i digital form og skriftstørrelse måles\end{tabular}  \\ \hline
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
-\end{tabular}
+\end{tabularx}
 
-\begin{tabular}{|l|l|}
+\begin{tabularx}{1\textwidth}{|l|X|}
 \hline
 \textbf{Krav nr.}              & UK3  \\ \hline
 \textbf{Acceptkriterie}        & Der anvendes ikke andet sprog end engelsk \\ \hline
-\textbf{Testmetode}            & UC1.5-6 følges. Det aflæses på UI om talværdi er angivet i ml.  \\ \hline
+\textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}}UC1 inkl. alternativ flow gennemføres og kontrollerer \\at sproget er engelsk\end{tabular} \\ \hline
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
-\end{tabular}
+\end{tabularx}
+
+\begin{tabularx}{1\textwidth}{|l|X|}
+\hline
+\textbf{Krav nr.}              & UK4  \\ \hline
+\textbf{Acceptkriterie}        & Design er intuitivt og uden unødige funktioner \\ \hline
+\textbf{Testmetode}            &  Der foretages en måling ud fra læsning i simpel brugermanual \\ \hline
+\textbf{Observation}           &  \\ \hline
+\textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
+\textbf{Init./Dato}            &  \\ \hline
+\end{tabularx}
+
+\begin{tabularx}{1\textwidth}{|l|X|}
+\hline
+\textbf{Krav nr.}              & UK5  \\ \hline
+\textbf{Acceptkriterie}        & Anvendte farver er fra den kolde farveskala \\ \hline
+\textbf{Testmetode}            &  Den kolde farveskala holdes op imod BVM \\ \hline
+\textbf{Observation}           &  \\ \hline
+\textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
+\textbf{Init./Dato}            &  \\ \hline
+\end{tabularx}
+
+
+\subsubsection{Reliability krav}
+
+\begin{tabularx}{1\textwidth}{|l|X|}
+\hline
+\textbf{Krav nr.}              & RK1  \\ \hline
+\textbf{Acceptkriterie}        & Nøjagtighed på +/- 10 ml.  \\ \hline
+\textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}} En testserie på 1000 volumenmålinger genereres hvorpå\\ nøjagtighed udregnes\end{tabular}  \\ \hline
+\textbf{Observation}           &  \\ \hline
+\textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
+\textbf{Init./Dato}            &  \\ \hline
+\end{tabularx}
+
+\begin{tabularx}{1\textwidth}{|l|X|}
+\hline
+\textbf{Krav nr.}              & RK2  \\ \hline
+\textbf{Acceptkriterie}        & Afvigelse af præcision på højst 1\% af $f_{b}$  \\ \hline
+\textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}} En testserie på 1000 målinger af $f_{b}$ genereres hvorpå\\ præcision udregnes\end{tabular}  \\ \hline
+\textbf{Observation}           &  \\ \hline
+\textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
+\textbf{Init./Dato}            &  \\ \hline
+\end{tabularx}
+
+\begin{tabularx}{1\textwidth}{|l|X|}
+\hline
+\textbf{Krav nr.}              & RK3  \\ \hline
+\textbf{Acceptkriterie}        & Der må forekomme fejl ved hver 1000. måling  \\ \hline
+\textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}} En testserie på 1000 volumenmålinger generes hvorpå\\ eventuelle fejl registreres \end{tabular}  \\ \hline
+\textbf{Observation}           &  \\ \hline
+\textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
+\textbf{Init./Dato}            &  \\ \hline
+\end{tabularx}
+
+\begin{tabularx}{1\textwidth}{|l|X|}
+\hline
+\textbf{Krav nr.}              & RK4  \\ \hline
+\textbf{Acceptkriterie}        & Varighed af fejlløsning må vare højst 2 minutter  \\ \hline
+\textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}} UC1.A1 følges og varighed registreres \end{tabular}  \\ \hline
+\textbf{Observation}           &  \\ \hline
+\textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
+\textbf{Init./Dato}            &  \\ \hline
+\end{tabularx}
+
+\begin{tabularx}{1\textwidth}{|l|X|}
+\hline
+\textbf{Krav nr.}              & RK5  \\ \hline
+\textbf{Acceptkriterie}        & Kalibrering efter aktuel lufttemperatur  \\ \hline
+\textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}} UC1.1 følges og temperatur aflæses på UI og\\ sammenholdes med målt temperatur i rummet \end{tabular}  \\ \hline
+\textbf{Observation}           &  \\ \hline
+\textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
+\textbf{Init./Dato}            &  \\ \hline
+\end{tabularx}
 
 	
 		
