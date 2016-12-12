@@ -23,18 +23,14 @@ Kravspecifikationen er udarbejdet ud fra den koncepttuelle brystvolumenmåler. G
 			\end{figure*}
 		
 	\section{Systembeskrivelse}
+	
+	Denne systembeskrivelse tager udgangspunkt i den koncepttuelle BVM. Beskrivelse vil derfor være af en detaljegrad der afspejler det koncepttuelle niveau.
 
 		\subsection{Brystvolumenmålerens opbygning} \label{subsec:BVMopb}
 		
+		Den konceptuelle BVM er bygget op af en resonator med en størrelse hvorpå den kan omslutte en patients bryst. Resonatoren har påmonteret en højtaler som sender lyd ind i resonatorporten. Indeni resonatoren er monteret en mikrofon til at opsamle resonansfrekvensen. I resonatorkanten, som tilslutter til brystet, er der påsat tryksensorer til detektering af anlægstrykket. Resonatoren er yderligere monteret med en passende mængde dioder til angivelse af et korrekt anlægstryk. Dioderne er placeret så det er synlige for plasktikkirurgen. Der er ydermere installeret et display, med en størrelse, hvortil det er muligt at anvise progressbar for volumenmåling, det målte volumen samt relevante piktogrammer for procestilstanden. På resonatoren er der ligeledes påført to knapper, M og K, hvor M-knapppen initialiserer en måling og K-knappen initialiserer en kalibrering.       
 		
-		Den akustiske brystvolumenmåler består af en Helmholtz resonator, hvor der er påmonteret en højtaler og en mikrofon. Højtaleren og mikrofonen er koblet til en Arduino Mega 2560 R3. Arduino'en er koblet til en PC, hvor der skrives til Arduino i LabVIEW. \\ 
 		
-		\begin{figure}[htb]
-			\centering
-			\includegraphics[width=5in]{systembeskrivelse}
-			\caption{Beskrivelse af systemets komponenter €€€€}
-			\label{system}
-		\end{figure}
 	
 		\subsection{Brystvolumenmåleren funktionalitet}
 		Når en måling intialiseres med BVM'en afsendes en lyd i resonatoren via højtaleren. Mikrofonen på resonatoren opsamler den reflekterede lyd, og udfra den reflekterede lyd, udregner en algoritme størrelsen på brystvolumen. 
