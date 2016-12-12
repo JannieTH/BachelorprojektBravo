@@ -1002,9 +1002,7 @@ Det er muligt at foretager n antal målinger i samme runtime og gemme disse i en
 		\daqsoft\\
 
 \subsubsection{Opstilling og opsætning}
-		\texttt{optagefrekvenssignal0.5.vi} er åbnet og onlinetonegeneratoren er åbnet i browseren på PC´en. Blokdiagrammet er vist i figur \ref{fig:vio5}. I blokdiagrammet i \texttt{optagefrekvenssignal0.5.vi} åbnes DAQ assistant modulet og i \textit{Samples to read} indtastes 800 og i \textit{Rate(Hz)} indtastes 8000. Dette vises i figur \ref{fig:daq}.   
-		 I onlinetonegeneratoren åbnes DMTF generatoren som er vist i figur \ref{fig:DTMF}  
-				
+		\texttt{optagefrekvenssignal0.5.vi} er åbnet. Blokdiagrammet er vist i figur \ref{fig:vio5}. I blokdiagrammet i \texttt{optagefrekvenssignal0.5.vi} åbnes DAQ assistant modulet og i \textit{Samples to read} indtastes 800 og i \textit{Rate(Hz)} indtastes 8000. Dette vises i figur \ref{fig:daq}.   
 		
 		\begin{figure}[htb]
 
@@ -1019,6 +1017,7 @@ Det er muligt at foretager n antal målinger i samme runtime og gemme disse i en
 			\item I blokdiagrammet indtastes 5 i \textit{Loop Count} og den ønskede sti til den gemte .CSV fil angiver i \textit{file path} i \textit{Write To Spreadsheet File.VI}´et	
 			\item På frontpanelt indtasten 4 sekunder i \textit{Tid} 		
 			\item Der trykkes på run i VI´et som nu optager lyd igennnem DAQ´en.
+			\item VI´et optager omkringværende lyd
 			\item På frontpanelt aflæses om der ligger 5 målinger i array´et
 			\item I den førangivet sti kontrolleres om der er dannet en .CSV fil med de 5 målinger 
 			\end{enumerate}
@@ -1034,9 +1033,9 @@ Da resultatet er fuldt tilfredsstillende, godkendes testhypotesen.
 \subsubsection{Aktion}
 - 
 
-\subsection{E16-VI07\underline{O}}
-\subsubsection{Testformål}
-		Denne test har til formål at afklare om den kodet helmholtzresonansformel i LabVIEW udregner korrekt volumen ud fra givet værdier. 
+\subsection{E16-VIHRF\underline{O}}
+\subsubsection{Testhypotese}
+		 Helmholtzresonansformel i LabVIEW udregner korrekt volumen ud fra kendte givet værdier. 
 		\subsubsection{Produktspecifikationer}
 	
 		\textit{Hardware:}\\
@@ -1047,12 +1046,12 @@ Da resultatet er fuldt tilfredsstillende, godkendes testhypotesen.
 		\labview\\
 	
 		\subsubsection{Opstilling og opsætning}
-		\texttt{ HelmholtzresonansVolumenformel.vi} er åbnet. Blokdiagrammet for VI´et ses i figur \ref{fig:HHRF} 
+		\texttt HRVF.vi} er åbnet. Blokdiagrammet for VI´et ses i figur \ref{fig:HHRF} 
 		
 		\begin{figure}[htb]
 			\centering
 			\includegraphics[width=3in]{HelmholtzformelLabVIEW}
-			\caption{Blokdiagram for VI'et \texttt{Helmholtzresonansformel}.}
+			\caption{Blokdiagram for VI'et \texttt{HRVF}.}
 			\label{fig:HHRF}
 		\end{figure}
 		
@@ -1093,25 +1092,53 @@ Da resultatet er fuldt tilfredsstillende, godkendes testhypotesen.
 	
 		\subsubsection{Konklusion}
 		 
-	Da resultatet af udregningen er ens for begge metoder, godkendes testen. 
+Da resultatet af udregningen er ens for begge metoder, godkendes testenhypotesen.  
 	
 	   \subsubsection{Aktion}
 Det besluttes at den kodede formel fra VI´et kan bruges i det videre udviklingsforløb i LabVIEW. 
 
-\subsection{E17-VI08()\underline{O}}
+
+\subsection{E17-VI07\underline{O}}
 \subsubsection{Testhypotest}
+Det er muligt at foretager n antal målinger i samme runtime og gemme disse i en .CSV fil hvor signalet er opsamlet med DAQ´en. 
 \subsubsection{Produktspecifikationer}
+\textit{Hardware:}\\
+		\PC\\
+		\daq\\
+	
+		\textit{Software:}\\
+		\labview\\
+		\visa\\
+		\vi\\
+		\daqsoft\\
 \subsubsection{Opstilling og opsætning}
+\texttt{optagefrekvenssignal0.7.vi} er åbnet. Blokdiagrammet er vist i figur \ref{fig:vio5}. I blokdiagrammet i \texttt{optagefrekvenssignal0.7.vi} åbnes DAQ assistant modulet og i \textit{Samples to read} indtastes 800 og i \textit{Rate(Hz)} indtastes 8000. Dette vises i figur \ref{fig:daq}.   
+		
+		\begin{figure}[htb]
+
+			\centering
+			\includegraphics[width=3in]{VI07o}
+			\caption{Blokdiagram for VI'et \texttt{optagefrekvenssignal0.7.vi}.}
+			\label{fig:vio5}
+		\end{figure}
+
 \subsubsection{Udførsel}
+\begin{enumerate}
+			\item I blokdiagrammet indtastes 5 i \textit{Loop Count} og den ønskede sti til den gemte .CSV fil angiver i \textit{file path} i \textit{Write To Spreadsheet File.VI}´et	
+			\item På frontpanelt indtasten 4 sekunder i \textit{Tid} 		
+			\item Der trykkes på run i VI´et som nu optager lyd igennnem DAQ´en.
+			\item VI´et optager omkringværende lyd
+			\item På frontpanelt aflæses om der ligger 5 målinger i array´et
+			\item I den førangivet sti kontrolleres om der er dannet en .CSV fil med de 5 målinger 
+			\end{enumerate}
+
 \subsubsection{Resultat}
+På frontpanlet i VI´et ser der 5 målinger og der er ligger i array´et. 
+I den valgt sti ligger der ligeledes en .CSV fil med de 5 målinger.
 \subsubsection{Diskusion}
+-
 \subsubsection{Konklusion}
-
- 
-
-
-
-
+Da resultatet er fuldt tilfredsstillende, godkendes testhypotesen. 
 
 \section{Integrationstest}
 			
