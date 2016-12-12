@@ -233,25 +233,6 @@
 \textbf{Init./Dato}            &  \\ \hline
 \end{tabularx}
 
-\begin{tabularx}{1\textwidth}{|l|X|}
-\hline
-\textbf{Krav nr.}              & UK4  \\ \hline
-\textbf{Acceptkriterie}        & Design er intuitivt og uden unødige funktioner \\ \hline
-\textbf{Testmetode}            &  Der foretages en måling ud fra læsning i simpel brugermanual \\ \hline
-\textbf{Observation}           &  \\ \hline
-\textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
-\textbf{Init./Dato}            &  \\ \hline
-\end{tabularx}
-
-\begin{tabularx}{1\textwidth}{|l|X|}
-\hline
-\textbf{Krav nr.}              & UK5  \\ \hline
-\textbf{Acceptkriterie}        & Anvendte farver er fra den kolde farveskala \\ \hline
-\textbf{Testmetode}            &  Den kolde farveskala holdes op imod BVM \\ \hline
-\textbf{Observation}           &  \\ \hline
-\textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
-\textbf{Init./Dato}            &  \\ \hline
-\end{tabularx}
 
 \vspace{5mm}
 
@@ -280,6 +261,16 @@
 \begin{tabularx}{1\textwidth}{|l|X|}
 \hline
 \textbf{Krav nr.}              & RK3  \\ \hline
+\textbf{Acceptkriterie}        & \begin{tabular}[l]{@{}l@{}} Volumenangivelse skal\\ afrundes til nærmeste hele tal \end{tabular} \\ \hline
+\textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}} UC1.5-6 følges og det kontrolleres\\ at volumen ikke er angivet som decimaltal\end{tabular}  \\ \hline
+\textbf{Observation}           &  \\ \hline
+\textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
+\textbf{Init./Dato}            &  \\ \hline
+\end{tabularx}
+
+\begin{tabularx}{1\textwidth}{|l|X|}
+\hline
+\textbf{Krav nr.}              & RK4  \\ \hline
 \textbf{Acceptkriterie}        & Der må forekomme fejl ved hver 1000. måling  \\ \hline
 \textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}} En testserie på 1000 volumenmålinger generes hvorpå\\ eventuelle fejl registreres \end{tabular}  \\ \hline
 \textbf{Observation}           &  \\ \hline
@@ -289,7 +280,7 @@
 
 \begin{tabularx}{1\textwidth}{|l|X|}
 \hline
-\textbf{Krav nr.}              & RK4  \\ \hline
+\textbf{Krav nr.}              & RK5  \\ \hline
 \textbf{Acceptkriterie}        & Varighed af fejlløsning må vare højst 2 minutter  \\ \hline
 \textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}} UC1.A1 følges og varighed registreres \end{tabular}  \\ \hline
 \textbf{Observation}           &  \\ \hline
@@ -299,7 +290,7 @@
 
 \begin{tabularx}{1\textwidth}{|l|X|}
 \hline
-\textbf{Krav nr.}              & RK5  \\ \hline
+\textbf{Krav nr.}              & RK6  \\ \hline
 \textbf{Acceptkriterie}        & Kalibrering efter aktuel lufttemperatur  \\ \hline
 \textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}} UC1.1 følges og temperatur aflæses på UI og\\ sammenholdes med målt temperatur i rummet \end{tabular}  \\ \hline
 \textbf{Observation}           &  \\ \hline
@@ -362,12 +353,15 @@
 \begin{tabularx}{1\textwidth}{|l|X|}
 \hline
 \textbf{Krav nr.}              & DK1  \\ \hline
-\textbf{Acceptkriterie}        & Funktioner skal være af standardiseret design \\ \hline
-\textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}} En person skal, uden kendskab til brugermanual,\\ intuitivt anvende BVM \end{tabular}  \\ \hline
+\textbf{Acceptkriterie}        & Skal kunne anvendes uden brugermanual \\ \hline
+\textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}} Minimum tyve plastikkirurger skal, uden kendskab til\\ brugermanual, intuitivt anvende BVM \end{tabular}  \\ \hline
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
 \end{tabularx}
+
+\vspace{2mm}
+DK1 kan også anses for at være et usabilitykrav og kan testes iht. ANSI/AAMI HE75:20097/(R)2013(ref€€€€)
 
 \begin{tabularx}{1\textwidth}{|l|X|}
 \hline
@@ -382,7 +376,7 @@
 \begin{tabularx}{1\textwidth}{|l|X|}
 \hline
 \textbf{Krav nr.}              & DK3  \\ \hline
-\textbf{Acceptkriterie}        & Resonatoråbning skal være anatomisk udformet \\ \hline
+\textbf{Acceptkriterie}        & Må ikke giver gener under måling \\ \hline
 \textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}} Ergoterapeut godkender udformning \end{tabular}  \\ \hline
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
