@@ -2,10 +2,10 @@
 \chapter{Kravspecifikation}
 \label{Kravspec}
 	\section{Indledning}
-	Dette kapitel indeholder kravspecifikationen for den akustiske volumenmåler til bryster. Kravspecifikation er udarbejdet i samarbejde med projektets kunde, Pavia Lumholt, speciallæge i plastikkirurgi. 
-	
+	Dette kapitel indeholder kravspecifikationen for den akustiske brystvolumenmåler(BVM). Kravspecifikation er udarbejdet i samarbejde med projektets kunde, Pavia Lumholt, speciallæge i plastikkirurgi. 
 	Kravspecifikationen er opbygget om FURPS+-modellen, som er en helhedsbetragtende teknik til definering af krav.
 	FURPS+ er inddelt i funktionelle og ikke-funktionelle krav. F(functionality) definerer de funktionelle krav, og URPS+ (usability, reliability, perfomance, supportability og +) definerer de ikke-funktionelle krav. I denne kravspecifikation definerer +, designbegrænsninger.  
+Kravspecifikationen er udarbejdet ud fra den koncepttuelle brystvolumenmåler. Grundet test og udviklingsmæssige udfordringer er denne model ikke blevet realiseret. Beskrivelse af den koncepttuelle brystvolumen er beskrevet i afsnit \ref{subsec:BVMopb} Brystvolumenmålerens opbygning 
 		  
 		\subsection{Formål}
 		Kravspecifikation definerer de funktionelle og ikke-funktionelle krav, og fungerer som en bindende kontrakt mellem producent og kunde.
@@ -24,7 +24,9 @@
 		
 	\section{Systembeskrivelse}
 
-		\subsection*{Brystvolumenmålerens opbygning}
+		\subsection{Brystvolumenmålerens opbygning} \label{subsec:BVMopb}
+		
+		
 		Den akustiske brystvolumenmåler består af en Helmholtz resonator, hvor der er påmonteret en højtaler og en mikrofon. Højtaleren og mikrofonen er koblet til en Arduino Mega 2560 R3. Arduino'en er koblet til en PC, hvor der skrives til Arduino i LabVIEW. \\ 
 		
 		\begin{figure}[htb]
@@ -34,7 +36,7 @@
 			\label{system}
 		\end{figure}
 	
-		\subsection*{Brystvolumenmåleren funktionalitet}
+		\subsection{Brystvolumenmåleren funktionalitet}
 		Når en måling intialiseres med BVM'en afsendes en lyd i resonatoren via højtaleren. Mikrofonen på resonatoren opsamler den reflekterede lyd, og udfra den reflekterede lyd, udregner en algoritme størrelsen på brystvolumen. 
 	
 		\subsection{Aktørbeskrivelse}
@@ -75,8 +77,6 @@
 UK1 & \begin{tabular}[c]{@{}l@{}}Volumen angives i\\ afrundet milliliter {[}ml{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}ml anføres efter talværdi, \\ \textit{ex. 300 ml}\end{tabular} & \begin{tabular}[c]{@{}l@{}}Standard inden for \\ plastikkirurgi\end{tabular} \\ \hline
 UK2 & \begin{tabular}[c]{@{}l@{}}Volumenangivelse \\ skal kunne aflæses på \\ en afstand af 50 cm.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Talværdi angives i \\ digital talform \\ med en højde på 1 cm.\end{tabular} & Tænkt arbejdssituation \\ \hline
 UK3 & \begin{tabular}[c]{@{}l@{}}Det anvendte sprog er \\ engelsk\end{tabular} & \begin{tabular}[c]{@{}l@{}}Der anvendes ikke \\ andet sprog end engelsk\end{tabular} & \begin{tabular}[c]{@{}l@{}}Rammer en bred målgruppe \\ på markedet\end{tabular} \\ \hline
-UK4 & \begin{tabular}[c]{@{}l@{}}Design er holdt \\ simpelt\end{tabular} & \begin{tabular}[c]{@{}l@{}}Design er intuitivt og \\ uden unødige funktioner\end{tabular} & Kundekrav \\ \hline
-UK5 & \begin{tabular}[c]{@{}l@{}}Design er i kolde \\ farver\end{tabular} & \begin{tabular}[c]{@{}l@{}}Anvendte farver er fra \\ den kolde farveskala\end{tabular} & \begin{tabular}[c]{@{}l@{}}Repræsenterer et æstestisk, \\ klinisk udtryk som gør \\ patient tryg ved \\ brugsoplevelse\end{tabular} \\ \hline
 \end{tabularx}
 
 
@@ -88,9 +88,10 @@ UK5 & \begin{tabular}[c]{@{}l@{}}Design er i kolde \\ farver\end{tabular} & \beg
 \textbf{\textbf{\begin{tabular}[c]{@{}l@{}}Krav \\ nr.\end{tabular}}} & \textbf{Krav}                                                                        & \textbf{Kriterie}                                                                           & \textbf{Baggrund for krav} \\ \hline
 RK1           & \begin{tabular}[c]{@{}l@{}}Volumenangivelse skal\\ have høj nøjagtighed\end{tabular} & +/- 10 ml.                                                                                  & Kundekrav                  \\ \hline
 RK2           & \begin{tabular}[c]{@{}l@{}}Volumenangivelse skal\\ have stor præcision\end{tabular}  & Afvigelse på 1\% af $f_{b}$                                                                      & Kundekrav                  \\ \hline
-RK3           & \begin{tabular}[c]{@{}l@{}}Hyppighed af \\ fejltilstand\end{tabular}                 & \begin{tabular}[c]{@{}l@{}}Der må forekomme fejl\\ ved hver 1000. måling\end{tabular}       & Tænkt arbejdssituation     \\ \hline
-RK4           & \begin{tabular}[c]{@{}l@{}}Straksafhandling af\\ fejltilstand\end{tabular}           & \begin{tabular}[c]{@{}l@{}}Varighed af fejlløsning\\ må vare højst 2 minutter\end{tabular}  & Tænkt arbejdssituation     \\ \hline
-RK5           & \begin{tabular}[c]{@{}l@{}}Skal kalibreres efter\\ lufttemperatur\end{tabular}       & \begin{tabular}[c]{@{}l@{}}Skal kalibreres efter den\\ aktuelle lufttemperatur\end{tabular} & Volumenudregning           \\ \hline
+RK3           & \begin{tabular}[c]{@{}l@{}}Volumenangivelse skal\\ afrundes til nærmeste hele tal\end{tabular}  &\begin{tabular}[c]{@{}l@{}} Volumenangivelse findes ikke\\ som decimaltal på UI\end{tabular} & Kundekrav                  \\ \hline
+RK4           & \begin{tabular}[c]{@{}l@{}}Hyppighed af \\ fejltilstand\end{tabular}                 & \begin{tabular}[c]{@{}l@{}}Der må forekomme fejl\\ ved hver 1000. måling\end{tabular}       & Tænkt arbejdssituation     \\ \hline
+RK5           & \begin{tabular}[c]{@{}l@{}}Straksafhandling af\\ fejltilstand\end{tabular}           & \begin{tabular}[c]{@{}l@{}}Varighed af fejlløsning\\ må vare højst 2 minutter\end{tabular}  & Tænkt arbejdssituation     \\ \hline
+RK6           & \begin{tabular}[c]{@{}l@{}}Skal kalibreres efter\\ lufttemperatur\end{tabular}       & \begin{tabular}[c]{@{}l@{}}Skal kalibreres efter den\\ aktuelle lufttemperatur\end{tabular} & Volumenudregning           \\ \hline
                
 \end{tabular}
 \end{table*}
@@ -116,7 +117,9 @@ PK2 & \begin{tabular}[c]{@{}l@{}}Lydniveau må ikke \\ være skadeligt for \\ ak
 SK1 & \begin{tabular}[c]{@{}l@{}}Produktmateriale \\ skal tåle rengøring\end{tabular} & Skal tåle rengøring med sprit & Tænkt arbejdssituation \\ \hline
 SK2 & UI skal tåle rengøring & Skal tåle rengøring med sprit & Tænkt arbejdssituation \\ \hline
 \end{tabular}
-\end{table*}	
+\end{table*}
+
+Ved en realisering af den konceptuelle BVM ville der endvidere i dette afsnit være listet krav til softwarearkitektur samt softlovgivning jvf. MDD/93/42/EEC. 
 
 \subsection{Design krav}
 \begin{table*}[!h]
@@ -125,7 +128,7 @@ SK2 & UI skal tåle rengøring & Skal tåle rengøring med sprit & Tænkt arbejd
 \textbf{\textbf{\begin{tabular}[c]{@{}l@{}}Krav \\ nr.\end{tabular}}} & \textbf{Krav} & \textbf{Kriterie} & \textbf{Baggrund for krav} \\ \hline
 DK1 & \begin{tabular}[c]{@{}l@{}}Skal være intuitiv at \\ anvende\end{tabular} & \begin{tabular}[c]{@{}l@{}}Funktioner skal være af \\ standardiseret design\end{tabular} & \begin{tabular}[c]{@{}l@{}}Organisatoriske og \\ økonomiske overvejelser\end{tabular} \\ \hline
 DK2 & \begin{tabular}[c]{@{}l@{}}Skal kunne anvendes \\ på forskellige \\ bryststørrelser og \\ -former\end{tabular} & \begin{tabular}[c]{@{}l@{}}Skal kunne anvendes på \\ 90\% af tilfældigt udvalgte \\ kvinder\end{tabular} & Tænkt arbejdssituation \\ \hline
-DK3 & \begin{tabular}[c]{@{}l@{}}Må ikke give gener \\ under måling\end{tabular} & \begin{tabular}[c]{@{}l@{}}Resonatoråbning skal være \\ anatomisk udformet\end{tabular} & Etiske overvejelser \\ \hline
+DK3 & \begin{tabular}[c]{@{}l@{}}Må ikke give gener \\ under måling\end{tabular} & \begin{tabular}[c]{@{}l@{}}Resonatoråbning må ikke forvolde\\ skader på huden\end{tabular} & Etiske overvejelser \\ \hline
 DK4 & \begin{tabular}[c]{@{}l@{}}Må ikke forårsage \\ arbejdsskader\end{tabular} & \begin{tabular}[c]{@{}l@{}}Skal være ergonomisk at \\ anvende\end{tabular} & \begin{tabular}[c]{@{}l@{}}Arbejdsmiljømæssige \\ overvejelser\end{tabular} \\ \hline
 DK5 & \begin{tabular}[c]{@{}l@{}}Design skal være \\ trådløst\end{tabular} & \begin{tabular}[c]{@{}l@{}}Ingen eksterne tilkoblinger \\ med kabler\end{tabular} & Kundekrav \\ \hline
 DK6 & \begin{tabular}[c]{@{}l@{}}Design skal overholde \\ klassificering Im i hht. \\ MDD 93/42/EEC\end{tabular} & \begin{tabular}[c]{@{}l@{}}Dokumentation skal \\ foreligge\end{tabular} & \begin{tabular}[c]{@{}l@{}}Godkendelse af \\ medicinsk udstyr\end{tabular} \\ \hline
@@ -140,8 +143,8 @@ DK6 & \begin{tabular}[c]{@{}l@{}}Design skal overholde \\ klassificering Im i hh
 	
 	\begin{figure}[htb]
 				\centering
-					\includegraphics[width=4in]{MoSCoWv02}
-					\caption{MoSCoW-model, hvor blablabla €€€}
+					\includegraphics[width=4in]{moscowv03}
+					\caption{MoSCoW-modellen definerer projektets afgrænsning}
 					\label{fig:MoSCoW}
 	\end{figure}	
 		
