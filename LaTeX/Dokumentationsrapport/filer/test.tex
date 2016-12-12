@@ -83,7 +83,7 @@
 				\item \textit{Alle krav skal opfylde de specificerede acceptkriterier i hvert enkelte testskema.}
 				\item \textit{De aktuelle observationer skal svare til de forventede observationer}
 				\item \textit{I >>Godkendt<<-kolonnen skrives >>Ja<<, hvis acceptkriteriet er overholdt.} 
-				\item \textit{I >>Godkendt<<-kolonnen skrives >>Nej<< samt afvigelsesnummer, hvis acceptkriteriet ikke er overholdt.}  
+				\item \textit{I >>Godkendt<<-kolonnen skrives >>Nej<< samt afvigelsesnummer, hvis acceptkriteriet ikke er overholdt.}  \item \textit{Kolonnen >>Init./Dato<< skal udfyldes ved hver udførsel af test}
 			\end{itemize}
 			
 €€€€ Husk an skrive at da vi ikke kører acceptesten, vil der ikke være udarbejede afvigelsesskemaer
@@ -120,7 +120,7 @@
 
 \subsubsection{Use Case 1}
 \textbf{Test Case:} normalforløb \\
-\textbf{Testforberedelse:} BVM skal være tændt. \\
+\textbf{Testforberedelse:} BVM skal være tændt. BVM skal være tændt. Dockingstation til kalibrering skal være tilgængelig. Ved brug af dockingsstation kendes volumen af tom resonator. \\
 
 \begin{tabularx}{1\textwidth}{|l|X|}
 \hline
@@ -148,8 +148,8 @@
 \begin{tabularx}{1\textwidth}{|l|X|}
 \hline
 \textbf{Krav nr.}              & UC1.4  \\ \hline
-\textbf{Acceptkriterie}        & BVM er placeret med et ensartet tryk \\ \hline
-\textbf{Testmetode}            & UI viser \textit{Tryk OK} \\ \hline
+\textbf{Acceptkriterie}        & BVM er placeret med et ensartet anlægstryk \\ \hline
+\textbf{Testmetode}            & Der påføres en kontinuert tryk indtil alle trykdioder på BVM lyser grøn.  \\ \hline
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
@@ -161,7 +161,7 @@
 \hline
 \textbf{Krav nr.}              & UC1.5-6  \\ \hline
 \textbf{Acceptkriterie}        & Der er foretaget en måling\\ \hline
-\textbf{Testmetode}            & Der trykkes på \textit{M} og UI angiver måling\\ \hline
+\textbf{Testmetode}            & Der trykkes på \textit{M} og en progressbar angiver målingsstatus. Volumen angives på UI når måling er foretaget. \\ \hline
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
@@ -181,7 +181,7 @@
 		
 \pagebreak
 \textbf{Test Case:} alternativ flow\\
-\textbf{Testforberedelse:} BVM skal være tændt\\
+\textbf{Testforberedelse:} BVM skal være tændt. Dockingstation til kalibrering skal være tilgængelig. Ved brug af dockingsstation kendes volumen af tom resonator. \\
 
 
 \begin{tabularx}{1\textwidth}{|l|X|}
@@ -195,6 +195,8 @@
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
 \end{tabularx}
+
+
 
 
 \subsection{Ikke-funktionelle krav}
