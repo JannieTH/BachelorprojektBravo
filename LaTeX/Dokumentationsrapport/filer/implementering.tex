@@ -736,8 +736,8 @@
 	    	Da højtaleren kan levere frekvenser fra 90 - 1200 Hz, besluttes det at anvende denne højtaler til det videre testforløb, hvor resonansfrekvens i et tomt kammer måles. 
 	    
 \subsection{E11-VI02G}
-\subsubsection{Testformål} 
-Testhypotese: Der kan igennem LINX LabVIEW Makerhub oprettes en forbindelse til Arduino Mega 2560 r3. 
+\subsubsection{Testhypotese} 
+Der kan igennem LINX LabVIEW Makerhub oprettes en forbindelse til Arduino Mega 2560 r3. 
 \subsubsection{Produktspecifikationer}
 
 \textit{Hardware:}\\
@@ -795,12 +795,14 @@ Der observeres en lyd ud fra højtaleren
 
 Det konkluderes at det har været muligt at skabe en forbindelse  
 igennem LINX LabVIEW Makerhub til Arduino Mega 2560 r3.
+\subsubsection{Aktion}
+-
 
 
 
 \subsection{E12-VI01\underline{O}}
-\subsubsection{Testformål}
-Testhypotese: Det er muligt at opfange en lyd ved brug af LabVIEWs \textit{Graphics and sound} VI´er. 
+\subsubsection{Testhypotese}
+Det er muligt at opfange en lyd ved brug af LabVIEWs \textit{Graphics and sound} VI´er. 
 \subsubsection{Produktspecifikationer}
 
 		\textit{Hardware:}\\
@@ -833,48 +835,77 @@ I grafen på frontpanelet ses der udsving på amplituden når der snakkes til PC
 -
 \subsubsection{Konklusion}
 Hypotesen accepteres. Det har været muligt at opfange en lyd ved brug af LabVIEWs \textit{Graphics and sound} VI´er. 
-
-
+\subsubsection{Aktion}
+-
 
 \subsection{E13-VI02\underline{O}}
-\subsubsection{Testformål}
-\subsubsection{Produktspecifikationer}
-\subsubsection{Opstilling og opsætning}
-\subsubsection{Udførsel}
-\subsubsection{Resultat}
-\subsubsection{Diskusion}
-\subsubsection{Konklusion}
+\subsubsection{Testhypotese}
+Det er muligt at lave en FFT på et lydsignal og detektere maks. frekvensen.  
 
-\subsection{E14-VI05\underline{O}}
-\subsubsection{Testformål}
 \subsubsection{Produktspecifikationer}
-\subsubsection{Opstilling og opsætning}
-\subsubsection{Udførsel}
-\subsubsection{Resultat}
-\subsubsection{Diskusion}
-\subsubsection{Konklusion}
+\textit{Hardware:}\\
+		\PC\\
+	
+\textit{Software:}\\
+		\labview\\
+		\onlineg\\
 
-\subsection{E15-VI06\underline{O}}
-\subsubsection{Testformål}
-\subsubsection{Produktspecifikationer}
 \subsubsection{Opstilling og opsætning}
-\subsubsection{Udførsel}
-\subsubsection{Resultat}
-\subsubsection{Diskusion}
-\subsubsection{Konklusion}
 
-\subsection{E16-VI08\underline{O}}
-\subsubsection{Testformål}
-\subsubsection{Produktspecifikationer}
-\subsubsection{Opstilling og opsætning}
-\subsubsection{Udførsel}
-\subsubsection{Resultat}
-\subsubsection{Diskusion}
-\subsubsection{Konklusion}
+I LabVIEW er det opbygget et VI \textit{optagefrekvenssignal02.VI} af \textit{Graphics and sound} og Textit{Waveforms Measurements}-komponenter. Komponenterne, forbindelserne og de angivede værdier er vist i figur \ref{fig:VIo2}
 
-\subsection{SW LabVIEW FFT af signal}	
-\subsubsection{Testformål}
-		Denne test har til formål at sikre at den maksfrekvens som LabVIEW er kodet til at detektere stemmer overens med den maksfrekvens som findes i det inputsignal som optages.  
+\begin{figure}[htb]
+			\centering
+				\includegraphics[width=3in]{VI02o}
+				\caption{Blokdiagram for \textit{optagefrekvenssignal02.VI}}	
+				\label{fig:VIo2}
+			\end{figure}
+			
+I onlinetonegeneratoren åbnes DMTF generatoren som er vist i figur \ref{fig:DTMF}  
+			
+\subsubsection{Udførsel}
+
+\begin{enumerate}
+			\item En DTMF tone 1 vælges i tonegeneratoren. Den højste frekvens i DTMF tonen noteres.
+			\item  Tonen afspilles og der trykkes på run i VI´et som nu optager tonen.
+			\item Maksfrekvensen aflæses på frontpanlet i \textit{Maks frekvens} og sammenholdes med den tidligere noteret maksfrekvens. Disse skulle gerne stemme overens. 
+\end{enumerate}
+
+			Denne udførsel gentages med tone 5, 9 samt D fra DTMF generatoren.
+
+\subsubsection{Resultat}
+
+\begin{table}[h]
+				\centering
+				\caption{Tabel over resultater}
+				\label{FFTresultater}
+				\begin{tabular}{lll}
+					\multicolumn{1}{l|}{\textbf{DTMF tone}} & 	
+					\multicolumn{1}{l|}{\textbf{Højeste frekvens}} & \textbf{Resultat} \\ \hline
+					\multicolumn{1}{c|}{1}& 
+					\multicolumn{1}{c|}{1209}&1209\\
+					\multicolumn{1}{c|}{5}& 
+					\multicolumn{1}{c|}{1336}&1336\\
+					\multicolumn{1}{c|}{9}& 
+					\multicolumn{1}{c|}{1477}&1477\\
+					\multicolumn{1}{c|}{D}& 
+					\multicolumn{1}{c|}{1633}&1633\\
+					
+	\end{tabular}
+			\end{table}
+\subsubsection{Diskusion}
+
+-
+
+\subsubsection{Konklusion}
+Resultaterne er lig med de afsendte frekvenser. Testhypotesen er godkendt. 
+\subsubsection{Aktion}
+-
+
+\subsection{E14-VI04\underline{O}}	
+\subsubsection{Testhypotese}
+Det er muligt at lave en FFT på et lydsignal og detektere maks. frekvensen med lydsignal fra DAQ.
+
 		\subsubsection{Produktspecifikationer}
 	
 		\textit{Hardware:}\\
@@ -886,7 +917,7 @@ Hypotesen accepteres. Det har været muligt at opfange en lyd ved brug af LabVIE
 		\visa\\
 		\vi\\
 		\daqsoft\\
-		\onlineg\\ 
+		
 	
 		\subsubsection{Opstilling og opsætning}
 		\texttt{optagefrekvenssignal0.4.vi} er åbnet og onlinetonegeneratoren er åbnet i browseren på PC´en. Blokdiagrammet er vist i figur \ref{fig:vio5}. I blokdiagrammet i \texttt{optagefrekvenssignal0.4.vi} åbnes DAQ assistant modulet og i \textit{Samples to read} indtastes 800 og i \textit{Rate(Hz)} indtastes 8000. Dette vises i figur \ref{fig:daq}.   
@@ -926,7 +957,7 @@ Hypotesen accepteres. Det har været muligt at opfange en lyd ved brug af LabVIE
 			
 		\subsubsection{Resultater}
 		
-			\begin{table}[]
+			\begin{table}[htb]
 				\centering
 				\caption{Tabel over resultater}
 				\label{SWhelmholtzresultater}
@@ -951,10 +982,77 @@ Hypotesen accepteres. Det har været muligt at opfange en lyd ved brug af LabVIE
 	
 		\subsubsection{Konklusion}
 		 
-	Resultaterne af testen ligger acceptabelt tæt på de afsendte frekvenser. 
+Resultaterne af testen ligger acceptabelt tæt på de afsendte frekvenser. Hypotesen er godkendt.
 	
 	    \subsubsection{Aktion}
-	    Det besluttes at godkende testen og bruge koden i det videre forløb. 
+	   Det besluttes at koden bruges i det videre udviklingsforløb.
+
+\subsection{E15-VI05\underline{O}}
+\subsubsection{Testhypotese}
+Det er muligt at foretager n antal målinger i samme runtime og gemme disse i en .CSV fil hvor signalet er opsamlet med DAQ´en. 
+\subsubsection{Produktspecifikationer}
+\textit{Hardware:}\\
+		\PC\\
+		\daq\\
+	
+		\textit{Software:}\\
+		\labview\\
+		\visa\\
+		\vi\\
+		\daqsoft\\
+
+\subsubsection{Opstilling og opsætning}
+		\texttt{optagefrekvenssignal0.5.vi} er åbnet og onlinetonegeneratoren er åbnet i browseren på PC´en. Blokdiagrammet er vist i figur \ref{fig:vio5}. I blokdiagrammet i \texttt{optagefrekvenssignal0.5.vi} åbnes DAQ assistant modulet og i \textit{Samples to read} indtastes 800 og i \textit{Rate(Hz)} indtastes 8000. Dette vises i figur \ref{fig:daq}.   
+		 I onlinetonegeneratoren åbnes DMTF generatoren som er vist i figur \ref{fig:DTMF}  
+				
+		
+		\begin{figure}[htb]
+
+			\centering
+			\includegraphics[width=3in]{VI05o}
+			\caption{Blokdiagram for VI'et \texttt{optagefrekvenssignal0.5.vi}.}
+			\label{fig:vio5}
+		\end{figure}
+
+\subsubsection{Udførsel}
+	\begin{enumerate}
+			\item I blokdiagrammet indtastes 5 i \textit{Loop Count} og den ønskede sti til den gemte .CSV fil angiver i \textit{file path} i \textit{Write To Spreadsheet File.VI}´et	
+			\item På frontpanelt indtasten 4 sekunder i \textit{Tid} 		
+			\item Der trykkes på run i VI´et som nu optager lyd igennnem DAQ´en.
+			\item På frontpanelt aflæses om der ligger 5 målinger i array´et
+			\item I den førangivet sti kontrolleres om der er dannet en .CSV fil med de 5 målinger 
+			\end{enumerate}
+			
+\subsubsection{Resultat}
+
+På frontpanlet i VI´et ser der 5 målinger og der er ligger i array´et. 
+I den valgt sti ligger der ligeledes en .CSV fil med de 5 målinger.
+\subsubsection{Diskusion}
+-
+\subsubsection{Konklusion}
+Da resultatet er fuldt tilfredsstillende, godkendes testhypotesen. 
+\subsubsection{Aktion}
+- 
+
+\subsection{E16-VI07\underline{O}}
+\subsubsection{Testformål}
+\subsubsection{Produktspecifikationer}
+\subsubsection{Opstilling og opsætning}
+\subsubsection{Udførsel}
+\subsubsection{Resultat}
+\subsubsection{Diskusion}
+\subsubsection{Konklusion}
+
+\subsection{E17-VI08\underline{O}}
+\subsubsection{Testformål}
+\subsubsection{Produktspecifikationer}
+\subsubsection{Opstilling og opsætning}
+\subsubsection{Udførsel}
+\subsubsection{Resultat}
+\subsubsection{Diskusion}
+\subsubsection{Konklusion}
+
+ 
 
 \subsection{SW LabVIEW volumenformel}	
 \subsubsection{Testformål}
