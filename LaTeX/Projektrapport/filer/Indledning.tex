@@ -24,12 +24,15 @@ Lumholts metode fungerer efter Helmholtz' princip om resonans. Dette princip bes
 Lumholts metode består af en skal med en mindre hals, som omslutter brystet. Ved at indesende en lyd gennem halsen og opfange den reflekterede lyd, kan der bestemmes et volumen for brystet.
  Skallen fungerer som en resonator, hvori luften bevæger sig, når der indsendes en lyd gennem resonatorens hals (herefter omtalt som \textit{port}). Lyden bevæger luften, som opfører sig som en akustisk fjeder i resonatoren. Dette illustreres i  figur \ref{fig:Helmholtzteori}
 
+\vspace{5mm}  
 \begin{figure}[htb]
 \centering
 \includegraphics[width=4in]{Helmholtzresonans}
 \caption{€€ https://newt.phys.unsw.edu.au/jw/Helmholtz.html}
 \label{fig:Helmholtzteori}
 \end{figure}
+\vspace{5mm}  
+
 
 Det har længe været kendt, at man ved brug af Helmholtz' resonansteori, kan bestemme et volumen ud fra resonansfrekvenser (€€ Artikel fra 1987). Fremgangsmåden er at måle resonansfrekvensen i den tomme resonator ($f_{0}$) og efterfølgende resonansfrekvensen i resonatoren, med et objekt placeret deri ($f_{b}$). Ved at kombinere disse to resonansfrevkenser, kan volumen af objektet ($W$) udledes, hvilket eftervises i afnit \ref{subsec:efter}.\\ 
 \subsection{Eftervisning af volumenbestemmelse af objekt ud fra Helmholtz resonansteori}
@@ -71,43 +74,22 @@ $\Downarrow$
 \Wudled
 $\Downarrow$
 \W
+\vspace{5mm}  
 
 \section{Problemformulering}
 Målet med dette projekt er at udvikle et \textit{minimum viable product} (MVP) til volumenmåling af et bryst, i samarbejde med Pavia Lumholt, speciallæge i plastikkirurgi. Systemet bygger videre på de erfaringer, der er opnået ved tidligere prototyper, udviklet af Lumholt. Metoden til brystvolumenmåling baseres fortsat på Helmholtz' resonansteori, mens prototyperne erstattes med nyt hardware og software. Projektet er et udviklingsprojekt, hvor der testes frem mod erfaringer, som kan opstille krav til systemet. Det udviklede system skal kunne måle volumen af et bryst ved at benytte en resonator, hvor i en indsendt lyd reflekteres og opfanges. 
 
 Herudover skal en redegørelse belyse hvilke regulatoriske krav, der skal opfyldes, for at opnå en medicinsk godkendelse samt CE-certificering. Endvidere skal en redegørelse belyse, hvilke metoder der kan benyttes i en risikostyring. 
-\section{Systembeskrivelse}	
-Systembeskrivelsen er opdelt i en konceptuelt og aktuel beskrivelse.
-Denne systembeskrivelse tager udgangspunkt i den koncepttuelle BVM. Beskrivelse vil derfor være af en detaljegrad der afspejler det koncepttuelle niveau.
-
-		\subsection{Den konceptuelle brystvolumenmåler} \label{subsec:BVMopb}
-		
-		Den konceptuelle BVM er bygget op af en resonator med en størrelse hvorpå den kan omslutte en patients bryst. Resonatoren har påmonteret en højtaler som sender lyd ind i resonatorporten. Indeni resonatoren er monteret en mikrofon til at opsamle resonansfrekvensen. I resonatorkanten, som tilslutter til brystet, er der påsat tryksensorer til detektering af anlægstrykket. Resonatoren er yderligere monteret med en passende mængde dioder til angivelse af et korrekt anlægstryk. Dioderne er placeret så det er synlige for plasktikkirurgen. Der er ydermere installeret en CPU til processering af data samt et display, med en størrelse, hvortil det er muligt at anvise progressbar for volumenmåling, det målte volumen samt relevante piktogrammer for procestilstanden. På resonatoren er der ligeledes påført tre knapper, en tænd-og sluk knap, målingsknap og en kalibreringsknap. Knappernes funktion er angivet med et piktogram til hver funktion. Et batteri er ligeledes tilkoblet så BVM bliver et trådløst device.   Et overbliksbillede af de forskellige komponenter som ingår i den konceptuelle BVM findes i figur \ref{fig:ksys} 
-		
-		
-\vspace{5mm}  
-		
-		\begin{figure}[htb]
-			\centering
-				\includegraphics[width=5in]{Ksys}
-				\caption{Diagrammet er en visuel beskrivelse af den konceptuelle brystvolumenmåler}	
-				\label{fig:ksys}
-			\end{figure}	     
-		
-	
-		\subsection{Brystvolumenmåleren funktionalitet}
-		Når en måling intialiseres med BVM'en afsendes en lyd fra højtalerne ind i resonatoren  Mikrofonen indeni resonatoren opsamler den opståede Helmholtzresonans. Igennem en A/D konvertering udregnes  udregner en algoritme størrelsen på brystvolumen. 
-	
-		\subsection{Aktørbeskrivelse}
-		Systemets primære aktør er en plastikkirurg, som bruger BMV'en når han ønsker et objektivt mål på et bryst. Det er udelukkende plastikkirurgen, der  betjener BMV'en under en måling. Som sekundær aktør giver patient et input, sit bryst, til systemet. 
-- Er systemet bygget som en prototype eller et endeligt produkt? 
-- Beskrivelse af det samlede system, der er tænkt realiseret i projektet (illustrationer)
-- Systembeskrivelse: allerede her tages der udgangspunkt i lovgivningsmæssige krav mhp. overensstemmelse med Im
-
 \section{Afgrænsning}
 - Et produkt, som er i sin spæde start, hvor der skal afgrænses
  Professionelt faglig målgruppe,  brug, udleje 
 - Økonomi 
 
+\begin{figure}[]
+\includegraphics[width=5in]{Must}
+\includegraphics[width=5in]{Should.png}	
+\includegraphics[width=5in]{Could.png}
+\includegraphics[width=5in]{Wouldnothave.png}
+\end{figure}
 
 
