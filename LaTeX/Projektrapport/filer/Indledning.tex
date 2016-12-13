@@ -1,23 +1,10 @@
 \chapter{Indledning}
-  
-
-- Et produkt, som er i sin spæde start, hvor der skal afgrænses
- Professionelt faglig målgruppe,  brug, udleje 
-- Økonomi 
-- Udvikling af ny løsning --> testes frem mod krav, erfaringer -> agil proces
-- Produktets problemstilling
-- Konkret problemformulering
-
-- Er systemet bygget som en prototype eller et endeligt produkt? 
-- Beskrivelse af det samlede system, der er tænkt realiseret i projektet (illustrationer)
-- Systembeskrivelse: allerede her tages der udgangspunkt i lovgivningsmæssige krav mhp. overensstemmelse med Im 
-
 
 Indenfor det plastikkirurgiske fagområde, efterspørges en standardiseret metode til måling af et brystvolumen \citep{Refworks:15}. Der foretages i Danmark, et stigende antal operationer inden for  de to klassifikationer; KHAD (\textit{Korrigerende operationer på bryst}) og KHAE (\textit{Rekonstruktioner af bryst}) \citep{{RefWorks:13},{RefWorks:14}}. På nuværende tidspunkt findes der ingen klinisk accepteret teknik til brystvolumenmåling, da der mangler evidens for nøjagtigheden af målet \citep{RefWorks:4}. De mest pålidelige målemetoder er i dag 3D-modellering og MRI-scanning \citep{RefWorks:18}. Disse metoder er omkostningsfulde at anvende i praksis, og den mest benyttede metode er derfor anvendelse af en gennemsigtig, plastikskål, hvor plastikkirurgen subjektivt vurderer udfyldningen af skålen \citep{Refworks:15}. Dette er en hurtig og enkel metode, som læner sig op ad Grossman-Roudner-metoden. Ulempen ved denne metode er, at forskelle på volumenmålinger ikke kan undgås mellem afdelinger samt kirurger da der er tale om en subjektiv vurdering. En standardiseret målemetode vil etablere mere præcise nationale retningslinjer samt udjævne disse forskelle. Endvidere opnås tilfredsstillelse hos patienter, sundhedsmyndigheder samt forsikringsselskaber \citep{Refworks:15}.  
 
-\begin{table}[]
+\begin{table}[htb]
 \centering
-\caption{My caption}
+\caption{Antallet af registrerede operationer på bryst defineret ud fra grupperinger}
 \label{operationer}
 \begin{tabular}{|l|l|r|r|r|}
 \hline
@@ -36,8 +23,24 @@ GRUPPERING & REGION/SYGEHUS & 2012 & 2013 & 2014 \\ \hline
  Professionelt faglig målgruppe,  brug, udleje 
 - Økonomi 
 - Udvikling af ny løsning --> testes frem mod krav, erfaringer -> agil proces
+- Produktets problemstilling
+- Konkret problemformulering
 
-Helmholtz resonans teorien ligger til grund for udviklingen af brystvolumenmåleren. Helmholtzresonatoren er et lukket kammer med en lille halsåbning. Ved at påvirke luften i helmholtzresonatoren opstår Helmholtzresonansen hvor luften bevæger sig som en fjeder i resonatoren. Dette illustreres i  figur \ref{fig:Helmholtzteori}
+- Er systemet bygget som en prototype eller et endeligt produkt? 
+- Beskrivelse af det samlede system, der er tænkt realiseret i projektet (illustrationer)
+- Systembeskrivelse: allerede her tages der udgangspunkt i lovgivningsmæssige krav mhp. overensstemmelse med Im 
+
+
+Pavia Lumholt, speciallæge i plastikkirurgi, er i gang med at udvikle en metode til at give et objektivt mål for brystvolumen. Lumholts metode er opbygget af Helmholtz' teori om resonans. Systemet består af en skal, der omslutter brystet.  
+
+
+der fungerer som en resonator. Når luft presses ind i denne skal . 
+
+ Ved at indsende en lyd gennem halsen og opfange den reflekterende lyd kan der bestemmes et volumen for brystet. Teorien som ligger til grund, hedder Helmholtz resonans. Skallen fungerer som en resonator, hvori luften bevæger sig, når der indsendes en lyd gennem resonatorens hals (herefter omtalt som \textit{port}). Lyden bevæger luften, som opfører sig som en akustisk fjeder i resonatoren. Dette illustreres i  figur \ref{fig:Helmholtzteori}
+
+Jetmotorerne fungerer efter Helmholtz' princip om resonans, som siger, at når luft presses ind i et hulrum, så stiger trykket, således at luft presses ud og bliver suget tilbage ind, noget som sætter svingninger i gang.
+
+Det er dette princip, man ser i aktion, når man får en fløjtelyd, når man blæser hen over en flaske.
 
 \begin{figure}[htb]
 \centering
@@ -46,9 +49,7 @@ Helmholtz resonans teorien ligger til grund for udviklingen af brystvolumenmåle
 \label{fig:Helmholtzteori}
 \end{figure}
 
-
- 
-Helmholtsresonansfrekvensen er givet i dette udtryk. 
+Helmholtz resonansen frekvensen er givet i dette udtryk. 
 \begin{eqnarray}
 \label{eqn:fnul}
 f_{0}&=&\frac{c}{2\pi}\sqrt{\frac{S_{p}}{V \left(l_{p}+\Delta l\right)}}
