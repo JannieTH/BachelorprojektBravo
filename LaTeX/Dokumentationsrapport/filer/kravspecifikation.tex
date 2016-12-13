@@ -26,14 +26,24 @@ Kravspecifikationen er udarbejdet ud fra den koncepttuelle brystvolumenmåler. G
 	
 	Denne systembeskrivelse tager udgangspunkt i den koncepttuelle BVM. Beskrivelse vil derfor være af en detaljegrad der afspejler det koncepttuelle niveau.
 
-		\subsection{Brystvolumenmålerens opbygning} \label{subsec:BVMopb}
+		\subsection{Den konceptuelle brystvolumenmåler} \label{subsec:BVMopb}
 		
-		Den konceptuelle BVM er bygget op af en resonator med en størrelse hvorpå den kan omslutte en patients bryst. Resonatoren har påmonteret en højtaler som sender lyd ind i resonatorporten. Indeni resonatoren er monteret en mikrofon til at opsamle resonansfrekvensen. I resonatorkanten, som tilslutter til brystet, er der påsat tryksensorer til detektering af anlægstrykket. Resonatoren er yderligere monteret med en passende mængde dioder til angivelse af et korrekt anlægstryk. Dioderne er placeret så det er synlige for plasktikkirurgen. Der er ydermere installeret et display, med en størrelse, hvortil det er muligt at anvise progressbar for volumenmåling, det målte volumen samt relevante piktogrammer for procestilstanden. På resonatoren er der ligeledes påført to knapper, M og K, hvor M-knapppen initialiserer en måling og K-knappen initialiserer en kalibrering.       
+		Den konceptuelle BVM er bygget op af en resonator med en størrelse hvorpå den kan omslutte en patients bryst. Resonatoren har påmonteret en højtaler som sender lyd ind i resonatorporten. Indeni resonatoren er monteret en mikrofon til at opsamle resonansfrekvensen. I resonatorkanten, som tilslutter til brystet, er der påsat tryksensorer til detektering af anlægstrykket. Resonatoren er yderligere monteret med en passende mængde dioder til angivelse af et korrekt anlægstryk. Dioderne er placeret så det er synlige for plasktikkirurgen. Der er ydermere installeret et display, med en størrelse, hvortil det er muligt at anvise progressbar for volumenmåling, det målte volumen samt relevante piktogrammer for procestilstanden. På resonatoren er der ligeledes påført tre knapper, en tænd-og sluk knap, målingsknap og en kalibreringsknap. Knappernes funktion er angivet med et piktogram til hver funktion. Et overbliksbillede at de forskellige komponenter som ingår i den konceptuelle BVM findes i figur \ref{fig:ksys} 
 		
+Husk CPU + Batteri
+
+\vspace{5mm}  
+		
+		\begin{figure}[htb]
+			\centering
+				\includegraphics[width=5in]{Ksys}
+				\caption{Diagrammet er en visuel beskrivelse af den konceptuelle brystvolumenmåler}	
+				\label{fig:ksys}
+			\end{figure}	     
 		
 	
 		\subsection{Brystvolumenmåleren funktionalitet}
-		Når en måling intialiseres med BVM'en afsendes en lyd i resonatoren via højtaleren. Mikrofonen på resonatoren opsamler den reflekterede lyd, og udfra den reflekterede lyd, udregner en algoritme størrelsen på brystvolumen. 
+		Når en måling intialiseres med BVM'en afsendes en lyd fra højtalerne ind i resonatoren  Mikrofonen indeni resonatoren opsamler den opståede Helmholtzresonans. Igennem en A/D konvertering udregnes  udregner en algoritme størrelsen på brystvolumen. 
 	
 		\subsection{Aktørbeskrivelse}
 		Systemets primære aktør er en plastikkirurg, som bruger BMV'en når han ønsker et objektivt mål på et bryst. Det er udelukkende plastikkirurgen, der  betjener BMV'en under en måling. Som sekundær aktør giver patient et input, sit bryst, til systemet. 
