@@ -1390,24 +1390,27 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 		
 		På PC'en er VI'erne \texttt{genererfrekvenssignal02.vi} og \texttt{optagefrekvenssignal02.vi} åbnet i LabVIEW og blokdiagrammerne er vist i figur \ref{fig:4gf02} og \ref{fig:4of01} \\ Testopstillingen kan ses på figur \ref{fig:bt4}.  
 		
+\vspace{5mm}
+		
 		\begin{figure}[htb]
 			\centering
 				\includegraphics[width=3in]{gf02}
 				\caption{Blokdiagrammet for \textit{genererfrekvenssignal02.vi}}	
 				\label{fig:4gf02}
 			\end{figure} 
-			
+\vspace{5mm}
 			\begin{figure}[htb]
 			\centering
 				\includegraphics[width=3in]{of01}
 				\caption{Blokdiagram for \textit{optagefrekvenssignal01.VI}}	
 				\label{fig:4of01}
 			\end{figure}
-		
-		\begin{figure}[htb]
+\vspace{5mm}
+
+		\begin{figure}[h]
 			\centering
 				\includegraphics[width=3in]{bordtest4}
-				\caption{Testopstilling for bordtest 4}	
+				\caption{Testopstilling for test \textit{I04-H2/M1/VI02G/VI02\underline{O}}}	
 				\label{fig:bt4}
 			\end{figure}
 		
@@ -1421,22 +1424,23 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 				\item Linealen påsættes resonatorens hals så den fungerer som afstandsmåler fra halsåbningen.
 				\item Højtaleren holdes manuelt over resonatorhalsen i en afstand på en halv diameter af højtalermembranen. Ved anvendelse ef den specificerede højtaler er afstanden to centimeter. 
 				\item I VI'et \texttt{genererfrekvenssignal02.vi} indtastes den ønskede frekvens i den numeriske kontrol \textit{Enter Frequency}. 
-					\begin{enumerate}
+					
 						\item Koden eksekveres ved at trykke på \textit{Run}. 
-					\end{enumerate} 
+					
 				\item I VI'et \texttt{optagefrekvenssignal02.vi} trykkes på \textit{Run}. 
-					\begin{enumerate}
+					
 						\item Den maksimale optagede frekvens aflæses i \textit{Max Frequency}. 
-					\end{enumerate}	 	
+					
 			\end{enumerate}
 			
 			
 			Testen udføres med en frekvens på 200 Hz, 500 Hz, 1000 Hz og 1200 Hz. Der afprøves to gange med hvert frekvens  
 			
 			\subsubsection{Resultater}
-			Det blev observeret ved begge forsøg, at resultatet fra det generede frekvenssignal i VI'et \texttt{genererfrekvenssignal02.vi} på 500 Hz var en af grundtonens harmoniske overtoner på 1500 Hz. Dette ses i figur \ref{fig:bt4500}. 
-
+			
 			 Det blev observeret i første forsøg, at resultatet fra det generede frekvenssignal i VI'et \texttt{genererfrekvenssignal02.vi} på 200 Hz var en af grundtonens harmoniske overtone på 1803 Hz og i andet forsøg observeres en harmonisk overtone 1402,33 Hz. Resultatet fra første forsøg vises i figur \ref{fig:bt4200}.
+			 
+			 Det blev observeret ved begge forsøg, at resultatet fra det generede frekvenssignal i VI'et \texttt{genererfrekvenssignal02.vi} på 500 Hz var en af grundtonens harmoniske overtoner på 1500 Hz. Dette ses i figur \ref{fig:bt4500}. 
 			 
 			 Det blev observeret i første forsøg, at resultatet fra det generede frekvenssignal i VI'et \texttt{genererfrekvenssignal02.vi} på 1000 Hz var en af grundtonens harmoniske overtoner på 3000,33 Hz i. Dette ses i figur \ref{fig:bt41000}. I det andet forsøg observeres det at resultatet stemmer overens med den afspillede grundtone. Dette ses på figur \ref{fig:bt41000b}.  
 			 
