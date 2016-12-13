@@ -1148,10 +1148,10 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 
 
 
-	\subsection{Bordtest nr. 1} %% Skal måske omdøbes?!
+	\subsection{I01-H1/M1/VI02G/VI01\underline{O}} %% Skal måske omdøbes?!
 	\label{bordtest1}
-		\subsubsection{Testformål}
-		Det afprøves, at generere et frekvenssignal som udsendes gennem højtaleren, og derefter opfanges af mikrofonen, hvor den højst målte frekvens til sidst angives.  
+		\subsubsection{Testhypotese}
+		Kan der genereres et kendt frekvenssignal som udsendes gennem højtaleren via arudino´en, og derefter opfanges af PC mikrofonen og hvor (maks) frekvensen angives i LabVIEW. 
 		\subsubsection{Produktspecifikationer}
 		
 		\textit{Hardware:}\\
@@ -1173,10 +1173,17 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 		Højtaleren er loddet til højtalerkablets ene ende, og pin headerne er loddet til kablets anden ende. 
 		Pin headerne er isat Arduino'en i pin 46 (PL3(OC5A)), som et er digitalt PWM output, og til ground (GND). 
 		Arduino'en er med et USB kabel koblet til PC'en. 		
-		På PC'en er VI'et \texttt{genererfrekvenssignal02.vi} åbnet i LabVIEW. Testopstillingen for denne del er vist i figur \ref{fig:etha}, og blokdiagrammet er vist i figur \ref{fig:bdgenerer}.\\ 
+		På PC'en er VI'et \texttt{genererfrekvenssignal02.vi} åbnet i LabVIEW.     		Blokdiagrammet er vist i figur \ref{fig:bdgenerer}.\\ 
+ 
+\begin{figure}[htb]
+			\centering
+				\includegraphics[width=3in]{gf02}
+				\caption{Blokdiagrammet for \textit{genererfrekvenssignal02.vi}}	
+				\label{fig:gf01}
+			\end{figure} 
  
 		\textit{2. delopstilling}:\\
-		Mikrofonen er sat i PC'ens minijack-stik. På PC'en er VI'et \texttt{optagefrekvenssignal0.1.vi} åbnet i LabVIEW. Testopstillingen for denne del er vist i figur \ref{fig:etmik}, og blokdiagrammet er vist i figur \ref{fig:bdoptage}.\\ 
+		Mikrofonen er sat i PC'ens minijack-stik. På PC'en er VI'et \texttt{optagefrekvenssignal0.1.vi} åbnet i LabVIEW. Blokdiagrammet er vist i figur \ref{fig:bdoptage}.\\ 
 		
 		\subsubsection{Udførsel}
 			\begin{enumerate}
@@ -1195,14 +1202,14 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 			Punkt 1-4 gentages med frekvenser på: 100 Hz, 150 Hz, 200 Hz, 400 Hz, 500 Hz, 600 Hz og 700 Hz. 
 			
 			\subsubsection{Resultater}
-			Den maksimale optagede frekvens var ikke tilnærmelsesvis frekvensen på den udsendte tone.
+			Den maksimale optagede frekvens var ikke tilnærmelsesvis frekvensen på den udsendte tone ved alle afprøvede frekvenser. 
 			\subsubsection{Diskussion}
 			Det ønskede resultat er frekvensen på den udsendte tone, hvilket ikke var tilfældet i denne test. Hvor er fejlen opstået; er der fejl i LabVIEW-kode eller hardware? 
 			\subsubsection{Konklusion}
-			Det er nødvendigt at undersøge om fejlen opstår i vores hardware eller software. 
+			Da resultatet ikke er tilfredsstillende forkastes hypotesen. 
 			\subsubsection{Aktion}
-			Det skal med en online tonegenerator undersøges, hvor fejlen er opstået. 
-
+			Det er nødvendigt at undersøge om fejlen opstår i vores hardware eller software. Onlinetonegenerator anvendes til at undersøge dette. 
+			 
 	\subsection{Bordtest nr. 2} %% Skal måske omdøbes?!
 		\subsubsection{Testformål}
 		Det afprøves, at generere et frekvenssignal fra en online tonegenerator, som udsendes gennem PC'ens højtaler, og derefter opfanges af mikrofonen, hvor den højst målte frekvens til sidst angives.  
