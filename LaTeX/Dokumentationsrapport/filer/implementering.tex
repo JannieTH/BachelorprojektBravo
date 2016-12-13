@@ -1070,7 +1070,7 @@ Det er muligt at foretager n antal målinger i samme runtime og gemme disse i en
 		\vi\\
 		\daqsoft\\
 \subsubsection{Opstilling og opsætning}
-\textit{optagefrekvenssignal0.7.vi} er åbnet. Blokdiagrammet er vist i figur \ref{fig:vio5}. I blokdiagrammet i \texttt{optagefrekvenssignal0.7.vi} åbnes DAQ assistant modulet og i \textit{Samples to read} indtastes 800 og i \textit{Rate(Hz)} indtastes 8000. Dette vises i figur \ref{fig:daq}.   
+\textit{optagefrekvenssignal0.7.vi} er åbnet. Blokdiagrammet er vist i figur \ref{fig:vio5}. I blokdiagrammet i \texttt{optagefrekvenssignal0.7.vi} åbnes DAQ assistant modulet og i \textit{Samples to read} indtastes 800 og i \textit{Rate(Hz)} indtastes 8000. Dette vises i figur \ref{fig:vio5}.   
 		
 		\begin{figure}[htb]
 
@@ -1103,7 +1103,7 @@ Det besluttes at dette \textit{optagefrekvenssignal0.7.vi} bruges i det videre u
 \section{Integrationstest}
 
 Dette afsnit..
-Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk på den lydgivende enhed.
+Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk på den lydgivende enhed.\\
 			
 \begin{table}[htb]
 				\centering
@@ -1148,7 +1148,7 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 
 
 
-	\subsection{I01-H1/M1/VI02G/VI01\underline{O}} %% Skal måske omdøbes?!
+	\subsection{I01-H1/M1/VI02G/VI01\underline{O}} 
 	\label{bordtest1}
 		\subsubsection{Testhypotese}
 		Kan der genereres et kendt frekvenssignal som udsendes gennem højtaleren via arudino´en, og derefter opfanges af PC mikrofonen og hvor (maks) frekvensen angives i LabVIEW. 
@@ -1160,7 +1160,7 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 		\pins\\
 		\arduino\\
 		\PC\\
-		\usbkabel\\
+		\usbkabel
 	
 		\textit{Software:}\\
 		\labview\\
@@ -1173,30 +1173,36 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 		Højtaleren er loddet til højtalerkablets ene ende, og pin headerne er loddet til kablets anden ende. 
 		Pin headerne er isat Arduino'en i pin 46 (PL3(OC5A)), som et er digitalt PWM output, og til ground (GND). 
 		Arduino'en er med et USB kabel koblet til PC'en. 		
-		På PC'en er VI'et \texttt{genererfrekvenssignal02.vi} åbnet i LabVIEW.     		Blokdiagrammet er vist i figur \ref{fig:bdgenerer}.\\ 
+		På PC'en er VI'et \texttt{genererfrekvenssignal02.vi} åbnet i LabVIEW.     		Blokdiagrammet er vist i figur \ref{fig:1gf02}.\\ 
  
 \begin{figure}[htb]
 			\centering
 				\includegraphics[width=3in]{gf02}
 				\caption{Blokdiagrammet for \textit{genererfrekvenssignal02.vi}}	
-				\label{fig:gf01}
+				\label{fig:1gf02}
 			\end{figure} 
  
 		\textit{2. delopstilling}:\\
-		Mikrofonen er sat i PC'ens minijack-stik. På PC'en er VI'et \texttt{optagefrekvenssignal0.1.vi} åbnet i LabVIEW. Blokdiagrammet er vist i figur \ref{fig:bdoptage}.\\ 
+		Mikrofonen er sat i PC'ens minijack-stik. På PC'en er VI'et \texttt{optagefrekvenssignal0.1.vi} åbnet i LabVIEW. Blokdiagrammet er vist i figur \ref{fig:1of01}.\\
+		
+		\begin{figure}[htb]
+			\centering
+				\includegraphics[width=3in]{of01}
+				\caption{Blokdiagram for \textit{optagefrekvenssignal01.VI}}	
+				\label{fig:1of01}
+			\end{figure}
 		
 		\subsubsection{Udførsel}
 			\begin{enumerate}
 				\item Højtaleren holdes manuelt således membranen står i lodret position. 
 				\item Mikrofonen holdes manuelt, vendt mod højtaleren, i en afstand på 5 cm. 
 				\item I VI'et \texttt{genererfrekvenssignal02.vi} indtastes den ønskede frekvens i den numeriske kontrol \textit{Enter Frequency}. 
-					\begin{enumerate}
+				
 						\item Koden eksekveres ved at trykke på \textit{Run}. 
-					\end{enumerate} 
+					
 				\item I VI'et \texttt{optagefrekvenssignal0.1.vi} trykkes på \textit{Run}. 
-					\begin{enumerate}
-						\item Den maksimale optagede frekvens aflæses i \textit{Max Frequency}. 
-					\end{enumerate}	  
+					
+						\item Den maksimale optagede frekvens aflæses i \textit{Max Frequency}.   
 			\end{enumerate}
 			
 			Punkt 1-4 gentages med frekvenser på: 100 Hz, 150 Hz, 200 Hz, 400 Hz, 500 Hz, 600 Hz og 700 Hz. 
@@ -1210,35 +1216,42 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 			\subsubsection{Aktion}
 			Det er nødvendigt at undersøge om fejlen opstår i vores hardware eller software. Onlinetonegenerator anvendes til at undersøge dette. 
 			 
-	\subsection{Bordtest nr. 2} %% Skal måske omdøbes?!
-		\subsubsection{Testformål}
-		Det afprøves, at generere et frekvenssignal fra en online tonegenerator, som udsendes gennem PC'ens højtaler, og derefter opfanges af mikrofonen, hvor den højst målte frekvens til sidst angives.  
+	\subsection{I02-M1/VI01} 
+	
+		\subsubsection{Testhypotese}
+		Kan der genereres et frekvenssignal fra en online tonegenerator, som udsendes gennem PC'ens højtaler, og derefter opfanges af mikrofonen, hvor den højst målte frekvens til sidst angives i LabVIEW.  
 		
 		\subsubsection{Produktspecifikationer}
 		
 		\textit{Hardware:}\\
 		\mikrofon\\
-		\PC\\
+		\PC
 	
 		\textit{Software:}\\
 		\labview\\
-		\visa\\
-		\vi\\
-		\ardsw\\
 		\texttt{onlinetonegenerator.com}
 		
 		\subsubsection{Opstilling og opsætning}
-		Mikrofonen er sat i PC'ens minijack-stik. På PC'en er VI'et \texttt{optagefrekvenssignal0.1.vi} åbnet i LabVIEW. Testopstillingen for denne del er vist i figur \ref{fig:etmik}, og blokdiagrammet er vist i figur \ref{fig:bdoptage}.\\ 
-		I en internetbrowser er hjemmesiden \texttt{www.onlinetonegenerator.com} åbnet, og PC'ens højtalere er slået til. 
+		Mikrofonen er sat i PC'ens minijack-stik. På PC'en er VI'et \texttt{optagefrekvenssignal0.1.vi} åbnet i LabVIEW. Blokdiagrammet er vist i figur \ref{fig:2of01}.\\ 
+		
+		
+		\begin{figure}[htb]
+			\centering
+				\includegraphics[width=3in]{of01}
+				\caption{Blokdiagram for \textit{optagefrekvenssignal01.VI}}	
+				\label{fig:2of01}
+			\end{figure}
+		
+		I en internetbrowser er hjemmesiden \texttt{www.onlinetonegenerator.com} åbnet, og PC'ens højtalere er slået til og volumen er sat til maksimum.
 		
 		\subsubsection{Udførsel}
 			\begin{enumerate}
 				\item Mikrofonen holdes manuelt, vendt mod PC'ens højtaler, i en afstand på 5 cm. 
 				\item I \texttt{onlinetonegenerator.com} genereres et signal med den ønskede frekvens. 
 				\item I VI'et \texttt{optagefrekvenssignal0.1.vi} trykkes på \textit{Run}. 
-					\begin{enumerate}
-						\item Den maksimale optagede frekvens aflæses i \textit{Max Frequency}. 
-					\end{enumerate}	  
+					
+					\item Den maksimale optagede frekvens aflæses i \textit{Max Frequency}. 
+					  
 			\end{enumerate}
 			
 			Punkt 1-4 gentages med frekvenser på: 100 Hz, 150 Hz, 200 Hz, 400 Hz, 500 Hz, 600 Hz og 700 Hz. 
@@ -1248,13 +1261,14 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 			\subsubsection{Diskussion}
 			Der opnås nu pæne resultater, og der reflekteres over om resultaterne i \ref{bordtest1} skyldes fejl i højtaler eller fejl i VI'et \texttt{genererfrekvenssignal02.vi}. 
 			\subsubsection{Konklusion}
-			Det konkluderes, at der ikke er fejl i VI'et \texttt{optagefrekvenssignal0.1.vi}. 
+			Testresultaterne er tilfredsstillende og testhypotesen accepteres. Det konkluderes, at der ikke er fejl i VI'et \texttt{optagefrekvenssignal0.1.vi}. 
 			\subsubsection{Aktion}
 			Det skal undersøges, hvilken forskel der er på frekvenssignalet fra onlinetonegenerator.com og det generede frekvenssignal udsendt fra højtaleren ABS-224-RC.  
 	
-		\subsection{Bordtest nr. 3} %% Skal måske omdøbes?!
-		\subsubsection{Testformål}
-		Det undersøges, hvilken forskel der er på frekvenssignalet fra onlinegenerator.com og det genererede frekvenssignal udsendt fra højtaleren ABS-224-RC.  
+ 		\subsection{I03-H1/M1/VI02G/VI02\underline{O}}
+		
+		\subsubsection{Testhypotese}
+		 Frekvenssignalet fra onlinegenerator.com og det genererede frekvenssignal udsendt fra højtaleren ABS-224-RC er forskellige ved analyse i LabVIEW.
 		
 		\subsubsection{Produktspecifikationer}
 		
@@ -1266,27 +1280,41 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 		\arduino\\
 		\usbkabel\\
 		\PC\\
-		\mikrofon\\
+		\mikrofon
 	
 		\textit{Software:}\\
 		\labview\\
 		\visa\\
 		\vi\\
 		\ardsw\\
-		\texttt{onlinetonegenerator.com}
+		\onlineg\\
 		
 		\subsubsection{Opstilling og opsætning}
 		\textit{1. delopstilling}:\\
 		Højtaleren er loddet til højtalerkablets ene ende, og pin headerne er loddet til kablets anden ende. 
 		Pin headerne er isat Arduino'en i pin 46 (PL3(OC5A)), som et er digitalt PWM output, og til ground (GND). 
 		Arduino'en er med et USB kabel koblet til PC'en. 		
-		På PC'en er VI'et \texttt{genererfrekvenssignal02.vi} åbnet i LabVIEW. Testopstillingen for denne del er vist i figur \ref{fig:etha}, og blokdiagrammet er vist i figur \ref{fig:bdgenerer}.\\ 
+		På PC'en er VI'et \texttt{genererfrekvenssignal02.vi} åbnet i LabVIEW. Blokdiagrammet er vist i figur \ref{fig:2gf02}.\\ 
  
+ \begin{figure}[htb]
+			\centering
+				\includegraphics[width=3in]{gf02}
+				\caption{Blokdiagrammet for \textit{genererfrekvenssignal02.vi}}	
+				\label{fig:2gf02}
+			\end{figure} 
+			
 		\textit{2. delopstilling}:\\
-		Mikrofonen er sat i PC'ens minijack-stik. På PC'en er VI'et \texttt{optagefrekvenssignal0.1.vi} åbnet i LabVIEW. Testopstillingen for denne del er vist i figur \ref{fig:etmik}, og blokdiagrammet er vist i figur \ref{fig:bdoptage}.\\  
+		Mikrofonen er sat i PC'ens minijack-stik. På PC'en er VI'et \texttt{optagefrekvenssignal0.1.vi} åbnet i LabVIEW. Testopstillingen for denne del er vist i figur \ref{fig:etmik}, og blokdiagrammet er vist i figur \ref{fig:3of01}.\\  
+
+		\begin{figure}[htb]
+			\centering
+				\includegraphics[width=3in]{of01}
+				\caption{Blokdiagram for \textit{optagefrekvenssignal01.VI}}	
+				\label{fig:3of01}
+			\end{figure}		
 		
 		\textit{3. delopstilling}:\\
-		I en internetbrowser er hjemmesiden \texttt{www.onlinetonegenerator.com} åbnet, og PC'ens højtalere er slået til. 
+		I en internetbrowser er hjemmesiden \texttt{www.onlinetonegenerator.com} åbnet, og PC'ens højtalere er slået til og volumen er sat til maksimum. 
 		
 		\subsubsection{Udførsel}
 			
@@ -1295,13 +1323,13 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 				\item Højtaleren holdes manuelt således membranen står i lodret position. 
 				\item Mikrofonen holdes manuelt, vendt mod højtaleren, i en afstand på 5 cm. 
 				\item I VI'et \texttt{genererfrekvenssignal02.vi} indtastes den ønskede frekvens i den numeriske kontrol \textit{Enter Frequency}. 
-					\begin{enumerate}
-						\item Koden eksekveres ved at trykke på \textit{Run}. 
-					\end{enumerate} 
+					
+					\item Koden eksekveres ved at trykke på \textit{Run}. 
+				
 				\item I VI'et \texttt{optagefrekvenssignal0.1.vi} trykkes på \textit{Run}. 
-					\begin{enumerate}
-						\item Den maksimale optagede frekvens aflæses i \textit{Max Frequency}. 
-					\end{enumerate}	 	
+					
+				\item Den maksimale optagede frekvens aflæses i \textit{Max Frequency}. 
+				
 			\end{enumerate}
 			
 			
@@ -1310,26 +1338,27 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 				\item Mikrofonen holdes manuelt, vendt mod PC'ens højtaler, i en afstand på 5 cm. 
 				\item I \texttt{onlinetonegenerator.com} genereres et signal med den ønskede frekvens. 
 				\item I VI'et \texttt{optagefrekvenssignal0.1.vi} trykkes på \textit{Run}. 
-					\begin{enumerate}
+					
 						\item Den maksimale optagede frekvens aflæses i \textit{Max Frequency}. 
-					\end{enumerate}	  
+					  
 			\end{enumerate}
 		
 			Deltestene gentages med frekvenser på: 100 Hz, 150 Hz, 200 Hz, 400 Hz, 500 Hz, 600 Hz, 700, 1000 0g 1200 Hz, og resultaterne sammenholdes. 
 			
 			\subsubsection{Resultater}
-			 Det blev observeret, at resultaterne fra det generede frekvenssignal i VI'et \texttt{genererfrekvenssignal02.vi} var grundtonens harmoniske overtoner, idet frekvensen udsendes som et firkantsignal. Kun ved højfrekvente signaler (<1 kHz), blev grundtonen opfanget. 
-			 Ved at benytte \texttt{onlinetonegenerator.com}, kunne der udsendes et sinussignal med en given frekvens, som blev korrekt opfanget (+/- 0.5 Hz).     
+			 Det blev observeret, at de afsendte frekvenser fra det generede frekvenssignal i VI'et \textit{genererfrekvenssignal02.vi} ikke stemte overens med de aflæste i maks frekvens-feltet.  
+			 Det erfaredes at det var grundtonens harmoniske overtoner, idet frekvensen udsendes som et firkantsignal. Kun ved højfrekvente signaler (<1 kHz), blev grundtonen opfanget. 
+			 Ved at benytte \texttt{onlinetonegenerator.com}, kunne der udsendes et sinussignal med en given frekvens, som blev korrekt opfanget (+/- 0.5 Hz) i maks frekvens-feltet.     
 			\subsubsection{Diskussion}
-			Der opnås pæne resultater ved at bruge et sinussignal, men der er desværre meget kompliceret at generere sinussignaler til en Arduino.   
+			Der opnås pæne resultater ved at bruge et sinussignal. Det overvejes om det er muligt at generer sinussignaler til en Arduino men der er desværre meget kompliceret at generere sinussignaler til en Arduino.   
 			\subsubsection{Konklusion}
-			Det konkluderes, at der ikke er fejl i software og hardware, og de unøjagtige resultater skyldes firkantsignalets harmoniske overtoner.  
+			Testhypotesen accepteres. Det konkluderes, at der ikke er fejl i software og hardware, og de unøjagtige resultater skyldes firkantsignalets harmoniske overtoner.  
 			\subsubsection{Aktion}
-			Det skal undersøges, om det er muligt at filtrere firkantssignalets harmoniske overtoner fra, således firkantssignalet kan benyttes. 
+			Det skal undersøges, om det er muligt at filtrere firkantssignalets harmoniske overtoner fra vha. en resonator, således firkantssignalet kan benyttes. 
 		
-		\subsection{Bordtest nr. 4} %% Skal måske omdøbes?!
+		\subsection{I04-H2/M1/VIO2G/VIO2\underline{O}} 
 		\subsubsection{Testformål}
-		Det undersøges, om en resonatorlignende beholder kan dæmpe de harmoniske overtoner fra firkantsignalet. 
+		Kan en resonatorlignende beholder dæmpe de harmoniske overtoner fra firkantsignalet. 
 		
 		\subsubsection{Produktspecifikationer}
 		
@@ -1359,7 +1388,21 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 		Arduino'en er med et USB kabel koblet til PC'en.	
 		Mikrofonen er sat i PC'ens minijack-stik og er ført ned i resonatoren hvor den ligger i bunden. Højtaleren placeres i en afstand på en halv diameter af højtalerens membran, ovenfor resonatorens hals. 
 		
-		På PC'en er VI'erne \texttt{genererfrekvenssignal02.vi} og \texttt{optagefrekvenssignal02.vi} åbnet i LabVIEW og blokdiagrammerne er vist i figur \ref{fig:bdgenerer} og \ref{fig:bdoptage} \\ Testopstillingen kan ses på figur \ref{fig:bt4}.  
+		På PC'en er VI'erne \texttt{genererfrekvenssignal02.vi} og \texttt{optagefrekvenssignal02.vi} åbnet i LabVIEW og blokdiagrammerne er vist i figur \ref{fig:4gf02} og \ref{fig:4of01} \\ Testopstillingen kan ses på figur \ref{fig:bt4}.  
+		
+		\begin{figure}[htb]
+			\centering
+				\includegraphics[width=3in]{gf02}
+				\caption{Blokdiagrammet for \textit{genererfrekvenssignal02.vi}}	
+				\label{fig:4gf02}
+			\end{figure} 
+			
+			\begin{figure}[htb]
+			\centering
+				\includegraphics[width=3in]{of01}
+				\caption{Blokdiagram for \textit{optagefrekvenssignal01.VI}}	
+				\label{fig:4of01}
+			\end{figure}
 		
 		\begin{figure}[htb]
 			\centering
