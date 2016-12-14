@@ -1357,7 +1357,7 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 			Det skal undersøges, om det er muligt at filtrere firkantssignalets harmoniske overtoner fra vha. en resonator, således firkantssignalet kan benyttes. 
 		
 		\subsection{I04-H2/M1/VIO2G/VIO2\underline{O}} 
-		\subsubsection{Testformål}
+		\subsubsection{Testhypotese}
 		Kan en resonatorlignende beholder dæmpe de harmoniske overtoner fra firkantsignalet. 
 		
 		\subsubsection{Produktspecifikationer}
@@ -1446,12 +1446,7 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 			 
 			 Det blev observeret, at resultatet fra den generede frekvenssignal i VI'et \texttt{genererfrekvenssignal02.vi} på 1200 Hz stemmer overens med den afspillede grundtone. Dette ses på figur \ref{fig:bt41200}.  
 			 
-			\begin{figure}[htb]
-			\centering
-				\includegraphics[width=4in]{Bordtest4500Hz}
-				\caption{Resultat for for bordtest 4 ved anvendelse af 500 Hz}	
-				\label{fig:bt4500}
-			\end{figure} 
+			
 			
 			\begin{figure}[htb]
 			\centering
@@ -1460,32 +1455,40 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 				\label{fig:bt4200}
 			\end{figure} 
 			
+\begin{figure}[htb]
+			\centering
+				\includegraphics[width=4in]{Bordtest4500Hz}
+				\caption{Resultat for\textit{I04-H2/M1/VI02G/VI02\underline{O}} ved anvendelse af 500 Hz}	
+				\label{fig:bt4500}
+			\end{figure} 			
+			
 			\begin{figure}[htb]
 			\centering
 				\includegraphics[width=4in]{Bordtest41000Hz}
-				\caption{Resultat for for bordtest 4 ved anvendelse af 1000 Hz}	
+				\caption{Resultat for for \textit{I04-H2/M1/VI02G/VI02\underline{O}} ved anvendelse af 1000 Hz}	
 				\label{fig:bt41000}
 			\end{figure} 
 			
 			\begin{figure}[htb]
 			\centering
 				\includegraphics[width=4in]{Bordtest41000Hzb}
-				\caption{Resultat for for bordtest 4 ved anvendelse af 1000 Hz}	
+				\caption{Resultat for for \textit{I04-H2/M1/VI02G/VI02\underline{O}} ved anvendelse af 1000 Hz}	
 				\label{fig:bt41000b}
 			\end{figure} 
 			
 			\begin{figure}[htb]
 			\centering
 				\includegraphics[width=4in]{Bordtest41200Hz}
-				\caption{Resultat for for bordtest 4 ved anvendelse af 1200 Hz}	
+				\caption{Resultat for \textit{I04-H2/M1/VI02G/VI02\underline{O}} ved anvendelse af 1200 Hz}	
 				\label{fig:bt41200}
 			\end{figure} 
 	
 			  
 			\subsubsection{Diskussion}
-			Ved forsøget med 1000 Hz observeres, at de to resultater ikke er tilnærmelsesvis ens. I første forsøg blev en harmonisk overtone opfanget, som den maksimale frekvens, hvor der i andet forsøg blev opfanget grundtonen på den genererede frekvens. Disse to resultater skal være ens og derfor er de ikke tilfredsstillende.
+			Ved forsøget med 1000 Hz observeres, at de to resultater ikke er tilnærmelsesvis ens. I første forsøg blev en harmonisk overtone opfanget, som den maksimale frekvens, hvor der i andet forsøg blev opfanget grundtonen på den genererede frekvens. Det er et meget divergerene resultater men hvad kan årsagen være til at der måles så forskellige tal?
 			
 			\subsubsection{Konklusion}
+			testhypotesen afkastes. 
 			Ved generering af frekvenser lavere end 1000 Hz opfanges harmoniske overtoner, i stedet for grundtonen, som er det ønskede resultat. 
 			Ved generering af frekvenser lig 1000 Hz opfanges ustabile resultater. 
 			Ved generering af frekvenser højere end 1000 Hz, opnås pæne resultater, hvor den genererede frekvens er lig den opfangede frekvens.  
@@ -1494,9 +1497,10 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 			\subsubsection{Aktion}
 			Det skal undersøges, om målinger genereret med en frekvens lig eller højere end 1000 Hz er stabile. 
 			
-			\subsection{Bordtest nr. 5} %% Skal måske omdøbes?!
-		\subsubsection{Testformål}
-		Det undersøges, om firkantsignaler genereret med frekvenser lig eller højere end 1000 Hz er stabile og hvilken effekt helmHoltz resonatoren har på signalerne. 
+			\subsection{I05-H2/M1/VI02G/VI02\underline{O}}
+			
+		\subsubsection{Testhypotese}
+		Er firkantsignaler genereret med frekvenser lig eller højere end 1000 Hz stabile og HelmHoltzresonatoren har på indvirkning på signalet. 
 		
 		\subsubsection{Produktspecifikationer}
 		
@@ -1526,7 +1530,23 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 		Arduino'en er med et USB kabel koblet til PC'en.	
 		Mikrofonen er sat i PC'ens minijack-stik og er ført ned i resonatoren hvor den ligger i bunden. Højtaleren placeres i en afstand på en halv diameter af højtalerens membran, ovenfor resonatorens hals. 
 		
-		På PC'en er VI'erne \texttt{genererfrekvenssignal02.vi} og \texttt{optagefrekvenssignal02.vi} åbnet i LabVIEW og blokdiagrammerne er vist i figur \ref{fig:bdgenerer} og \ref{fig:bdoptage} \\ Testopstillingen er den samme som i bordtest 4, og vises i figur \ref{fig:bt4}.  
+		På PC'en er VI'erne \texttt{genererfrekvenssignal02.vi} og \texttt{optagefrekvenssignal02.vi} åbnet i LabVIEW og blokdiagrammerne er vist i figur \ref{fig:5gf02} og \ref{fig:5of01} \\ Testopstillingen er den samme som i bordtest 4, og vises i figur \ref{fig:bt4}.  
+		
+
+\begin{figure}[htb]
+			\centering
+				\includegraphics[width=3in]{gf02}
+				\caption{Blokdiagrammet for \textit{genererfrekvenssignal02.vi}}	
+				\label{fig:5gf02}
+			\end{figure} 
+\vspace{5mm}
+			\begin{figure}[htb]
+			\centering
+				\includegraphics[width=3in]{of01}
+				\caption{Blokdiagram for \textit{optagefrekvenssignal01.VI}}	
+				\label{fig:5of01}
+			\end{figure}
+\vspace{5mm}
 		
 
 		\subsubsection{Udførsel}
@@ -1537,13 +1557,13 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 				\item Linealen påsættes resonatorens hals så den fungere som afstandsmåler fra halsåbningen.
 				\item Højtaleren holdes manuelt over resonatorhalsen i en afstand på en halv diameter af højtalermembranen. Ved anvendelse ef den specificerede højtaler er afstanden to centimeter. 
 				\item I VI'et \texttt{genererfrekvenssignal02.vi} indtastes den ønskede frekvens i den numeriske kontrol \textit{Enter Frequency}. 
-					\begin{enumerate}
+					
 						\item Koden eksekveres ved at trykke på \textit{Run}. 
-					\end{enumerate} 
+				
 				\item I VI'et \texttt{optagefrekvenssignal02.vi} trykkes på \textit{Run}. 
-					\begin{enumerate}
+					
 						\item Den maksimale optagede frekvens aflæses i \textit{Max Frequency}. 
-					\end{enumerate}	 	
+					
 			\end{enumerate}
 			
 			Testen udføres med en frekvens på 950 Hz, 1000 Hz, 1100 Hz, 1200 Hz og 1300 Hz. Testen fortages to gange med hver frekvens.  
@@ -1575,18 +1595,18 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 				
 			  
 			\subsubsection{Diskussion}
-			De opfangede frekvensers variation er tilfredsstillende til brug i det videre udviklingsforløb. De optagede frekvenser afviger ikke fra de udsendte frekvenser selvom de udsendte frekvenser er opfanget i resonatoren. Det er Helmholtz resonansen som ønskes opfanget og den formodes at afvige fra den udssendte frekvens. Dette er dog ikke tilfældet i denne tests resultater. Det undres over de optagede frekvenser ikke er påvirkede af resonatoren og der sås nu tvivl minijack mikrofonen opfanger signalerne eller om det er PC mikrofonen som opfanger signalerne
+			 Variationen på de opfangede frekenser er tilfredsstillende til brug i det videre udviklingsforløb. De optagede frekvenser afviger ikke fra de udsendte frekvenser selvom de udsendte frekvenser er opfanget i resonatoren. Det er Helmholtz resonansen som ønskes opfanget og den formodes at afvige fra den udsendte frekvens. Dette er dog ikke tilfældet i denne tests resultater. Det undres over de optagede frekvenser ikke er påvirkede af resonatoren og der sås nu tvivl minijack mikrofonen opfanger signalerne eller om det er PC mikrofonen som opfanger signalerne
 			
 			\subsubsection{Konklusion}
-			Frekvenser over 950 Hz kan opfanges som grundtonen og det opfangede signal er ikke forstyrret at de harmoniske overtoner. Det ser ikke ud til at de opfangede frekvenser ikke er påvirket af resonatoren, hvilket vil være forventeligt. Det konkluderes at det det er nødvendigt at undersøge om minijack mikrofonen opfanger de afsendte signaler. 
+			Hypotesen afkastestes. Frekvenser over 950 Hz kan opfanges som grundtonen og det opfangede signal er ikke forstyrret at de harmoniske overtoner. Det ser ikke ud til at de opfangede frekvenser ikke er påvirket af resonatoren, hvilket vil være forventeligt. Det konkluderes at det det er nødvendigt at undersøge om minijack mikrofonen opfanger de afsendte signaler. 
 			
 			\subsubsection{Aktion}
 			 Der udføres en ny enhedstest af minijack mikrofonen for at klarlægge om mikrofonen opfanger signalerne. 
 			 
- 	\subsection{Bordtest nr. 6 - resonansfrekvens i tomt kammer}
+ 	\subsection{I06-H3/M4/VI05\underline{O}}
 	
-	\subsubsection{Testformål}
-	Det ønskes, at finde resonansfrekvensen $f_{0}$ i den tomme resonator, således denne kan verificeres i forhold til resonatorens kendte volumen.  	
+	\subsubsection{Testhypotese}
+	 Resonansfrekvensen $f_{0}$ i den tomme resonator kan opfanges og volumen udregnes.  Volumenudregning med brug af $f_{0}$ stemmer overens med resonatorens kendte volumen af resonatoren.  	
 	
 	\subsubsection{Produktspecifikationer}
 	\textit{Hardware:}\\
@@ -1608,6 +1628,83 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 	\subsubsection{Opstilling og opsætning}
 	Flasken er skruet af tryksprøjten, og bunden er savet af i et lige snit. Denne flaske har funktionen som resonator i testen. Resonatoren vises i figur \ref{fig:resonator}. Resonatoren er placeret på pladen, og er tætnet med modellervoks i kanten mellem resonator og plade. Trykventilen på flasken er også tætnet med modellervoks. En lineal er påsat flaskehalsen, og benyttes til afstandsmåling. Mikrofonen er monteret på resonatorens inderside med klæbemasse. Mikrofonen placeres mindre end resonatorhalsens længde fra  resonatorhalsens indre åbning. Mikrofonen er endvidere tilkoblet DAQ'en, som er tilsluttet PC'en. På PC'en er LabVIEW VI'et \texttt{optagefrekvenssignal05.vi} åbnet. Blokdiagrammet vises i figur \ref{fig:optagefrekvenssignal05}. Højtaleren er tilsluttet PC'en, og \onlineg er åbnet i en browser, hvor pink noise genereres. Højtaleren holdes i en afstand på en halv diameter af halsåbningen fra halsens indgangen.  
 	
+Volumet af flasken er udregnet ved at hælde vand i resonatoren, og derefter måle vandets vægt. Ud fra vandets vægt kunne volumen gives. 
+
+\begin{equation}
+  V=\frac{m}{\rho}
+  \label{eq:vformel}
+\end{equation}
+
+\begin{equation}
+V_{resonator}=\frac{\SI{1698}{\micro\gram \per \centi\meter^{3}}}{\SI{1000}{\kilo \gram \per \meter^{3}}}
+\end{equation}
+
+\begin{equation}
+V_{resonator}=\frac{\SI{1671}{\micro\gram \per \centi\meter^{3}}}{\SI{1000}{\kilo \gram \per \meter^{3}}}={\SI{1.671}{\meter^{3}}}={\SI{1.671}{\liter}}
+\end{equation} 
+
+Volumet bestem ud fra den målte resonansfrekvens er gjort på følgende måde.
+
+Helmholtz resonansen i en tom resonator er givet ved følgende formel: \fnul
+
+hvor 
+\begin{description}[align=left, labelwidth=1in,labelindent=0.5cm]
+\item $f_{0}$: resonansfrekvens i en tom resonator [$Hz$],\\
+\item $c$: lydens hastighed i luft [$m/s$],\\
+\item $S_{p}$: tværsnitsareal af port [$m^2$],\\
+\item $V$: statisk volumen af resonator [$m^3$],\\
+\item $l_{p}$: længde af port [$m$],\\
+\item $\Delta l$: endekorrektion [$m$]\\
+\end{description}
+Lydens hastighed i luft $c$ er givet ved formlen: 
+\c
+hvor $T_{K}$ er givet ved \T. 
+Derved kan lydens hastighed i luft ved en temperatur på 23\degree C bestemmes: 
+\begin{equation}
+		c = {\SI{331,5}{\meter / \second}} \cdot
+		\sqrt{\frac{\SI{296,15}{\kelvin}}{\SI{273,15}{\kelvin}}} = {\SI{345,175}{\meter / \second}} 	\end{equation}
+		
+Tværsnitsarealet $S_{p}$ af porten bestemmes ved: 
+\Sp 
+hvor ${r}$ er radius er porten. 
+Derved bliver $S_{p}$ ved en radius på ${\SI{1.75}{\centi \meter}}$:  
+\begin{equation}
+S_{p} = ({\SI{0,0175}{\meter}})^{2}\pi = {\SI{0,000962}{\meter^{2}}}	
+\end{equation}  
+
+Volumen af resonatoren $V$ er ekskl. port/ hals. Volumen er udregnet ved at hælde vand i resonatoren, og derefter måle vandets vægt. Ud fra vandets vægt kan volumen gives vha. følgende formel:  
+\begin{equation}
+  V=\frac{m}{\rho}
+  \label{eq:vformel}
+\end{equation}
+$\Downarrow$
+\begin{equation}
+V_{resonator}=\frac{\SI{1,671}{\kilo\gram}}{\SI{1000}{\kilo \gram \per \meter^{3}}}={\SI{0,001671}{\meter^{3}}}
+\end{equation}
+
+Endekorrektionen $\Delta l$ er en værdi som tillægges, som korrektion for den medsvingende luft, der i resonatoren fungerer som masse. 
+
+$\Delta l$ gives ved: \deltal
+$\Downarrow$
+\begin{equation}
+		\Delta l = 0,6 \cdot {\SI{0,0175}{\meter}} + \frac{8}{3\pi} \cdot {\SI{0,0175}{\meter}} = {\SI{0,157108}{\meter}} 
+\end{equation}
+
+Resonansfrekvens $f_{0}$ i en tom resonator ved en lufttemperatur på 23\degree C er altså:
+
+\fnul
+$\Downarrow$   
+\begin{equation}
+		f_{0} = \frac{\SI{345,175}{\meter / \second}}{2\pi}\sqrt{\frac{\SI{0,000962}{\meter^{2}}}{{\SI{0,001671}{\meter^{3}}}({\SI{0,034}{\meter}}+{\SI{0,157108}{\meter}})}} 
+	\end{equation}	
+$\Downarrow$
+\begin{equation}
+	f_{0} = {\SI{95,3497}{\second}^{-1}} \approxeq {\SI{95,4}{\hertz}} 	
+	\end{equation}
+	
+
+
+	
 	\begin{figure}[htb]
 	\centering
 	\includegraphics[width=3in]{resonator.jpg}
@@ -1622,6 +1719,8 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 	\label{fig:optagefrekvenssignal05}	
 	\end{figure}
 	
+	
+	
 	\subsubsection{Udførsel}
 			
 			\begin{enumerate}
@@ -1635,25 +1734,28 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 	
 	
 			
-		\begin{table}[]
+		\begin{table}[htb]
 \centering
 \caption{Tabel over resultater}
 \label{bordtest6resultater}
 \begin{tabular}{c|l}
 \textbf{\#}& \textbf{$f_{0}$ {[Hz]}} \\
 \hline
-1  &                  \\
-2  &                  \\
-3  &                  \\
-4  &                  \\
-5  &                  \\
-6  &                  \\
-7  &                  \\
-8  &                  \\
-9  &                  \\
-10 &                 
+1  &    179,394              \\
+2  &    183,692             \\
+3  &    204,948              \\
+4  &    216,2              \\
+5  &    218,8              \\
+6  &    232,2              \\
+7  &    240,6              \\
+8  &    260,5              \\
+9  &    255,9              \\
+10 &    251,3             
 \end{tabular}
 \end{table}
+			
+			
+			
 			
 	
 	\subsection{Bordtest nr. 6.1 - resonansfrekvens i tomt kammer}
