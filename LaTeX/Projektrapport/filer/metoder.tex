@@ -25,11 +25,18 @@ I projektets spæde opstart er der udformet og klarlagt, en samarbejdsaftale, fu
 	
 \section{Projektplanlægning}  
 \subsection{Den dynamiske tidsplan} 
-I projektets begyndelse er der anvendt et online projektplanlægningsværktøj, Teamweek, som fungerede som gruppens dynamiske tidsplan og interne kalender. Teamweek er tilpasset, og større opgaver fra den statiske tidsplan er medtaget. Hensigten at anvende den dynamiske tidsplanen er, at have en let udgave af et Gantt-diagram, som skulle give overblik over tidsmæssige overlap mellem udviklingsfaser. 
+I projektets begyndelse er der anvendt et online projektplanlægningsværktøj, Teamweek, som har fungeret som gruppens dynamiske tidsplan og interne kalender. Teamweek er tilpasset, og større opgaver fra den statiske tidsplan er medtaget. Hensigten med at anvende den dynamiske tidsplan er, at have en let udgave af et Gantt-diagram, som giver overblik over tidsmæssige overlap mellem projektets faser. Figur \ref{fig:teamweek} viser et billede af tidsplanens opbygning.  
+
+\begin{figure}
+\centering
+\includegraphics[width=6in]{teamweek.png}	
+\caption{Den dynamiske tidsplan med overlap, d. 29.09.16,}
+\label{fig:teamweek}
+\end{figure}
 
 \subsection{Den statiske tidsplan}
 \subsubsection{Stage-Gate model}
-I projektets indledende faser, hvor der er arbejdet med konceptudvikling samt udkast til kravspecifikation og accepttest, der er anvendt en Stage-Gate model, som fremgår af figur \ref{fig:stagegate}. Stage-Gate modellen er opbygget af \textit{stages}, som er projektets faser. Til hvert stage er der tilknyttet kriterier samt en deadline. Inden deadline, skal kriterierne være opfyldt, og afkrydset i den tilhørende tjekliste.   ( Fordelene ved denne model er, at opdeling, specificering og eksekvering af de foreliggende opgaver, giver mulighed for at danne et helhedsbillede af projektets tidsmæssige ramme. 
+I projektets indledende faser, hvor der er arbejdet med konceptudvikling samt udkast til kravspecifikation og accepttest, der er anvendt en Stage-Gate model, som fremgår af figur \ref{fig:stagegate}. Stage-Gate modellen er opbygget af \textit{stages}, som repræsenterer projektets faser, og \textit{gates}, som repræsenterer de dertilknyttede kriterier samt deadlines. Inden deadline, skal det pågældende stage's kriterier være opfyldt og afkrydset i den tilhørende tjekliste, som fremgår af figur \ref{fig:tjekliste}. Gaten til næste stage åbnes først når kriterierne er opfyldt. Fordelene ved denne model er, at opdeling, specificering og eksekvering af de foreliggende opgaver, giver mulighed for at danne et helhedsbillede af projektets stages og gates sammenholdt med den tidsmæssige ramme. Dog har den også sine svagheder - den kan tildels sammenlignes med vandfaldsmodellen, og er derfor ikke hensigtsmæssig ved agile udviklingsprocesser. Der er derfor udarbejdet en ny tidsplan undervejs: den agile stage-gate model. 
 
 \newpage
 \begin{landscape}
@@ -41,17 +48,31 @@ I projektets indledende faser, hvor der er arbejdet med konceptudvikling samt ud
 \end{figure}
 \end{landscape}
 
+\begin{figure}
+\centering
+\includegraphics[width=4in]{tjekliste.png}
+\caption{Tjekliste for opfyldelse af kriterier til fasen \textit{Konceptudvikling}}
+\label{fig:tjekliste}
+\end{figure}
 
-\subsubsection{Agile Stage-Gate model}
-I projekts udviklingsfase (herunder design, implementering samt integrationstest), er Stage-Gate modellen udskiftet med en Agil Stage-Gate model. Den Agile Stage-Gate model dækker behovet for agilitet og dag-til-dag planlægning. Det er en model, der er målrettet til produktion af nye fysiske produkter, og modellen er under udvikling. Evidensen på denne nye udviklingsmetode er begrænset og består hovedsageligt af tidligere evidens, hvor der er eksperimenteret med Stage-Gate og Scrum inden for softwareudvikling samt nyere empirisk evidens fra udviklingsprocesser i førende produktionsvirksomheder. Fordelen ved at anvende den Agile Stage-Gate model er, at der opnås et stort potentiale for at sikre en struktureret udviklingsproces, reducering af udviklingstid samt at give et større overblik og en bedre kvalitet. Disse punkter er yderst fordelagtige i udviklingen af et nyt produkt, og det er derfor besluttet at udarbejde en tilpasset Agile Stage-Gate model i dette projektforløb. Den Agile Stage-Gate model dækker både mikro- og makroplanlægning, og det forventes derfor, at modellen vil opfylde behovet for klare milepæle og faste beslutningspunkter samt hastighed og flexibilitet. 
+\subsubsection{Agil Stage-Gate model}
+I projekts udviklingsfase (herunder design, implementering samt integrationstest), blev Stage-Gate modellen udskiftet med en Agil Stage-Gate model. Den Agile Stage-Gate model dækker behovet for agilitet og dag-til-dag planlægning, som opstår under et test- og udviklingsforløb af et nyt produkt. Den Agile Stage-Gate er en model, der på nuværende tidspunkt under udvikling. Evidensen på denne nye udviklingsmetode er begrænset og består hovedsageligt af tidligere evidens, hvor der er eksperimenteret med Stage-Gate og Scrum. Derudover findes nyere empirisk evidens fra udviklingsprocesser i førende produktionsvirksomheder, så som LEGO, Coloplast, Grundfos og Danfoss. Den Agile Stage-Gate er anvendt på samme vis som Stage-Gate modellen beskrevet ovenfor, men med agilitet i form af sprints (sprints uddybes i afsnit \ref{subsubsec:pivotal}) og åbne gates. Fordelen ved at anvende den Agile Stage-Gate model er, at den dækker både mikro- og makroplanlægning, og det forventes derfor, at modellen vil opfylde behovet for klare milepæle og faste beslutningspunkter samt hastighed og flexibilitet. 
 	   
-	€€€HUSK BILLEDER AF AGILE-STAGE-GATE 
-	
+	\newpage
+\begin{landscape}
+\begin{figure}
+\centering	
+\includegraphics[width=9.5in]{agilstagegate.pdf}
+\caption{Den anvendte Stage-Gate model}
+\label{fig:agilstagegate}
+\end{figure}
+\end{landscape}
+
 \subsection{Projektstyring}
-	€€PivotalTracker, Planning poker, logbog OG agilt: opslagstavle, tavler, analoge oversigter
+	€€PivotalTracker, Planning poker, logbog OG agilt: opslagstavle, tavler, analoge oversigter 
 	
-	Dette projekt omhandler, hvorledes man med en systematisk og struktureret tilgang, kan udvikle og teste sig frem mod en ny løsning til en given problemstilling. Brystvolumenmåleren er en ny løsning inden for dets anvendelsesområde, og det har derfor været yderst fordelagtigt at opbygge udviklings- samt testprocessen med en agil arbejdstilgang. Den agile tilgang har gjort det muligt at søge viden, opstille en testhypotese og derefter hurtigt at afprøve den(€€ref til vores diagram?). Dette afsnit beskriver anvendelsen af projektstyringsværktøjer i arbejdsprocessen. 
 	\subsubsection{Pivotal Tracker}
+	\label{subsubsec:pivotal}
 	Med henblik på at strukturere og overskueliggøre denne dynamiske arbejdsproces, er der i projektet anvendt elementer fra Scrum. Ved at bruge denne iterative arbejdsmetode bliver der løbende prioriteret mellem opgaver, hvorefter delopgaver revurderes og planlægges, og styres ud fra 7-dages-sprints. Dette gør, at produktet og resultater evalueres og testes løbende. Pivotal Tracker er et webbaseret projektstyringsværktøj, som muliggør denne agile arbejdstilgang. I Pivotal Trackers icebox, er samtlige arbejdsopgaver defineret. Dette giver et overblik over foreliggende opgaver, og giver samtidig en ro over, at intet forglemmes. Arbejdsopgaverne defineres med en kort beskrivelse og tildeles points. Pointtildelingen er sket ved brug af \textit{Planning poker}, som fremgår i figur \ref{fig:planningpoker}. 
 	
 	\begin{figure}[htb]
