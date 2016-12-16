@@ -25,16 +25,17 @@ I projektets spæde opstart er der udformet og klarlagt, en samarbejdsaftale, fu
 	
 \section{Projektplanlægning}  
 \subsection{Den dynamiske tidsplan} 
-I projektets begyndelse er der anvendt et online projektplanlægningsværktøj, Teamweek, som har fungeret som gruppens dynamiske tidsplan og interne kalender. Teamweek er tilpasset, og større opgaver fra den statiske tidsplan er medtaget. Hensigten med at anvende den dynamiske tidsplan er, at have en let udgave af et Gantt-diagram, som giver overblik over tidsmæssige overlap mellem projektets faser. Figur \ref{fig:teamweek} viser et billede af tidsplanens opbygning.  
+I projektets begyndelse er der anvendt et online projektplanlægningsværktøj, Teamweek, som har fungeret som gruppens dynamiske tidsplan og interne kalender. Teamweek er tilpasset efter projektets behov, og større opgaver fra den statiske tidsplan er medtaget. Hensigten med at anvende den dynamiske tidsplan er, at have en let udgave af et Gantt-diagram, som giver overblik over tidsmæssige overlap mellem projektets faser. Figur \ref{fig:teamweek} viser et billede af den dynamiske tidsplans opbygning.  
 
 \begin{figure}
 \centering
 \includegraphics[width=6in]{teamweek.png}	
-\caption{Den dynamiske tidsplan med overlap, d. 29.09.16,}
+\caption{Den dynamiske tidsplan med overlap, øjebliksbillede fra d. 29.09.16,}
 \label{fig:teamweek}
 \end{figure}
 
 \subsection{Den statiske tidsplan}
+\label{subsec:statisk}
 \subsubsection{Stage-Gate model}
 I projektets indledende faser, hvor der er arbejdet med konceptudvikling samt udkast til kravspecifikation og accepttest, der er anvendt en Stage-Gate model, som fremgår af figur \ref{fig:stagegate}. Stage-Gate modellen er opbygget af \textit{stages}, som repræsenterer projektets faser, og \textit{gates}, som repræsenterer de dertilknyttede kriterier samt deadlines. Inden deadline, skal det pågældende stage's kriterier være opfyldt og afkrydset i den tilhørende tjekliste, som fremgår af figur \ref{fig:tjekliste}. Gaten til næste stage åbnes først når kriterierne er opfyldt. Fordelene ved denne model er, at opdeling, specificering og eksekvering af de foreliggende opgaver, giver mulighed for at danne et helhedsbillede af projektets stages og gates sammenholdt med den tidsmæssige ramme. Dog har den også sine svagheder - den kan tildels sammenlignes med vandfaldsmodellen, og er derfor ikke hensigtsmæssig ved agile udviklingsprocesser. Der er derfor udarbejdet en ny tidsplan undervejs: den agile stage-gate model. 
 
@@ -48,7 +49,7 @@ I projektets indledende faser, hvor der er arbejdet med konceptudvikling samt ud
 \end{figure}
 \end{landscape}
 
-\begin{figure}
+\begin{figure}[htb]
 \centering
 \includegraphics[width=4in]{tjekliste.png}
 \caption{Tjekliste for opfyldelse af kriterier til fasen \textit{Konceptudvikling}}
@@ -56,7 +57,7 @@ I projektets indledende faser, hvor der er arbejdet med konceptudvikling samt ud
 \end{figure}
 
 \subsubsection{Agil Stage-Gate model}
-I projekts udviklingsfase (herunder design, implementering samt integrationstest), blev Stage-Gate modellen udskiftet med en Agil Stage-Gate model. Den Agile Stage-Gate model dækker behovet for agilitet og dag-til-dag planlægning, som opstår under et test- og udviklingsforløb af et nyt produkt. Den Agile Stage-Gate er en model, der på nuværende tidspunkt under udvikling. Evidensen på denne nye udviklingsmetode er begrænset og består hovedsageligt af tidligere evidens, hvor der er eksperimenteret med Stage-Gate og Scrum. Derudover findes nyere empirisk evidens fra udviklingsprocesser i førende produktionsvirksomheder, så som LEGO, Coloplast, Grundfos og Danfoss. Den Agile Stage-Gate er anvendt på samme vis som Stage-Gate modellen beskrevet ovenfor, men med agilitet i form af sprints (sprints uddybes i afsnit \ref{subsubsec:pivotal}) og åbne gates. Fordelen ved at anvende den Agile Stage-Gate model er, at den dækker både mikro- og makroplanlægning, og det forventes derfor, at modellen vil opfylde behovet for klare milepæle og faste beslutningspunkter samt hastighed og flexibilitet. 
+I projekts udviklingsfase (herunder design, implementering samt integrationstest), blev Stage-Gate modellen udskiftet med en Agil Stage-Gate model. Den Agile Stage-Gate model dækker behovet for agilitet og dag-til-dag planlægning, som opstår under et test- og udviklingsforløb af et nyt produkt. Den Agile Stage-Gate er en model, der på nuværende tidspunkt under udvikling. Evidensen på denne nye udviklingsmetode er begrænset og består hovedsageligt af tidligere evidens, hvor der er eksperimenteret med Stage-Gate og Scrum. Derudover findes nyere empirisk evidens fra udviklingsprocesser i førende produktionsvirksomheder, så som LEGO, Coloplast, Grundfos og Danfoss \citep{{Refworks:8},{Refworks:24}}. Den Agile Stage-Gate er anvendt på samme vis som Stage-Gate modellen beskrevet ovenfor, men med agilitet i form af sprints (sprints uddybes i afsnit \ref{subsec:scrum}) og åbne gates. Fordelen ved at anvende den Agile Stage-Gate model er, at den dækker både mikro- og makroplanlægning, og det forventes derfor, at modellen vil opfylde behovet for klare milepæle og faste beslutningspunkter samt hastighed og flexibilitet. 
 	   
 	\newpage
 \begin{landscape}
@@ -68,65 +69,63 @@ I projekts udviklingsfase (herunder design, implementering samt integrationstest
 \end{figure}
 \end{landscape}
 
-\subsection{Projektstyring}
-	€€PivotalTracker, Planning poker, logbog OG agilt: opslagstavle, tavler, analoge oversigter 
+\section{Projektstyring}
 	
-	\subsubsection{Pivotal Tracker}
-	\label{subsubsec:pivotal}
-	Med henblik på at strukturere og overskueliggøre denne dynamiske arbejdsproces, er der i projektet anvendt elementer fra Scrum. Ved at bruge denne iterative arbejdsmetode bliver der løbende prioriteret mellem opgaver, hvorefter delopgaver revurderes og planlægges, og styres ud fra 7-dages-sprints. Dette gør, at produktet og resultater evalueres og testes løbende. Pivotal Tracker er et webbaseret projektstyringsværktøj, som muliggør denne agile arbejdstilgang. I Pivotal Trackers icebox, er samtlige arbejdsopgaver defineret. Dette giver et overblik over foreliggende opgaver, og giver samtidig en ro over, at intet forglemmes. Arbejdsopgaverne defineres med en kort beskrivelse og tildeles points. Pointtildelingen er sket ved brug af \textit{Planning poker}, som fremgår i figur \ref{fig:planningpoker}. 
+	\subsection{Scrum}
+	\label{subsec:scrum}
+	Der er i projektet anvendt elementer fra Scrum. Hver morgen afholdes \textit{Daily Scrum Meetings}, således gruppemedlemmer er opdateret på, hvad der er lavet siden sidst, hvad planen er for den pågældende dag samt eventuelle hindringer. Med henblik på at strukturere og overskueliggøre den dynamiske arbejdsproces, beskrevet i afsnit \ref{subsec:statisk}, er der i projektet anvendt den kendte iterative arbejdsmetode fra Scrum, hvor der løbende bliver prioriteret mellem opgaver. Herefter revuderes og planlægges delopgaver, og disse styres ud fra 7-dages-sprints. Dette gør, at produktet og resultater evalueres og testes løbende. I det efterfølgende afsnit, afsnit \ref{subsec:pivotal}, uddybes det, hvorledes denne styringsproces er anvendt.  
+	
+	\subsection{Pivotal Tracker}
+	\label{subsec:pivotal}
+	Pivotal Tracker er et webbaseret projektstyringsværktøj, som muliggør denne agile arbejdstilgang. I Pivotal Trackers icebox, er samtlige arbejdsopgaver defineret. Dette giver et overblik over foreliggende opgaver, og giver samtidig en ro over, at intet forglemmes. Arbejdsopgaverne defineres med en kort beskrivelse og tildeles points. Pointtildelingen sker ved brug af \textit{Planning poker}, som fremgår i figur \ref{fig:planningpoker}, hvorved der opnås enighed om opgavens arbejdsbyrde samt omfang. Denne arbejdsmetode skaber stor gennemsigtighed i arbejdsprocessen, og samtidig et fælles overblik over indholdet i opgaverne. 
 	
 	\begin{figure}[htb]
 	\centering
-	\includegraphics[width=3in]{Planningpoker}
+	\includegraphics[width=2in]{Planningpoker}
 	\caption{Anvendelse af Planning poker ved tildeling af points til arbejdsopgaver}
 	\label{fig:planningpoker}	
 	\end{figure}
+	 
+	Definererede arbejdsopgaverne ligger herefter med en kort beskrivelse samt pointestimat for omfanget i projektets icebox, klar til at blive flyttet over i backloggen. Backologgen indeholde de opgaver, som prioriteres, og Pivotal Tracker tilføjer automatisk opgaver til det igangværende sprint indtil \textit{Velocity}-grænsen opnås. Velocity er gennemsnittet af points, som gennemføres i løbet af et sprint. En opgaves status defineres ud fra en række forskellige states, herunder \textit{unstarted}, \textit{started}, \textit{finished}, \textit{delivered}, \textit{rejected} og \textit{accepted}. Denne arbejdsprocessen gør det dermed muligt, at en færdiggjort opgave kan afleveres til review hos det andet gruppemedlem, som derefter afviser eller godkender opgaven. Samtidig medvirker denne arbejdsproces til, at projektmedlemmer er inde over alt indhold indhold gennem projektprocessen.     
 	
-	Herved opnås der enighed om opgavens arbejdsbyrde samt omfang. Dette har gjort, at der har været en stor gennemsigtighed i arbejdsprocessen, og samtidig et fælles overblik over indholdet i opgaverne. En opgaves status defineres ud fra en række forskellige states, herunder \textit{unstarted}, \textit{started}, \textit{finished}, \textit{delivered}, \textit{rejected} og \textit{accepted}. Arbejdsprocessen har på den måde muliggjort at en færdiggjort opgave afleveres til review hos det andet gruppemedlem, som derefter afviser eller godkender opgaven. Denne arbejdsproces har medvirket, at projektmedlemmerne har været inde over alt indhold gennem projektprocessen.  
-    
-    €HJÆLP€ 
-	Definererede arbejdsopgaverne ligger herefter med en kort beskrivelse samt pointestimat for omfanget i projektets icebox, klar til at blive flyttet over i backloggen. Backologgen indeholde de opgaver, som prioriteres, og Pivotal Tracker tilføjer automatisk opgaver til det igangværende sprint indtil \textit{Velocity}-grænsen opnås. Velocity er gennemsnittet af points, som gennemføres i løbet af et sprint. Det har i projektarbejdet været en stor udfordring at definere, hvornår et sprint anses for at være \textit{Done}. €€Noget mere om dette!€€    
+	Ved brug af \textit{Burnup chart'et} i Pivotal Tracker, kan der dannes et overblik over projektets fremgang, hvor der stræbes efter en lineær fremgang, således man undgår en tung arbejdsbyrde mod projektets slutning. Processen sammenholdes med tidsplanen, og ved en eksponentiel fremgang i Burnup chart'et, må en revidering af tidsplanen overvejes, for at opnå en realistisk arbejdsbyrde mod projektet udgang.  
 	
-	Ved hjælp af \textit{Burn Up chart'et}, dannes der et overblik over projektets fremgang, og der stræbes efter en lineær fremgang, således man undgår en tung arbejdsbyrde mod projektets slutning. Figur \ref{fig:burnup} viser projektets Burn Up chart, som viser projektets arbejdesomfang sammenholdt med udførte opgaver. Processen har i følge Burn Up chart'et været tilnærmelsesvis lineær. Det fremgår tydeligt, at projektets første uge er præget af indkøring af dette nye værktøj. €Jannie, skriv noget klogt!€
-	Processen sammenholdes med tidsplanen, og ved en eksponentiel fremgang i Burn Up chart'et, må en revidering af tidsplanen overvejes, for at opnå en realistisk arbejdsbyrde mod projektet udgang.  
-		
-	\begin{figure}[htb]
-	\centering
-	\includegraphics[width=4in]{burnup}
-	\caption{Burn Up chart over projektets arbejdsomfang sammenholdt med udførte opgaver}
-	\label{fig:burnup}	
-	\end{figure}
-	    	
-	Pivotal Tracker har også den fordel, at den indeholder en komplet historik over de afsluttede sprints med dertilhørende opgaver. I denne log fremgår det, hvilke opgaver, der er udført i hvilken uge, og på den vis kan loggen benyttes som en opgave-logbog. Dog er der i projektet prioriteret at anvende en traditionel logbog, da overvejelser og refleksioner vægtes meget højt i arbejdsprocessen.	
+	Pivotal Tracker har også den fordel, at den indeholder en komplet historik over de afsluttede sprints med dertilhørende opgaver. I denne log fremgår det, hvilke opgaver, der er udført i hvilken uge, og på den vis kan loggen benyttes som en opgave-logbog. Dog er der i projektet prioriteret at anvende en traditionel logbog, da overvejelser, refleksioner og erfaringer vægtes meget højt i arbejdsprocessen.      		
 	
-	\subsubsection{Logbog}
-	Logbogen er anvendt som et højt prioriteret værktøj i arbejdsprocessen, da projektets store omdrejningspunkt er udviklings- samt testproces. Logbogen er benyttet til at dokumentere refleksioner, overvejelser og beslutninger, som er gjort under projektarbejdet. Hver morgen er startet med, at logbogen er blevet åbnet, og i forlængelse af Daily Scrum meeting, er dagordenen blevet  fastlagt. Logbogens opbygning, som fremgår af figur \ref{fig:logbog}, lægger op til en reflekterende og evaluerende granskning af procesforløbet. Således er procesforløbet løbende blevet evalueret og revideret i forhold til passende arbejdsmetoder. Projektgruppen har fundet denne arbejdsmetode tung, men yderst fordelagtig, da ofte vigtige refleksioner og overvejelser hurtigt kan blive forglemt. 
+	\subsection{Logbog}
+	Logbogen anvendes som et højt prioriteret værktøj i arbejdsprocessen, da projektets store omdrejningspunkt er udviklings- samt testproces. Logbogen benyttes til at dokumentere refleksioner, overvejelser og beslutninger, som er gjort under projektarbejdet. Hver morgen startes med Daily Scrum Meeting, hvorefter logbogen åbnes, og i forlængelse af Daily Scrum meeting, er dagordenen blevet  fastlagt. Logbogens opbygning, som fremgår af figur \ref{fig:logbog}, lægger op til en reflekterende og evaluerende granskning af procesforløbet. Således er procesforløbet løbende blevet evalueret og revideret i forhold til passende arbejdsmetoder. 
 	
 	\begin{figure}[htb]
 	\centering
 	\includegraphics[width=4in]{Logbogskabelon}
 	\caption{Skabelon anvendt i projektets logbog}
 	\label{fig:logbog}	
-	\end{figure}
-	
-	\subsection{Agile, analoge værktøjer}
-	
+	\end{figure}	
 
 \section{Udviklingsværktøjer}
-	€€LaTeX+ RefWorks, LabVIEW, Visio, Creately, 
+	 
+	\subsection{\LaTeX}
+Det er i projektets indledende uger, prioriteret at bruge tid på at lære at anvende tekstformateringsprogrammet \LaTeX. Fordelene ved at anvende LaTeX, er at der kan fokuseres på at skabe det tekstuelle indhold, da der under skrivningen kun angives strukturelle og logiske kommandoer, som LaTeX derved bruger til at lave indholdfortegnelse, afsnitsinddeling, krydsreferencer, bibliografi mm. Den stilmæssige udformning af layoutet defineres i en særskilt fil, og på denne måde opnås en ensartet typografisk kvalitet, som er klar til udprintning. Hensigten er, at undgå Microsoft Word, hvor der ofte opstår formateringsudfordringer, ved projektarbejdets ende. 
+    
+	\subsection{RefWorks}
+Det webbaserede referenceværktøj RefWorks, er benyttes til at holde styr på kilder fra anvendt litteratur. Projektgruppen har oprettet en fælles account til RefWorks, så alle referencer er samlet i én online database, og på denne måde kan tilgås fra enhver computer. Referencerne i RefWorks-databasen eksporteres til bibliografien i LaTeX, som danner en litteraturliste. Formålet med dette værktøj er, at gøre det problemfrit, at referere til anvendt litteratur. 
 
-	\subsubsection{\LaTeX}
-Det blev i projektets indledende uger, prioriteret at bruge tid på at lære at anvende tekstformateringsprogrammet \LaTeX. Fordelene ved at anvende LaTeX, er at der kan fokuseres på at skabe det tekstuelle indhold, da der under skrivningen kun angives strukturelle og logiske kommandoer, som LaTeX derved bruger til at lave indholdfortegnelse, afsnitsinddeling, krydsreferencer, bibliografi mm. Den stilmæssige udformning af layoutet defineres i en særskilt fil, og på denne måde opnås en ensartet typografisk kvalitet, som er klar til udprintning.   
-	\subsubsection{RefWorks}
-Det online referenceværktøj RefWorks, er benyttet til at holde styr på kilder fra anvendt litteratur. Projektgruppen har oprettet en fælles account til RefWorks, så alle referencer er samlet i én online database, og på denne måde kan tilgås fra enhver computer. Referencerne i RefWorks-databasen eksporteres til bibliografien i LaTeX, som danner en litteraturliste. På denne måde har det i rapportskrivningen været problemfrit at referere til anvendt litteratur.  
+	\subsection{LabVIEW 14.0 Development System}
+	LabVIEW er et udviklingsmiljø, der med grafisk og intuitiv programmering, gør det nemt at visualisere og kode teknisk software. Formålet med dette værktøj er, at der hurtigt (sammenlignet med traditionelle programmeringssporg) kan produceres et brugerdefineret program, som interagerer med real-world data og signaler. Hensigten er derfor at anvende det værktøj i databehandlingen af lydgenerering og lydopfangning. 
 	
+	\subsection{Microsoft Visio}   
+	Microsoft Visio er et tegneprogram, som bruges til at illustrere forskellige diagrammer. Hensigten er at benytte dette værktøj til at tegne udviklingsdiagrammer.
 	
-
-
-
+	\subsection{Creately}
+	Creately er et webbaseret tegneprogram, som også bruges til at illustrere forskellige diagrammer og modeller. Hensigten er at benytte dette program til at tegne farverige modeller og diagrammer. 
+	
 \section{Versionsstyring}
- 	€€Dropbox og GitHub
+\subsection{GitHub}
+GitHub er et versionsstyringsprogram, som i projektet anvendes til versionsstyring af dokumenter og LabVIEW-kode. 
 
+I projektet er der gjort brug af versionsstyringssoftwaren GitHub. Til versionsstyring af projektdokumentationen og source kode anvendes GitHub, sombygger på open source versionsstyringssystemet Git. Her opdateres der løbende ændringer,så det nyeste dokumentation og source kode altid er tilgængeligt. Som user interface tilGitHub anvendes GitHub Desktop (figur: 3.1). I GitHub Desktop vises en tidslinje, forhvornår, der er lavet ændringer. Under de enkelte filer kan det observeres, hvad der erændret i for den gældende version. Programmet giver yderligere indblik, i hvilke filer, derlokalt er lavet ændringer i, som ikke er tilføjet repositoriet endnu.
+
+dokumenterne fået et nyt versionsnummer og versionshistorikstabellen er opdateret i hvertdokument, se tabellen nedenfor.
 \section{Arbejdsfordeling}
 
 \section{Opnåede erfaringer}
