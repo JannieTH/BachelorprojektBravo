@@ -174,7 +174,8 @@ Der er praktiseret en omhyggelig, systematisk tilgang til litteratursøgningen, 
 	 Formålet med at lave en fully dressed beskrivelse er at klarlægge normalforløbet og alternative flows for brystvolumenmålingen. Endvidere er de ikke-funktionelle krav udarbejdet ud fra daværende kendte HW- og SW-krav.
 	Efterfulgt af kravspecifikationen, er der udarbejdet en  accepttestprotokol (se Projektdokumentationsrapporten, afsnit 2.2). Denne protokol beskriver alle de forhold og forudsætninger, som skal være opfyldt for at kunne udføre accepttest af den akustiske brystvolumenmåler. Formålet med protokollen er at specificere accepttest-aktiviteterne, gældende for brystvolumenmåleren. 
 	I selve accepttesten, forberedes en test til hvert punkt i normalforløbet, som indeholder et krav nr., acceptkriterie samt testmetode. Denne test er med til at verificere at alle krav, der er bestemt i samarbejde med kunden, er opfyldte. 	
-	Der var et tydeligt behov, at der i udviklings- samt testfasen, måtte testes frem mod erfaringer, hvorudfra der kunne defineres mere specifikke krav. Udarbejdelse af kravspecifikation samt accepttest var derfor på \textit{high-level}, altså et højt, overordnet plan og under ingen omstændigheder endegyldigt. Der blev i denne fase udarbejdet en ny tidsplansmodel: den Agile Stage-Gate model, omtalt i afsnit \ref{subsubsec:agil}. Hensigten var at have en mere agil projektstyring.  	
+	Der var et tydeligt behov, at der i udviklings- samt testfasen, måtte testes frem mod erfaringer, hvorudfra der kunne defineres mere specifikke krav. Udarbejdelse af kravspecifikation samt accepttest var derfor på \textit{high-level}, altså et højt, overordnet plan og under ingen omstændigheder endegyldigt. Der blev i denne fase udarbejdet en ny tidsplansmodel: den Agile Stage-Gate model, omtalt i afsnit \ref{subsubsec:agil}. Hensigten var at have en mere agil projektstyring. 
+	
 	\begin{figure}[htb]
 	\centering	
 	\includegraphics[width=5in]{UC1.png}
@@ -189,8 +190,31 @@ Der er praktiseret en omhyggelig, systematisk tilgang til litteratursøgningen, 
 	\label{UCtabel}
 	\end{figure}
 	
+\subsection{Den tredje udviklingsfase: udvikling og test}	
 	
-\subsection{Den tredje udviklingsfase: udvikling og test}
+	\subsubsection{Testforløb af enheds- og integrationstest}
+	Projektet er et udviklingsprojekt, hvor der systematisk testes frem til en produktløsning. Projektet er derfor præget af et omfattende testforløb, hvor der med en systematisk tilgang er lagt vægt på reproducerbarhed samt sporbarhed. 
+Det indledende testforløb blev udarbejdet med inspiration fra “Projekteringshåndbogen”, skrevet af Søren Lyngsø-Petersen, som beskriver test af produktionsudstyr til Health Care branchen. Der anvendes enkelte tilpassede metoder i den videre udarbejdelse af projektets testforløb. Således blev Lyngsø-Petersens testforløbsmodel tilpasset projektets testforløb, som endte ud med at være et testforløb inddelt i følgende fem faser:    
+
+	\begin{enumerate}
+		\item Enhedstest
+		\item Integrationstest
+		\item Accepttest
+		\item Lab PoC
+		\item Kvalificeringstest 
+	\end{enumerate}
+
+I første fase, enhedstest, testes de indgående komponenter, for at sikre disses funktion. I anden fase, integrationstest, er hovedformålet at foretage verificeringer af de forskellige funktionaliteter og processer i elementer, som anvendes i det videre testforløb. I tredje fase, accepttest, eftervises alle specificerede krav fra kravspecifikationen, som nævnt i forrige afsnit. I fjerde fase, Lab PoC, testes diverse forhold og hypoteser, og der udvikles mod en ny og bedre version af produktet. I femte fase, kvalificeringstest, foretages en systemvalidering til/med kunden. 
+Udarbejdelsen af testforløbet (af enhedstest og integrationstest) afspejler “God testpraksis”, som er et begreb anvendt inden for Health Care Industrien \citep{RefWorks:29}. “God testpraksis” beskriver en testprocedure, hvor man udfører og dokumenterer sine tests på en måde, som gør dem valide, hvilket afspejles i den måde, hvorpå dokumentationen af de foretagede tests i projektet er opbygget. Projektets testudførelse består derfor af følgende tre forhold;
+
+	\begin{enumerate}
+	\item beskrivelse af, hvordan testen skal udføres (testprocedure) 
+	\item Selve udførelsen af testen 
+	\item Dokumentation af testresultatet
+	\end{enumerate}
+
+Testproceduren beskriver den praktiske udførelse af testen, således den er reproducerbar og alle/ fagfolk vil have mulighed for at udføre testen, uden at have nogen specifik baggrundsviden. Dokumentationen af hver enkelte test starter med en testhypotese, for at afklare hvad det forventede resultat er. Derefter specificeres det anvendte udstyr og komponenter, og testopstillingen samt - opsætningen beskrives meget udførligt for at sikre en korrekt udførelse af testen. Selve udførelsen af testen beskrives med en høj detaljegrad og kan muligvis forekomme nedladende, men da resultatet kan afhænge af, hvordan testen udføres er dette et nødvendigt forhold. Slutvis fremvises testresultaterne, og disse diskuteres efterfølgende for at sikre en refleksion over de opnåede resultater. Testen afrundes med en konklusion af resultatet i sammenhold med testhypotesen, og der planlægges en aktion for næste skridt. 	
+	
 \subsection{Den fjerde udviklingsfase: implementering}
 
 FURPS
