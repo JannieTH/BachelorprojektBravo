@@ -57,6 +57,7 @@ I projektets indledende faser, hvor der er arbejdet med konceptudvikling samt ud
 \end{figure}
 
 \subsubsection{Agil Stage-Gate model}
+\label{subsubsec:agil}
 I projekts udviklingsfase (herunder design, implementering samt integrationstest), blev Stage-Gate modellen udskiftet med en Agil Stage-Gate model. Den Agile Stage-Gate model dækker behovet for agilitet og dag-til-dag planlægning, som opstår under et test- og udviklingsforløb af et nyt produkt. Den Agile Stage-Gate er en model, der på nuværende tidspunkt under udvikling. Evidensen på denne nye udviklingsmetode er begrænset og består hovedsageligt af tidligere evidens, hvor der er eksperimenteret med Stage-Gate og Scrum. Derudover findes nyere empirisk evidens fra udviklingsprocesser i førende produktionsvirksomheder, så som LEGO, Coloplast, Grundfos og Danfoss \citep{{Refworks:8},{Refworks:24}}. Den Agile Stage-Gate er anvendt på samme vis som Stage-Gate modellen beskrevet ovenfor, men med agilitet i form af sprints (sprints uddybes i afsnit \ref{subsec:scrum}) og åbne gates. Fordelen ved at anvende den Agile Stage-Gate model er, at den dækker både mikro- og makroplanlægning, og det forventes derfor, at modellen vil opfylde behovet for klare milepæle og faste beslutningspunkter samt hastighed og flexibilitet. 
 	   
 \newpage
@@ -167,14 +168,16 @@ Der er praktiseret en omhyggelig, systematisk tilgang til litteratursøgningen, 
 		
 	\subsubsection{Litteraturudvælgelse}	
 	Artiklerne blev gennemgået med et kritisk øje, og relevant information blev efterfølgende ekstraheret selvstændigt af JH og JR. Det lykkedes ikke, at fremsøge litteratur vedr. kvinders følelse af og holdninger til at anvende et lignende system som BVM. Det blev derfor besluttet at der måtte - hvis tidsrammen tillod - udarbejdes en usabilityundersøgelse på en gruppe på minimum 15 personer i hht. retningslinjer fra \textit{Association of the Advancement of Medical Instrumentation} og \textit{American National Standards Institute} (AAMI/ANSI HE75:2009). \\
-	 
-	Udover litteratursøgning, blev den første version af kravspecifikationen udarbejdet. Kravspecifikationen er udarbejdet på baggrund af det konceptuelle systemet, omtalt i afsnit \ref{sec:BVMopb}. I kravspecifikationen defineres de funktionelle krav ved anvendelse af et Use case diagram samt en fully dressed Use Case-beskrivelse. I Use Case diagrammet, som fremgår af figur \ref{fig:UCdiagram}, illustreres systemet \textit{Brystvolumenmåler}'s Use Case: \textit{udfør brystvolumenmåling}. Til venstre for systemet, vises systemets primære aktør; \textit{plastikkirurgen}, og til højre for systemet vises den sekundære aktør; \textit{patienten}. Nedenfor systemet, fremgår systemets interessenter. Formålet med at lave en fully dressed beskrivelse er at klarlægge normalforløbet og alternative flows. Endvidere er de ikke-funktionelle krav udarbejdet ud fra daværende kendte HW- og SW-krav.
 	
-	Samtidigt med kravspecifikationen, er der udarbejdet en accepttest. Denne test er med til at verificereat alle krav, der er bestemt i samarbejde med kunden, er opfyldte. I accepttesten er det beskrevet hvordan hver enkelte krav skal testes. Accepttesten udføres før produktet afleveres til kunden. 
-	Der var et tydeligt behov, at der i udviklings- samt testfasen, måtte testes frem mod erfaringer, hvorudfra der kunne defineres mere specifikke krav. Udarbejdelse af kravspecifikation samt accepttest var derfor på \textit{high-level}, altså et højt, overordnet plan. 	
+	\subsubsection{Kravspecifikation og accepttest} 
+	Udover litteratursøgning, blev den første version af kravspecifikationen udarbejdet. Kravspecifikationen er udarbejdet på baggrund af det konceptuelle systemet, omtalt i afsnit \ref{sec:BVMopb}. I kravspecifikationen defineres de funktionelle krav ved anvendelse af et Use case diagram samt en fully dressed Use Case-beskrivelse. I Use Case diagrammet, som fremgår af figur \ref{fig:UCdiagram}, illustreres systemet \textit{Brystvolumenmåler}'s Use Case: \textit{udfør brystvolumenmåling}. Til venstre for systemet, vises systemets primære aktør; \textit{plastikkirurgen}, og til højre for systemet vises den sekundære aktør; \textit{patienten}. Nedenfor systemet, fremgår systemets interessenter. Da Use case diagrammet lå færdigt, blev der udarbejdet en fully dressed Use case beskrivelse, som fremgår af tabel \ref{UCtabel}.
+	 Formålet med at lave en fully dressed beskrivelse er at klarlægge normalforløbet og alternative flows for brystvolumenmålingen. Endvidere er de ikke-funktionelle krav udarbejdet ud fra daværende kendte HW- og SW-krav.
+	Efterfulgt af kravspecifikationen, er der udarbejdet en  accepttestprotokol (se Projektdokumentationsrapporten, afsnit 2.2). Denne protokol beskriver alle de forhold og forudsætninger, som skal være opfyldt for at kunne udføre accepttest af den akustiske brystvolumenmåler. Formålet med protokollen er at specificere accepttest-aktiviteterne, gældende for brystvolumenmåleren. 
+	I selve accepttesten, forberedes en test til hvert punkt i normalforløbet, som indeholder et krav nr., acceptkriterie samt testmetode. Denne test er med til at verificere at alle krav, der er bestemt i samarbejde med kunden, er opfyldte. 	
+	Der var et tydeligt behov, at der i udviklings- samt testfasen, måtte testes frem mod erfaringer, hvorudfra der kunne defineres mere specifikke krav. Udarbejdelse af kravspecifikation samt accepttest var derfor på \textit{high-level}, altså et højt, overordnet plan og under ingen omstændigheder endegyldigt. Der blev i denne fase udarbejdet en ny tidsplansmodel: den Agile Stage-Gate model, omtalt i afsnit \ref{subsubsec:agil}. Hensigten var at have en mere agil projektstyring.  	
 	\begin{figure}[htb]
 	\centering	
-	\includegraphics[width=6in]{UC1.png}
+	\includegraphics[width=5in]{UC1.png}
 	\caption{Use Case diagrammet giver overblik over Use case samt involverede aktører}
 	\label{UCdiagram}
 	\end{figure}
@@ -185,7 +188,7 @@ Der er praktiseret en omhyggelig, systematisk tilgang til litteratursøgningen, 
 	\caption{Fully dressed beskrivelse af UC1}
 	\label{UCtabel}
 	\end{figure}
-
+	
 	
 \subsection{Den tredje udviklingsfase: udvikling og test}
 \subsection{Den fjerde udviklingsfase: implementering}
