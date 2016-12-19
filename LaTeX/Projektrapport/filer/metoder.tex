@@ -218,19 +218,31 @@ Testproceduren beskriver den praktiske udførelse af testen, således den er rep
 I dette afsnit gives der eksempler på, hvordan projektet er gået fra at være kravorienteret til løsningsorienteret.   Der er blandt andet brugt Block Definition Diagram (BDD), Internal Definition Diagram (IBD) og sekvensdiagram. Diagrammerne benyttes til at beskrive systemet på en overskuelig måde ved opdeling i delsystemer, og beskriver på den måde funktioner og sammenhænge. Det er ud fra disse diagrammer, at systemet er udviklet.   
 
 \subsubsection{BDD og IBD over hardware}
- BDD og IBD over hardwaren, er anvendt til at sikre, at hvert hardware element kan kommunikere med hinanden. Yderligere er det med til at definere specifikationerne, for eksempelvis at indskærpe antallet af strømforsyninger.Det anvendte BDD, som fremgår af figur \ref{fig:bdd}, giver en black box-repræsentation af systemet \textit{brystvolumenmåler}, sammen med sine fysisk sammensatte blokke, hhv. A/D-konvertering, en lydgivende kilde, en resonator, en lydopfanger samt et processeringselement. BDD anvendes til at give det overordnede overblik over, hvilke dele brystvolumenmåleren skal bestå af, og flow portene beskriver, hvad der kan gå gennem blokken (ind og/eller ud). 
+ BDD og IBD over hardwaren, er anvendt til at sikre, at hvert enkelte hardwarekomponent kan kommunikere med hinanden. Yderligere er det med til at definere specifikationerne, for eksempelvis at indskærpe antallet af strømforsyninger.
+
+Det anvendte BDD, som fremgår af figur \ref{fig:bdd}, giver en black box repræsentation af systemet \textit{brystvolumenmåler}, sammen med sine fysisk sammensatte blokke, hhv. A/D-konvertering, en lydgivende kilde, en resonator, en lydopfanger samt et processeringselement. BDD anvendes til at give det overordnede overblik over, hvilke komponenter brystvolumenmåleren skal bestå af, og flow portene beskriver, hvad der kan gå gennem blokken (ind og/eller ud). 
     
 \begin{figure}[htb]
 \centering
 \includegraphics[width=6in]{bdd.png}
-\caption{BDD over brystvolumenmålerens hardwareelementer}
+\caption{BDD over brystvolumenmålerens hardwarekomponenter}
 \label{fig:bdd}
 \end{figure}
 
+Det anvendte IBD, som fremgår af figur \ref{fig:idb}, giver en white box repræsentation af systemet. IBD'et beskriver mere præcist, hvordan de forskellige komponenter interagerer med hinanden. 
 
+\begin{figure}[htb]
+\centering
+\includegraphics[width=6in]{ibd.jpg}
+\caption{IBD over brystvolumenmåleren}
+\label{fig:ibd}
+\end{figure}
 
+I designfasen er der udarbejdet specifikationer samt overvejelser for de enkelte hardwarekomponenter. Disse fremgår af Projektdokumentationen. 
 
-	
+\subsubsection{Sekvensdiagram}
+I designdokumentet er der yderligere lavet et simpelt sekvensdiagram, hvilet giver overblik over de sekventielle dele af systemet til brugen af systemet.  Sekvensdiagrammernehar været brugt til at klargøre, hvordan softwaren skal implementeres og ihvilken rækkefølge funktionerne skal eksekveres. Derudover har det været med til at danneet overblik over delene, der skal implementeres i projektet, samt dele arbejdsopgaverne opi mindre opgaver.
+
 Da der efter denne fase var dannet et overblik over, hvilke opgaver der var nødvendige i implementeringen, blev der udarbejdet en ny og revurderet tidsplan for projektet. 
 
 \subsection{Den fjerde udviklingsfase: implementering}
