@@ -41,9 +41,9 @@ I projektets indledende faser, hvor der er arbejdet med konceptudvikling samt ud
 
 \newpage
 \begin{landscape}
-\begin{figure}
+\begin{figure}[htb]
 \centering	
-\includegraphics[width=9.5in]{stagegate.pdf}
+\includegraphics[width=9.5in]{stagegate.png}
 \caption{Den anvendte Stage-Gate model}
 \label{fig:stagegate}
 \end{figure}
@@ -62,10 +62,10 @@ I projekts udviklingsfase (herunder design, implementering samt integrationstest
 	   
 \newpage
 \begin{landscape}
-\begin{figure}
+\begin{figure}[ht]
 \centering
-\includegraphics[width=11in]{agilstagegate.pdf}
-\caption{Den anvendte Stage-Gate model}
+\includegraphics[width=10in]{agilstagegate}
+\caption{Den anvendte Agile Stage-Gate model}
 \label{fig:agilstagegate}
 \end{figure}
 \end{landscape}
@@ -170,14 +170,14 @@ Der er praktiseret en omhyggelig, systematisk tilgang til litteratursøgningen, 
 	Artiklerne blev gennemgået med et kritisk øje, og relevant information blev efterfølgende ekstraheret selvstændigt af JH og JR. Det lykkedes ikke, at fremsøge litteratur vedr. kvinders følelse af og holdninger til at anvende et lignende system som BVM. Det blev derfor besluttet at der måtte - hvis tidsrammen tillod - udarbejdes en usabilityundersøgelse på en gruppe på minimum 15 personer i hht. retningslinjer fra \textit{Association of the Advancement of Medical Instrumentation} og \textit{American National Standards Institute} (AAMI/ANSI HE75:2009). \\
 	
 	\subsubsection{Kravspecifikation og accepttest} 
-	Udover litteratursøgning, blev den første version af kravspecifikationen udarbejdet. Kravspecifikationen er udarbejdet på baggrund af det konceptuelle systemet, omtalt i afsnit \ref{sec:BVMopb}. I kravspecifikationen defineres de funktionelle krav ved anvendelse af et Use case diagram samt en fully dressed Use Case-beskrivelse. I Use Case diagrammet, som fremgår af figur \ref{fig:UCdiagram}, illustreres systemet \textit{Brystvolumenmåler}'s Use Case: \textit{udfør brystvolumenmåling}. Til venstre for systemet, vises systemets primære aktør; \textit{plastikkirurgen}, og til højre for systemet vises den sekundære aktør; \textit{patienten}. Nedenfor systemet, fremgår systemets interessenter. Da Use case diagrammet lå færdigt, blev der udarbejdet en fully dressed Use case beskrivelse, som fremgår af tabel \ref{UCtabel}.
+	Udover litteratursøgning, blev den første version af kravspecifikationen udarbejdet. Kravspecifikationen er udarbejdet på baggrund af det konceptuelle systemet, omtalt i afsnit \ref{sec:BVMopb}. I kravspecifikationen defineres de funktionelle krav ved anvendelse af et Use case diagram samt en fully dressed Use Case-beskrivelse. I Use Case diagrammet, som fremgår af figur \ref{fig:UC}, illustreres systemet \textit{Brystvolumenmåler}'s Use Case: \textit{udfør brystvolumenmåling}. Til venstre for systemet, vises systemets primære aktør; \textit{plastikkirurgen}, og til højre for systemet vises den sekundære aktør; \textit{patienten}. Nedenfor systemet, fremgår systemets interessenter. Da Use case diagrammet lå færdigt, blev der udarbejdet en fully dressed Use case beskrivelse, som fremgår af tabel \ref{UCtabel}.
 	 Formålet med at lave en fully dressed beskrivelse er at klarlægge normalforløbet og alternative flows for brystvolumenmålingen. Endvidere er de ikke-funktionelle krav udarbejdet ud fra daværende kendte HW- og SW-krav.
 	 
 	 \begin{figure}[htb]
 	\centering	
 	\includegraphics[width=5in]{UC1.png}
 	\caption{Use Case diagrammet giver overblik over Use case samt involverede aktører}
-	\label{UCdiagram}
+	\label{fig:UC}
 	\end{figure}
 	
 	\begin{figure}[htb]
@@ -215,7 +215,8 @@ Udarbejdelsen af testforløbet afspejler “God testpraksis”, som er et begreb
 Testproceduren beskriver den praktiske udførelse af testen, således den er reproducerbar og alle vil have mulighed for at udføre testen, uden at have nogen specifik baggrundsviden. Dokumentationen af hver enkelte test starter med en testhypotese, for at afklare hvad det forventede resultat er. Derefter specificeres det anvendte udstyr og komponenter, og testopstillingen samt - opsætningen beskrives meget udførligt for at sikre en korrekt udførelse af testen. Selve udførelsen af testen beskrives med en høj detaljegrad og kan muligvis forekomme nedladende, men da resultatet kan afhænge af, hvordan testen udføres er dette et nødvendigt forhold. Slutvis fremvises testresultaterne, og disse diskuteres efterfølgende for at sikre en refleksion over de opnåede resultater. Testen afrundes med en konklusion af resultatet i sammenhold med testhypotesen, og der planlægges en aktion for næste skridt. 
 	
 \subsection{Den tredje udviklingsfase: udvikling og test}Den tredje udviklingsfase er en iterativ proces bestående af design, udvikling, test og opdagelser.
-I dette afsnit gives der eksempler på, hvordan projektet er gået fra at være kravorienteret til løsningsorienteret.   Der er blandt andet brugt Block Definition Diagram (BDD), Internal Definition Diagram (IBD) og sekvensdiagram. Diagrammerne benyttes til at beskrive systemet på en overskuelig måde ved opdeling i delsystemer, og beskriver på den måde funktioner og sammenhænge. Det er ud fra disse diagrammer, at systemet er udviklet.   
+I dette afsnit gives der eksempler på, hvordan projektet er gået fra at være kravorienteret til løsningsorienteret.   Der er blandt andet brugt Block Definition Diagram (BDD) og Internal Definition Diagram (IBD). Diagrammerne benyttes til at beskrive systemet på en overskuelig måde ved opdeling i delsystemer, og beskriver på den måde funktioner og sammenhænge. Det er ud fra disse diagrammer, at systemet er udviklet. 
+Der er i denne fase ikke udviklet et sekvensdiagram på baggrund af UC1, da softwareudviklingen er afhængig af udviklingen af prototypen. Softwareudviklingen er derfor udarbejdet i takt med testprocessen og de opståede behov.
 
 \subsubsection{BDD og IBD over hardware}
  BDD og IBD over hardwaren, er anvendt til at sikre, at hvert enkelte hardwarekomponent kan kommunikere med hinanden. Yderligere er det med til at definere specifikationerne, for eksempelvis at indskærpe antallet af strømforsyninger.
@@ -229,7 +230,7 @@ Det anvendte BDD, som fremgår af figur \ref{fig:bdd}, giver en black box repræ
 \label{fig:bdd}
 \end{figure}
 
-Det anvendte IBD, som fremgår af figur \ref{fig:idb}, giver en white box repræsentation af systemet. IBD'et beskriver mere præcist, hvordan de forskellige komponenter interagerer med hinanden. 
+Det anvendte IBD, som fremgår af figur \ref{fig:ibd}, giver en white box repræsentation af systemet. IBD'et beskriver mere præcist, hvordan de forskellige komponenter interagerer med hinanden. 
 
 \begin{figure}[htb]
 \centering
@@ -241,6 +242,17 @@ Det anvendte IBD, som fremgår af figur \ref{fig:idb}, giver en white box repræ
 I designfasen er der udarbejdet specifikationer samt overvejelser for de enkelte hardwarekomponenter. Disse fremgår af Projektdokumentationen.  
 
 \subsection{Den fjerde udviklingsfase: implementering}
+Der er i denne fase udarbejdet et simpelt sekvensdiagram på baggrund af det aktuelle system, for at overskueliggøre sekvenserne i den udviklede kode. 
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=6in]{sekvensdiagram.png}
+\caption{Sekvensdiagram udarbejdet for at overskueliggøre den udarbejde software}
+\label{fig:sekvens}	
+\end{figure}
+
+
+Der er foretaget en kraftig revidering af kravspecifikationen, da der på baggrund af testerfaringerne kan udspecificeres mere konkrete krav. Disse krav er defineret ud fra akronymet FURPS+ (functionality, usability, reliability, performance and supportability, hvor \textit{+} defineres som designkrav). FURPS+-metoden anvendes som en form for checkliste, således alle sider bliver medtaget. 
 
 FURPS
  
