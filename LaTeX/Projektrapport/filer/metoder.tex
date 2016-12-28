@@ -112,6 +112,7 @@ Det er i projektets indledende uger, prioriteret at bruge tid på at lære at an
 Det webbaserede referenceværktøj RefWorks, er benyttes til at holde styr på kilder fra anvendt litteratur. Projektgruppen har oprettet en fælles account til RefWorks, så alle referencer er samlet i én online database, og på denne måde kan tilgås fra enhver computer. Referencerne i RefWorks-databasen eksporteres til bibliografien i LaTeX, som danner en litteraturliste. Formålet med dette værktøj er, at gøre det problemfrit, at referere til anvendt litteratur. 
 
 	\subsection{LabVIEW 14.0 Development System}
+	\label{subsec:labview}
 	LabVIEW er et udviklingsmiljø, der med grafisk og intuitiv programmering, gør det simpelt at visualisere og kode teknisk software. Formålet med dette værktøj er, at der hurtigt (sammenlignet med traditionelle programmeringssporg) kan produceres et brugerdefineret program, som interagerer med real-world data og signaler. Hensigten er derfor at anvende det værktøj i databehandlingen af lydgenerering og lydopfangning. 
 	
 	\subsection{Microsoft Visio}   
@@ -134,7 +135,7 @@ GitHub er et versionsstyringsprogram, som i projektet anvendes til versionsstyri
 \vspace{0.5cm}
 
 \section{Udviklingsfaserne}
-Dette afsnit omhandler de fire udviklingsfaser, der er gennemgået under projektprocessen. Hensigten med dette afsnit er at beskrive de anvendte metoder i hver enkelte fase, samt at eftervise anvendelse af disse ved at inddrage eksempler.   
+Dette afsnit omhandler de fire udviklingsfaser, der er gennemgået under projektprocessen. Hensigten med dette afsnit er at beskrive de anvendte metoder i hver enkelte fase, samt at eftervise anvendelsen af disse ved at inddrage eksempler.   
   
 \subsection{Den første udviklingsfase: konceptudvikling}
 
@@ -191,6 +192,7 @@ Der er praktiseret en omhyggelig, systematisk tilgang til litteratursøgningen, 
 	Der var et tydeligt behov, at der i udviklings- samt testfasen, måtte testes frem mod erfaringer, hvorudfra der kunne defineres mere specifikke krav. Udarbejdelse af kravspecifikation samt accepttest var derfor på \textit{high-level}, altså et højt, overordnet plan og under ingen omstændigheder endegyldigt. Der blev i denne fase udarbejdet en ny tidsplansmodel: den Agile Stage-Gate model, omtalt i afsnit \ref{subsubsec:agil}. Hensigten var at have en mere agil projektstyring. 
 	
 	\subsubsection{Planlægning af testforløb og -dokumentation}
+	\label{subsubsec:test}
 	Projektet er et udviklingsprojekt, hvor der systematisk testes frem til en produktløsning. Projektet er derfor præget af et omfattende testforløb, hvor der med en systematisk tilgang er lagt vægt på reproducerbarhed samt sporbarhed. 
 Det indledende testforløb blev udarbejdet med inspiration fra “Projekteringshåndbogen”, skrevet af Søren Lyngsø-Petersen, som beskriver test af produktionsudstyr til Health Care branchen. Således blev Lyngsø-Petersens testforløbsmodel tilpasset projektets testforløb, som endte ud med at være et forløb inddelt i følgende fem faser:    
 
@@ -211,14 +213,15 @@ Udarbejdelsen af testforløbet afspejler “God testpraksis”, som er et begreb
 	\item Dokumentation af testresultatet
 	\end{enumerate}
 
-Testproceduren beskriver den praktiske udførelse af testen, således den er reproducerbar og alle vil have mulighed for at udføre testen, uden at have nogen specifik baggrundsviden. Dokumentationen af hver enkelte test starter med en testhypotese, for at afklare hvad det forventede resultat er. Derefter specificeres det anvendte udstyr og komponenter, og testopstillingen samt - opsætningen beskrives meget udførligt for at sikre en korrekt udførelse af testen. Selve udførelsen af testen beskrives med en høj detaljegrad og kan muligvis forekomme nedladende, men da resultatet kan afhænge af, hvordan testen udføres er dette et nødvendigt forhold. Slutvis fremvises testresultaterne, og disse diskuteres efterfølgende for at sikre en refleksion over de opnåede resultater. Testen afrundes med en konklusion af resultatet i sammenhold med testhypotesen, og der planlægges en aktion for næste skridt. 
+Testproceduren beskriver den praktiske udførelse af testen, således den er reproducerbar og alle vil have mulighed for at udføre testen, uden at have nogen specifik baggrundsviden. Dokumentationen af hver enkelte test starter med en testhypotese for at afklare, hvad det forventede resultat er. Derefter specificeres det anvendte udstyr og komponenter, og testopstillingen samt - opsætningen beskrives meget udførligt for at sikre en korrekt udførelse af testen. Selve udførelsen af testen beskrives med en høj detaljegrad og kan muligvis forekomme nedladende, men da resultatet kan afhænge af, hvordan testen udføres er dette et nødvendigt forhold. Slutvis fremvises testresultaterne, og disse diskuteres efterfølgende for at sikre en refleksion over de opnåede resultater. Testen afrundes med en konklusion af resultatet i sammenhold med testhypotesen, og der planlægges en aktion for næste skridt. 
 	
-\subsection{Den tredje udviklingsfase: udvikling og test}Den tredje udviklingsfase er en iterativ proces bestående af design, udvikling, test og opdagelser.
-I dette afsnit gives der eksempler på, hvordan projektet er gået fra at være kravorienteret til løsningsorienteret.   Der er blandt andet brugt Block Definition Diagram (BDD) og Internal Definition Diagram (IBD). Diagrammerne benyttes til at beskrive systemet på en overskuelig måde ved opdeling i delsystemer, og beskriver på den måde funktioner og sammenhænge. Det er ud fra disse diagrammer, at systemet er udviklet. 
-Der er i denne fase ikke udviklet et sekvensdiagram på baggrund af UC1, da softwareudviklingen er afhængig af udviklingen af prototypen. Softwareudviklingen er derfor udarbejdet i takt med testprocessen og de opståede behov.
+\subsection{Den tredje udviklingsfase: design, udvikling og test} 
+Den tredje udviklingsfase er en iterativ proces bestående af design, udvikling, test og opdagelser. Systemets design fastlægges i denne fase på baggrund af erfaringer fra den systematiske testproces, beskrevet ovenfor i afsnit  \ref{subsubsec:test}. Det vil sige, at der ud fra testerfaringer designes, udvikles samt testes påny indtil det endelig mål opnåes. Systemets design er altså løbende udarbejdet og fastlagt efter testerfaringer samt ved at konferere med fagfolk; herunder Tore A. Skogberg og Lars G. Johansen, lektorer i akustik ved Ingeniørhøjskolen, Aarhus Universitet.
 
-\subsubsection{BDD og IBD over hardware}
- BDD og IBD over hardwaren, er anvendt til at sikre, at hvert enkelte hardwarekomponent kan kommunikere med hinanden. Yderligere er det med til at definere specifikationerne, for eksempelvis at indskærpe antallet af strømforsyninger.
+
+I dette afsnit gives der eksempler på, hvordan projektet er gået fra at være kravorienteret til løsningsorienteret.   Blandt andet er der brugt \textit{Block Definition Diagram} (BDD) og \textit{Internal Definition Diagram} (IBD). Diagrammerne benyttes til at beskrive systemet på en overskuelig måde ved opdeling i delsystemer, hvorfra funktioner og sammenhænge fremgår. Ud fra disse diagrammer er systemets udvikling påbegyndt. 
+
+BDD og IBD er udarbejdet over hardware, og er anvendt til at sikre, at hvert enkelte hardwarekomponent kan kommunikere med hinanden. 
 
 Det anvendte BDD, som fremgår af figur \ref{fig:bdd}, giver en black box repræsentation af systemet \textit{brystvolumenmåler}, sammen med sine fysisk sammensatte blokke, hhv. A/D-konvertering, en lydgivende kilde, en resonator, en lydopfanger samt et processeringselement. BDD anvendes til at give det overordnede overblik over, hvilke komponenter brystvolumenmåleren skal bestå af, og flow portene beskriver, hvad der kan gå gennem blokken (ind og/eller ud). 
     
@@ -238,7 +241,33 @@ Det anvendte IBD, som fremgår af figur \ref{fig:ibd}, giver en white box repræ
 \label{fig:ibd}
 \end{figure}
 
-I designfasen er der udarbejdet specifikationer samt overvejelser for de enkelte hardwarekomponenter. Disse fremgår af Projektdokumentationen.  
+Systemets software udvikles i LabVIEW. Som nævnt i afsnit \ref{subsec:labview} udvikles programmet af modulær kode, som afgrænser de enkelte funktionaliteter. Ved objektorienteret programmering beskrives koden typisk vha. klassediagrammer og 3-lags modellen, hvor de enkelte klassers ansvar og grænseflader defineres. I LabVIEW holdes koden simpel og i et logisk flow, som afspejler eksekveringsrækkefølgen. Ved at opdele koden i funktioner fremfor klasser er det ikke hensigtmæssigt at benytte 3-lags modellen. 
+Der er i denne fase ikke udviklet et sekvensdiagram ud fra UC1, da softwareudviklingen er afhængig af udviklingen af prototypen. Softwareudviklingen er derfor udarbejdet i takt med testprocessen og de opståede behov og har ikke været forudbestemt. Dog er der alligevel medtaget et simpelt sekvensdiagram over den udviklede software. Dette er gjort for at fremvise metoden samt for at præsentere den udviklede kode med henblik på en eventuel videreudvikling.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=6in]{sekvensdiagram.png}
+\caption{Sekvensdiagram over brystvolumenmåleren}
+\label{fig:sekvens}
+\end{figure}
+
+Specifikationer samt overvejelser for de enkelte hardwarekomponenter fremgår af de udførte enhedstest, og vises i flowdiagrammerne i figur \ref{fig:flowlyd} og \ref{fig:flowop}. For at præsentere de udførte enhedstest på en systematisk og struktureret måde, er enhedstestene angivet med et tildelt ID. ID'et er opbygget af forkortelsen \textit{E} for enhedstest efterfulgt af et nummer, som definerer hvilket nummer enhedstest der er tale om. Endvidere er de anvendte hardwarekomponenter tildelt et ID defineret ud fra deres funktion og rækkefølge; eksempelvis \textit{H3} for \textit{højtaler tre}, altså den tredje anvendte højtaler. Disse to ID'er definerer tilsammen hvilken enhedstest der er tale om, samt hvilken hardwarefunktion der testes. 
+ 
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=3in]{flowdiagramelyd.png}
+\caption{Flowdiagram over de udførte enhedstests af lydgivende kilder}
+\label{fig:flowlyd}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=3in]{flowdiagrameop.png}
+\caption{Flowdiagram over de udførte enhedstests af lydopfangere}	
+\label{fig:flowop}
+\end{figure}
+
 
 \subsection{Den fjerde udviklingsfase: implementering}
 Der er i denne fase udarbejdet et simpelt sekvensdiagram på baggrund af det aktuelle system, for at overskueliggøre sekvenserne i den udviklede kode. 
@@ -251,7 +280,6 @@ Der er i denne fase udarbejdet et simpelt sekvensdiagram på baggrund af det akt
 \end{figure}
 
 
-Der er foretaget en kraftig revidering af kravspecifikationen, da der på baggrund af testerfaringerne kan udspecificeres mere konkrete krav. Disse krav er defineret ud fra akronymet FURPS+ (functionality, usability, reliability, performance and supportability, hvor \textit{+} defineres som designkrav). FURPS+-metoden anvendes som en form for checkliste, således alle sider bliver medtaget. 
+Der er foretaget en kraftig revidering af kravspecifikationen, da der på baggrund af testerfaringerne kan udspecificeres mere konkrete krav. Disse krav er defineret ud fra metoden \textit{FURPS+} (functionality, usability, reliability, performance and supportability, hvor \textit{+} defineres som designkrav). FURPS+-metoden anvendes som en form for checkliste, således alle sider bliver medtaget. 
 
-FURPS
  
