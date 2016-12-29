@@ -27,6 +27,7 @@
 Projektet er et udviklingsprojekt, hvor der systematisk testes frem til en produktløsning. Projektet er derfor præget af et omfattende testforløb, hvor der med en systematisk tilgang er lagt vægt på reproducerbarhed samt sporbarhed. Dette afsnit beskriver, hvorledes testprocessen er udarbejdet. 
 
 \subsection{Beskrivelse af testforløbet}
+\label{subsec:testfor}
 Det indledende testforløb blev udarbejdet med inspiration fra “Projekteringshåndbogen”, skrevet af Søren Lyngsø-Petersen, som beskriver test af produktionsudstyr til Health Care branchen. Lyngsø-Petersen beskriver, hvorledes et testforløb overordnet kan inddeles i fem faser;  
 
 	\begin{enumerate}
@@ -84,14 +85,14 @@ I figur \ref{fig:flowdiagramelyd} og \ref{fig:flowdiagrameop} vises, hvorledes e
 
 \begin{figure}[htb]
 			\centering
-				\includegraphics[width=4in]{flowdiagramelyd}
+				\includegraphics[width=3in]{flowdiagramelyd}
 				\caption{Flowdiagram over enhedstest af lydgivende enheder}	
 				\label{fig:flowdiagramelyd}
 			\end{figure}
 
 \begin{figure}[htb]
 			\centering
-				\includegraphics[width=4in]{flowdiagrameop}
+				\includegraphics[width=3in]{flowdiagrameop}
 				\caption{Flowdiagram over enhedstest af lydopfangende enheder}	
 				\label{fig:flowdiagrameop}
 			\end{figure}
@@ -150,102 +151,7 @@ VT6 &
 \begin{tabular}[c]{@{}l@{}}Varmekilde og vand\end{tabular} \\ \hline
 \end{tabularx}
 	
-\section{Godkendelse af BVM som medicinsk udstyr}
-Godkendelse af medicinsk udstyr kan opfattes som en forhindring i udviklings og produktionsprocessen af nye produkter, da dokumentationen bag en godkendelse kan være lang og meget omfattende. Heldigvis kan denne proces, med indsigt, systematik og struktureret planlægning, være en naturlig del af udviklings- og produktionsprocessen. Allerede i projektets opstartsfase bør produktets \textit{intended use} fastlægges og det bør undersøges, hvorledes dokumentationen skal udarbejdes for at opfylde gældende krav.
-Der stilles regulatoriske krav, som skal dokumenteres allerede i den tidlig forskningssfase, hvor f.eks testdokumentation understøtter risikohåndteringen som er påkrævet. 
-
-\begin{figure}[htb]
-\centering	
-\includegraphics[width=5in]{life}
-\caption{Det medicinske udstyrs life cycle€€€}
-\label{fig:label}
-\end{figure}
-   
 
 
-I henhold til at få et medicinsk udstyr markedsført i Europa, skal der foretages en godkendelse af produktet, hvilket opnås ved en CE-mærkning. Der stilles omfattende krav til produktet styret af \textit{the European Medical Devices Directive 93/42/EEC}{}(MDD 93/42/EEC). I udgangen af år 2016 eller begyndelsen af 2017 bliver MDD erstattet af \textit{the European Medical Device Regulation}{}(MDR), hvis regulativer skal være implementeret inden udgangen af 2019. 
-  
-Dette afsnit beskriver vejen til CE-mærket for brystvolumenmåleren. CE-mærkningen starter ved at definere produktet som medicinsk udstyr og derefter at klassificere produktet ud fra \textit{the European Commission's official guidance for Medical Devices - MEDDEV 2.4/1 Rev.9}. Ud fra klassifikationen tydeliggøres det i MEDDEV, hvilke bilag fra MDD, som skal opfyldes for at opnå CE-mærkning. 
-Udover klassificeringen, findes gennerelle krav, som ethvert medicinsk udstyr skal opfylde. Disse væsentlige krav indeholder bl.a. en risikoanalyse, som vil blive udarbejdet for brystvolumenmåleren. 
-Når dokumentationen for overensstemmelse med gældende krav er udarbejdet, kan CE-mærkning opnåes.
-Redegørelsen for vejen til CE-mærkning vil ikke være fyldestgørende, idet ressourcerne hovedsageligt er brugt på det beskrevne proces- og testforløb. Udarbejdelsen af dette afsnit skal ses som en konsulterende redegørelse for håndteringen af de regulatoriske krav. 
-
-\subsection{Definition af BVM som medicinsk udstyr}
-
-BMV kategoriseres som et medicinsk udstyr ud fra definitionen af medicinsk udstyr i MDD 93/42/ EEC, artikel 1.2 (a) og B(e). BMV's anvendelsesformål er bestemmelse af volumen af et bryst med henblik på modificering af anatomien på en patient. Dette anvendelsesformål definerer derved brystvolumenmåleren som værende et medicinsk udstyr. 
-
-\subsection{Klassificeringen af brystvolumenmåleren}
-
-Ud fra MEDDEV guidelines klassificeres BMV'en som et klasse I produkt, ud fra regel 1: \\
-\textit{"Devices that either do not touch the patient or contact intact skin only."} \\
-Ydermere har produktet en målefunktion og derved skærpes kravene til CE-godkendelsen. Klassificeringen bliver derved en klasse Im.
-
-\subsection{Vejen til CE-mærkning}
-
-For klasse Im-udstyr, og dermed BVM, er der flere veje til at opnå CE-mærkning. I figur \ref{fig:Klas} fremgår det, hvilke bilag i MDD 93/42/EEC, som beskriver kravene til opfyldelse af overensstemmelseserklæring. Der gøres opmærksom på, at bilag VII \textit{skal} opfyldes sammen med \textit{enten} bilag II (pånær sektion 4), bilag IV, bilag V eller bilag VI. Bilag VII er en EF overensstemmelseserklæring, som blandt andet indeholder al den tekniske dokumentation. I bilag II, IV, V og VI stilles der krav til kvalitetssikringssystemer, hvor forskellen er omfanget af kravene til kvalitetssystemerne. Bilag II beskriver kravene til en fuld kvalitetssikring, hvor bilag IV, bilag V og bilag VI beskriver kvalitetssikringskrav til hhv. produktionverifikation, produktion og produkt, hvor kun de de metrologiske aspekter medtages. Producenten må derfor vurdere, hvordan graden af kvalitetssikring og økonomiske omkostninger skal afbalanceres.   
-
-    Den harmoniserede standard DS/EN ISO 13485:2016 kan følges for at sikre overensstemmelse med kvalitetskravene i MDD. Følges hele standarden, er producenten fuldt ud i overensstemmelse med bilag II.
-    Der kan opnåes overensstemmelse med de regulatoriske krav, omhandlende risikostyring som findes i bilag VII, ved at følge den harmoniserede standard ISO 14971:2007.
-Ydermere skal der gøres opmærksom på at den konceptuelle BVM vil indeholde software. I de regulatoriske krav stilles der krav til software i medicinsk udstyr. Den harmoniserede standard IEC 62304:2006 kan følges for at opnå overensstemmelse med disse krav.   
-
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=5in]{Klassificering}
-\caption{Klassificeringen af det medicinske udstyr har indflydelse på hvilke bilag som skal opfyldes for at opnå CE-mærkningen. For klasse Im-udstyr \textit{skal} bilag VII opfyldes sammen med \textit{enten} bilag II (pånær sektion 4), bilag IV, bilag V eller bilag VI (MEDDEV 2. 4/1 Rev. 9 June 2010)}
-\label{fig:Klas}
-\end{figure}
-
-\subsection{CE-mærkningen}
-   
-Når bilag VII samt en af de ovenstående kvalitetssikringsbilag er opfyldt, gennemgår og vurderer et selvvalgt bemyndiget organ om de metrologiske apsekter i produktet, lever op til kravene i MDD. Disse bemyndigede organer er private virksomheder, som er udvalgt af nationale sundhedsmyndigheder i EU. Når dokumentationen godkendes udstedes et certifikat, som giver producenten lov til at påsætte CE-mærket på sine produkter, og dermed markedsføre dem.    
- Producenten skal opbevare sin overensstemmelseserklæring i mindst fem år efter produktionen af sidste produkt. Producenten har samtidig det fulde ansvar for at holde sin dokumentation opdateret, således de opfyldte bilag til hver en tid kan godkendes af det bemyndigede organ. Det bemyndigede organ har ansvaret for løbende at vurdere dokumentationen.
-Det gøres opmærksom på, at producenten er forpligtiget til at vedligeholde sit markedsovervågningssystem, som oprettes jvf. bilag VII. Efter markedsføringen skal producenten fortsat systematisk indsamle og vurdere erfaringer, som opnås ved brug af det medicinske udstyr på markedet. 
-
-\subsection{Risikovurdering}
-I dette afsnit eksemplificeres udførslen af en risikovurdering af anvendelsen af brystvolumenmåleren. Denne risikovurdering er en systematisk fremgangsmåde, hvor sporbarhed er essentielt. Her identificeres og vurderes risikofaktorer, og usikkerhed behandles. 
-Det anbefales, at risikovurderingen udarbejdes af et tværfagligt team med eksperter på deres respektive områder, for at opnå en fyldestgørende og helhedsbetragtende risikovurdring.   
-En risikovurdering består af en \textit{risikoanalyse} og en \textit{risikoevaluering}. I risikoanalysen identificeres en given fare, hvortil risikoen estimeres. I risikoevalueringen vurderes og vælges hvilke risikoniveauer, der er acceptable, og endvidere analyseres muligheder for en evt. risikoreduktion.
-
-	\subsubsection{Risikoanalyse}
-	Der findes forskellige analysemetoder til at identificere risici, og dette eksempel tager udgangspunkt i metoden kaldet \textit{Failure Mode and Effect Analysis}{} (FMEA). Ved brug af FMEA inddeles BMV'en i uafhængige undersystemer, som med fordel kan identificeres ud fra de udarbejdede BBD- og IBD-diagrammer. Ved denne inddeling opnås en kvalitativ og systematisk identificering af risikofaktorer.
-	I udarbejdelsen af identificering af farer i forbindelse med BVM, er der blevet taget udgangspunkt i det fundne litteratur, sparring med fagpersoner samt egne udviklingserfaringer. Der blev genereret en liste over identificerede farer som er blevet videreudviklet til en FMEA-tabel.  
-	
-	Risikofaktorerne vurderes derefter ud fra en kvantitativ scoring fra 1-10 i hht. \textit{Risk Priority Number}{} (RPN), som fremgår af figur \ref{fig:rpn}. \textit{Sandsynlighed}{}(S) er et begreb for, hvor ofte årsagen til fejltilstanden opstår. \textit{Konsekvens}{}(K) definerer, hvilken effekt fejltilstanden har. \textit{Detektion}{}(D) er et begreb for sandsynligheden for at detektere fejltilstanden. De angivne RPN-værdier er givet ud fra et estimat grundet manglende indsigt i samt data af den konceptuelle BVM. Tabellen er udarbejdet, som et eksempel på, hvorledes FMEA kan anvendes. 	
-	 
-	\begin{figure}[htb]
-	\centering
-	\includegraphics[width=5in]{RPN}
-	\caption	{RPN er produktet af sandsynlighed, konsekvens og detektion.}
-	\label{fig:rpn}
-	\end{figure}
-
-\begin{landscape}
-\centering
-\label{my-label}
-\begin{tabular}{llllllllllll}
-\hline
-\multicolumn{1}{|l|}{\textbf{Enhed}} & \multicolumn{1}{l|}{\textbf{Ref.nr.}} & \multicolumn{1}{l|}{\textbf{Funktion}} & \multicolumn{1}{l|}{\textbf{Fare eller fejltilstand}} & \multicolumn{1}{l|}{\textbf{Effekt af fare eller fejltilstand}} & \multicolumn{1}{l|}{\textbf{Årsag til fare eller fejltilstand}} & \multicolumn{1}{l|}{\textbf{S}} & \multicolumn{1}{l|}{\textbf{K}} & \multicolumn{1}{l|}{\textbf{D}} & \multicolumn{1}{l|}{\textbf{RPN}} & \multicolumn{1}{l|}{\textbf{\begin{tabular}[c]{@{}l@{}}Ansvar og\\ deadline\end{tabular}}} & \multicolumn{1}{l|}{\textbf{Ændringsdato}} \\ \hline
-   
-    \multicolumn{1}{|l|}{Resonator} & \multicolumn{1}{l|}{R1} & \multicolumn{1}{l|}{Danner Helmholtz resonans} & \multicolumn{1}{l|}{Ikke-ideel opførelse i port} & \multicolumn{1}{l|}{Fejl i volumenudregning} & \multicolumn{1}{l|}{Fejlberegning af endekorrektion $\Delta l$} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{-} & \multicolumn{1}{l|}{10} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{\begin{tabular}[c]{@{}l@{}}Ansvar og\\ deadline\end{tabular}}} & \multicolumn{1}{l|}{\textbf{Ændringsdato}} \\ \hline
-    
-      \multicolumn{1}{|l|}{} &
-       \multicolumn{1}{l|}{R2} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{Indlejrer luft} & \multicolumn{1}{l|}{Afvigende temperatur} & \multicolumn{1}{l|}{Fejl i volumenudregning} & \multicolumn{1}{l|}{Ukorrekt værdi for temperatur i udregning} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{\begin{tabular}[c]{@{}l@{}}Ansvar og\\ deadline\end{tabular}}} & \multicolumn{1}{l|}{\textbf{Ændringsdato}} \\ \hline  
-      
-       \multicolumn{1}{|l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{\begin{tabular}[c]{@{}l@{}}Ansvar og\\ deadline\end{tabular}}} & \multicolumn{1}{l|}{\textbf{Ændringsdato}} \\ \hline                                                                                                                   
-\end{tabular}
-
-\end{landscape}
-
-	\subsubsection{Risikoevaluering}  
-	I risikoevalueringen vurderes og bestemmes, hvilke risikoniveauer der er acceptable samt hvilke niveauer der skal behandles mhp. risikoreduktion. Der sættes en tærskelværdi ud fra den definerede RPN-skala, som skelner mellem det acceptable og ikke-acceptable niveau. De risici, som overskider tærskelværdien skal reduceres. Denne risikoreduktion kan foretages ved anvendelse af princippet \textit{as low as reasonably practical}{} (ALARP). ALARP-niveauet er nået, når omkostningerne af yderligere reduktion bliver uhensigtsmæssigt disproportioneret i forhold til den ellers opnåede risikoreduktion.    
-
-\subsection{Kvalitetssikringssystem}
-
-Et kvalitetssystem designes til opfylde de regulatoriske krav som produktets klassificering pålægges. Det vil sige at det designes ud fra behov. 
-Et kvalitetssikringssystem består af en organisationsstruktur, en ansvarsfordeling, procedure, specifikationer pg processer og ressoucer. 
-
-Hvad kræver det af dokumenter
-Sporbarhed
 
 
