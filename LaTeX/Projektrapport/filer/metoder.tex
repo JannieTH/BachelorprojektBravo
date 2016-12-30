@@ -210,6 +210,9 @@ Testproceduren beskriver den praktiske udførelse af testen, således den er rep
 	
 \subsection{Den tredje udviklingsfase: design, udvikling og test} 
 I dette afsnit gives der eksempler på, hvordan projektet er gået fra at være kravorienteret til løsningsorienteret.Den tredje udviklingsfase er en iterativ proces bestående af design, udvikling, test og opdagelser. Systemets design fastlægges i denne fase på baggrund af erfaringer fra den systematiske testproces, beskrevet ovenfor i afsnit  \ref{subsubsec:test}, samt overvejelser omkring opfyldelseskriterier i forbindelse med godkendelse af det medicinske udstyr. Det vil sige, at der ud fra testerfaringer designes, udvikles samt testes påny indtil det endelig mål opnåes, og den ønskede klassificering kan opfyldes. Systemets design er altså løbende udarbejdet og fastlagt efter testerfaringer samt ved at konferere med fagfolk; herunder Tore A. Skogberg og Lars G. Johansen, lektorer i akustik ved Ingeniørhøjskolen, Aarhus Universitet.
+\subsubsection{Design af HW og SW}
+
+Dette afsnit dokumenterer hardwaren i systemet \textit{Brystvolumenmåler}, og indeholder dermed beskrivelser af systemets fysiske dele samt deres funktionalitet. Beskrivelserne er udarbejdet ud fra et begrænset kendskab til Helmholtz' resonansteori i forbindelse med brystvolumenmåling. Disse beskrivelser der derfor anvendt som udgangspunkt for et indledende design, som kan anvendes til at teste frem mod erfaringer omkring hardwareudvælgelse. De fysiske deles specifikationer er derfor ikke uddybet i dette dokument, og begrundelser og argumenter for, hvorfor de brugte komponenter er valgt fremgår af Projektdokumentationen, kapitel 3. 
 
 Under design af hardware er der brugt \textit{Block Definition Diagram} (BDD) og \textit{Internal Definition Diagram} (IBD). Diagrammerne benyttes til at beskrive systemet på en overskuelig måde ved opdeling i delsystemer, hvorfra funktioner og sammenhænge fremgår. Ud fra disse diagrammer er systemets udvikling påbegyndt. 
 
@@ -243,11 +246,52 @@ Der er i denne fase ikke udviklet et sekvensdiagram ud fra UC1, da softwareudvik
 \label{fig:sekvens}
 \end{figure}
 
-Overvejelser for valget af de enkelte hardwarekomponenter er resultater af testerfaringer samt anbefalinger af fagfolk, som nævnt ovenfor. 
+\subsubsection{Fastlæggelse af hardware} 
+Udvælgelsen af hardware er, som nævnt, sket på baggrund af testerfaringer samt ved at konferere med fagfolk. Selve udvælgelsen er dermed en proces, som er kørt sideløbende med selve testprocessen i implementeringsfasen. Der er derfor ikke fastlagt nogle endelig komponenter da systemet stadig er under udvikling. I de følgende afsnit begrundes der for det anvendte hardware. 
 
-Eksempelvis fremgår det af figur \ref{fig:flowop}, at der først er testet med én type mikrofon (\textit{M1}, hvorefter der er opdaget en eventuel fejl under udførslen af testen og resultatet af en dermed ny test af mikrofonen har belyst et krav om et bredere frekvensbånd. Derfra er der testet med en ny type højtaler, hvorefter der er opdaget et nyt krav osv.  
 
-For at præsentere de udførte enhedstest på en systematisk og struktureret måde, er enhedstestene angivet med et tildelt ID. ID'et er opbygget af forkortelsen \textit{E} for enhedstest efterfulgt af et nummer, som definerer hvilket nummer enhedstest der er tale om. Endvidere er de anvendte hardwarekomponenter tildelt et ID defineret ud fra deres funktion og rækkefølge; eksempelvis \textit{H3} for \textit{højtaler tre}, altså den tredje anvendte højtaler. Disse to ID'er definerer tilsammen hvilken enhedstest der er tale om, samt hvilken hardwarefunktion der testes. 
+Overvejelser for valget af de enkelte hardwarekomponenter er resultater af testerfaringer samt anbefalinger af fagfolk, som nævnt ovenfor. Selve udvælgelsen er dermed en proces, som er kørt sideløbende med selve testprocessen i implementeringsfasen. Der er derfor ikke fastlagt nogle endelig komponenter da systemet stadig er under udvikling. 
+
+I tabel \ref{table:overblok} fremgår en oversigt over systemets enkelte blokkes funktioner og signaltyper. Til opfyldelse af disse funktioner er der anvendt forskelligt hardware, som fremgår af tabel \ref{table:anvendthw}. 
+
+\begin{table}[htb]
+\centering
+\caption{Oversigt over de enkelte blokkes funktioner og signaltyper}
+\label{table:overblok}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Bloknavn} & \textbf{Funktionsbeskrivelse} & \textbf{Signaltype}\\ \hline
+Speaker & udsender lyd & frekvenssignal\\ \hline
+Resonator & tilbagekaster lyd & resonansfrekvens\\ \hline
+Microphone & opfanger reflekteret lyd & frekvenssignal \\ \hline
+Arduino & A/D konvertering & frekvenssignal og resonansfrekvens \\ \hline
+Dataprocessering & behandling af data & frekvenssignal og resonansfrekvens\\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[htb]
+\centering
+\caption{Oversigt over det anvendte hardware}
+\label{table:anvendthw}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Funktion} & \textbf{ID} & \textbf{Navn} \\ \hline
+\multirow{3}{*}{Højtaler} & H1 & ASB-224-RC \\ \cline{2-3} 
+ & H2 & Wide Band 2.5'' SB65WBAC25-4  \\ \cline{2-3} 
+ & H3 & Multimedia USB Speaker HP-1800 \\ \hline
+ Resonator & res1 & Tryksprøjte NSG 150 - Neptun (modificeret) \\ \hline
+\multirow{2}{*}{Mikrofon} & M1 & Minijack PC Mikrofon  \\ \cline{2-3} 
+ & M2 & Logitech HD WEBCAM C270 \\ \cline{2-3}
+ & M3 & Electret Microphone BOB12758 \\ \cline{2-3}
+ & M4 & Electret Microphone Amplifier MAX4466\\ \hline
+ \multirow{1}{*}{A/D konverter} & C1 & Arduino Mega 2560 \\ \cline{2-3}
+ & C2 & \daq \\ \hline
+ Dataprocesser & D1 & PC med \labview \\ \hline
+\end{tabular}
+\end{table}
+
+
+
 
 \begin{figure}[htb]
 \centering

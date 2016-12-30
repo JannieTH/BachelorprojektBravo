@@ -1,10 +1,10 @@
 
 \chapter{Design}
 \section{Indledning}
-Dette dokument beskriver systemets design og systemarkitektur. Dokumentet er en generel præsentation og beskrivelse af systemet, herunder hvorledes brystvolumenmåleren er opbygget, hardware-  og softwaremæssigt. \\
-Grundet manglende kendskab til Helmholtz' resonansteori i forbindelse med brystvolumenmåling, er opbygning af systemets HW og SW udviklet på baggrund af testerfaringer og ved at konferere med fagfolk; herunder Tore A. Skogberg og Lars G. Johansen, lektorer i akustik ved Ingeniørhøjskolen, Aarhus Universitet. Derudover er der ud fra en systematisk litteratursøgning fundet en begrænset mængde videnskabelig litteratur omhandlende Helmholtz' resonansteori i forbindelse med voluminer af objekter.
+Dette dokument beskriver systemets design. Dokumentet er en generel præsentation og beskrivelse af systemet, herunder hvorledes brystvolumenmåleren er opbygget, hardware-  og softwaremæssigt. \\
+Grundet manglende kendskab til Helmholtz' resonansteori i forbindelse med brystvolumenmåling, er opbygning af systemets HW og SW udviklet på baggrund af testerfaringer og ved at konferere med fagfolk; herunder Tore A. Skogberg og Lars G. Johansen, lektorer i akustik ved Ingeniørhøjskolen Aarhus Universitet. Derudover er der ud fra en systematisk litteratursøgning fundet en begrænset mængde videnskabelig litteratur omhandlende Helmholtz' resonansteori i forbindelse med voluminer af objekter.
 
-Designafsnittet er altså udviklet på baggrund af det aktulle system. 
+Designafsnittet er udviklet på baggrund af det aktulle system. 
 
 \section{Udviklingsværktøjer}
 Selve softwaren til systemet udvikles i LabVIEW, version 14.0. Følgende tilføjelsespakker er anvendt:
@@ -17,8 +17,7 @@ Selve softwaren til systemet udvikles i LabVIEW, version 14.0. Følgende tilføj
 
 Disse pakker anvendes til at interagere med \arduino{} samt \daq. 
 
-	\subsection{Microsoft Visio}   
-	Microsoft Visio er et tegneprogram, som anvendes til at illustrere udviklingsdiagrammer. 
+Endvidere er der anvendt tegneprogrammet \textit{Microsoft Visio}, til illustration af udviklingsdiagrammer. 
 	
 \section{Versionsstyring}
 \subsection{GitHub}
@@ -72,8 +71,8 @@ Dataprocessering & behandling af data & frekvenssignal og resonansfrekvens\\ \hl
 \end{tabular}
 \end{table}
 
-\subsection{Bestemmelse af hardware} 
-Udvælgelsen af hardware er, som nævnt, sket på baggrund af testerfaringer samt ved at konferere med fagfolk. Selve udvælgelsen er dermed en proces, som er kørt sideløbende med selve testprocessen i implementeringsfasen. 
+\subsection{Fastlæggelse af hardware} 
+Udvælgelsen af hardware er, som nævnt, sket på baggrund af testerfaringer samt ved at konferere med fagfolk. Selve udvælgelsen er dermed en proces, som er kørt sideløbende med selve testprocessen i implementeringsfasen. Der er derfor ikke fastlagt nogle endelig komponenter da systemet stadig er under udvikling. I de følgende afsnit begrundes der for det anvendte hardware. 
 I tabel \ref{table:anvendthw} fremgår en oversigt over det anvendte hardware. 
 
 \begin{table}[htb]
@@ -93,7 +92,7 @@ I tabel \ref{table:anvendthw} fremgår en oversigt over det anvendte hardware.
  & M4 & Electret Microphone Amplifier MAX4466\\ \hline
  \multirow{1}{*}{A/D konverter} & C1 & Arduino Mega 2560 \\ \cline{2-3}
  & C2 & \daq \\ \hline
- Dataprocesser & D1 & \labview \\ \hline
+ Dataprocesser & D1 & PC med \labview \\ \hline
 \end{tabular}
 \end{table}
 
@@ -108,7 +107,7 @@ Udvælgelsesprocessen af højtaleren fremgår af figur \ref{fig:flowlyd}. I diag
 \end{figure}
 
 \subsubsection{Valg af resonator}
-Da en resonator skulle vælges, blev det besluttet at finde en flaske af hårdt plast. I et byggemarked blev en tryksprøjte fundet. Tryksprøjten er af hårdt plast således den \textit{ikke svinger med} og transmittering af lyden undgåes. Selve trykmodulet kunne afmonteres, og på Prototypeværkstedet, Ingeniørhøjskolen Aarhus Universitet, blev bundet savet af i et lige snit. Tryksprøjten kunne derefter anvendes som en resonator (res1).   
+Da en resonator skulle vælges, blev det besluttet at finde en flaske af hårdt plast. I et byggemarked blev en tryksprøjte fundet. Tryksprøjten er af hårdt plast således den ikke \textit{svinger med} og transmittering af lyden dermed undgåes. Selve trykmodulet kunne afmonteres, og på Prototypeværkstedet på Ingeniørhøjskolen Aarhus Universitet, blev bunden savet af i et lige snit. Tryksprøjten kunne derefter anvendes som en resonator (res1).   
 
 \begin{figure}[htbp]
   \begin{minipage}[b]{0.5\linewidth}
@@ -148,7 +147,7 @@ Sidenhen blev det erfaret, at udviklingen af et VI til at generere en lyd gennem
 På denne baggrund blev det besluttet ikke at anvende C2 til lydgenerering gennem H3 i det videre projektforløb. 
 
 \subsubsection{Valg af dataprocessering}
-LabVIEW blev valgt som databehandlingsprogram, da det på kort tid er muligt at producere og videreudvikle på et brugerdefineret program, som interagerer med real-world data og signaler.
+En PC med LabVIEW blev valgt til dataprocessering. 
 
 \section{Software}
 Systemets software er udviklet i LabVIEW, hvor koden udvikles i modulær kode, som afgrænser de enkelte funktionaliteter. Ved objektorienteret programmering beskrives koden typisk vha. klassediagrammer og 3-lags modellen, hvor de enkelte klassers ansvar og grænseflader defineres. I LabVIEW holdes koden simpel og i et logisk flow, som afspejler eksekveringsrækkefølgen. Ved at opdele koden i funktioner fremfor klasser er det ikke hensigtmæssigt at benytte 3-lags modellen. Ligeledes er softwareudviklingen afhængig af udviklingen af prototypen, og softwareudviklingen er derfor udarbejdet i takt med testprocessen og de opståede behov, og har ikke været forudbestemt. I tabel \ref{table:udvikletsw} fremgår en oversigt over det udviklede software. 
