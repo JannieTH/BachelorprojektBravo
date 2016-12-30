@@ -2,7 +2,9 @@
 \chapter{Design}
 \section{Indledning}
 Dette dokument beskriver systemets design og systemarkitektur. Dokumentet er en generel præsentation og beskrivelse af systemet, herunder hvorledes brystvolumenmåleren er opbygget, hardware-  og softwaremæssigt. \\
-Grundet manglende kendskab til Helmholtz' resonansteori i forbindelse med brystvolumenmåling, er opbygning af systemets HW og SW udviklet på baggrund af testerfaringer og ved at konferere med fagfolk; herunder Tore A. Skogberg og Lars G. Johansen, lektorer i akustik ved Ingeniørhøjskolen, Aarhus Universitet. Derudover er der ud fra en systematisk literatursøgning fundet en begrænset mængde videnskabelig litteratur omhandlende Helmholtz' resonansteori i forbindelse med voluminer af objekter.
+Grundet manglende kendskab til Helmholtz' resonansteori i forbindelse med brystvolumenmåling, er opbygning af systemets HW og SW udviklet på baggrund af testerfaringer og ved at konferere med fagfolk; herunder Tore A. Skogberg og Lars G. Johansen, lektorer i akustik ved Ingeniørhøjskolen, Aarhus Universitet. Derudover er der ud fra en systematisk litteratursøgning fundet en begrænset mængde videnskabelig litteratur omhandlende Helmholtz' resonansteori i forbindelse med voluminer af objekter.
+
+Designafsnittet er altså udviklet på baggrund af det aktulle system. 
 
 \section{Udviklingsværktøjer}
 Selve softwaren til systemet udvikles i LabVIEW, version 14.0. Følgende tilføjelsespakker er anvendt:
@@ -17,9 +19,6 @@ Disse pakker anvendes til at interagere med \arduino{} samt \daq.
 
 	\subsection{Microsoft Visio}   
 	Microsoft Visio er et tegneprogram, som anvendes til at illustrere udviklingsdiagrammer. 
-		
-	\subsection{Creately}
-	Creately er et webbaseret tegneprogram, som anvendes til at illustrere diagrammer og modeller.  
 	
 \section{Versionsstyring}
 \subsection{GitHub}
@@ -152,6 +151,63 @@ På denne baggrund blev det besluttet ikke at anvende C2 til lydgenerering genne
 LabVIEW blev valgt som databehandlingsprogram, da det på kort tid er muligt at producere og videreudvikle på et brugerdefineret program, som interagerer med real-world data og signaler.
 
 \section{Software}
+Systemets software er udviklet i LabVIEW, hvor koden udvikles i modulær kode, som afgrænser de enkelte funktionaliteter. Ved objektorienteret programmering beskrives koden typisk vha. klassediagrammer og 3-lags modellen, hvor de enkelte klassers ansvar og grænseflader defineres. I LabVIEW holdes koden simpel og i et logisk flow, som afspejler eksekveringsrækkefølgen. Ved at opdele koden i funktioner fremfor klasser er det ikke hensigtmæssigt at benytte 3-lags modellen. Ligeledes er softwareudviklingen afhængig af udviklingen af prototypen, og softwareudviklingen er derfor udarbejdet i takt med testprocessen og de opståede behov, og har ikke været forudbestemt. I tabel \ref{table:udvikletsw} fremgår en oversigt over det udviklede software. 
+
+Den anvendte version af koden, som genererer et frekvenssignal (VI02G) vises i figur \ref{fig:swgf02}, og den version af koden, som optager og udregner volumen på et objekt (VI06\underline{O}) vises i figur \ref{fig:swop06}.  
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=4in]{genererfrekvenssignal02.PNG}	
+\caption{VI02G: den udviklede kode til generering af frekvenssignal}
+\label{fig:swgf02}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=6in]{optagefrekvenssignal06.jpeg}	
+\caption{VI06\underline{O}: den udviklede kode til optagelse samt udregning af volumen på et objekt} 
+\label{fig:swop06}
+\end{figure}
+
+
+\begin{table}[htb]
+\centering
+\caption{Oversigt over det udviklede software}
+\label{table:udvikletsw}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Funktion} & \textbf{ID} & \textbf{Navn} & \textbf{Ændring} \\ \hline
+Generere frekvenssignal & VI02G & genererfrekvenssignal02.vi & Arduino \\ \hline
+\multirow{4}{*}{\begin{tabular}[c]{@{}l@{}}Optage samt \\behandle frekvenssignal\end{tabular}} &
+ VI01\underline{O} & optagefrekvenssignal01.vi & Graphics and sound VI \\ \cline{2-4} 
+ & VI02\underline{O} & optagefrekvenssignal02.vi & +FFT \\ \cline{2-4} 
+ & VI05\underline{O} & optagefrekvenssignal05.vi & +N opsamlinger \\ \cline{2-4} 
+ & VI06\underline{O} & optagefrekvenssignal06.vi & DAQ + volumenudregning \\ \cline{2-4} 
+ & VI08\underline{O} & optagefrekvenssignal08.vi & testversion \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+\subsection{User Interface}
+I figur \ref{fig:ui} er et Mockup af test-brugergrænsefladen (GUI) vist. Denne GUI er langt fra færdigudviklet til brugeren, og skal kun anvendes i testfasen. Testeren har mulighed for at indtaste en række værdier; varighed for målingen, volumen af den tomme resonator samt resonansfrekvensen i den tomme resonator. Da softwaren anvendes i testsammenhæng kan den indstilles til at foretage store testsæt, og resultaterne gemmes derfor ned på en csv-fil. Der er derfor ikke nogen indikator af volumenmålingen på UI'en.   
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=5in]{Frontpanel.PNG}
+\caption{Brugergrænsefladen for det aktuelle system, som anvendes under testfasen}
+\label{fig:ui}
+\end{figure}
 
 \subsection{Sekvensdiagram}
+Der er i det indledende design ikke udviklet et sekvensdiagram ud fra UC1, da softwareudviklingen, som nævnt, er afhængig af udviklingen af prototypen. For at fremvise metoden er der udarbejdet et simpelt sekvensdiagram over den udviklede software. Sekvensdiagrammet kan i denne kontekst anvendes til at danne et overblik over den udviklede kode med henblik på en eventuel videreudvikling heraf. 
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=6in]{sekvensdiagram.png}
+\caption{Sekvensdiagram over brystvolumenmåleren}
+\label{fig:sekvens}
+\end{figure}
+
+
 
