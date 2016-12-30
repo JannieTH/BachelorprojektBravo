@@ -1,19 +1,85 @@
 
 \chapter{Design}
-
 \section{Indledning}
+Dette dokument beskriver systemets design og systemarkitektur. Dokumentet er en generel præsentation og beskrivelse af systemet, herunder hvorledes brystvolumenmåleren er opbygget, hardware-  og softwaremæssigt. \\
+Grundet manglende kendskab til Helmholtz' resonansteori i forbindelse med brystvolumenmåling, er opbygning af systemets HW og SW udviklet på baggrund af testerfaringer og ved at konferere med fagfolk; herunder Tore A. Skogberg og Lars G. Johansen, lektorer i akustik ved Ingeniørhøjskolen, Aarhus Universitet. Derudover er der ud fra en systematisk literatursøgning fundet en begrænset mængde videnskabelig litteratur omhandlende Helmholtz' resonansteori i forbindelse med voluminer af objekter.
 
-Dette kapitel indeholder designdokumentation for den BVM. 
+\section{Udviklingsværktøjer}
+Selve softwaren til systemet udvikles i LabVIEW, version 14.0. Følgende tilføjelsespakker er anvendt:
+\begin{itemize}
+\item \visa
+\item \vi
+\item \ardsw	
+\item \daqsoft 
+\end{itemize}
 
-\subsection{Hardware}
+Disse pakker anvendes til at interagere med \arduino{} samt \daq. 
 
-\subsubsection{BDD}
-\subsubsection{IBD}
+	\subsection{Microsoft Visio}   
+	Microsoft Visio er et tegneprogram, som anvendes til at illustrere udviklingsdiagrammer. 
+		
+	\subsection{Creately}
+	Creately er et webbaseret tegneprogram, som anvendes til at illustrere diagrammer og modeller.  
+	
+\section{Versionsstyring}
+\subsection{GitHub}
+GitHub er et versionsstyringsprogram, som i projektet anvendes til versionsstyring af dokumenter og LabVIEW-kode. GitHubbygger på open source versionsstyringssystemet Git, hvor der løbende opdateres ændringer, så det nyeste dokumentation og LabVIEW-kode altid er tilgængeligt. SourceTree er anvendt som user interface til GitHub-funktionerne. I SourceTree vises et overblik over ændringer, og under de enkelte filer, kan det observeres, hvad der er ændret i den pågældende version. Samtidig knyttes der en kommentar ved hvert commit/ ændring. Dette fremgår af figur \ref{fig:git}. 
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=5in]{github.png}
+\caption{SourceTree viser overblik over ændringer i enkelte filer}
+\label{fig:git}	
+\end{figure}
+
+
+\section{Hardware}
+Dette afsnit dokumenterer hardwaren i systemet \textit{Brystvolumenmåler}, og indeholder dermed beskrivelser af systemets fysiske dele samt deres funktionalitet. Beskrivelserne er udarbejdet ud fra et begrænset kendskab til Helmholtz' resonansteori i forbindelse med brystvolumenmåling. Disse beskrivelser der derfor anvendt som udgangspunkt for et indledende design, som kan anvendes til at teste frem mod erfaringer omkring hardwareudvælgelse. De fysiske deles specifikationer er derfor ikke uddybet i dette dokument, og begrundelser og argumenter for, hvorfor de brugte komponenter er valgt, er baseret på testerfaringer. 
+
+\subsection{Block Definition Diagram}
+Der er udarbejdet et Block Definition Diagram (BDD), som fremgår af figur \ref{fig:bdd}, til at danne et overordnet overblik over de indgående fysiske dele. Systemet \textit{Brystvolumenmåler} indeholder fem fysiske blokke, hhv. A/D-konvertering, en lydgivende kilde, en resonator, en lydopfanger samt et processeringselement. Flow portene beskriver, hvad der kan gå gennem blokken (ind og/eller ud).  
+ 
+\begin{figure}[htb]
+\centering
+\includegraphics[width=5.5in]{bdd.png}
+\caption{BDD over HW-komponenter i systemet \textit{Brystvolumenmåler}}
+\label{fig:bdd}	
+\end{figure}
+
+\subsection{Internal Block Diagram}
+Der er udarbejdet et internal block diagram (IBD), som fremgår af figur \ref{fig:ibd}. IBD'et anvendes til at give en mere konkret beskrivelse af, hvordan de forskellige komponenter interagerer med hinanden. Diagrammet anvendes til at definere, hvilke signaltyper systemet skal indeholde, for at sikre kommunikation mellem interne dele. 
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=6in]{ibd.jpg}
+\caption{IBD over HW-komponenter i systemet \textit{Brystvolumenmåler}}
+\label{fig:ibd}
+\end{figure}
+
+I nedenstående tabel fremgår en oversigt over hvilke funktioner samt signaler den enkelte blokke indeholder. 
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Bloknavn} & \textbf{Funktionsbeskrivelse} & \textbf{Signaltype}\\ \hline
+Speaker & udsender lyd & frekvenssignal\\ \hline
+Resonator & tilbagekaster lyd & resonansfrekvens\\ \hline
+Microphone & opfanger reflekteret lyd & frekvenssignal \\ \hline
+Arduino & A/D konvertering & frekvenssignal og resonansfrekvens \\ \hline
+Dataprocessering & behandling af data & frekvenssignal og resonansfrekvens\\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Bestemmelse af hardware} 
+Udvælgelsen af hardware er, som nævnt, sket på baggrund af testerfaringer samt ved at konferere med fagfolk, og er dermed en proces, som er kørt sideløbende med selve testprocessen i implementeringsfasen. 
+I nedenstående tabel fremgår en oversigt over det anvendte hardware, og endvidere fremgår udvælgelsensprocessen i flowdiagrammerne \ref{fig:}
 
 
 
 
-\subsection{Software}
 
-\subsubsection{Sekvensdiagram}
+\section{Software}
+
+\subsection{Sekvensdiagram}
 
