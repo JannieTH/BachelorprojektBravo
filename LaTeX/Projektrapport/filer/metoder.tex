@@ -254,7 +254,7 @@ Overvejelser for valget af de enkelte hardwarekomponenter er resultater af teste
 
 I tabel \ref{table:overblok} fremgår en oversigt over systemets enkelte blokkes funktioner og signaltyper. Til opfyldelse af disse funktioner er der anvendt forskelligt hardware, som fremgår af tabel \ref{table:anvendthw}. 
 
-\begin{table}[htb]
+\begin{table}[!h]
 \centering
 \caption{Oversigt over de enkelte blokkes funktioner og signaltyper}
 \label{table:overblok}
@@ -310,6 +310,24 @@ Dataprocessering & behandling af data & frekvenssignal og resonansfrekvens\\ \hl
 
 \subsection{Den fjerde udviklingsfase: implementering}
 
-Der er foretaget en kraftig revidering af kravspecifikationen, da der på baggrund af testerfaringerne kan udspecificeres mere konkrete krav. Disse krav er defineret ud fra metoden \textit{FURPS+} (functionality, usability, reliability, performance and supportability, hvor \textit{+} defineres som designkrav). FURPS+-metoden anvendes som en form for checkliste, således alle sider bliver medtaget. Kravspecifikationen afspejler det konceptuelle system, og accepttesten er derfor ikke udført.  
+Der er foretaget en kraftig revidering af kravspecifikationen, da der på baggrund af testerfaringerne samt opnået teoretisk forståelse, kan udspecificeres mere konkrete krav. Disse krav er defineret ud fra metoden \textit{FURPS+} (functionality, usability, reliability, performance and supportability, hvor \textit{+} defineres som designkrav). \textit{F} definerer de funktionelle krav, som fremgår af UC1. \textit{URPS+} definerer de ikke-funktionelle krav. FURPS+-metoden anvendes som en form for checkliste, således alle sider bliver medtaget. Kravspecifikationen afspejler det konceptuelle system. 
+I nedenstående tabel, fremgår en oversigt med eksempler på krav fra hver kategori. Kategorien fremgår af \textit{krav nr.}, eksempelvis læses \textit{UK2} som \textit{usability krav 2}.  
+
+\begin{table*}[!h]	
+\begin{tabularx}{1.1\textwidth}{|l|l|l|X|}
+\hline
+\textbf{\textbf{\begin{tabular}[c]{@{}l@{}}Krav \\ nr.\end{tabular}}} & \textbf{Krav} & \textbf{Kriterie} & \textbf{Baggrund for krav} \\ \hline
+\textbf{U}K2 & \begin{tabular}[c]{@{}l@{}}Volumenangivelse \\ skal kunne aflæses på \\ en afstand af 50 cm.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Talværdi angives i \\ digital talform \\ med en højde på 1 cm.\end{tabular} & Tænkt arbejdssituation \\ \hline
+\textbf{R}K1           & \begin{tabular}[c]{@{}l@{}}Volumenangivelse skal\\ have høj nøjagtighed\end{tabular} & +/- 10 ml.                                                                                  & Kundekrav                  \\ \hline
+\textbf{P}K1 & \begin{tabular}[c]{@{}l@{}}Måling skal foretages  \\ hurtigt\end{tabular} & \begin{tabular}[c]{@{}l@{}}Målingen skal være foretaget \\ inden for 10 sekunder\end{tabular} & Kundekrav \\ \hline
+\textbf{S}K2 & UI skal tåle rengøring & Skal tåle rengøring med sprit & Tænkt arbejdssituation \\ \hline
+\textbf{+} / (DK1) & \begin{tabular}[c]{@{}l@{}}Skal være intuitiv at \\ anvende\end{tabular} & \begin{tabular}[c]{@{}l@{}}Funktioner skal være af \\ standardiseret design\end{tabular} & \begin{tabular}[c]{@{}l@{}}Organisatoriske og \\ økonomiske overvejelser\end{tabular} \\ \hline
+\end{tabularx}
+\end{table*}
+
+Ved en realisering af den konceptuelle BVM ville der endvidere i være listet krav til softwarearkitektur samt softwarelovgivning jvf. MDD/93/42/EEC. 
+
+
+	 
 
  
