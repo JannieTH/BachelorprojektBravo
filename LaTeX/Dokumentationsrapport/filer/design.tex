@@ -56,10 +56,12 @@ Der er udarbejdet et internal block diagram (IBD), som fremgår af figur \ref{fi
 \label{fig:ibd}
 \end{figure}
 
-I nedenstående tabel fremgår en oversigt over hvilke funktioner samt signaler den enkelte blokke indeholder. 
+I tabel \ref{table:overblok} fremgår en oversigt over hvilke funktioner samt signaler den enkelte blokke indeholder. 
 
 \begin{table}[htb]
 \centering
+\caption{Oversigt over de enkelte blokkes funktioner og signaltyper}
+\label{table:overblok}
 \begin{tabular}{|l|l|l|}
 \hline
 \textbf{Bloknavn} & \textbf{Funktionsbeskrivelse} & \textbf{Signaltype}\\ \hline
@@ -72,12 +74,82 @@ Dataprocessering & behandling af data & frekvenssignal og resonansfrekvens\\ \hl
 \end{table}
 
 \subsection{Bestemmelse af hardware} 
-Udvælgelsen af hardware er, som nævnt, sket på baggrund af testerfaringer samt ved at konferere med fagfolk, og er dermed en proces, som er kørt sideløbende med selve testprocessen i implementeringsfasen. 
-I nedenstående tabel fremgår en oversigt over det anvendte hardware, og endvidere fremgår udvælgelsensprocessen i flowdiagrammerne \ref{fig:}
+Udvælgelsen af hardware er, som nævnt, sket på baggrund af testerfaringer samt ved at konferere med fagfolk. Selve udvælgelsen er dermed en proces, som er kørt sideløbende med selve testprocessen i implementeringsfasen. 
+I tabel \ref{table:anvendthw} fremgår en oversigt over det anvendte hardware. 
 
+\begin{table}[htb]
+\centering
+\caption{Oversigt over det anvendte hardware}
+\label{table:anvendthw}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Funktion} & \textbf{ID} & \textbf{Navn} \\ \hline
+\multirow{3}{*}{Højtaler} & H1 & ASB-224-RC \\ \cline{2-3} 
+ & H2 & Wide Band 2.5'' SB65WBAC25-4  \\ \cline{2-3} 
+ & H3 & Multimedia USB Speaker HP-1800 \\ \hline
+ Resonator & res1 & Tryksprøjte NSG 150 - Neptun (modificeret) \\ \hline
+\multirow{2}{*}{Mikrofon} & M1 & Minijack PC Mikrofon  \\ \cline{2-3} 
+ & M2 & Logitech HD WEBCAM C270 \\ \cline{2-3}
+ & M3 & Electret Microphone BOB12758 \\ \cline{2-3}
+ & M4 & Electret Microphone Amplifier MAX4466\\ \hline
+ \multirow{1}{*}{A/D konverter} & C1 & Arduino Mega 2560 \\ \cline{2-3}
+ & C2 & \daq \\ \hline
+ Dataprocesser & D1 & \labview \\ \hline
+\end{tabular}
+\end{table}
 
+\subsubsection{Valg af højtaler}
+Udvælgelsesprocessen af højtaleren fremgår af figur \ref{fig:flowlyd}. I diagrammet definerer \textit{E\#}, i hvilken enhedstest den pågældende komponent er testet. Endvidere fremgår en kort beskrivelse af årsagen til erstatningen for komponenten. Altså blev H1 erstattet med H2 da der opstod et behov for et bredere frekvensbånd i det udsendte lydsignal. Endvidere blev H2 erstattet med H3, som et resultatet af en problematik vedr. opfyldelse af Nyquists samplingsteori, hvorefter højtaleren måtte være en ekstern del af systemet. Det medførte et behov for en højtaler med et bredt frekvensbånd samt et minijack stik. 
 
+\begin{figure}[htb]
+\centering
+\includegraphics[width=3in]{flowdiagramelyd.png}
+\caption{Flowdiagram over de udførte enhedstests af lydgivende kilder. E\# definerer, i hvilken enhedstest den pågældende komponent er testet}
+\label{fig:flowlyd}
+\end{figure}
 
+\subsubsection{Valg af resonator}
+Da en resonator skulle vælges, blev det besluttet at finde en flaske af hårdt plast. I et byggemarked blev en tryksprøjte fundet. Tryksprøjten er af hårdt plast således den \textit{ikke svinger med} og transmittering af lyden undgåes. Selve trykmodulet kunne afmonteres, og på Prototypeværkstedet, Ingeniørhøjskolen Aarhus Universitet, blev bundet savet af i et lige snit. Tryksprøjten kunne derefter anvendes som en resonator (res1).   
+
+\begin{figure}[htbp]
+  \begin{minipage}[b]{0.5\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{tryk.jpg}
+    \caption{Tryksprøjte NSG 150 - Neptun}
+    \label{fig:tryks}
+  \end{minipage}
+  \hspace{0.5cm}
+  \begin{minipage}[b]{0.5\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{resonator.jpg}
+    \caption{Resonator (res1)}
+    \label{fig:res}
+  \end{minipage}
+\end{figure}
+
+\subsubsection{Valg af mikrofon}
+
+Udvælgelsesprocessen af mikrofonen fremgår af figur \ref{fig:flowop}. I diagrammet definerer \textit{E\#}, i hvilken enhedstest den pågældende komponent er testet. Endvidere fremgår en kort beskrivelse af årsagen til erstatningen for komponenten. 
+
+Under udførslen af integrationstest I05, blev det observeret, at resultatet i VI'et \texttt{optagefrekvenssignal02.vi} blev opfanget af PC'ens indbyggede mikrofon og ikke minijack PC mikrofonen (M1). Der opstod en mistanke om problemet da der med en kritisk tilgang blev reflekteret over de \textit{for pæne} resultater - altså var resultaterne ens uanset M1's placering indeni samt uden for resonatoren. Der blev derefter testet ved at udtage M1 fra PC'en, hvorefter resultaterne stadig var ens. Dette medvirkede til en ny enhedstest, E04-M1, hvor M1 blev placeret i et andet rum med en lukket branddør imellem. Da der ikke blev opfanget et signal i LabVIEW fra M1 blev det konstateret, at M1 ikke var aktiv. Årsagen til problemstillingen skyldes, at M1 har et 3-pols stik, og derfor mangler en pol til lyd input. PC'en indlæser derfor M1 som en højtaler, og forsøger dermed at udsende lyd gennem mikrofonen. 
+Løsningen på denne problemstilling er at anvende en mikrofon med 4-pols stik, en adapter eller en mikrofon med USB-stik.
+Det blev forsøgt at optage lyd med et headset med indbygget mikrofon, som har et 4-pols minijack stik. Headsettet blev indlæst på PC´en, som et headset, og derfor var det ikke muligt at vælge headsetmikrofonen som lydkilde under PC'ens konfigurationsindstillinger. Det var heller ikke muligt at få forbindelse til mikrofonen gennem LabView. Konklusionen på denne problemstilling er, at der må sidde et 3-pols minijack hun stik i PC´en. Der er foretaget en internetsøgning på indholdet af stik i en Macbook Pro 2009 model for at understøtte denne konklusion. Det lykkedes ikke at finde specifikationer som klart udspecificerer hvilket hun minijackstik, der er indbygget i omhandlende PC. Det vælges at gå videre til test med et USB-webkamera med indbygget mikrofon (M2) da dette kan være en hurtig løsning af problemstillingen. M2 blev koblet til computeren og under konfigurationsindstillingerne på PC'en var det nu muligt at vælge M2 som lydopfanger. Samtidig blev andre lydkilder i PC'en fravalgt, og der blev nu forsøgt at optage en lyd i LabVIEW i enhedstest E05-M2. Det blev konkluderet, at det er muligt at anvende en mikrofon med USB stik til indlæsning af lydsignaler i LabView. Med denne nye viden til rådighed, blev det undersøgt om det er muligt at anvende en adapter, så M1 kunne tilsluttes. Det lykkedes at finde en adapter med den ønskede funktion, dog med nogle dages leveringstid. Leveringstiden blev opvejet mod at tilslutte en electret breakout board microphone (M3) til en Arduino Mega 2560 og opsætte et program i LabVIEW til dette. Det blev vurderet, at arbejdsomfanget af M3 var minimalt og opvejede ventetiden. Sidenhen blev M3 dog erstattet af M4 da der opstod et behov for et brede frekvensbånd. 
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=3in]{flowdiagrameop.png}
+\caption{Flowdiagram over de udførte enhedstests af lydopfangende kilder. E\# definerer, i hvilken enhedstest den pågældende komponent er testet}
+\label{fig:flowop}
+\end{figure}
+\subsubsection{Valg af A/D konverter}
+
+I forbindelse med det indledende design, blev Arduino Mega 2560 (C1) valgt frem for DAQ (C2) grundet økonomiske omstændigheder. Dog blev det hurtigt konstateret, at C1 forårsagede uhensigtsmæssige udfordringer i forbindelse med frekvenssignalet, idet det kun er muligt at generere et firkantsignal igennem LINX MakerHub i LabVIEW. Det ønskede resultat var grundtonens frekvens, men i stedet blev firkantssignalets harmoniske overtoner opfanget som maksimum frekvens i FFT-funktionen i LabVIEW (integrationstest I04). Efter samtale med lektor Tore Arne Skogberg, blev det påpeget, at det burde være muligt at måle brystvolumen med firkantsignaler. De harmoniske overtoner kunne muligvis dæmpes ved hjælp af resonatoren da denne har funktion som et lavpasfilter, og dette skulle hermed testes som en løsning til denne problemstilling. Således blev det besluttet at arbejde videre med C1 da de økonomiske fordele stadig talte for. Der opstod endvidere en udfordring forårsaget af C1's begrænsede ydeevne. C1's højeste Loop Rate ligger på omkring 122Hz. I og med, at den daværende valgte højtaler, H1, er egnet til et frekvensområde fra 100 Hz op til 2 kHz vil der ikke kunne genereres et frekvenssignal, som er muligt at opfange. For at få en korrekt digital repræsentation af det analoge signal, skal der minimum samples med det dobblete af indgangssignalet. Således vil det indsendte signal være begrænset til maksimalt 50 Hz, for at undgå aliasering jv. Nyquists samplingsteori. Til sidst blev det konkluderet, at udfordringerne ikke blev opvejet af de økonomiske fordele, og det blev derfor besluttet at udskifte C1 til C2 da der kan samples med en højere frekvens, og samtidig anvendes sinussignal for at undgå udfordringer med harmoniske overtoner.      
+
+Sidenhen blev det erfaret, at udviklingen af et VI til at generere en lyd gennem C2 til højtaleren H3 var mere udfordrende en først antaget. Der blev fundet flere guides på \texttt{www.NI.com} til at løse problemstillingen, og koden dertil fandtes meget simpel. Disse guides blev brugt til at bygge VI'et \texttt{generefrekvenssignal04.vi}, men der opstod fejl i forbindelse med opsætning af DAQ Assistant-modulet. Dette blev løst ved at vælge \textit{Generation mode} til \textit{1 sample(on Demand)} og \textit{Signal output range min} til 0. Løsningen blev fundet ved brug af \textit{trail and error} metoden sammen med vejleder. Der opstod herefter en ny fejl med kørslen af VI´et. Under fejlsøgning af denne problemstilling blev det opdaget at C2 har en maksimal samplingsrate på 150 Hz. Fejlsøgning blev afbrudt da denne nye viden satte udviklingen af VI´et i et nyt perspektiv. Med brug af C2 vil der kunne generes et maksimalt signal på 75Hz, når Nyquists samplingsteori opfyldes. I udviklingen af prototypen ønskes det, at kunne genere et bredt frekvensbånd fra 100 Hz op til 1000 Hz. Højtaleren H3's begrænsede frekvensspektre fra 100 Hz til 2 kHz  gør det ikke muligt at anvende C2 sammen med H3. 
+På denne baggrund blev det besluttet ikke at anvende C2 til lydgenerering gennem H3 i det videre projektforløb. 
+
+\subsubsection{Valg af dataprocessering}
+LabVIEW blev valgt som databehandlingsprogram, da det på kort tid er muligt at producere og videreudvikle på et brugerdefineret program, som interagerer med real-world data og signaler.
 
 \section{Software}
 
