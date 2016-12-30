@@ -32,7 +32,7 @@ GitHub er et versionsstyringsprogram, som i projektet anvendes til versionsstyri
 
 
 \section{Hardware}
-Dette afsnit dokumenterer hardwaren i systemet \textit{Brystvolumenmåler}, og indeholder dermed beskrivelser af systemets fysiske dele samt deres funktionalitet. Beskrivelserne er udarbejdet ud fra et begrænset kendskab til Helmholtz' resonansteori i forbindelse med brystvolumenmåling. Disse beskrivelser der derfor anvendt som udgangspunkt for et indledende design, som kan anvendes til at teste frem mod erfaringer omkring hardwareudvælgelse. De fysiske deles specifikationer er derfor ikke uddybet i dette dokument, og begrundelser og argumenter for, hvorfor de brugte komponenter er valgt, er baseret på testerfaringer. 
+Dette afsnit dokumenterer hardwaren i systemet \textit{Brystvolumenmåler}, og indeholder dermed beskrivelser af systemets fysiske dele samt deres funktionalitet. Beskrivelserne er udarbejdet ud fra et begrænset kendskab til Helmholtz' resonansteori i forbindelse med brystvolumenmåling. Disse beskrivelser er derfor anvendt som udgangspunkt for et indledende design, som kan anvendes til at teste frem mod erfaringer omkring hardwareudvælgelse. De fysiske deles specifikationer er derfor ikke uddybet i dette dokument, og begrundelser og argumenter for, hvorfor de brugte komponenter er valgt, er baseret på testerfaringer. 
 
 \subsection{Block Definition Diagram}
 Der er udarbejdet et Block Definition Diagram (BDD), som fremgår af figur \ref{fig:bdd}, til at danne et overordnet overblik over de indgående fysiske dele. Systemet \textit{Brystvolumenmåler} indeholder fem fysiske blokke, hhv. A/D-konvertering, en lydgivende kilde, en resonator, en lydopfanger samt et processeringselement. Flow portene beskriver, hvad der kan gå gennem blokken (ind og/eller ud).  
@@ -54,7 +54,7 @@ Der er udarbejdet et internal block diagram (IBD), som fremgår af figur \ref{fi
 \label{fig:ibd}
 \end{figure}
 
-I tabel \ref{table:overblok} fremgår en oversigt over hvilke funktioner samt signaler den enkelte blokke indeholder. 
+I tabel \ref{table:overblok} fremgår en oversigt over hvilke funktioner samt signaler de enkelte blokke indeholder. 
 
 \begin{table}[htb]
 \centering
@@ -107,7 +107,7 @@ Udvælgelsesprocessen af højtaleren fremgår af figur \ref{fig:flowlyd}. I diag
 \end{figure}
 
 \subsubsection{Valg af resonator}
-Da en resonator skulle vælges, blev det besluttet at finde en flaske af hårdt plast. I et byggemarked blev en tryksprøjte fundet. Tryksprøjten er af hårdt plast således den ikke \textit{svinger med} og transmittering af lyden dermed undgåes. Selve trykmodulet kunne afmonteres, og på Prototypeværkstedet på Ingeniørhøjskolen Aarhus Universitet, blev bunden savet af i et lige snit. Tryksprøjten kunne derefter anvendes som en resonator (res1).   
+Da en resonator skulle vælges, blev det besluttet at finde en flaske af hårdt plast. I et byggemarked blev en tryksprøjte fundet anvendelig. Tryksprøjten er af hårdt plast således den ikke \textit{svinger med} og transmittering af lyden dermed undgåes. Selve trykmodulet kunne afmonteres, og på Prototypeværkstedet på Ingeniørhøjskolen Aarhus Universitet, blev bunden savet af i et lige snit. Tryksprøjten kunne derefter anvendes som en resonator (res1).   
 
 \begin{figure}[htbp]
   \begin{minipage}[b]{0.5\linewidth}
@@ -187,9 +187,8 @@ Generere frekvenssignal & VI02G & genererfrekvenssignal02.vi & Arduino \\ \hline
 \end{table}
 
 
-
 \subsection{User Interface}
-I figur \ref{fig:ui} er et Mockup af test-brugergrænsefladen (GUI) vist. Denne GUI er langt fra færdigudviklet til brugeren, og skal kun anvendes i testfasen. Testeren har mulighed for at indtaste en række værdier; varighed for målingen, volumen af den tomme resonator samt resonansfrekvensen i den tomme resonator. Da softwaren anvendes i testsammenhæng kan den indstilles til at foretage store testsæt, og resultaterne gemmes derfor ned på en csv-fil. Der er derfor ikke nogen indikator af volumenmålingen på UI'en.   
+I figur \ref{fig:ui} er et Mockup af test-brugergrænsefladen (GUI) vist. Denne GUI er langt fra færdigudviklet til brugeren, og skal kun anvendes i testfasen. Testeren har mulighed for at indtaste en række værdier; varighed for målingen, volumen af den tomme resonator samt resonansfrekvensen i den tomme resonator. Da softwaren anvendes i testsammenhæng kan den indstilles til at foretage store testsæt, og resultaterne gemmes derfor ned på en csv-fil. Der er derfor ikke nogen indikator af volumenmålingen på GUI'en.   
 
 \begin{figure}[htb]
 \centering
