@@ -1,6 +1,66 @@
 \chapter{Resultater}
+Der i projektet ikke opnået succes med at udvikle en prototype, som kan give et nøjagtigt og præcist objektivt mål for et brystvolumen. Projektarbejdet har derfor taget udgangspunkt i to systemer; et \textit{konceptuelt} og et \textit{aktuelt} system, som omtalt i kapitel 2.  
 
-Der er i dette projekt udarbejdet en prototype, som kan undersøge muligheden for en metode til at give et objektivt mål for et brystvolumen. 
+\section{Det udviklede system}
+Det udviklede system er det aktuelle system, som består af følgende dele: 
+
+\begin{itemize}
+\item resonator	
+\item mikrofon 
+\item højtaler
+\item DAQ
+\item softwareprogram
+\item modellervoks
+\item pink noise generator
+\item termometer
+\item afstandsklods
+\end{itemize}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=4in]{aktuellesys.JPG}
+\caption{Det aktuelle systems opstilling}
+\label{fig:aktuellesys}	
+\end{figure}
+
+ Det aktuelle system består af en resonator, hvor en mikrofon, som er tilkoblet en DAQ, er påsat. En højtaler er tilsluttet en pink noise generator. Højtaleren holdes over resonatorens portåbning, og indsender pink noise gennem resonatorporten. Pink noise tilbagekastes i resonatoren, og resonansfrekvens opsamles i mikrofonen, hvor signalet opsamles via DAQ'en til softwareprogrammet i LabVIEW. I softwareprogrammet foretages en Fast Fourier Transform (FFT), hvorfra frekvensen med den største amplitude findes. Den resonansfrekvens anvendes i udregningen af det pågældende volumen.   
+
+\subsection{Resonator}
+ Modellervoks
+\subsection{Mikrofon}
+klæbemasse
+Mikrofonens optimale placering på resonatorens indvendige side er, i følge fundet litteratur \citep{RefWorks:11}, i en afstand af 280 mm fra portåbningen. 
+Ud fra fundet litteratur, viser resultater fra en Ph.D.-afhandling omhandlende volumenmåling ved brug af Helmholtz' resonansteori endvidere, at ændringer i mikrofonens placeringsorientering med hensyn til lydkildens placering ikke viser mærkbare ændringer i frekvens eller dens tilsvarende amplitude \citep{RefWorks:22}. 
+
+\subsection{Højtaler}
+Afstandsklods 
+\subsection{DAQ}
+
+
+
+\subsection{
+
+\subsection{Firkantsignal}
+Der blev ikke opnået succes ved at anvende firkantssignal i de tidligere tests. Resultater fra den omtalte Ph.D.-afhandling viser endvidere, at anvendelse af firkantsignal til detektering af resonansfrekvenser, ikke har været succesfuldt da de ulige harmonier jævnligt faldt sammen med anden og tredje harmoni, forårsaget af resonatorens fysiske geometri og artefakter \citep{RefWorks:22}. Dette var også tilfældet i der udførte test med firkantsignal i projektet. 
+
+\subsection{Pink noise}
+Pink noise består af vilkårlige frekvenser med lige stor effekt. Frekvensdomænets output ligner tilnærmelsesvis en step funktion med ens effekt ved alle frekvenser. Ved at anvende pink noise som den indgående frekvens, kan resonansfrekvens altså observeres som en top i frekvensdomænet. 
+Pink noise blev genereret via hjemmesiden \texttt{www.onlinetonegenerator.com}. 
+
+\subsection{Termometer}
+Et termometer anvendes i opstillingen da en stigning i lufttemperaturen medfører en forøgelse af lydens hastighed i luft, og derfor ændrer et volumen bestemt ud fra Helmholtz' ligning (beskrevet i afsnit \ref{subsec:efter}). 
+
+\subsection{Software}
+ I softwareprogrammet, som fremgår af figur \ref{fig:VI06O}, foretages en (FFT) for at få et frekvensspektre, hvorfra frekvensen med den største amplitude findes. 
+ 
+ \begin{figure}[!h]	
+\centering
+\includegraphics[width=6in]{optagefrekvenssignal06.jpeg}
+\caption{Det udviklede softwareprogram i LabVIEW}
+\label{fig:VI06O}
+ \end{figure}
+
+ 
 
 \section{Godkendelse af BVM som medicinsk udstyr}
 Godkendelse af medicinsk udstyr kan opfattes som en forhindring i udviklings og produktionsprocessen af nye produkter, da dokumentationen bag en godkendelse kan være lang og meget omfattende. Heldigvis kan denne proces, med indsigt, systematik og struktureret planlægning, være en naturlig del af udviklings- og produktionsprocessen. Allerede i projektets opstartsfase bør produktets \textit{intended use} fastlægges og det bør undersøges, hvorledes dokumentationen skal udarbejdes for at opfylde gældende krav.
