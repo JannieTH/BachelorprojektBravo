@@ -32,13 +32,17 @@ Volumen af resonatorkammeret er $={\SI{1.671}{\liter}}$
  
 \subsection{Mikrofon}
 Den anvendte mikrofon er af typen \textit{Electret Microphone Amplifier MAX4466}, og af det tilhørende datablad (bilag X) fremgår et frekvensspektre på 20 Hz - 20KHz. Mikrofonen er påsat resonatoren med klæbemasse (også kendt som \textit{lærerens tyggegummi}).  
-Mikrofonens optimale placering på resonatorens indvendige side er, i følge fundet litteratur \citep{RefWorks:11}, i en afstand af 280 mm fra portåbningen. 
-Ud fra fundet litteratur, viser resultater fra en Ph.D.-afhandling omhandlende volumenmåling ved brug af Helmholtz' resonansteori endvidere, at ændringer i mikrofonens placeringsorientering med hensyn til lydkildens placering ikke viser mærkbare ændringer i frekvens eller dens tilsvarende amplitude \citep{RefWorks:22}. 
+Mikrofonens optimale placering på resonatorens indvendige side er, i følge fundet litteratur \citep{RefWorks:11}, i en afstand af 280 mm fra portåbningen. Dette antages at være bestemt ud fra det anvendte systems skalering. Endvidere viser resultater fra en Ph.D.-afhandling omhandlende volumenmåling ved brug af Helmholtz' resonansteori, at ændringer i mikrofonens placering med hensyn til lydkildens placering ikke viser mærkbare ændringer i frekvens eller dens tilsvarende amplitude \citep{RefWorks:22}. På baggrund af anbefalinger fra TAS er mikrofonen i det aktuelle system placeret ca. 40 mm fra portåbningen.  
 
 \subsection{Højtaler}
-Den anvendte højtaler er af typen \textit{Multimedia USB Speaker HP-1800}. 
-Afstandsklods 
-\subsection{DAQ}
+Den anvendte højtaler er af typen \textit{Multimedia USB Speaker HP-1800}. Det har ikke været muligt at finde et datablad, men i følge producentens specifikationer har højtalerne et frekvensspektre på 100 Hz - 20 kHz \citep{RefWorks:30}. Højtaleren er tilkoblet en PC, hvorigennem der genereres pink noise. Højtaleren skal holdes i en defineret afstand fra resonatorens portåbning.  På baggrund af samtale med TAS og hans testerfaringer, er denne afstand defineret til at være $\geq$ portens diameter \citep{RefWorks:31}. En holder, som opfyldte denne betingelse, blev 3D-printet og monteret på resonatorens hals. Testerfaringer viste derefter, at systemet blev for lukket, og luft var nødvendigt at tilhøre for at få luften til at virke som en fjeder. Holderen blev derefter afmonteret, og der blev i stedet anvendt en afstandsklods (en hætte fra en sprittusch) med den definerede længde. Det var ikke muligt at anvende en intern højtaler, da output kapaciteten på de anvendte analog-to-digital converters, ikke var tilstrækkelig til at opfylde Nyquists samplingsteori på output-pin'en. Der er derfor anvendt et eksternt lydoutput. 
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=4in]{bordtest61.jpg}
+\caption{}
+\label{fig:resmedholder}	
+\end{figure}
 
 \subsection{Firkantsignal}
 Der blev ikke opnået succes ved at anvende firkantssignal i de tidligere tests. Resultater fra den omtalte Ph.D.-afhandling viser endvidere, at anvendelse af firkantsignal til detektering af resonansfrekvenser, ikke har været succesfuldt da de ulige harmonier jævnligt faldt sammen med anden og tredje harmoni, forårsaget af resonatorens fysiske geometri og artefakter \citep{RefWorks:22}. Dette var også tilfældet i der udførte test med firkantsignal i projektet. 
@@ -52,6 +56,7 @@ Et termometer anvendes i opstillingen da en stigning i lufttemperaturen medføre
 
 \subsection{Software}
  I softwareprogrammet, som fremgår af figur \ref{fig:VI06O}, foretages en (FFT) for at få et frekvensspektre, hvorfra frekvensen med den største amplitude findes. 
+ Varigheden af hvert enkelte mål skal være stor nok til at signalet kan nå at stabilisere sig \citep{RefWorks:22}. I testforløbet er det anvendt en måletid på hhv. 4 sekunder og 10 sekunder alt efter testsættets størrelse, og hvor hurtigt testerfaringerne ønskedes at opnåes. 
  
  \begin{figure}[!h]	
 \centering
@@ -60,7 +65,99 @@ Et termometer anvendes i opstillingen da en stigning i lufttemperaturen medføre
 \label{fig:VI06O}
  \end{figure}
 
- 
+\section{Måleresultater}
+
+Af tabel \ref{table:resultater} fremgår måleresultater opnået ved at måle volumen af vandballoner hhv. med og uden højtalerholder. 
+
+
+\begin{table}[!h]
+\centering
+\caption{Tabel over måleresultater opnået ved at måle volumen af vandballon hhv. med og uden højtalerholder}
+\label{table:resultater}
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Volumen {[}g{]}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Med (+) / uden (-) \\ højtalerholder\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Den gennemsnitlige \\ frekvens {[}Hz{]}\end{tabular}}} \\ \hline
+0 (tomt) & + & 124,9875 \\ \hline
+0 (tomt) & - & 217,12 \\ \hline
+216 & + & 150,0025 \\ \hline
+216 & - & 182,105 \\ \hline
+383 & + & 151,87 \\ \hline
+383 & - & 186,985 \\ \hline
+516 & + & 159,1325 \\ \hline
+516 & - & 201,62 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{figure}[!h]
+  \begin{minipage}[b]{1\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{tomtkammer(m_holder)}
+    \caption{Ovenstående graf viser frekvensmålinger \underline{med} højtalerholder af tomt kammer}
+    \label{fig:tomtkammer(m_holder)}
+  \end{minipage}
+  \hspace{1cm}
+  \begin{minipage}[b]{1\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{tomtkammer(u_holder)}
+    \caption{Ovenstående graf viser frekvensmålinger \underline{uden} højtalerholder af tomt kammer}
+    \label{fig:tomtkammer(u_holder)}
+  \end{minipage}
+\end{figure}
+
+
+\begin{figure}[htbp]
+  \begin{minipage}[b]{1\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{ballon216g(m_holder)}
+    \caption{Ovenstående graf viser frekvensmålinger \underline{med} højtalerholder af vandballon 216 g.}
+    \label{fig:ballon216g(m_holder)}
+  \end{minipage}
+  \hspace{1cm}
+  \begin{minipage}[b]{1\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{ballon216g(u_holder)}
+    \caption{Ovenstående graf viser frekvensmålinger \underline{uden} højtalerholder af vandballon 216 g.}
+    \label{fig:ballon216g(u_holder)}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[htbp]
+  \begin{minipage}[b]{1\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{ballon383g(m_holder)}
+    \caption{Ovenstående graf viser frekvensmålinger \underline{med} højtalerholder af vandballon 383 g.}
+    \label{fig:ballon383g(m_holder)}
+  \end{minipage}
+  \hspace{1cm}
+  \begin{minipage}[b]{1\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{ballon383g(u_holder)}
+    \caption{Ovenstående graf viser frekvensmålinger \underline{uden} højtalerholder af vandballon 383 g.}
+    \label{fig:ballon383g(u_holder)}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[htbp]
+  \begin{minipage}[b]{1\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{ballon516g(m_holder)}
+    \caption{Ovenstående graf viser frekvensmålinger \underline{med} højtalerholder af vandballon 516 g.}
+    \label{fig:ballon516g(m_holder)}
+  \end{minipage}
+  \hspace{1cm}
+  \begin{minipage}[b]{1\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{ballon516g(u_holder)}
+    \caption{Ovenstående graf viser frekvensmålinger \underline{uden} højtalerholder af vandballon 516 g.}
+    \label{fig:ballon516g(u_holder)}
+  \end{minipage}
+\end{figure}
+
+
+
+
+\section{Accepttest af systemet}
+Den udarbejdede accepttest er ikke gennemført da kravspecifikationen som nævnt, er opbygget om det konceptuelle system. Accepttesten fremgår af bilag€€€. 
 
 \section{Godkendelse af BVM som medicinsk udstyr}
 Godkendelse af medicinsk udstyr kan opfattes som en forhindring i udviklings og produktionsprocessen af nye produkter, da dokumentationen bag en godkendelse kan være lang og meget omfattende. Heldigvis kan denne proces, med indsigt, systematik og struktureret planlægning, være en naturlig del af udviklings- og produktionsprocessen. Allerede i projektets opstartsfase bør produktets \textit{intended use} fastlægges og det bør undersøges, hvorledes dokumentationen skal udarbejdes for at opfylde gældende krav.
