@@ -26,19 +26,19 @@ Det udviklede system er det aktuelle system, som består af følgende dele:
  Det aktuelle system består af en resonator, hvor en mikrofon, som er tilkoblet en DAQ, er påsat. En højtaler er tilsluttet en pink noise generator. Højtaleren holdes over resonatorens portåbning, og indsender pink noise gennem resonatorporten. Pink noise tilbagekastes i resonatoren, og resonansfrekvens opsamles i mikrofonen, hvor signalet opsamles via DAQ'en til softwareprogrammet i LabVIEW. I softwareprogrammet foretages en Fast Fourier Transform (FFT), hvorfra frekvensen med den største amplitude findes. Den resonansfrekvens anvendes i udregningen af det pågældende volumen.   
 
 \subsection{Resonator}
- Modellervoks
+Resonatoren er fremstillet af en tryksprøjte i hårdt plast. Tryksprøjtemodulet er afmonteret og bunden er savet af i et lige snit. Der er anvendt modellervoks til tætning mellem resonatorkant og underflade i et forsøg på at undgå luftutætheder. 
+
+Volumen af resonatorkammeret er $={\SI{1.671}{\liter}}$
+ 
 \subsection{Mikrofon}
-klæbemasse
+Den anvendte mikrofon er af typen \textit{Electret Microphone Amplifier MAX4466}, og af det tilhørende datablad (bilag X) fremgår et frekvensspektre på 20 Hz - 20KHz. Mikrofonen er påsat resonatoren med klæbemasse (også kendt som \textit{lærerens tyggegummi}).  
 Mikrofonens optimale placering på resonatorens indvendige side er, i følge fundet litteratur \citep{RefWorks:11}, i en afstand af 280 mm fra portåbningen. 
 Ud fra fundet litteratur, viser resultater fra en Ph.D.-afhandling omhandlende volumenmåling ved brug af Helmholtz' resonansteori endvidere, at ændringer i mikrofonens placeringsorientering med hensyn til lydkildens placering ikke viser mærkbare ændringer i frekvens eller dens tilsvarende amplitude \citep{RefWorks:22}. 
 
 \subsection{Højtaler}
+Den anvendte højtaler er af typen \textit{Multimedia USB Speaker HP-1800}. 
 Afstandsklods 
 \subsection{DAQ}
-
-
-
-\subsection{
 
 \subsection{Firkantsignal}
 Der blev ikke opnået succes ved at anvende firkantssignal i de tidligere tests. Resultater fra den omtalte Ph.D.-afhandling viser endvidere, at anvendelse af firkantsignal til detektering af resonansfrekvenser, ikke har været succesfuldt da de ulige harmonier jævnligt faldt sammen med anden og tredje harmoni, forårsaget af resonatorens fysiske geometri og artefakter \citep{RefWorks:22}. Dette var også tilfældet i der udførte test med firkantsignal i projektet. 
