@@ -1,13 +1,14 @@
 
 \chapter{Dokumentation af accepttest}
 	\section{Indledning}
-	Dette kapitel indeholder accepttesten for det konceptuelle system \textit{Akustisk brystvolumenmåler}.  
+	Dette kapitel indeholder accepttest-protokol samt accepttest for det konceptuelle system \textit{Akustisk brystvolumenmåler}.  
 	 		  
 	\subsection{Formål}
 Formålet er at dokumentere udarbejdelsen af accepttesten, som er et værktøj til at validere de specificerede krav fra kravspecifikation \ref{chap:kravspec}. 
 	
-		\subsection{Læsevejledning}	Dokumentet indeholder en accepttestprotokol, som beskriver forhold og forudsætninger der skal opfyldes inden accepttesten kan udføres. I accepttesten er der opstilt testcases for de enkelte krav, som specificeret i kravspecifikationen. Accepttesten er opdelt i henholdsvis funktionelle og ikke-funktionelle krav. Testcasene er beskrevet i tabeller, hvor der ved hver test noteres krav nr., acceptkriterie og testmetode. Herudover noteres det observerede resultat, og om hvorvidt testen er godkendt eller ej. Yderligere er initialer og dato noteret, som angiver hvornår og af hvem, den enkelte test er udført.
-			
+		\subsection{Læsevejledning}	Dokumentet indeholder en accepttestprotokol, som beskriver forhold og forudsætninger der skal opfyldes inden accepttesten kan udføres. I accepttesten er der opstilt testcases for de enkelte krav, som specificeret i kravspecifikationen. Accepttesten er opdelt i henholdsvis funktionelle og ikke-funktionelle krav. Testcasene er beskrevet i tabeller, hvor der ved hver test noteres krav nr., acceptkriterie, forventet observation og testmetode. Herudover noteres det observerede resultat, og om hvorvidt testen er godkendt eller ej. Yderligere er initialer og dato noteret, som angiver hvornår og af hvem, den enkelte test er udført.
+	
+	\newpage		
 			
 	\section{Accepttest-protokol}
 	Denne protokol beskriver alle de forhold og forudsætninger, som skal være opfyldt for at kunne udføre accepttest af den akustiske brystvolumenmåler. 
@@ -16,10 +17,23 @@ Formålet er at dokumentere udarbejdelsen af accepttesten, som er et værktøj t
 		Formålet med denne protokol er at specificere accepttest-aktivteterne gældnede for brystvolumenmåleren. 
 		
 		\subsection{Referencer}
-		€€ Eksempelvis UC\#1
+		Acceptprotokollen er udarbejdet med inspiration fra \textit{Projekteringshåndbogen}, skrevet af Søren Lyngsø-Petersen. \\
+		Accepttesten er bygget op om den udarbejdede kravspecifikation, som fremgår af kapitel \ref{chap:kravspec}. 
 		
 		\subsection{Forkortelser}
-		€€
+		\vspace{1cm}
+\begin{table}[hbt]
+\centering
+\label{ordliste}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Forkortelse             } & \textbf{Betydning             } \\ \hline
+A/D & Analog til digital \\ \hline
+BVM & Brystvolumenmåler \\ \hline
+CPU & Central Processing Unit \\ \hline
+Init. & initialer \\ \hline
+\end{tabular}
+\end{table}
 		  
 		\subsection{Ansvar}
 		\textit{		Ved underskrift på protokollen bekræfter: }\\
@@ -37,17 +51,27 @@ Formålet er at dokumentere udarbejdelsen af accepttesten, som er et værktøj t
 		\end{itemize}
 		
 		\subsection{Udstyrsbeskrivelse}
-		Den akustiske brystvolumenmåler består af en Helmholtz resonator, hvor der er påmonteret en højtaler og en mikrofon. Højtaleren og mikrofonen er koblet til en Arduino Mega 2560 R3. Arduino'en er koblet til en PC, hvor der skrives til Arduino i LabVIEW. 
-		Brystvolumenmåleren benyttes af en plastikkirurg, som bruger BMV'en når han ønsker et objektivt volumenmål på et bryst. Når en måling intialiseres med BVM'en afsendes en lyd i resonatoren via højtaleren. Mikrofonen på resonatoren opsamler den reflekterede lyd, og udfra den reflekterede lyd, udregner en algoritme størrelsen på brystvolumen. 			
+	
+	Den konceptuelle BVM er bygget op af en resonator med en størrelse, hvorpå den kan omslutte en patients bryst. Resonatoren har påmonteret en højtaler som sender lyd ind i resonatorporten. Inde i resonatoren er der monteret en mikrofon til at opsamle resonansfrekvensen. I resonatorkanten, som tilslutter til brystet, er der påsat tryksensorer til detektering af anlægstrykket. Resonatoren er yderligere monteret med en passende mængde dioder til angivelse af et korrekt anlægstryk. Dioderne er placeret så de er synlige for plastikkirurgen. Der er ydermere installeret en CPU til processering af data samt et display, med en størrelse, hvorpå det er muligt at anvise en progressbar for volumenmåling, det målte volumen samt relevante piktogrammer for procestilstanden. På resonatoren er der ligeledes påført tre knapper, en tænd- og sluk-knap, en målingsknap og en kalibreringsknap. Knappernes funktion er angivet med et piktogram, beskrivende for hver funktion. Et batteri er ligeledes tilkoblet så BVM er en trådløs enhed. Et overbliksbillede af de forskellige komponenter som indgår i den konceptuelle BVM, findes i figur \ref{fig:ksys} 
+		
+\vspace{5mm}  
+		
 		\begin{figure}[htb]
 			\centering
-			\includegraphics[width=5in]{systembeskrivelse}
-			\caption{Beskrivelse af systemets komponenter €€€€}
-			\label{system}
-		\end{figure}
+				\includegraphics[width=5in]{Ksys.png}
+				\caption{Diagrammet er en visuel beskrivelse af den konceptuelle brystvolumenmåler}	
+				\label{fig:ksys}
+			\end{figure}	     
+		
+	
+		\subsubsection{Brystvolumenmålerens funktionalitet}
+		Når en måling initialiseres med BVM'en, afsendes en lyd fra højtaleren ind i resonatoren. Mikrofonen, der er monteret inde i resonatoren, opsamler den opståede Helmholtz resonans. Igennem en A/D konvertering udregner en algoritme størrelsen på brystvolumen. 
+	
+		\subsubsection{Aktørbeskrivelse}
+		Systemets primær aktør er en plastikkirurg, som bruger BMV'en når han ønsker et objektivt mål for volumen på et bryst. Det er udelukkende plastikkirurgen, der  betjener BMV'en under en måling. Som sekundær aktør giver patient et input, brystet, til systemet.
 		
 		\subsection{Acceptkriterier}
-		\textit{Acceptkriterierne er afledt af de forhold, der er specificeret i Kravspecifikationen, kapitel \ref{Kravspec}. Acceptkriterierne er specificeret i de enkelte testskemaer.} 
+		Acceptkriterierne er afledt af de forhold, der er specificeret i Kravspecifikationen, kapitel \ref{chap:kravspec}. Acceptkriterierne er specificeret i de enkelte testcases. 
 		
 		\subsection{Metode}
 		Dette afsnit specificerer de retningslinjer, hvorefter accepttesten skal afvikles. 
@@ -71,21 +95,22 @@ Formålet er at dokumentere udarbejdelsen af accepttesten, som er et værktøj t
 			 Dette afsnit beskriver, hvordan testskemaerne specifikt skal udfyldes. 
 			 
 			 \begin{itemize}
-				\item \textit{Alle krav skal opfylde de specificerede acceptkriterier i hvert enkelte testskema.}
+				\item \textit{Alle krav skal opfylde de specificerede acceptkriterier i hvert enkelte testskema}
 				\item \textit{De aktuelle observationer skal svare til de forventede observationer}
-				\item \textit{I >>Godkendt<<-kolonnen skrives >>Ja<<, hvis acceptkriteriet er overholdt.} 
-				\item \textit{I >>Godkendt<<-kolonnen skrives >>Nej<< samt afvigelsesnummer, hvis acceptkriteriet ikke er overholdt.}  \item \textit{Kolonnen >>Init./Dato<< skal udfyldes ved hver udførsel af test}
+				\item \textit{I >>Godkendt<<-kolonnen skrives >>Ja<<, hvis acceptkriteriet er overholdt} 
+				\item \textit{I >>Godkendt<<-kolonnen skrives >>Nej<< samt afvigelsesnummer, hvis acceptkriteriet ikke er overholdt}  \item \textit{Kolonnen >>Init./Dato<< skal udfyldes ved hver udførsel af test}
 			\end{itemize}
 			
-€€€€ Husk an skrive at da vi ikke kører acceptesten, vil der ikke være udarbejede afvigelsesskemaer
 			\subsubsection{Afvigelseshåndtering}	
-			Afvigelser registreres under udførslen af accepttesten og dokumenteres ved udarbejdelse af afvigelsesbilag, hvor følgende punkter opfyldes:
+			Afvigelser registreres under udførslen af accepttesten og dokumenteres ved udfyldelse af afvigelsesbilag, hvor følgende punkter specificeres: 
 			
 			\begin{enumerate}[label=\alph*)]
 				\item \textit{Afvigelse og årsag til afvigelsen beskrives}
 				\item \textit{Aktion for opfyldelse af acceptkriterier angives}
 				\item \textit{Resultat af gennemført aktion dokumenteres}	
 			\end{enumerate}
+			
+			En skabelon til afvigelsesbilag er udarbejdet, og fremgår af bilag B. 
 			
 			\subsubsection{Afslutning af accepttest-aktiviteter}
 			Ved afslutningen af accepttest-aktivteterne, udarbejdes en accepttest-rapport. Denne rapport lukker accepttest-aktiviteterne, og fungerer som bevis for, at den gennemførte test af brystvolumenmåleren, er afsluttet med et tilfredsstillende resultat. 
@@ -102,9 +127,10 @@ Formålet er at dokumentere udarbejdelsen af accepttesten, som er et værktøj t
 		€€ Her angives de specifikke testdokumenter i en tabel. Obs, på eventuelle referencer til kravspec. 
 		
 		\subsection{Forudsætning for udførelse af accepttest}
-		€€ Hvad forudsætter afgørelsen for igangsættelse af accepttest / når det og det er opfyldt, startes accepttest 
 		
-		\section{Accepttest}
+		\textit{Accepttesten kan igangsættes når systemet har ydet 1000 stabile målinger.} 
+		
+\section{Accepttest}
 
 		
 \subsection{Funktionelle krav}
@@ -396,5 +422,7 @@ DK1 kan også anses for at være et usabilitykrav og kan testes iht. ANSI/AAMI H
 \textbf{Init./Dato}            &  \\ \hline
 \end{tabularx}
 
-	
-		
+\section{Accepttestrapport}
+
+\textit{Da accepttesten ikke er udført grundet den udviklede prototypes status, er accepttestrapporten ikke udarbejdet. Ligeledes fremgår der derfor ikke en godkendt protokol, afvigelsesblad eller udfyldte testskemaer.}
+			
