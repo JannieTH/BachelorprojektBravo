@@ -2,30 +2,83 @@
 
 \section{Bestemmelse af volumen af resonator}
 
-Volumen af resonatoren skal kendes for at bestemme resonansfrekvensen i det tomme kammer. Volumen er udregnet ved at hælde vand i resonatoren, og derefter måle vandets vægt. Ud fra vandets vægt kunne volumen gives. 
+Volumen af resonatoren skal kendes for at bestemme resonansfrekvensen i det tomme kammer. Volumen er udregnet ved at hælde vand i resonatoren, og derefter måle vandets vægt. Ud fra vandets vægt kunne volumen gives. Der gøres opmærksom på at volumen af resonatorens hals \textit{ikke} medtages. 
 
+Volumen af resonatoren $V$ er ekskl. port/ hals. Volumen er udregnet ved at hælde vand i resonatoren, og derefter måle vandets vægt. Ud fra vandets vægt kan volumen gives vha. følgende formel:  
 \begin{equation}
   V=\frac{m}{\rho}
   \label{eq:vformel}
 \end{equation}
-
+$\Downarrow$
 \begin{equation}
-V_{resonator}=\frac{\SI{1698}{\micro\gram \per \centi\meter^{3}}}{\SI{1000}{\kilo \gram \per \meter^{3}}}
+V_{resonator}=\frac{\SI{1,671}{\kilo\gram}}{\SI{1000}{\kilo \gram \per \meter^{3}}}={\SI{0,001671}{\meter^{3}}}
 \end{equation}
 
-\begin{equation}
-	V_{resonator}={\SI{1.698}{\meter^{3}}}={\SI{1.698}{\liter}}
-\end{equation}
-
-\subsection{Bestemmelse af volumen af resonator ekskl. halsvolumen}
-
-Volumen af resonatoren ekskl. halsvolumen er udregnet på samme fremgangsmåde ved brug af ligning \ref{eq:vformel}. 
-
-\begin{equation}
-V_{resonator}=\frac{\SI{1671}{\micro\gram \per \centi\meter^{3}}}{\SI{1000}{\kilo \gram \per \meter^{3}}}={\SI{1.671}{\meter^{3}}}={\SI{1.671}{\liter}}
-\end{equation}
 
 \section{Udregning af volumen}
+
+Helmholtz resonansen i en tom resonator er givet ved følgende formel: \fnul
+
+hvor 
+\begin{description}[align=left, labelwidth=1in,labelindent=0.5cm]
+\item $f_{0}$: resonansfrekvens i en tom resonator [$Hz$],\\
+\item $c$: lydens hastighed i luft [$m/s$],\\
+\item $S_{p}$: tværsnitsareal af port [$m^2$],\\
+\item $V$: statisk volumen af resonator [$m^3$],\\
+\item $l_{p}$: længde af port [$m$],\\
+\item $\Delta l$: endekorrektion [$m$]\\
+\end{description}
+Lydens hastighed i luft $c$ er givet ved formlen: 
+\c
+hvor $T_{K}$ er givet ved \T. 
+Derved kan lydens hastighed i luft ved en temperatur på 23\degree C bestemmes: 
+\begin{equation}
+		c = {\SI{331,5}{\meter / \second}} \cdot
+		\sqrt{\frac{\SI{296,15}{\kelvin}}{\SI{273,15}{\kelvin}}} = {\SI{345,175}{\meter / \second}} 	\end{equation}
+		
+Tværsnitsarealet $S_{p}$ af porten bestemmes ved: 
+\Sp 
+hvor ${r}$ er radius er porten. 
+Derved bliver $S_{p}$ ved en radius på ${\SI{1.75}{\centi \meter}}$:  
+\begin{equation}
+S_{p} = ({\SI{0,0175}{\meter}})^{2}\pi = {\SI{0,000962}{\meter^{2}}}	
+\end{equation}  
+
+Endekorrektionen $\Delta l$ er en værdi som tillægges, som korrektion for den medsvingende luft, der i resonatoren fungerer som masse. 
+
+$\Delta l$ gives ved: \deltal
+$\Downarrow$
+\begin{equation}
+		\Delta l = 0,6 \cdot {\SI{0,0175}{\meter}} + \frac{8}{3\pi} \cdot {\SI{0,0175}{\meter}} = {\SI{0,025354}{\meter}} 
+\end{equation}
+
+Resonansfrekvens $f_{0}$ i en tom resonator ved en lufttemperatur på 23\degree C er altså:
+
+\fnul
+$\Downarrow$   
+\begin{equation}
+		f_{0} = \frac{\SI{345,175}{\meter / \second}}{2\pi}\sqrt{\frac{\SI{0,000962}{\meter^{2}}}{{\SI{0,001671}{\meter^{3}}}({\SI{0,034}{\meter}}+{\SI{0,025354}{\meter}})}} 
+	\end{equation}	
+$\Downarrow$
+\begin{equation}
+	f_{0} = {\SI{171,094}{\second}^{-1}} \approxeq {\SI{95,4}{\hertz}} 	
+	\end{equation}
+	
+
+
+
+
+Volumen af resonatoren skal kendes for at verificere den målte resonansfrekvens i det tomme kammer. 
+Volumen af resonatoren $V$ er ekskl. port/ hals. Volumen er udregnet ved at hælde vand i resonatoren, og derefter måle vandets vægt. Ud fra vandets vægt kan volumen gives vha. følgende formel:  
+\begin{equation}
+  V=\frac{m}{\rho}
+  \label{eq:vformel}
+\end{equation}
+$\Downarrow$
+\begin{equation}
+V_{resonator}=\frac{\SI{1,671}{\kilo\gram}}{\SI{1000}{\kilo \gram \per \meter^{3}}}={\SI{0,001671}{\meter^{3}}}
+\end{equation}
+
 
 Helmholtz resonansen i en tom resonator er givet ved følgende formel: \fnul
 
