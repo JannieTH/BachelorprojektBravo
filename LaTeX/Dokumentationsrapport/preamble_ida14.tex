@@ -274,10 +274,19 @@
 \def\modellervoks{MY DOUGH modellervoks}
 \def\plade{Etronit MBM PhenolicMelamine plade}
 \def\højtalerholder{3D-printet holder}
-\def\fnul{
+
+
+
+ \def\f{
 \begin{equation}
 		f_{0} = \frac{c}{2\pi}\sqrt{\frac{S_{p}}{V(l_{p}+\Delta l)}}
 	\end{equation}}
+	
+\def\fb{
+\begin{equation}
+		f_{b} = \frac{c}{2\pi}\sqrt{\frac{S_{p}}{(V-W)(l_{p}+\Delta l)}}
+	\end{equation}}
+	
 \def\c{
 \begin{equation}
 		c = {\SI{331,5}{\meter / \second}} \cdot \sqrt{\frac{T_{K}}{\SI{273,15}{\kelvin}}}	\end{equation}}
@@ -297,7 +306,22 @@
 		S_{p} = r^2\pi	
 \end{equation}}
 
+\def\Wudl{
+\begin{equation}
+	\left(\frac{f_{0}}{f_{b}}\right)^2 = \frac{V-W}{V} = 1 - \frac{W}{V}	
+\end{equation}}
 
+\def\Wudled{
+\begin{equation}
+		\frac{W}{V} = 1 - \left(\frac{f_{0}}{f_{b}}\right)^2
+\end{equation}}
+
+
+\def\W{
+\begin{equation}
+		W = V\left(1-\left(\frac{f_{0}}{f_{b}}\right)^2\right)
+\end{equation}}
+  
 
 	
    

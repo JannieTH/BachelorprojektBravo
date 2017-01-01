@@ -622,7 +622,6 @@
 			\onlineg\\
 	
 		\subsubsection{Opstilling og opsætning}
-		\subsubsection{Opstilling og opsætning}
 		På kablerne er pins fastloddet, som igen er loddet fast til mikrofonprintet. Det røde kabel forbinder mikrofonprintets "AUD"{} til "+AI0"{}-indgangen på DAQ'en. Det sorte kabel forbinder mikrofonprintets "GND"{} til "GND"{}-indgangen på DAQ'en. Det blå kabel forbinder mikrofonprintets "VCC"{} til "5V"{} på DAQ'en. DAQ'en er med USB-kablet tilkoblet PC'en, hvorpå \texttt{optagefrekvenssignal04.vi} er åbnet i LabVIEW. Blockdiagrammet for VI'et er vist i figur \ref{fig:op04}. Højtaleren er tilsluttet PC'ens USB-port og minijack-stik, og er placeret ca. 2 cm. fra mikrofonen. I en browser på PC´en er onlinetonegenerator.com åbnet.       
 	
 		\subsubsection{Udførsel}
@@ -1137,10 +1136,7 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 					\multicolumn{1}{l|}{H3/M4/VI06\underline{O}}&Volumenmåling af ballon\\
 					
 					\multicolumn{1}{c|}{I09} &
-					\multicolumn{1}{l|}{H3/M4/VI08\underline{O}}&Volumenmåling med højtalerholder af balloner\\	
-					
-					\multicolumn{1}{c|}{I10} &
-					\multicolumn{1}{l|}{H3/M4/VI08\underline{O}}&Volumenmåling uden højtalerholder af balloner\\	
+					\multicolumn{1}{l|}{H3/M4/VI08\underline{O}}&Volumenmåling af balloner med og uden højtalerholder\\	
 						
 				\end{tabular}
 			\end{table}
@@ -1604,9 +1600,10 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 			 Der udføres en ny enhedstest af minijack mikrofonen for at klarlægge om mikrofonen opfanger signalerne. 
 			 
  	\subsection{I06-H3/M4/VI05\underline{O}}
+ 	\label{subsec:I06}
 	
 	\subsubsection{Testhypotese}
-	Resonansfrekvensen $f_{0}$ i den tomme resonator kan opfanges og verificeres ud fra den teoretiske udregnede resonansfrekvens. 
+	Resonansfrekvensen $f_{0}$ i den tomme resonator, kan verificeres i forhold til resonatorens kendte volumen. 
 		
 	\subsubsection{Teoretisk baggrundsviden}	
 Volumen af resonatoren skal kendes for at verificere den målte resonansfrekvens i det tomme kammer. 
@@ -1621,7 +1618,7 @@ V_{resonator}=\frac{\SI{1,671}{\kilo\gram}}{\SI{1000}{\kilo \gram \per \meter^{3
 \end{equation}
 
 
-Helmholtz resonansen i en tom resonator er givet ved følgende formel: \fnul
+Helmholtz resonansen i en tom resonator er givet ved følgende formel: \f
 
 hvor 
 \begin{description}[align=left, labelwidth=1in,labelindent=0.5cm]
@@ -1658,7 +1655,7 @@ $\Downarrow$
 
 Resonansfrekvens $f_{0}$ i en tom resonator ved en lufttemperatur på 23\degree C er altså:
 
-\fnul
+\f
 $\Downarrow$   
 \begin{equation}
 		f_{0} = \frac{\SI{345,175}{\meter / \second}}{2\pi}\sqrt{\frac{\SI{0,000962}{\meter^{2}}}{{\SI{0,001671}{\meter^{3}}}({\SI{0,034}{\meter}}+{\SI{0,025354}{\meter}})}} 
@@ -1746,8 +1743,8 @@ $\Downarrow$
 	\subsubsection{Aktion}
 	Det skal undersøges, om der er en fejl i softwaren.	
 	
-	\subsection{I07-H3/M4/VI05\underline{O}		\subsubsection{Testformål}
-	Det ønskes, at finde resonansfrekvensen $f_{0}$ i den tomme resonator, således denne kan verificeres i forhold til resonatorens kendte volumen.  	
+	\subsection{I07-H3/M4/VI05\underline{O}}		\subsubsection{Testhypotese}
+	Resonansfrekvensen $f_{0}$ i den tomme resonator, kan verificeres i forhold til resonatorens kendte volumen.  	
 	
 	\subsubsection{Produktspecifikationer}
 	\textit{Hardware:}\\
@@ -1789,122 +1786,27 @@ Mikrofonen er monteret på resonatorens inderside med klæbemasse. Mikrofonen pl
 			\end{enumerate}
 			
 	\subsubsection{Resultater}
+	\begin{figure}[H]
+	\centering
+	\includegraphics[width=6in]{I08.png}	
+	\end{figure}
 	
-	Rumtemperatur: 23.7\degree C
+	\subsubsection{Diskussion}
+	Resultatet er ikke tilnærmelsesvis det teoretiske på 171,094 Hz. 
 	
-	$f_{0}$ udregnet ud fra Helmholtz resonans ligningen:
+	\subsubsection{Konklusion}
+	Hypotesen forkastes. 
 	
-		\fnul,
-		
-		hvor c er givet ved: 
-		\c, og T er bestemt ved.: 
-		\T
-		
-		Tværsnitsarealet $S_{p}$ er bestemt ved
-		\Sp
-		
-		Endvidere er $\Delta$l bestemt ved: 
-		\deltal
-		\Sp
-	
-	
+	\subsubsection{Aktion}
+	Der udføres en ny test, hvor volumen af et objekt bestemmes. 
 
-	
-	
-			
-		\begin{table}[]
-\centering
-\caption{Tabel over resultater}
-\label{bordtest6resultater}
-\begin{tabular}{c|l}
-\textbf{\#}& \textbf{$f_{0}$ {[Hz]}} \\
-\hline
-1  &                  \\
-2  &                  \\
-3  &                  \\
-4  &                  \\
-5  &                  \\
-6  &                  \\
-7  &                  \\
-8  &                  \\
-9  &                  \\
-10 &                 
-\end{tabular}
-\end{table}
-			
+\subsection{I08-H3/M4/VI05\underline{O}}
 
-\subsection{Bordtest 6.2 - test med tre balloner med forskellig volumen}
+\subsubsection{Testhypotese}
+Volumen af den vandfyldte ballon i resonatoren kan bestemmes ud fra den målte resonansfrekvens $f_{b}$
 
-\subsubsection{Testformål}
-	
-
-Gul ballon: 216 g. svarende til et volumen på: 0,000216 m3\\ 
-Blå ballon: 383 g. svarende til et volumen på: 0,000383 m3\\
-Grøn ballon: 516 g. svarende til et volumen på: 0,000516 m3\\
-
-Rumtemperatur: 23,2\degree C
-
-		
-	
-$f_{0}$ ved 23.2\degree C: 96.4 s
-
-Gul ballon: $f_{b}$ burde dermed være: 103.3 s (var 150 s) 
-Blå ballon: $f_{b}$ burde dermed være: 109.8 s (var 152 s)
-Grøn ballon: $f_{b}$ burde dermed være: 115.9 s (var 159 s) 		
-	
-	\subsection{Teoretisk udregning af resonansfrekvensen i det tomme kammer ($f_{0}$)} 
-
-Resonansfrekvensen $f_{0}$ i et tomt kammer udregnes ved brug af Helmholtz' ligning, givet ved dette udtryk f
-
-hvor 
-\begin{description}[align=left,labelindent=0.3cm]
-\item $f_{0}$: resonansfrekvens i en tom resonator [$Hz$],\\
-\item $c$: lydens hastighed i luft [$m/s$],\\
-\item $S_{p}$: tværsnitsareal af port [$m^2$],\\
-\item $V$: statisk volumen af resonator [$m^3$],\\
-\item $l_{p}$: længde af port [$m$],\\
-\item $\Delta l$: endekorrektion [$m$]\\
-\end{description}
-
-Først udregnes lydens hastighed i en lufttemperatur på 23,7\degree C:
-\begin{equation}
-		c = {\SI{331,5}{\meter / \second}} \cdot \sqrt{\frac{T_{K}}{\SI{273,15}{\kelvin}}}	\end{equation}
- hvor 		
-\begin{equation}
-		T_{K} = t_{\degree C} + {\SI{273,15}{\kelvin}} = {\SI{23,7}{\degree C}} + {\SI{273,15}{\kelvin}} = {\SI{296,85}{\kelvin}}	
-\end{equation}
-
-og dermed er c: 
-\begin{equation}
-		c = {\SI{331,5}{\meter / \second}} \cdot \sqrt{\frac{\SI{296,85}{\kelvin}}{\SI{273,15}{\kelvin}}} = {\SI{345,582}{\kelvin}}	\end{equation}
-		
-Herefter findes tværsnitsarealet $S_{p}$ af porten:
-\begin{equation}
-		S_{p} = r^2\pi = (0,0175)^2 m \cdot \pi	= {\SI{0,000962}{\meter}^2}
-\end{equation}
-
-Endekorrektionsfaktoren bestemmes: 
-\begin{equation}
-		\Delta l = 0,6 \cdot r + \frac{8}{3\pi} \cdot r 
-\end{equation} 
-$\Downarrow$
-\begin{equation}
-\Delta l = 0,6 \cdot {\SI{0,0175}{\meter}} + \frac{8}{3\pi} \cdot {\SI{0,0175}{\meter}} = {\SI{0.025354}{\meter}} 
-\end{equation}
-		
-Og dermed kan der ud fra ligning ligning 4.1 udledes: 
-
-\begin{equation}
-		f_{0} = \frac{{\SI{345,582}{\kelvin}}}{2\pi}\sqrt{\frac{{\SI{0,000962}{\meter}^2}}{{\SI{0,001671}{\meter}^3}({\SI{0,034}{\meter}}+ {\SI{0.025354}{\meter}})}}
-\end{equation}	
-$\Downarrow$
-\begin{equation}
-		f_{0} = {\SI{171,295}{\hertz}}
-		\end{equation}
-
-\subsection{Teoretisk udregning af resonansfrekvensen ($f_{b}$) i kammer indeholdende et objekt}
-
-Resonansfrekvensen $f_{b}$ i et kammer indeholdende et objekt udregnes ved brug af Helmholtz' ligning, givet ved dette udtryk fb
+\subsubsection{Teoretisk baggrundviden}
+Resonansfrekvensen $f_{b}$ i et kammer indeholdende en vandfyldt ballon med et volumen på 0,676 L, kan udregnes ved brug af Helmholtz' ligning, givet ved dette udtryk \fb
 
 hvor 
 \begin{description}[align=left,labelindent=0.3cm]
@@ -1912,242 +1814,155 @@ hvor
 \item $W$: volumen af objekt [$m^3$],\\
 \end{description}
 
+(for yderligere specifikation se teoretisk baggrundsviden i I06, \ref{subsec:I06})
 
-\subsubsection{Resonansfrevkensen af b1} 
+\subsubsection{Resonansfrevkensen $f_{b}$ af ballonen [V=0,676 L]} 
 \hspace{1,5cm}
 \begin{equation}
 		f_{b} = \frac{c}{2\pi}\sqrt{\frac{S_{p}}{(V-W)(l_{p}+\Delta l)}}
 	\end{equation}
 $\Downarrow$
 \begin{equation}
-		f_{b1} = \frac{{\SI{345,582}{\kelvin}}}{2\pi}\sqrt{\frac{{\SI{0,000962}{\meter}^2}}{({\SI{0,001671}{\meter}^3}-{\SI{0,000216}{\meter}^3})({\SI{0,034}{\meter}}+ {\SI{0.025354}{\meter}})}}	
+		f_{b} = \frac{{\SI{345,582}{\kelvin}}}{2\pi}\sqrt{\frac{{\SI{0,000962}{\meter}^2}}{({\SI{0,001671}{\meter}^3}-{\SI{0,000676}{\meter}^3})({\SI{0,034}{\meter}}+ {\SI{0.025354}{\meter}})}}	
 \end{equation}
 $\Downarrow$
 \begin{equation}
-		f_{b1} = {\SI{183,57}{\hertz}}
+		f_{b} = {\SI{221,7}{\hertz}}
 \end{equation}
 
-\subsubsection{Resonansfrevkensen af b2} 
-\hspace{1,5cm}
+ \subsubsection{Produktspecifikationer}
+	\textit{Hardware:}\\
+	\usbhøj\\
+	\elektretto\\
+	\daq\\
+	\sprøjtebeholder\\	
+	\snot\\	
+	\højtalerholder til \usbhøj\\
+	\modellervoks\\
+	\plade\\
+	Ballon med vandvolumen på 0,676 L\\
+	\PC\\
+	Termometer\\
+	
+	\textit{Software:}\\
+	\labview\\
+	\daqsoft\\
+	\onlineg\\
+	
+		\subsubsection{Opstilling og opsætning}
+	Flasken er skruet af tryksprøjten, og bunden er savet af i et lige snit. Denne flaske har funktionen som resonator i testen. Ballonen placeres på pladen, og resonatoren sættes nedover. Kanten mellem resonator og plade tætnes med modellervoks. Trykventilen på flasken er også tætnet med modellervoks.
+Mikrofonen er monteret på resonatorens inderside med klæbemasse. Mikrofonen placeres mindre end resonatorhalsens længde fra  resonatorhalsens indre åbning. Mikrofonen er endvidere tilkoblet DAQ'en, som er tilsluttet PC'en. På PC'en er LabVIEW VI'et \texttt{optagefrekvenssignal05.vi} åbnet. Blokdiagrammet vises i figur \ref{fig:optagefrekvenssignal05}. En 3D-printet holder er skruet på flaskens gevind. Holderen sikrer, at højtaleren holdes i en afstand på $\geq$ en diameter af halsåbningen fra halsens indgangen. Højtaleren er tilsluttet PC'en, og \onlineg er åbnet i en browser, hvor pink noise genereres. 
+	Et termometer sættes til at måle rumtemperaturen, imens testen udføres. 
+	
+	\subsubsection{Udførsel}
+			
+			\begin{enumerate}
+			\item Pink noise genereres fra \onlineg  ud gennem højtaleren. 
+			\item Gentagelse af antal loops i blokdiagrammet sættes til 100, og der optages 4 sekunder af gangen. 
+			\item Der trykkes \textit{Run} i VI'et. 
+			\item Resonansfrekvens $f_{0}$ aflæses i \textit{Resonansfrekvens af kammer med objekt}.
+			\end{enumerate}
+			
+	\subsubsection{Resultater}
+	Den målte resonansfrekvens er $f_{b}$ = 321 Hz.  
+	Volumen af ballonen $W$ udregnes ud fra den målte resonansfrekvens $f_{b}$. 
+	Resonansfrekvens (udregnet i I06 \ref{subsec:I06}) $f_{0}$=171,094 Hz anvendes.  
+	
 \begin{equation}
-		f_{b} = \frac{c}{2\pi}\sqrt{\frac{S_{p}}{(V-W)(l_{p}+\Delta l)}}
-	\end{equation}
+		W = V\left(1-\left(\frac{f_{0}}{f_{b}}\right)^2\right)
+\end{equation}
 $\Downarrow$
 \begin{equation}
-		f_{b2} = \frac{{\SI{345,582}{\kelvin}}}{2\pi}\sqrt{\frac{{\SI{0,000962}{\meter}^2}}{({\SI{0,001671}{\meter}^3}-{\SI{0,000383}{\meter}^3})({\SI{0,034}{\meter}}+ {\SI{0.025354}{\meter}})}}	
+		W = {\SI{0,001671}{\meter^{3}}}\left(1-\left(\frac{\SI{171,094}{\hertz}}{\SI{321}{\hertz}}\right)^2\right)
 \end{equation}
 $\Downarrow$
 \begin{equation}
-		f_{b2} = {\SI{195,108}{\hertz}}
+		W = {\SI{0,001196}{\meter^{3}}}={\SI{1,196}{\liter}}
 \end{equation}
 
-\subsubsection{Resonansfrevkensen af b3} 
-\hspace{1,5cm}
-\begin{equation}
-		f_{b} = \frac{c}{2\pi}\sqrt{\frac{S_{p}}{(V-W)(l_{p}+\Delta l)}}
-	\end{equation}
-$\Downarrow$
-\begin{equation}
-		f_{b3} = \frac{{\SI{345,582}{\kelvin}}}{2\pi}\sqrt{\frac{{\SI{0,000962}{\meter}^2}}{({\SI{0,001671}{\meter}^3}-{\SI{0,000516}{\meter}^3})({\SI{0,034}{\meter}}+ {\SI{0.025354}{\meter}})}}	
-\end{equation}
-$\Downarrow$
-\begin{equation}
-		f_{b3} = {\SI{206,036}{\hertz}}
-\end{equation}
+	\subsubsection{Diskussion}
+	Den absolutte afvigelse er på knap det dobbelte. Skyldes dette unøjagtige mål, testopstillingen, softwaren eller andre ting? 
+	
+	\subsubsection{Konklusion}
+	Hypotesen afkastes grundet den store afvigelse. 
+	
+	\subsubsection{Aktion}
+	Der konfereres med fagperson, hvorefter der foretages en ny test med forskellige størrelser. 
 
-\subsection{Udregning af volumen ud fra måleresultater samt teoretiske udregninger}
+\subsection{I09-H3/M4/VI05\underline{O}}
 
-For at verificere målingerne samt udregningerne, foretages der \textit{backward engineering}, hvor volumen af objektet udregnes ud fra målte samt teoretiske resonansfrekvenser. Den teoretiske resonansfrekvens $f_{0}$ anvendes i udregningerne, da resultaterne af de målte $f_{0}$ er yderst afvigende, og en fejl i testudførslen ikke kan udelukkes.    
+\subsubsection{Testhypotese}
+Der opnåes mere præcise resultater ved at afmontere højtalerholderen.
 
-Ved at kombinere $f_{0}$ (ligning 4.1) og $f_{b}$ (ligning 4.10), kan volumen af objektet $W$ udledes, som eftervist i afsnit \ref{subsec:efter}. Følgende ligning anvendes til udregning af volumen ud fra $f_{b}$
+\subsubsection{Produktspecifikationer}
+	\textit{Hardware:}\\
+	\usbhøj\\
+	\elektretto\\
+	\daq\\
+	\sprøjtebeholder\\	
+	\snot\\	
+	\højtalerholder til \usbhøj\\
+	Afstandsklods: hætte fra sprittusch ($\geq$ portens diameter)\\ 
+	\modellervoks\\
+	\plade\\
+	\PC\\
+	Termometer\\
+	3 balloner:
+	\begin{itemize}
+	\item Gul ballon: 216 g. svarende til et volumen på: 0,000216 m3
+\item Blå ballon: 383 g. svarende til et volumen på: 0,000383 m3
+\item Grøn ballon: 516 g. svarende til et volumen på: 0,000516 m3	\end{itemize}
+	
+	\textit{Software:}\\
+	\labview\\
+	\daqsoft\\
+	\onlineg\\
+	
+\subsubsection{Opstilling og opsætning}
+	Flasken er skruet af tryksprøjten, og bunden er savet af i et lige snit. Denne flaske har funktionen som resonator i testen. Ballonen placeres på pladen, og resonatoren sættes nedover. Kanten mellem resonator og plade tætnes med modellervoks. Trykventilen på flasken er også tætnet med modellervoks.
+Mikrofonen er monteret på resonatorens inderside med klæbemasse. Mikrofonen placeres mindre end resonatorhalsens længde fra  resonatorhalsens indre åbning. Mikrofonen er endvidere tilkoblet DAQ'en, som er tilsluttet PC'en. På PC'en er LabVIEW VI'et \texttt{optagefrekvenssignal05.vi} åbnet. Blokdiagrammet vises i figur \ref{fig:optagefrekvenssignal05}. I den del af testen, hvor der testes med højtalerholderen, er denne skruet på flaskens gevind. I testen uden højtalerholderen, indsættes en afstandsklods i stedet. Dette er for at sikre, at højtaleren holdes i en afstand på $\geq$ en diameter af halsåbningen fra halsens indgangen. Højtaleren er tilsluttet PC'en, og \onlineg er åbnet i en browser, hvor pink noise genereres. 
+	Et termometer sættes til at måle rumtemperaturen, imens testen udføres. 
+	
+	\subsubsection{Udførsel}
+			
+			\begin{enumerate}
+			\item Pink noise genereres fra \onlineg  ud gennem højtaleren. 
+			\item Gentagelse af antal loops i blokdiagrammet sættes til 100, og der optages 4 sekunder af gangen. 
+			\item Der trykkes \textit{Run} i VI'et. 
+			\item Resonansfrekvens $f_{0}$ aflæses i \textit{Resonansfrekvens af kammer med objekt}.
+			\end{enumerate}
+	
+	Der foretages først målinger med højtalerholderen og herefter uden. Der udføres et testsæt med resonansfrevkenser af det tomme kammer og derefter ballonerne. 
+	
+	\subsubsection{Resultater}
+	
+	
+	Resonansfrekvensen ved målinger \textit{med} højtalerholderen:
+	\begin{figure}[H]
+	\centering
+	\includegraphics[width=6in]{tomtkammer(m_holder)}
+	\includegraphics[width=6in]{ballon216g(m_holder)}
+	\includegraphics[width=6in]{ballon383g(m_holder)}
+	\includegraphics[width=6in]{ballon516g(m_holder)}
+	\end{figure}
+	
+	Resonansfrekvenser ved målinger \textit{uden} højtalerholderen:
+	\begin{figure}[H]
+	\centering
+	\includegraphics[width=6in]{tomtkammer(u_holder)}
+	\includegraphics[width=6in]{ballon216g(u_holder)}
+	\includegraphics[width=6in]{ballon383g(u_holder)}
+	\includegraphics[width=6in]{ballon516g(u_holder)}
+	\end{figure}
 
-\begin{equation}
-		W_{b} = V\left(1-\left(\frac{f_{0}}{f_{b1}}\right)^2\right)
-\end{equation}
- 
+	\subsubsection{Dikussion}
+	Værdierne er mere præcise uden højtalerholderen. Dette skyldes muligvis, at der skal være frit luft omkring resonatorhalsen, så luften kan virke som en fjeder. 
+	
+	\subsubsection{Konklusion}
+	Hypotesen godkendes. 
 
-\subsubsection{Volumen af b1}
-
-\textit{Teoretisk $f_{b1}$}:
-\begin{equation}
-		W_{b1} = V\left(1-\left(\frac{{\SI{171,295}{\hertz}}
-}{{\SI{183,57}{\hertz}}}\right)^2\right) = {\SI{0,000216}{\meter}^3} = {\SI{0,000216}{\liter}}
-\end{equation}
-
-\textit{$f_{b1}$ ud fra måling foretaget med højtalerholder}: 
-\begin{equation}
-		W_{b1} = V\left(1-\left(\frac{{\SI{171,295}{\hertz}}
-}{{\SI{150,00}{\hertz}}}\right)^2\right) = {\SI{-0,000508}{\meter}^3} = {\SI{-0,000508}{\liter}}
-\end{equation}
-
-\textit{$f_{b1}$ ud fra måling foretaget uden højtalerholder}: 
-\begin{equation}
-		W_{b1} = V\left(1-\left(\frac{{\SI{171,295}{\hertz}}
-}{{\SI{182,12}{\hertz}}}\right)^2\right) = {\SI{0,000193}{\meter}^3} = {\SI{0,000193}{\liter}}
-\end{equation}
-
-\hspace{1,5cm}
-Resultaterne fremgår af oversigten i tabel \ref{table:b1af}.\\ 
-
-\begin{table}[!h]
-\centering
-\caption{Tabel over den relative afvigelse af målt volumen af b1 i forhold til den sande volumen}
-\label{table:b1af}
-\begin{tabular}{|l|l|l|l|}
-\hline
-\textbf{$f_{b1}$ fundet ud fra:} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Resonansfrevkens\\ {[}Hz{]}\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Volumen\\ {[}l{]}\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Relativ afvigelse\\ {[}\%{]}\end{tabular}}} \\ \hline
-teoretisk udregning & 183,57  & 0,216 & 0 \\ \hline
-\begin{tabular}[c]{@{}l@{}}måling foretaget med \\ højtalerholder\end{tabular} & 150,00 & -0,508  & -335 \\ \hline
-\begin{tabular}[c]{@{}l@{}}måling foretaget uden \\ højtalerholder\end{tabular} & 182,12 & 0,193 & -11 \\ \hline
-\end{tabular}
-\end{table}
-
-\subsubsection{Volumen af b2}
-
-\textit{Teoretisk $f_{b2}$}:
-\begin{equation}
-		W_{b2} = V\left(1-\left(\frac{{\SI{171,295}{\hertz}}
-}{{\SI{195,11}{\hertz}}}\right)^2\right) = {\SI{0,000383}{\meter}^3} = {\SI{0,000383}{\liter}}
-\end{equation}
-
-\textit{$f_{b2}$ ud fra måling foretaget med højtalerholder}:
-\begin{equation}
-		W_{b2} = V\left(1-\left(\frac{{\SI{171,295}{\hertz}}
-}{{\SI{151,87}{\hertz}}}\right)^2\right) = {\SI{-0,000455}{\meter}^3} = {\SI{-0,000455}{\liter}}
-\end{equation}
-
-\textit{$f_{b2}$ ud fra måling foretaget uden højtalerholder}: 
-\begin{equation}
-		W_{b2} = V\left(1-\left(\frac{{\SI{171,295}{\hertz}}
-}{{\SI{186,99}{\hertz}}}\right)^2\right) = {\SI{0,000269}{\meter}^3} = {\SI{0,000269}{\liter}}
-\end{equation}
-
-\hspace{1,5cm}
-Resultaterne fremgår af oversigten i tabel \ref{table:b2af}.\\ 
-
-\begin{table}[!h]
-\centering
-\caption{Tabel over den relative afvigelse af målt volumen af b2 i forhold til den sande volumen}
-\label{table:b2af}
-\begin{tabular}{|l|l|l|l|}
-\hline
-\textbf{$f_{b2}$ fundet ud fra:} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Resonansfrevkens\\ {[}Hz{]}\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Volumen\\ {[}l{]}\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Relativ afvigelse\\ {[}\%{]}\end{tabular}}} \\ \hline
-teoretisk udregning & 195,11  & 0,383 & 0 \\ \hline
-\begin{tabular}[c]{@{}l@{}}måling foretaget med \\ højtalerholder\end{tabular} & 151,87 & -0,455  & -216 \\ \hline
-\begin{tabular}[c]{@{}l@{}}måling foretaget uden \\ højtalerholder\end{tabular} & 186,99 & 0,269 & -30 \\ \hline
-\end{tabular}
-\end{table}
-
-\subsubsection{Volumen af b3}
-
-\textit{Teoretisk $f_{b3}$}:
-\begin{equation}
-		W_{b3} = V\left(1-\left(\frac{{\SI{171,295}{\hertz}}
-}{{\SI{206,04}{\hertz}}}\right)^2\right) = {\SI{0,000516}{\meter}^3} = {\SI{0,000516}{\liter}}
-\end{equation}
-
-\textit{$f_{b3}$ ud fra måling foretaget med højtalerholder}:
-\begin{equation}
-		W_{b3} = V\left(1-\left(\frac{{\SI{171,295}{\hertz}}
-}{{\SI{159,13}{\hertz}}}\right)^2\right) = {\SI{-0,000265}{\meter}^3} = {\SI{-0,000265}{\liter}}
-\end{equation}
-
-\textit{$f_{b3}$ ud fra måling foretaget uden højtalerholder}: 
-\begin{equation}
-		W_{b3} = V\left(1-\left(\frac{{\SI{171,295}{\hertz}}
-}{{\SI{201,62}{\hertz}}}\right)^2\right) = {\SI{0,000465}{\meter}^3} = {\SI{0,000465}{\liter}}
-\end{equation}
-
-\hspace{1,5cm}
-Resultaterne fremgår af oversigten i tabel \ref{table:b3af}.\\ 
-
-\begin{table}[!h]
-\centering
-\caption{Tabel over den relative afvigelse af målt volumen af b3 i forhold til den sande volumen}
-\label{table:b3af}
-\begin{tabular}{|l|l|l|l|}
-\hline
-\textbf{$f_{b3}$ fundet ud fra:} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Resonansfrevkens\\ {[}Hz{]}\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Volumen\\ {[}l{]}\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Relativ afvigelse\\ {[}\%{]}\end{tabular}}} \\ \hline
-teoretisk udregning & 206,04  & 0,516 & 0 \\ \hline
-\begin{tabular}[c]{@{}l@{}}måling foretaget med \\ højtalerholder\end{tabular} & 159,13 & -0,265  & -151 \\ \hline
-\begin{tabular}[c]{@{}l@{}}måling foretaget uden \\ højtalerholder\end{tabular} & 201,62 & 0,465 & -10 \\ \hline
-\end{tabular}
-\end{table}
-
-Af figur \ref{fig:tomtkammer(m_holder)} fremgår de målte resonansfrekvenser ($f_{b}$) i et tomt kammer \underline{med} højtalerholderen, og af figur \ref{fig:tomtkammer(u_holder)} fremgår de målte resonansfrekvenser ($f_{b}$) i et tomt kammer \underline{uden} højtalerholderen. 
-
-Af figur \ref{fig:ballon216g(m_holder)} fremgår de målte resonansfrekvenser ($f_{b}$) for en vandfyldt ballon på 216 g. \underline{med} højtalerholderen, og af figur \ref{fig:ballon216g(u_holder)} fremgår de målte resonansfrekvenser ($f_{b}$) for en vandfyldt ballon på 216 g. \underline{uden} højtalerholderen.  
-
-Af figur \ref{fig:ballon383g(m_holder)} fremgår de målte resonansfrekvenser ($f_{b}$) for en vandfyldt ballon på 383 g. \underline{med} højtalerholderen, og af figur \ref{fig:ballon383g(u_holder)} fremgår de målte resonansfrekvenser ($f_{b}$) for en vandfyldt ballon på 383 g. \underline{uden} højtalerholderen.  
-
-Af figur \ref{fig:ballon516g(m_holder)} fremgår de målte resonansfrekvenser ($f_{b}$) for en vandfyldt ballon på 516 g. \underline{med} højtalerholderen, og af figur \ref{fig:ballon516g(u_holder)} fremgår de målte resonansfrekvenser ($f_{b}$) for en vandfyldt ballon på 516 g. \underline{uden} højtalerholderen.  
-
-\begin{figure}[!h]
-  \begin{minipage}[b]{1\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{tomtkammer(m_holder)}
-    \caption{Ovenstående graf viser resonansfrekvenser $f_{b}$ af et tomt kammer \underline{med} højtalerholder}
-    \label{fig:tomtkammer(m_holder)}
-  \end{minipage}
-  \hspace{1cm}
-  \begin{minipage}[b]{1\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{tomtkammer(u_holder)}
-    \caption{Ovenstående graf viser resonansfrekvenser $f_{b}$ af et tomt kammer \underline{uden} højtalerholder}
-    \label{fig:tomtkammer(u_holder)}
-  \end{minipage}
-\end{figure}
-
-
-\begin{figure}[htbp]
-  \begin{minipage}[b]{1\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{ballon216g(m_holder)}
-    \caption{Ovenstående graf viser resonansfrekvenser $f_{b}$  af vandballon 216 g. \underline{med} højtalerholder}
-    \label{fig:ballon216g(m_holder)}
-  \end{minipage}
-  \hspace{1cm}
-  \begin{minipage}[b]{1\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{ballon216g(u_holder)}
-    \caption{Ovenstående graf viser resonansfrekvenser $f_{b}$  af vandballon 216 g. \underline{uden} højtalerholder}
-    \label{fig:ballon216g(u_holder)}
-  \end{minipage}
-\end{figure}
-
-\begin{figure}[htbp]
-  \begin{minipage}[b]{1\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{ballon383g(m_holder)}
-    \caption{Ovenstående graf viser resonansfrekvenser $f_{b}$  af vandballon 383 g. \underline{med} højtalerholder}
-    \label{fig:ballon216g(m_holder)}
-    \label{fig:ballon383g(m_holder)}
-  \end{minipage}
-  \hspace{1cm}
-  \begin{minipage}[b]{1\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{ballon383g(u_holder)}
-    \caption{Ovenstående graf viser resonansfrekvenser $f_{b}$  af vandballon 383 g. \underline{uden} højtalerholder}
-    \label{fig:ballon383g(u_holder)}
-  \end{minipage}
-\end{figure}
-
-\begin{figure}[htbp]
-  \begin{minipage}[b]{1\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{ballon516g(m_holder)}
-    \caption{Ovenstående graf viser resonansfrekvenser $f_{b}$  af vandballon 516 g. \underline{med} højtalerholder}
-    \label{fig:ballon516g(m_holder)}
-  \end{minipage}
-  \hspace{1cm}
-  \begin{minipage}[b]{1\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{ballon516g(u_holder)}
-    \caption{Ovenstående graf viser resonansfrekvenser $f_{b}$  af vandballon 516 g. \underline{uden} højtalerholder}
-    \label{fig:ballon516g(u_holder)}
-  \end{minipage}
-\end{figure}
-
+	\subsubsection{Aktion}
+	Resultaterne skal behandles i Projektrapporten. Der skal endvidere testes uden højtalerholderen i et forsøg på at skabe endnu præcisere resulater. 
 
 
 
