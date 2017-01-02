@@ -32,6 +32,7 @@ A/D & Analog til digital \\ \hline
 BVM & Brystvolumenmåler \\ \hline
 CPU & Central Processing Unit \\ \hline
 Init. & initialer \\ \hline
+UI & User Interface \\ \hline
 \end{tabular}
 \end{table}
 		  
@@ -245,9 +246,9 @@ Init. & initialer \\ \hline
 \begin{tabularx}{1\textwidth}{|l|X|}
 \hline
 \textbf{Krav nr.}              & UK3  \\ \hline
-\textbf{Acceptkriterie}        & Der anvendes piktogrammer til visualisering af processtatus på UI \\ \hline
+\textbf{Acceptkriterie}        & Der anvendes udelukkende visuelt symbolik \\ \hline
 \textbf{Testmetode}            & Usabilitytest på min. 15 plastikkirurger med forskellig national baggrund \\ \hline
-\textbf{Forventet resultat}		& Usabilitytest på min. 15 plastikkirurger med national baggrund viser, at målgruppen forstår processtadiet ud fra UI\\ \hline
+\textbf{Forventet resultat}		& Usabilitytest på min. 15 plastikkirurger med national baggrund viser, at målgruppen forstår anvendelsen af UI\\ \hline
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
@@ -283,9 +284,9 @@ Init. & initialer \\ \hline
 \begin{tabularx}{1\textwidth}{|l|X|}
 \hline
 \textbf{Krav nr.}              & RK3  \\ \hline
-\textbf{Acceptkriterie}        & \begin{tabular}[l]{@{}l@{}} Volumenangivelse skal\\ afrundes til nærmeste hele tal \end{tabular} \\ \hline
+\textbf{Acceptkriterie}        & \begin{tabular}[l]{@{}l@{}} Volumenangivelse findes\\ ikke som decimaltal på UI \end{tabular} \\ \hline
 \textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}} UC1.5-6 følges og det kontrolleres\\ at volumen ikke er angivet som decimaltal\end{tabular}  \\ \hline
-
+\textbf{Forventet resultat}	& UC1.5-6 følges, og der observeres ingen decimaltal i anvendelsen af UI \\ \hline
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
@@ -296,6 +297,7 @@ Init. & initialer \\ \hline
 \textbf{Krav nr.}              & RK4  \\ \hline
 \textbf{Acceptkriterie}        & Der må forekomme fejl ved hver 1000. måling  \\ \hline
 \textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}} En testserie på 1000 volumenmålinger generes hvorpå\\ eventuelle fejl registreres \end{tabular}  \\ \hline
+\textbf{Forventet resultat}	& Der genereres 1000 målinger uden fejl\\ \hline
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
@@ -306,6 +308,7 @@ Init. & initialer \\ \hline
 \textbf{Krav nr.}              & RK5  \\ \hline
 \textbf{Acceptkriterie}        & Varighed af fejlløsning må vare højst 2 minutter  \\ \hline
 \textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}} UC1.A1 følges og varighed registreres \end{tabular}  \\ \hline
+\textbf{Forventet resultat}	& Tidtagningen af fejlløsningen er mindre end 2 minutter \\ \hline 
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
@@ -320,6 +323,7 @@ Init. & initialer \\ \hline
 \textbf{Krav nr.}              & PK1  \\ \hline
 \textbf{Acceptkriterie}        & Måling skal være foretaget inden for 10 sekunder  \\ \hline
 \textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}} UC1 følges og varighed registreres \end{tabular}  \\ \hline
+\textbf{Forventet resultat}           & Tidtagning af foretaget måling viser mindre end 10 sekunder  \\ \hline
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
@@ -328,8 +332,9 @@ Init. & initialer \\ \hline
 \begin{tabularx}{1\textwidth}{|l|X|}
 \hline
 \textbf{Krav nr.}              & PK2  \\ \hline
-\textbf{Acceptkriterie}        & Lydniveau ved måling skal være mindre end 75 dB målt med standiseret målemetode(kilde€€€€) \\ \hline
+\textbf{Acceptkriterie}        & Lydniveau ved måling skal være mindre end 75 dB målt med standiseret målemetode \\ \hline
 \textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}} UC1 følges og lydniveau registreres med lydmåler \end{tabular}  \\ \hline
+\textbf{Forventet resultat}           & Lydniveaumåling med standardiseret målemetode viser mindre end 75 dB ved brystvolumenmåling \\ \hline
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
@@ -343,7 +348,8 @@ Init. & initialer \\ \hline
 \hline
 \textbf{Krav nr.}              & SK1  \\ \hline
 \textbf{Acceptkriterie}        & Produktmateriale skal tåle rengøring med sprit \\ \hline
-\textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}} Materiale rengøres med sprit 100 gange og kontrolleres for skader \end{tabular}  \\ \hline
+\textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}} Materiale rengøres med sprit 100 gange og kontrolleres\\ for skader \end{tabular}  \\ \hline
+\textbf{Forventet resultat}	& Produktet rengøres med sprit 100 gange og foretager derefter problemfrit en måling \\ \hline 
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
@@ -354,6 +360,7 @@ Init. & initialer \\ \hline
 \textbf{Krav nr.}              & SK2  \\ \hline
 \textbf{Acceptkriterie}        & UI skal tåle rengøring med sprit \\ \hline
 \textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}} UI rengøres med sprit 100 gange og kontrolleres for skader \end{tabular}  \\ \hline
+\textbf{Forventet resultat}	& UI rengøres med sprit 100 gange og foretager derefter problemfrit en måling \\ \hline 
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
@@ -366,21 +373,23 @@ Init. & initialer \\ \hline
 \begin{tabularx}{1\textwidth}{|l|X|}
 \hline
 \textbf{Krav nr.}              & DK1  \\ \hline
-\textbf{Acceptkriterie}        & Skal kunne anvendes uden brugermanual \\ \hline
+\textbf{Acceptkriterie}        & Funktioner skal være af standardiseret design \\ \hline
 \textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}} Minimum tyve plastikkirurger skal, uden kendskab til\\ brugermanual, intuitivt anvende BVM \end{tabular}  \\ \hline
+\textbf{Forventet resultat}	& Min. 20 plastikkirurger anvender BVM uden brug af brugermanual \\ \hline
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
 \end{tabularx}
 
 \vspace{2mm}
-DK1 kan også anses for at være et usabilitykrav og kan testes iht. ANSI/AAMI HE75:20097/(R)2013(ref€€€€)
+DK1 kan også anses for at være et usabilitykrav og kan testes iht. ANSI/AAMI HE75:20097/(R)2013
 
 \begin{tabularx}{1\textwidth}{|l|X|}
 \hline
 \textbf{Krav nr.}              & DK2  \\ \hline
-\textbf{Acceptkriterie}        & Anvendes på 90\% af tilfældigt udvalgte kvinder \\ \hline
+\textbf{Acceptkriterie}        & Skal kunne anvendes på 90\% af tilfældigt udvalgte kvinder \\ \hline
 \textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}} Ud af en testpopulation på 100 kvinder, må der findes\\ 10 kvinder som BVM ikke kan anvendes på\end{tabular}  \\ \hline
+\textbf{Forventet resultat} & BVM kan anvendes på min. 90 af de 100 kvinder\\ \hline
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
@@ -389,8 +398,9 @@ DK1 kan også anses for at være et usabilitykrav og kan testes iht. ANSI/AAMI H
 \begin{tabularx}{1\textwidth}{|l|X|}
 \hline
 \textbf{Krav nr.}              & DK3  \\ \hline
-\textbf{Acceptkriterie}        & Må ikke giver gener under måling \\ \hline
+\textbf{Acceptkriterie}        & Resonatoråbning må forvolde skade på huden\\ \hline
 \textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}} Ergoterapeut godkender udformning \end{tabular}  \\ \hline
+\textbf{Forventet resultat} & Ergoterapeut undersøger resonatoråbningen og konkluderer at den ikke kan forvolde skade på huden \\ \hline
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
@@ -401,6 +411,7 @@ DK1 kan også anses for at være et usabilitykrav og kan testes iht. ANSI/AAMI H
 \textbf{Krav nr.}              & DK4  \\ \hline
 \textbf{Acceptkriterie}        & Arbejdsstilling skal være ergonomisk korrekt \\ \hline
 \textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}} Ergoterapeut godkender arbejdsstilling \end{tabular}  \\ \hline
+\textbf{Forventet resultat} & Ergoterapeut undersøger arbejdsstillingen og konkluderer at den ikke kan forvolde arbejdsskader\\ \hline
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
@@ -411,6 +422,7 @@ DK1 kan også anses for at være et usabilitykrav og kan testes iht. ANSI/AAMI H
 \textbf{Krav nr.}              & DK5  \\ \hline
 \textbf{Acceptkriterie}        & Ingen eksterne tilkoblinger med kabler \\ \hline
 \textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}} Det kontrolleres, at der ikke er monteret kabler fra\\ eksterne enheder \end{tabular}  \\ \hline
+\textbf{Forventet resultat} & Der findes ingen kabler på BVM\\ \hline
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
@@ -421,6 +433,7 @@ DK1 kan også anses for at være et usabilitykrav og kan testes iht. ANSI/AAMI H
 \textbf{Krav nr.}              & DK6  \\ \hline
 \textbf{Acceptkriterie}        &\begin{tabular}[l]{@{}l@{}} Dokumentation for overensstemmelse med klassificering\\ Im i hht. MDD 93/42/EEC \end{tabular} \\ \hline
 \textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}} CE-certificering for de metrologiske aspekter\\ er underskrevet af bemyndiget organ  \end{tabular}  \\ \hline
+\textbf{Forventet resultat} & Bemyndiget organ underskriver CE-certificering for de metrologiske apsekter på baggrund af overensstemmende dokumentation \\ \hline
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline

@@ -2,56 +2,44 @@
 \chapter{Kravspecifikation}
 \label{chap:kravspec}
 	\section{Indledning}
-	Dette kapitel indeholder kravspecifikationen for den akustiske brystvolumenmåler(BVM). Kravspecifikation er udarbejdet i samarbejde med projektets kunde, Pavia Lumholt, speciallæge i plastikkirurgi. 
+	Dette kapitel indeholder kravspecifikationen for den akustiske brystvolumenmåler (BVM). Kravspecifikation er udarbejdet i samarbejde med projektets kunde, Pavia Lumholt, speciallæge i plastikkirurgi. \\
 	Kravspecifikationen er opbygget om FURPS+-modellen, som er en helhedsbetragtende teknik til definering af krav.
-	FURPS+ er inddelt i funktionelle og ikke-funktionelle krav. F(functionality) definerer de funktionelle krav, og URPS+ (usability, reliability, perfomance, supportability og +) definerer de ikke-funktionelle krav. I denne kravspecifikation definerer +, designbegrænsninger.  
-Kravspecifikationen er udarbejdet ud fra den koncepttuelle brystvolumenmåler. Grundet test og udviklingsmæssige udfordringer er denne model ikke blevet realiseret. Beskrivelse af den koncepttuelle brystvolumen er beskrevet i afsnit \ref{subsec:BVMopb} Brystvolumenmålerens opbygning 
+	FURPS+ er inddelt i funktionelle og ikke-funktionelle krav. F(functionality) definerer de funktionelle krav, og URPS+ (usability, reliability, perfomance, supportability og +) definerer de ikke-funktionelle krav. I denne kravspecifikation definerer +, designbegrænsninger.  \\
+Kravspecifikationen er udarbejdet ud fra den konceptuelle brystvolumenmåler. Grundet test- og udviklingsmæssige udfordringer er denne model ikke blevet realiseret. Beskrivelse af den konceptuelle brystvolumenmåler er beskrevet i afsnit \ref{subsec:BVMopb}.
 		  
 		\subsection{Formål}
 		Kravspecifikation definerer de funktionelle og ikke-funktionelle krav, og fungerer som en bindende kontrakt mellem producent og kunde.
 	
 		\subsection{Læsevejledning}	
-		Dokumentet indeholder en systembeskrivelse for den akustiske brystvolumenmåler (omtales herefter BVM). Systembeskrivelsen er en kort beskrivelse af BVM samt en illustration af måleren. De definerede krav er opdelt i funktionelle og ikke-funktionelle krav, og er beskrevet i de navnebeslægtede afsnit. Dokumentet indeholder ydermere en projektafgrænsning i form af MoSCoW-modellen samt et afsnit omhandlende projektets samarbejdspartnere.
+		Dokumentet indeholder en systembeskrivelse for den konceptuelle akustiske brystvolumenmåler (omtales herefter BVM). Systembeskrivelsen er en kort beskrivelse af BVM samt en illustration af måleren. De definerede krav er opdelt i funktionelle og ikke-funktionelle krav, og er beskrevet i de navnebeslægtede afsnit. Dokumentet indeholder ydermere en projektafgrænsning i form af MoSCoW-modellen samt et afsnit omhandlende projektets samarbejdspartnere.
 		
-		\subsection{Versionshistorik}
-		
-		\vspace{5mm}
-		
-			\begin{figure*}[htb]
-				\centering
-				\includegraphics[width=5in]{versionshisv01.png}
-			\end{figure*}
-		
+		\newpage
+				
 	\section{Systembeskrivelse}
-	
-Systembeskrivelsen er opdelt i en konceptuelt og aktuel beskrivelse.
-Denne systembeskrivelse tager udgangspunkt i den koncepttuelle BVM. Beskrivelse vil derfor være af en detaljegrad der afspejler det koncepttuelle niveau.
+Denne systembeskrivelse tager udgangspunkt i den konceptuelle BVM (Den aktuelle BVM fremgår af Projektrapporten). Beskrivelsen af systemet vil derfor være af en detaljegrad, der afspejler det konceptuelle niveau.
 
 		\subsection{Den konceptuelle brystvolumenmåler} \label{subsec:BVMopb}
 		
-		Den konceptuelle BVM er bygget op af en resonator med en størrelse hvorpå den kan omslutte en patients bryst. Resonatoren har påmonteret en højtaler som sender lyd ind i resonatorporten. Indeni resonatoren er monteret en mikrofon til at opsamle resonansfrekvensen. I resonatorkanten, som tilslutter til brystet, er der påsat tryksensorer til detektering af anlægstrykket. Resonatoren er yderligere monteret med en passende mængde dioder til angivelse af et korrekt anlægstryk. Dioderne er placeret så det er synlige for plasktikkirurgen. Der er ydermere installeret en CPU til processering af data samt et display, med en størrelse, hvortil det er muligt at anvise progressbar for volumenmåling, det målte volumen samt relevante piktogrammer for procestilstanden. På resonatoren er der ligeledes påført tre knapper, en tænd-og sluk knap, målingsknap og en kalibreringsknap. Knappernes funktion er angivet med et piktogram til hver funktion. Et batteri er ligeledes tilkoblet så BVM bliver et trådløst device.   Et overbliksbillede af de forskellige komponenter som ingår i den konceptuelle BVM findes i figur \ref{fig:ksys} 
-		
+		Den konceptuelle BVM er bygget op af en resonator med en størrelse, hvorpå den kan omslutte en patients bryst. Resonatoren har påmonteret en højtaler som sender lyd ind i resonatorporten. Inde i resonatoren er der monteret en mikrofon til at opsamle resonansfrekvensen. I resonatorkanten, som tilslutter til brystet, er der påsat tryksensorer til detektering af anlægstrykket. Resonatoren er yderligere monteret med en passende mængde dioder til angivelse af et korrekt anlægstryk. Dioderne er placeret så de er synlige for plastikkirurgen. Der er ydermere installeret en CPU til processering af data samt et display, med en størrelse, hvorpå det er muligt at anvise en progressbar for volumenmåling, det målte volumen samt relevante piktogrammer for procestilstanden. På resonatoren er der ligeledes påført tre knapper, en tænd- og sluk-knap, en målingsknap og en kalibreringsknap. Knappernes funktion er angivet med et piktogram, beskrivende for hver funktion. Et batteri er ligeledes tilkoblet så BVM er en trådløs enhed. Et overbliksbillede af de forskellige komponenter som indgår i den konceptuelle BVM, findes i figur \ref{fig:ksys} 
 		
 \vspace{5mm}  
 		
 		\begin{figure}[htb]
 			\centering
-				\includegraphics[width=5in]{Ksys}
+				\includegraphics[width=5in]{Ksys.png}
 				\caption{Diagrammet er en visuel beskrivelse af den konceptuelle brystvolumenmåler}	
 				\label{fig:ksys}
 			\end{figure}	     
 		
 	
-		\subsection{Brystvolumenmåleren funktionalitet}
-		Når en måling intialiseres med BVM'en afsendes en lyd fra højtalerne ind i resonatoren  Mikrofonen indeni resonatoren opsamler den opståede Helmholtzresonans. Igennem en A/D konvertering udregnes  udregner en algoritme størrelsen på brystvolumen. 
+		\subsection{Brystvolumenmålerens funktionalitet}
+		Når en måling initialiseres med BVM'en, afsendes en lyd fra højtaleren ind i resonatoren. Mikrofonen, der er monteret inde i resonatoren, opsamler den opståede Helmholtz resonans. Igennem en A/D konvertering udregner en algoritme størrelsen på brystvolumen. 
 	
 		\subsection{Aktørbeskrivelse}
-		Systemets primære aktør er en plastikkirurg, som bruger BMV'en når han ønsker et objektivt mål på et bryst. Det er udelukkende plastikkirurgen, der  betjener BMV'en under en måling. Som sekundær aktør giver patient et input, sit bryst, til systemet. 
+		Systemets primær aktør er en plastikkirurg, som bruger BMV'en når han ønsker et objektivt mål for volumen på et bryst. Det er udelukkende plastikkirurgen, der  betjener BMV'en under en måling. Som sekundær aktør giver patient et input, brystet, til systemet.
 	
 	\section{Funktionelle krav}	
 	Dette afsnit beskriver de funktionelle krav, som er udarbejdet i samarbejde med Pavia Lumholt. Disse krav er præsenteret i et Use Case diagram samt i en Fully Dressed Use Case beskrivelse.  
-	
-	\pagebreak
 	
 		\subsection{Use Case diagram}
 		I Use Case diagrammet, figur \ref{fig:UC1}, vises en Use Case for brugen af den akustiske brystvolumenmåler. På venstre side af Use Casen ses systemets primære aktør, og på højre side ses systemets sekundære aktør. Endvidere, vises systemets interessenter, nederst i diagrammet.  

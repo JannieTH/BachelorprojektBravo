@@ -3,10 +3,12 @@
 
 
 \section{Indledning}
-	Dette kapitel indeholder enhedstest, integrationstest samt €€€€€€€€€€accepttest. Alle udførte tests er reproducerbare, hvilket afspejles i den høje detaljegrad som testene er beskrevet i. For at kunne reproducere beskrevne tests, forventes et kendskab til Labview, herunder LINX [LabVIEW MakerHub]. 
+Implementeringsfasen forløber sig efter en iterativ proces, hvor de enkelte dele er udviklet og testet før desammensættes med andre delelementer. På denne måde er prototypen gradvist samlet og løbende testet i gennem forløbet.4.1.1 FormålFormålet med dette dokument er, at beskrive i detaljer hvordan de enkelte delelementerfra designdokumentet konkret er implementeret.
+	Dette kapitel indeholder udførte enhedstest samt integrationstest samt. Alle udførte tests er reproducerbare, hvilket afspejles i den høje detaljegrad som testene er beskrevet i. For at kunne reproducere beskrevne tests, forventes et kendskab til Labview, herunder LINX [LabVIEW MakerHub]. 
 	
 		\subsection{Formål}
-	
+		Formålet med dette dokument er at beskrive i detaljer, hvordan de enheds- samt intergrationstests er udført. 
+		
 		\subsection{Læsevejledning}	
 	
 	
@@ -14,7 +16,7 @@
 	
 	\begin{table}[htb]
 				\centering
-				\caption{Tabeloversigt over udførte enhedstests 2} 
+				\caption{Tabeloversigt over udførte enhedstests} 
 				\label{enhedstests 2}
 				\begin{tabular}{lll}
 					\multicolumn{1}{l|}{\textbf{Test-ID}} & 	
@@ -26,7 +28,7 @@
 					\multicolumn{1}{l|}{E03-H2}& 
 					\multicolumn{1}{l|}{Højtaler}&H2: Wide Band 2,5'' SB65WBAC25-4\\
 					\multicolumn{1}{l|}{E04-M1}& 
-					\multicolumn{1}{l|}{Mikrofon}&M1: Minijack PC Mikrofon (udvidet test)\\
+					\multicolumn{1}{l|}{Mikrofon}&M1: (udvidet test)\\
 					\multicolumn{1}{l|}{E05-M2}& 
 					\multicolumn{1}{l|}{Mikrofon}&M2: Logitech HD WEBCAM C270\\	
 					\multicolumn{1}{l|}{E06-M3}& 
@@ -34,9 +36,9 @@
 						\multicolumn{1}{l|}{E07-M4}& 
 					\multicolumn{1}{l|}{Mikrofon}&M4: Electret Microphone Amplifier MAX4466 (2.5 V strømforsyning)\\
 					\multicolumn{1}{l|}{E08-M4}& 
-					\multicolumn{1}{l|}{Mikrofon}&M4: Electret Microphone Amplifier MAX4466 (5 V strømforsyning)\\
+					\multicolumn{1}{l|}{Mikrofon}&M4: (5 V strømforsyning)\\
 					\multicolumn{1}{l|}{E09-M4}& 
-					\multicolumn{1}{l|}{Mikrofon}&M4: Electret Microphone Amplifier MAX4466 (frekvensbånd)\\
+					\multicolumn{1}{l|}{Mikrofon}&M4: (frekvensbånd)\\
 					\multicolumn{1}{l|}{E10-H3}& 
 					\multicolumn{1}{l|}{Højtaler}&H3: Multimedia USB Speaker HP-1800\\
 						
@@ -57,9 +59,7 @@
 			\end{table}
 	
 	
-		
-		\subsection{Versionshistorik}
-
+	
  
 \section{Enhedstest}
 	Dette afsnit beskriver de indledende funktionstests, hvor hver enkelte selvstændige funktion i systemet afprøves. 
