@@ -1,8 +1,34 @@
 \chapter{Diskussion}
+Udviklingen af en objektiv målemetode til volumenbestemmelse af et bryst ved anvendelse af Helmholtz' resonansteori, har vist at være mere kompliceret end først antaget. En stor del af tiden er gået med HW-mæssige udfordringer som muligvis kunne være undgået ved et større kendskab til elektronik og akustik. Det diskuteres endvidere, hvorvidt udviklingen af prototypen var nået længere ved, at have haft et ekstra gruppemedlem med fagligt kendskab inden for elektronik og/eller akustik. Projektet er derfor drejet over i et spor, hvor der har været fokus på testproces fremfor det endelige resultat af prototypen. 
 
-\section{Resonator}
-Any air leaks between the two parts could cause variability inthe resonant frequency, thus the chamber and bottom were O-ringed to have them sealed. There is a salverfixed on the bottom so that the watermelon could not move when going up. All parts were made of clearstainless steel to reduce varying of temperature on the volume of the chamber and the noise around.
+\section{Testprocessen}    
+Testprocessen har været en spændende og udfordrende proces. Gruppen har erfaret vigtigheden af en systematik, grundig og slavisk fremgangsmåde under udarbejdelse af dokumentation. Gruppen har også brændt nallerne ved at lade sig rive med, og \textit{lige} teste en ting eller to mere, inden udførslen af dokumentationen, hvilket har medført diskussioner på baggrund af forskellige opfattelser af, hvordan testen reelt forløb.  
+Opbygningen af testdokumentationens punkter har medvirket til, at der er reflekteret over resultaterne, hvorpå der er fejlsporet og planlagt en næste aktion, så arbejdet aldrig har stået stille.    
 
-\section{Endekorrektionsfaktoren}
+\section{Design af prototype}
+\subsection{Resonator}
+Utætheder mellem underlag og resonatoren kan medføre ændringer i resonansfrekvensen. Det vides ikke hvorvidt modellervoksen har tætnet resonatoren fuldkomment, og om dette kan have påvirket måleresultaterne. Resonatoren er som nævnt, fremstillet af hårdt plast, for at beskytte målingerne mod støj. Resonatorens størrelse i forhold til objektet kan også have påvirket resultaterne. Endvidere har portens længde samt diameter også indflydelse på målingerne, og burde undersøges nærmere. 
 
-Halslængde
+\subsection{Endekorrektionsfaktoren}
+I den ideelle resonansteori fungerer luftens masse som en fjeder i resonatorens port. Dette medfører, at massen bevæger sig resonatorportens længde samt en yderligere merværdi, som udtrykkes ved en endekorrektion $\Delta$l.
+Efter samtaler med TAS og LGJ er det erfaret, at endekorrektionsfaktoren er en kompliceret størrelse. I realiteten opfører $\Delta$l sig ikke ideelt i forhold til teorien. På Ingeniørhøjskolen Aarhus Universitet ligger et bachelorprojekt alene omhandlende denne problematik, klar til udarbejdelse af studerende. For at opnå valide resultater må denne endekorrektionsfaktor undersøges. 
+
+\begin{equation}
+		\Delta l = 0,6 \cdot r + \frac{8}{3\pi} \cdot r
+\end{equation}
+
+\subsection{Højtaleren}
+Projektgruppen erfarede ud fra testerfaringer samt samtale med TAS, at højtaleren skal sidde i et kabinet eller på anden vis afgrænses, for at undgå akustisk kortslutning.  
+
+\subsection{Frekvensspektre}
+Efter samtaler fra fagpersoner, diskuteres det om der skal anvendes lav- eller højfrekvenser. En hypotese lyder, at når der anvendes højfrekvenser, reflekteres disse når de rammer brystet, hvorimod lavfrekvenser lettere transmitteres gennem væv, muskler og fedt.
+
+\subsection{Arduino og DAQ}
+Output kapaciteten på Arduino og DAQ er ikke tilstrækkelig til at opfylde Nyquists samplingsteori på output til højtaleren. Det blev nedprioriteret at finde en anvendelig A/D converter, og i stedet blev det besluttet at anvende en ekstern højtalerenhed da det dermed var muligt at komme videre med testforløbet. 
+
+\subsection{Testobjekter}
+Der er testet med vandfyldte balloner da dette var en hurtigt testmetode. Det må dog antages, at målingerne er påvirket af medsvingninger, da ballonen er af elastisk materiale og fyldt med vand. Det var et stort ønske at teste på hhv. svine- og kyllingekød for at afspejle et mere virkelighedstro testobjekt. Dette blev ikke opfyldt grundet den tidsmæssige ramme.  
+
+ 
+
+

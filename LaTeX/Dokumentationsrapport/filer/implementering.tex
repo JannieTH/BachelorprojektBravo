@@ -1300,7 +1300,7 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 			\end{figure} 
 			
 		\textit{2. delopstilling}:\\
-		Mikrofonen er sat i PC'ens minijack-stik. På PC'en er VI'et \texttt{optagefrekvenssignal0.1.vi} åbnet i LabVIEW. Testopstillingen for denne del er vist i figur \ref{fig:etmik}, og blokdiagrammet er vist i figur \ref{fig:3of01}.\\  
+		Mikrofonen er sat i PC'ens minijack-stik. På PC'en er VI'et \texttt{optagefrekvenssignal0.1.vi} åbnet i LabVIEW. Blokdiagrammet er vist i figur \ref{fig:3of01}.\\  
 
 		\begin{figure}[htb]
 			\centering
@@ -1346,7 +1346,7 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 			 Det erfaredes at det var grundtonens harmoniske overtoner, idet frekvensen udsendes som et firkantsignal. Kun ved højfrekvente signaler (<1 kHz), blev grundtonen opfanget. 
 			 Ved at benytte \texttt{onlinetonegenerator.com}, kunne der udsendes et sinussignal med en given frekvens, som blev korrekt opfanget (+/- 0.5 Hz) i maks frekvens-feltet.     
 			\subsubsection{Diskussion}
-			Der opnås pæne resultater ved at bruge et sinussignal. Det overvejes om det er muligt at generer sinussignaler til en Arduino men der er desværre meget kompliceret at generere sinussignaler til en Arduino.   
+			Der opnås pæne resultater ved at bruge et sinussignal. Det overvejes om det er muligt at genere sinussignaler til en Arduino, men det viser sig, at være kompliceret at generere sinussignaler til en Arduino.   
 			\subsubsection{Konklusion}
 			Testhypotesen accepteres. Det konkluderes, at der ikke er fejl i software og hardware, og de unøjagtige resultater skyldes firkantsignalets harmoniske overtoner.  
 			\subsubsection{Aktion}
@@ -1415,7 +1415,7 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 		\subsubsection{Udførsel}
 			
 			\begin{enumerate}
-				\item Tryksprøjtedelen afmonteres beholderen og fungerer nu som resonator. Resonatoren stilles på et bord med halsen pegende opad. 
+				\item Tryksprøjtedelen afmonteres beholderen, og beholderen fungerer nu som resonator. Resonatoren stilles på et bord med halsen pegende opad. 
 				\item Mikrofonen føres ned i resonatoren og ligger i resonatorens bund. 
 				\item Linealen påsættes resonatorens hals så den fungerer som afstandsmåler fra halsåbningen.
 				\item Højtaleren holdes manuelt over resonatorhalsen i en afstand på en halv diameter af højtalermembranen. Ved anvendelse ef den specificerede højtaler er afstanden to centimeter. 
@@ -1491,12 +1491,12 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 			Dermed konkluderes, at resonatoren i dette tilfælde ikke virker dæmpende på harmoniske overtoner på frekvenser lavere end 1000 Hz. 
 			  
 			\subsubsection{Aktion}
-			Det skal undersøges, om målinger genereret med en frekvens lig eller højere end 1000 Hz er stabile. 
+			Det skal undersøges, om målinger genereret med en frekvens $\geq$ 1000 Hz er stabile. 
 			
 			\subsection{I05-H2/M1/VI02G/VI02\underline{O}}
 			
 		\subsubsection{Testhypotese}
-		Er firkantsignaler genereret med frekvenser lig eller højere end 1000 Hz stabile og HelmHoltzresonatoren har på indvirkning på signalet. 
+		Firkantsignaler genereret med frekvenser $\geq$ 1000 Hz er stabile, og Helmholtzresonatoren har på indvirkning på signalet. 
 		
 		\subsubsection{Produktspecifikationer}
 		
@@ -1591,10 +1591,10 @@ Ved samtlige test med lydgenererende funktion er der anvendt maksimalt lydtryk p
 				
 			  
 			\subsubsection{Diskussion}
-			 Variationen på de opfangede frekenser er tilfredsstillende til brug i det videre udviklingsforløb. De optagede frekvenser afviger ikke fra de udsendte frekvenser selvom de udsendte frekvenser er opfanget i resonatoren. Det er Helmholtz resonansen som ønskes opfanget og den formodes at afvige fra den udsendte frekvens. Dette er dog ikke tilfældet i denne tests resultater. Det undres over de optagede frekvenser ikke er påvirkede af resonatoren og der sås nu tvivl minijack mikrofonen opfanger signalerne eller om det er PC mikrofonen som opfanger signalerne
+			 Variationen på de opfangede frekenser er tilfredsstillende til brug i det videre udviklingsforløb. De optagede frekvenser afviger ikke fra de udsendte frekvenser selvom de udsendte frekvenser er opfanget i resonatoren. Det er Helmholtz resonansen som ønskes opfanget og den formodes at afvige fra den udsendte frekvens. Dette er dog ikke tilfældet i denne tests resultater. Der undres over de optagede frekvenser ikke er påvirkede af resonatoren og der sås nu tvivl minijack mikrofonen opfanger signalerne eller om det er PC mikrofonen som opfanger signalerne
 			
 			\subsubsection{Konklusion}
-			Hypotesen afkastestes. Frekvenser over 950 Hz kan opfanges som grundtonen og det opfangede signal er ikke forstyrret at de harmoniske overtoner. Det ser ikke ud til at de opfangede frekvenser ikke er påvirket af resonatoren, hvilket vil være forventeligt. Det konkluderes at det det er nødvendigt at undersøge om minijack mikrofonen opfanger de afsendte signaler. 
+			Hypotesen afkastestes. Frekvenser over 950 Hz kan opfanges som grundtonen og det opfangede signal er ikke forstyrret at de harmoniske overtoner. Det ser ikke ud til at de opfangede frekvenser er påvirkede af resonatoren, hvilket er forventeligt. Det konkluderes, at det er nødvendigt at undersøge om minijack mikrofonen opfanger de afsendte signaler. 
 			
 			\subsubsection{Aktion}
 			 Der udføres en ny enhedstest af minijack mikrofonen for at klarlægge om mikrofonen opfanger signalerne. 
@@ -1735,7 +1735,7 @@ $\Downarrow$
 \end{table}
 			
 	\subsubsection{Diskussion}
-	Den teoretiske udregnede resonansfrevkens i den tomme resonator er 171 Hz. Den første måling er har en relativ afvigelse på 5 \%, og de efterfølgende målinger ser ud til at stige for hver foretagede måling.  
+	Den teoretiske udregnede resonansfrevkens i den tomme resonator er 171 Hz. Den første måling har en relativ afvigelse på 5 \%, og de efterfølgende målinger ser ud til at stige for hver foretagede måling.  
 	
 	\subsubsection{Konklusion}
 	Hypotesen afkastes. Der må være en fejl i softwaren siden målinger tilnærmelsesvis stiger for hver måling. 
@@ -1766,7 +1766,7 @@ $\Downarrow$
 	
 		\subsubsection{Opstilling og opsætning}
 	Flasken er skruet af tryksprøjten, og bunden er savet af i et lige snit. Denne flaske har funktionen som resonator i testen. Resonatoren vises i figur \ref{fig:resonator}. Resonatoren er placeret på pladen, og er tætnet med modellervoks i kanten mellem resonator og plade. Trykventilen på flasken er også tætnet med modellervoks.
-Mikrofonen er monteret på resonatorens inderside med klæbemasse. Mikrofonen placeres mindre end resonatorhalsens længde fra  resonatorhalsens indre åbning. Mikrofonen er endvidere tilkoblet DAQ'en, som er tilsluttet PC'en. På PC'en er LabVIEW VI'et \texttt{optagefrekvenssignal05.vi} åbnet. Blokdiagrammet vises i figur \ref{fig:optagefrekvenssignal05}. En 3D-printet holder er skruet på flaskens gevind. Holderen sikrer, at højtaleren holdes i en afstand på $\geq$ en diameter af halsåbningen fra halsens indgangen. Højtaleren er tilsluttet PC'en, og \onlineg er åbnet i en browser, hvor pink noise genereres. 
+Mikrofonen er monteret på resonatorens inderside med klæbemasse. Mikrofonen placeres mindre end resonatorhalsens længde fra  resonatorhalsens indre åbning. Mikrofonen er endvidere tilkoblet DAQ'en, som er tilsluttet PC'en. På PC'en er LabVIEW VI'et \texttt{optagefrekvenssignal05.vi} åbnet. Blokdiagrammet vises i figur \ref{fig:optagefrekvenssignal05}. En 3D-printet holder er skruet på flaskens gevind. Holderen sikrer, at højtaleren holdes i en afstand på $\geq$  diameter af portåbningen fra portindgangen. Højtaleren er tilsluttet PC'en, og \onlineg er åbnet i en browser, hvor pink noise genereres. 
 	Et termometer sættes til at måle rumtemperaturen, imens testen udføres. 
 	
 	\begin{figure}[htb]
@@ -1786,10 +1786,7 @@ Mikrofonen er monteret på resonatorens inderside med klæbemasse. Mikrofonen pl
 			\end{enumerate}
 			
 	\subsubsection{Resultater}
-	\begin{figure}[H]
-	\centering
-	\includegraphics[width=6in]{I08.png}	
-	\end{figure}
+	$f_{b}$ = 251 Hz
 	
 	\subsubsection{Diskussion}
 	Resultatet er ikke tilnærmelsesvis det teoretiske på 171,094 Hz. 

@@ -32,8 +32,8 @@ Resonatoren er fremstillet af en tryksprøjte i hårdt plast. Tryksprøjtemodule
 Volumen af resonatorkammeret er $={\SI{1.671}{\liter}}$
  
 \subsection{Mikrofon}
-Den anvendte mikrofon er af typen \textit{Electret Microphone Amplifier MAX4466}, og af det tilhørende datablad (bilag X) fremgår et frekvensspektre på 20 Hz - 20 KHz. Mikrofonen er påsat resonatoren med klæbemasse (også kendt som \textit{lærerens tyggegummi}).  
-Mikrofonens optimale placering på resonatorens indvendige side er, i følge fundet litteratur \citep{RefWorks:11}, i en afstand af 280 mm fra portåbningen. Dette antages at være bestemt ud fra det anvendte systems skalering. Endvidere viser resultater fra en Ph.D.-afhandling omhandlende volumenmåling ved brug af Helmholtz' resonansteori, at ændringer i mikrofonens placering med hensyn til lydkildens placering ikke viser mærkbare ændringer i frekvens eller dens tilsvarende amplitude \citep{RefWorks:22}. På baggrund af anbefalinger fra TAS er mikrofonen i det aktuelle system placeret $\leq$ resonatorhalsens længde, hvilket er $\leq$ 37 mm. 
+Den anvendte mikrofon er af typen \textit{Electret Microphone Amplifier MAX4466}, og af det tilhørende datablad (bilag I) fremgår et frekvensspektre på 20 Hz - 20 KHz. Mikrofonen er påsat resonatoren med klæbemasse (også kendt som \textit{lærerens tyggegummi}).  
+Mikrofonens optimale placering på resonatorens indvendige side er, i følge fundet litteratur \citep{RefWorks:11}, i en afstand af 280 mm fra portåbningen. Dette antages at være bestemt ud fra det anvendte systems skalering. Endvidere viser resultater fra en Ph.D.-afhandling omhandlende volumenmåling ved brug af Helmholtz' resonansteori, at ændringer i mikrofonens placering med hensyn til lydkildens placering ikke viser mærkbare ændringer i frekvens eller dens tilsvarende amplitude \citep{RefWorks:22}. På baggrund af anbefalinger fra TAS er mikrofonen i det aktuelle system placeret $\leq$ resonatorhalsens længde, hvilket er $\leq$ 37 mm, fra portåbningen. 
 
 \subsection{Højtaler}
 Den anvendte højtaler er af typen \textit{Multimedia USB Speaker HP-1800}. Det har ikke været muligt at finde et datablad, men i følge producentens specifikationer har højtalerne et frekvensspektre på 100 Hz - 20 kHz \citep{RefWorks:30}. Højtaleren er tilkoblet en PC, hvorigennem der genereres pink noise. Højtaleren skal holdes i en defineret afstand fra resonatorens portåbning.  På baggrund af samtale med TAS og hans testerfaringer, er denne afstand defineret til at være $\geq$ portens diameter \citep{RefWorks:31}. En holder, som opfyldte denne betingelse, blev 3D-printet og monteret på resonatorens hals. Højtalerenholderen fremgår af figur \ref{fig:resmedholder}. Testerfaringer (integrationstest I08) viste derefter, at systemet blev for lukket, og lufttilførelse er nødvendigt for at få luften til at virke som en fjeder. Holderen blev derefter afmonteret, og der blev i stedet anvendt en afstandsklods (en hætte fra en sprittusch) med den definerede længde. Det var ikke muligt at anvende en intern højtaler, da output kapaciteten på de anvendte analog-to-digital converters, ikke var tilstrækkelig til at opfylde Nyquists samplingsteori på output-pin'en. Der er derfor anvendt et eksternt lydoutput. 
@@ -475,16 +475,15 @@ En risikovurdering består af en \textit{risikoanalyse} og en \textit{risikoeval
 \begin{landscape}
 \centering
 \label{my-label}
-\begin{tabular}{llllllllllll}
+\begin{tabular}{lllllllllll}
 \hline
-\multicolumn{1}{|l|}{\textbf{Enhed}} & \multicolumn{1}{l|}{\textbf{Ref.nr.}} & \multicolumn{1}{l|}{\textbf{Funktion}} & \multicolumn{1}{l|}{\textbf{Fare eller fejltilstand}} & \multicolumn{1}{l|}{\textbf{Effekt af fare eller fejltilstand}} & \multicolumn{1}{l|}{\textbf{Årsag til fare eller fejltilstand}} & \multicolumn{1}{l|}{\textbf{S}} & \multicolumn{1}{l|}{\textbf{K}} & \multicolumn{1}{l|}{\textbf{D}} & \multicolumn{1}{l|}{\textbf{RPN}} & \multicolumn{1}{l|}{\textbf{\begin{tabular}[c]{@{}l@{}}Ansvar og\\ deadline\end{tabular}}} & \multicolumn{1}{l|}{\textbf{Ændringsdato}} \\ \hline
+\multicolumn{1}{|l|}{\textbf{Enhed}} & \multicolumn{1}{l|}{\textbf{Ref.nr.}} & \multicolumn{1}{l|}{\textbf{Funktion}} & \multicolumn{1}{l|}{\textbf{\begin{tabular}[c]{@{}l@{}}Fare eller\\fejltilstand\end{tabular}}} & 
+\multicolumn{1}{l|}{\textbf{\begin{tabular}[c]{@{}l@{}}Effekt af fare eller\\fejltilstand\end{tabular}}} &
+\multicolumn{1}{l|}{\textbf{\begin{tabular}[c]{@{}l@{}}Årsag til fare eller\\fejltilstand\end{tabular}}} & \multicolumn{1}{l|}{\textbf{S}} & \multicolumn{1}{l|}{\textbf{K}} & \multicolumn{1}{l|}{\textbf{D}} & \multicolumn{1}{l|}{\textbf{RPN}} & \multicolumn{1}{l|}{\textbf{\begin{tabular}[c]{@{}l@{}}Ændrings-\\dato\end{tabular}}}} \\ \hline
    
-    \multicolumn{1}{|l|}{Resonator} & \multicolumn{1}{l|}{R1} & \multicolumn{1}{l|}{Danner Helmholtz resonans} & \multicolumn{1}{l|}{Ikke-ideel opførelse i port} & \multicolumn{1}{l|}{Fejl i volumenudregning} & \multicolumn{1}{l|}{Fejlberegning af endekorrektion $\Delta l$} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{-} & \multicolumn{1}{l|}{10} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{\begin{tabular}[c]{@{}l@{}}Ansvar og\\ deadline\end{tabular}}} & \multicolumn{1}{l|}{\textbf{Ændringsdato}} \\ \hline
-    
-      \multicolumn{1}{|l|}{} &
-       \multicolumn{1}{l|}{R2} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{Indlejrer luft} & \multicolumn{1}{l|}{Afvigende temperatur} & \multicolumn{1}{l|}{Fejl i volumenudregning} & \multicolumn{1}{l|}{Ukorrekt værdi for temperatur i udregning} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{\begin{tabular}[c]{@{}l@{}}Ansvar og\\ deadline\end{tabular}}} & \multicolumn{1}{l|}{\textbf{Ændringsdato}} \\ \hline  
-      
-       \multicolumn{1}{|l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{\begin{tabular}[c]{@{}l@{}}Ansvar og\\ deadline\end{tabular}}} & \multicolumn{1}{l|}{\textbf{Ændringsdato}} \\ \hline                                                                                                                   
+    \multicolumn{1}{|l|}{Resonator} & \multicolumn{1}{l|}{R1} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Danner\\Helmholtz-\\resonans\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Ikke-ideel opførelse\\i port\end{tabular}} & \multicolumn{1}{l|}{Fejl i volumenudregning} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Fejlberegning af\\ endekorrektionsfaktoren\end{tabular}} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{-} & \multicolumn{1}{l|}{10} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{\textbf{}} \\ \hline
+ 
+                                                                                                                      
 \end{tabular}
 
 \end{landscape}
@@ -494,10 +493,9 @@ En risikovurdering består af en \textit{risikoanalyse} og en \textit{risikoeval
 
 \subsection{Kvalitetssikringssystem}
 
-Et kvalitetssystem designes til opfylde de regulatoriske krav som produktets klassificering pålægges. Det vil sige at det designes ud fra behov. 
+Et kvalitetssystem designes til opfylde de regulatoriske krav som produktets klassificering pålægges i hht. ISO 13485. Det vil sige at det designes ud fra behov. 
 Et kvalitetssikringssystem består af en organisationsstruktur, en ansvarsfordeling, procedure, specifikationer, processer og ressoucer. 
 
-Hvad kræver det af dokumenter
-Sporbarhed
+
 
 

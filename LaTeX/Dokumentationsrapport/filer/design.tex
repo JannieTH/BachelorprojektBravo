@@ -56,7 +56,7 @@ Der er udarbejdet et internal block diagram (IBD), som fremgår af figur \ref{fi
 
 I tabel \ref{table:overblok} fremgår en oversigt over hvilke funktioner samt signaler de enkelte blokke indeholder. 
 
-\begin{table}[htb]
+\begin{table}[H]
 \centering
 \caption{Oversigt over de enkelte blokkes funktioner og signaltyper}
 \label{table:overblok}
@@ -75,7 +75,7 @@ Dataprocessering & behandling af data & frekvenssignal og resonansfrekvens\\ \hl
 Udvælgelsen af hardware er, som nævnt, sket på baggrund af testerfaringer samt ved at konferere med fagfolk. Selve udvælgelsen er dermed en proces, som er kørt sideløbende med selve testprocessen i implementeringsfasen. Der er derfor ikke fastlagt nogle endelig komponenter da systemet stadig er under udvikling. I de følgende afsnit begrundes der for det anvendte hardware. 
 I tabel \ref{table:anvendthw} fremgår en oversigt over det anvendte hardware. 
 
-\begin{table}[htb]
+\begin{table}[H]
 \centering
 \caption{Oversigt over det anvendte hardware}
 \label{table:anvendthw}
@@ -99,7 +99,7 @@ I tabel \ref{table:anvendthw} fremgår en oversigt over det anvendte hardware.
 \subsubsection{Valg af højtaler}
 Udvælgelsesprocessen af højtaleren fremgår af figur \ref{fig:flowlyd}. I diagrammet definerer \textit{E\#}, i hvilken enhedstest den pågældende komponent er testet. Endvidere fremgår en kort beskrivelse af årsagen til erstatningen for komponenten. Altså blev H1 erstattet med H2 da der opstod et behov for et bredere frekvensbånd i det udsendte lydsignal. Endvidere blev H2 erstattet med H3, som et resultatet af en problematik vedr. opfyldelse af Nyquists samplingsteori, hvorefter højtaleren måtte være en ekstern del af systemet. Det medførte et behov for en højtaler med et bredt frekvensbånd samt et minijack stik. 
 
-\begin{figure}[htb]
+\begin{figure}[H]
 \centering
 \includegraphics[width=3in]{flowdiagramelyd.png}
 \caption{Flowdiagram over de udførte enhedstests af lydgivende kilder. E\# definerer, i hvilken enhedstest den pågældende komponent er testet}

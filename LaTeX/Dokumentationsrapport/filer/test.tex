@@ -27,7 +27,7 @@ Formålet er at dokumentere udarbejdelsen af accepttesten, som er et værktøj t
 \label{ordliste}
 \begin{tabular}{|l|l|}
 \hline
-\textbf{Forkortelse             } & \textbf{Betydning             } \\ \hline
+\textbf{Forkortelse             } & \textbf{Betydning} \\ \hline
 A/D & Analog til digital \\ \hline
 BVM & Brystvolumenmåler \\ \hline
 CPU & Central Processing Unit \\ \hline
@@ -76,10 +76,6 @@ Init. & initialer \\ \hline
 		\subsection{Metode}
 		Dette afsnit specificerer de retningslinjer, hvorefter accepttesten skal afvikles. 
 		
-			\subsubsection{Dokumentsammenhæng}
-			illustreres 
-			€€ Indsæt oversigt, med inspiration fra s. 204 	
-			
 			\subsubsection{Gennerelle krav}
 			Afviklingen af accepttesten skal overholde følgende nøglekrav: 
 			
@@ -110,7 +106,7 @@ Init. & initialer \\ \hline
 				\item \textit{Resultat af gennemført aktion dokumenteres}	
 			\end{enumerate}
 			
-			En skabelon til afvigelsesbilag er udarbejdet, og fremgår af bilag B. 
+			En skabelon til afvigelsesbilag er udarbejdet, og fremgår af bilag A. 
 			
 			\subsubsection{Afslutning af accepttest-aktiviteter}
 			Ved afslutningen af accepttest-aktivteterne, udarbejdes en accepttest-rapport. Denne rapport lukker accepttest-aktiviteterne, og fungerer som bevis for, at den gennemførte test af brystvolumenmåleren, er afsluttet med et tilfredsstillende resultat. 
@@ -122,13 +118,11 @@ Init. & initialer \\ \hline
 				\item \textit{Afvigelsesblad med korrektive aktioner}
 				\item \textit{Udfyldte testskemaer}
 			\end{itemize}
-			
-		\subsection{Oversigt over testdokumenter}
-		€€ Her angives de specifikke testdokumenter i en tabel. Obs, på eventuelle referencer til kravspec. 
 		
 		\subsection{Forudsætning for udførelse af accepttest}
 		
 		\textit{Accepttesten kan igangsættes når systemet har ydet 1000 stabile målinger.} 
+\newpage 
 		
 \section{Accepttest}
 
@@ -142,6 +136,7 @@ Init. & initialer \\ \hline
 \begin{tabularx}{1\textwidth}{|l|X|}
 \hline
 \textbf{Krav nr.}              & UC1.1  \\ \hline
+\textbf{Handling}				& PK kalibrerer BVM i den tilhørende dockingstation \\ \hline
 \textbf{Acceptkriterie}        & BVM er kalibreret \\ \hline
 \textbf{Testmetode}            & Der trykkes på \textit{Kalibrér} og UI viser \textit{Kalibrering ok} \\ \hline
 \textbf{Observation}           &  \\ \hline
@@ -154,6 +149,7 @@ Init. & initialer \\ \hline
 \begin{tabularx}{1\textwidth}{|l|X|}
 \hline
 \textbf{Krav nr.}              & UC1.2-3  \\ \hline
+\textbf{Handling}				& PK placerer BVM på patients blottede bryst \\ \hline
 \textbf{Acceptkriterie}        & Patientens bryst er omsluttet af BVM \\ \hline
 \textbf{Testmetode}            & Der observeres efter luftlommer mellem BVM og hud \\ \hline
 \textbf{Observation}           &  \\ \hline
@@ -165,6 +161,7 @@ Init. & initialer \\ \hline
 \begin{tabularx}{1\textwidth}{|l|X|}
 \hline
 \textbf{Krav nr.}              & UC1.4  \\ \hline
+\textbf{Handling}				& PK kontrollerer at anlægstrykket er ensartet \\ \hline
 \textbf{Acceptkriterie}        & BVM er placeret med et ensartet anlægstryk \\ \hline
 \textbf{Testmetode}            & Der påføres en kontinuert tryk indtil alle trykdioder på BVM lyser grøn.  \\ \hline
 \textbf{Observation}           &  \\ \hline
@@ -177,6 +174,7 @@ Init. & initialer \\ \hline
 \begin{tabularx}{1\textwidth}{|l|X|}
 \hline
 \textbf{Krav nr.}              & UC1.5-6  \\ \hline
+\textbf{Handling}				& PK foretager en måling ved at trykke på \textit{M}\\ \hline
 \textbf{Acceptkriterie}        & Der er foretaget en måling\\ \hline
 \textbf{Testmetode}            & Der trykkes på \textit{M} og en progressbar angiver målingsstatus. Volumen angives på UI når måling er foretaget. \\ \hline
 \textbf{Observation}           &  \\ \hline
@@ -188,12 +186,13 @@ Init. & initialer \\ \hline
 \begin{tabularx}{1\textwidth}{|l|X|}
 \hline
 \textbf{Krav nr.}              & UC1.7  \\ \hline
+\textbf{Handling}				& PK foretager slukker ved at trykke på \textit{O/I}\\ \hline
 \textbf{Acceptkriterie}        & BVM slukkes\\ \hline
 \textbf{Testmetode}            & Der trykkes på \textit{O/I} \\ \hline
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
-\end{tabularx}\\
+\end{tabularx}
 	
 		
 \pagebreak
@@ -203,8 +202,7 @@ Init. & initialer \\ \hline
 
 \begin{tabularx}{1\textwidth}{|l|X|}
 \hline
-\textbf{Krav nr.}              & UC1.A1  \\ 
-\hline
+\textbf{Krav nr.}              & UC1.A1  \\ \hline
 \textbf{Scenarie}              & BVM melder fejl  \\ \hline
 \textbf{Acceptkriterie}        & BVM melder klar til måling\\ \hline
 \textbf{Testmetode}            & Kalibrering af BVM \\ \hline
@@ -227,6 +225,7 @@ Init. & initialer \\ \hline
 \textbf{Krav nr.}              & UK1  \\ \hline
 \textbf{Acceptkriterie}        & ml. anføres efter talværdi \\ \hline
 \textbf{Testmetode}            & UC1.5-6 følges. Det aflæses på UI om talværdi er angivet i ml.  \\ \hline
+\textbf{Forventet resultat}	& UC1.5-6 følges og på UI aflæses talværdi angivet i ml. \\ \hline
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
@@ -236,7 +235,8 @@ Init. & initialer \\ \hline
 \hline
 \textbf{Krav nr.}              & UK2  \\ \hline
 \textbf{Acceptkriterie}        & Talværdi angives i digital talform med en højde på 1 cm. \\ \hline
-\textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}}UC1.5-6 følges.\\ Det observeres på UI om talværdi er angivet\\ i digital form og skriftstørrelse måles\end{tabular}  \\ \hline
+\textbf{Testmetode}            & UC1.5-6 følges. Det observeres på UI om talværdi er angivet i digital form og skriftstørrelse måles \\ \hline
+\textbf{Forventet resultat}	& UC1.5-6 følges, og på UI observeres om talværdi er angivet i digital form, og skriftstørrelsen måles \\ \hline  
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
@@ -246,7 +246,8 @@ Init. & initialer \\ \hline
 \hline
 \textbf{Krav nr.}              & UK3  \\ \hline
 \textbf{Acceptkriterie}        & Der anvendes piktogrammer til visualisering af processtatus på UI \\ \hline
-\textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}}Usabilitytest på min. 15 plastikkirurger med forskellig national baggrund\end{tabular} \\ \hline
+\textbf{Testmetode}            & Usabilitytest på min. 15 plastikkirurger med forskellig national baggrund \\ \hline
+\textbf{Forventet resultat}		& Usabilitytest på min. 15 plastikkirurger med national baggrund viser, at målgruppen forstår processtadiet ud fra UI\\ \hline
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
@@ -262,6 +263,7 @@ Init. & initialer \\ \hline
 \textbf{Krav nr.}              & RK1  \\ \hline
 \textbf{Acceptkriterie}        & Nøjagtighed på +/- 10 ml.  \\ \hline
 \textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}} En testserie på 1000 volumenmålinger genereres hvorpå\\ nøjagtighed udregnes\end{tabular}  \\ \hline
+\textbf{Forventet resultat}		& En udregning baseret på 1000 volumenmålinger viser nøjagtighed på +/- 10 ml. \\ \hline
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
@@ -272,6 +274,7 @@ Init. & initialer \\ \hline
 \textbf{Krav nr.}              & RK2  \\ \hline
 \textbf{Acceptkriterie}        & Afvigelse af præcision på højst 1\% af $f_{b}$  \\ \hline
 \textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}} En testserie på 1000 målinger af $f_{b}$ genereres hvorpå\\ præcision udregnes\end{tabular}  \\ \hline
+\textbf{Forventet resultat}		& En udregning baseret på 1000 volumenmålinger viser afvigelse af præcision på højst 1\% af $f_{b}$ \\ \hline
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
@@ -282,6 +285,7 @@ Init. & initialer \\ \hline
 \textbf{Krav nr.}              & RK3  \\ \hline
 \textbf{Acceptkriterie}        & \begin{tabular}[l]{@{}l@{}} Volumenangivelse skal\\ afrundes til nærmeste hele tal \end{tabular} \\ \hline
 \textbf{Testmetode}            & \begin{tabular}[l]{@{}l@{}} UC1.5-6 følges og det kontrolleres\\ at volumen ikke er angivet som decimaltal\end{tabular}  \\ \hline
+
 \textbf{Observation}           &  \\ \hline
 \textbf{Godkendt {[}Ja/Nej{]}} &  \\ \hline
 \textbf{Init./Dato}            &  \\ \hline
