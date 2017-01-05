@@ -461,9 +461,9 @@ En risikovurdering består af en \textit{risikoanalyse} og en \textit{risikoeval
 
 	\subsubsection{Risikoanalyse}
 	Der findes forskellige analysemetoder til at identificere risici, og dette eksempel tager udgangspunkt i metoden kaldet \textit{Failure Mode and Effect Analysis}{} (FMEA). Ved brug af FMEA inddeles BMV'en i uafhængige undersystemer, som med fordel kan identificeres ud fra de udarbejdede BBD- og IBD-diagrammer. Ved denne inddeling opnås en kvalitativ og systematisk identificering af risikofaktorer.
-	I udarbejdelsen af identificering af farer i forbindelse med BVM, er der blevet taget udgangspunkt i det fundne litteratur, sparring med fagpersoner samt egne udviklingserfaringer. Der blev genereret en liste over identificerede farer som er blevet videreudviklet til en FMEA-tabel.  
+	I udarbejdelsen af identificering af farer i forbindelse med BVM, er der blevet taget udgangspunkt i det fundne litteratur, sparring med fagpersoner samt egne udviklingserfaringer. Der er udarbejdet et par eksmepler på identificerede farer, som er blevet videreudviklet til en FMEA-tabel.  
 	
-	Risikofaktorerne vurderes derefter ud fra en kvantitativ scoring fra 1-10 i hht. \textit{Risk Priority Number}{} (RPN), som fremgår af figur \ref{fig:rpn}. \textit{Sandsynlighed}{}(S) er et begreb for, hvor ofte årsagen til fejltilstanden opstår. \textit{Konsekvens}{}(K) definerer, hvilken effekt fejltilstanden har. \textit{Detektion}{}(D) er et begreb for sandsynligheden for at detektere fejltilstanden. De angivne RPN-værdier er givet ud fra et estimat grundet manglende indsigt i samt data af den konceptuelle BVM. Tabellen er udarbejdet, som et eksempel på, hvorledes FMEA kan anvendes. 	
+	Risikofaktorerne vurderes derefter ud fra en kvantitativ scoring fra 1-10 i hht. \textit{Risk Priority Number}{} (RPN), som fremgår af figur \ref{fig:rpn}. \textit{Sandsynlighed}{}(S) er et begreb for, hvor ofte årsagen til fejltilstanden opstår. \textit{Konsekvens}{}(K) definerer, hvilken effekt fejltilstanden har. \textit{Detektion}{}(D) er et begreb for sandsynligheden for at detektere fejltilstanden. De angivne RPN-værdier er givet ud fra et estimat grundet manglende indsigt i samt data af den konceptuelle BVM. Tabel \ref{table:fmea} er udarbejdet, som et eksempel på, hvorledes FMEA kan anvendes. 	
 	 
 	\begin{figure}[htb]
 	\centering
@@ -473,17 +473,16 @@ En risikovurdering består af en \textit{risikoanalyse} og en \textit{risikoeval
 	\end{figure}
 
 \begin{landscape}
+Tabel 4.5.5: Et udarbejdet eksempel på, hvorledes FMEA kan anvendes i en risikoanalyse
 \centering
-\label{my-label}
-\begin{tabular}{lllllllllll}
+\begin{tabular}{|c|l|l|l|l|l|l|l|l|l|l|l|}
 \hline
-\multicolumn{1}{|l|}{\textbf{Enhed}} & \multicolumn{1}{l|}{\textbf{Ref.nr.}} & \multicolumn{1}{l|}{\textbf{Funktion}} & \multicolumn{1}{l|}{\textbf{\begin{tabular}[c]{@{}l@{}}Fare eller\\fejltilstand\end{tabular}}} & 
-\multicolumn{1}{l|}{\textbf{\begin{tabular}[c]{@{}l@{}}Effekt af fare eller\\fejltilstand\end{tabular}}} &
-\multicolumn{1}{l|}{\textbf{\begin{tabular}[c]{@{}l@{}}Årsag til fare eller\\fejltilstand\end{tabular}}} & \multicolumn{1}{l|}{\textbf{S}} & \multicolumn{1}{l|}{\textbf{K}} & \multicolumn{1}{l|}{\textbf{D}} & \multicolumn{1}{l|}{\textbf{RPN}} & \multicolumn{1}{l|}{\textbf{\begin{tabular}[c]{@{}l@{}}Ændrings-\\dato\end{tabular}}}} \\ \hline
-   
-                                                                                                                      
+\multicolumn{1}{|l|}{\textbf{Enhed}} & \textbf{Enhed} & \textbf{Funktion} & \textbf{\begin{tabular}[c]{@{}l@{}}Fare eller\\ fejltilstand\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Effekt af \\ fare eller\\ fejltilstand\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Årsag til \\ fare eller\\ fejltilstand\end{tabular}} & \textbf{S} & \textbf{K} & \textbf{D} & \textbf{RNP} & \textbf{\begin{tabular}[c]{@{}l@{}}Ændrings-\\ dato\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Ansvar\\ {[}Init.{]}\end{tabular}} \\ \hline
+R1 & Resonator & \begin{tabular}[c]{@{}l@{}}Reflekterer \\ indsendt lyd\end{tabular} & \begin{tabular}[c]{@{}l@{}}Afvigelse af \\ temperatur\end{tabular} & \begin{tabular}[c]{@{}l@{}}Fejl i volumen-\\ udregning\end{tabular} & \begin{tabular}[c]{@{}l@{}}Utæt kant-\\ afgrænsning\end{tabular} & 2 & 5 & 4 & 40 & \multicolumn{1}{c|}{-} & \multicolumn{1}{c|}{-} \\ \hline
+R2 & Tryksensor & \begin{tabular}[c]{@{}l@{}}Detekterer \\ anlægstryk\end{tabular} & \begin{tabular}[c]{@{}l@{}}Ikke-ensartet\\ anlægstryk\end{tabular} & \begin{tabular}[c]{@{}l@{}}Fejl i volumen-\\ udregning\end{tabular} & Defekt sensor & 1 & 5 & 9 & 45 & \multicolumn{1}{c|}{-} & \multicolumn{1}{c|}{-} \\ \hline
+R3 & ... & ... & ... & ... & ... & ... & ... & ... & ... & ... & ... \\ \hline
 \end{tabular}
-
+\label{table:fmea}
 \end{landscape}
 
 	\subsubsection{Risikoevaluering}  
